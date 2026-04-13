@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WISE</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#ace683">
+    <link rel="manifest" href="manifest.json"> 
     <link rel="icon" type="image/png" href="icons/wise.png" sizes="32x32">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -29,7 +28,7 @@
             width: 100%;
             max-width: 440px;
             background: #0F0F0F;
-            border:  px solid #111;
+            border: 14px solid #111;
             border-radius: 52px;
             overflow: hidden;
             box-shadow: 0 0 50px rgba(0,0,0,0.9);
@@ -243,15 +242,15 @@
         }
 
         .amount-input {
-        font-size: 1.8rem;  /* Adjust this value as needed */
-        font-weight: 600;
-        background: transparent;
-        border: none;
-        outline: none;
-        text-align: left;
-        color: white;
-        width: 100%;
-        padding: 4px 0;   /* Optional: prevents jumping */
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: transparent;
+            border: none;
+            outline: none;
+            text-align: right;
+            color: white;
+            width: 100%;
+            padding: 4px 0;
         }
 
         .flag-circle {
@@ -315,41 +314,47 @@
             width: 100%;
         }
 
-        /* Bottom Navigation */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            max-width: 420px;
-            margin: 0 auto;
-            background: #1C1C1C;
-            height: 78px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border-top: 1px solid #333;
-            z-index: 100;
-        }
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 420px;
+    margin: 0 auto;
+    background: #1C1C1C;
+    height: 78px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #333;
+    z-index: 100;
+}
 
-        .nav-item {
-            text-align: center;
-            color: #888;
-            font-size: 14px;
-            width: 70px;
-        }
+.nav-item {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    width: 70px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
 
-        .nav-item.active {
-            color: #ace683;
-        }
+.nav-item.active {
+    color: #ace683;
+}
 
-        .nav-icon {
-            width: 28px;
-            height: 28px;
-            margin: 0 auto 4px;
-            display: block;
-        }
-    </style>
+.nav-item.active .nav-icon {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(100%) hue-rotate(60deg) brightness(80%) contrast(200%);
+}
+
+.nav-icon {
+    width: 28px;
+    height: 28px;
+    margin: 0 auto 4px;
+    display: block;
+}
+</style>
 </head>
 <body>
     <div class="phone-frame">
@@ -362,7 +367,6 @@
                 <div class="earn-btn">Earn HK$500</div>
                 <div style="width:68px;"> <img src="icons/eye.png"></div>            
             </div>
-            
 
             <!-- Total Balance -->
             <div class="balance-section">
@@ -445,7 +449,6 @@
 
                 <!-- You send -->
                 <div class="input-box">
-                     
                     <div class="flex items-center">
                         <input id="amount-from" 
                                type="text" 
@@ -472,7 +475,6 @@
 
                 <!-- Recipient gets -->
                 <div class="input-box">
-                     
                     <div class="flex items-center">
                         <input id="amount-to" 
                                type="text" 
@@ -506,19 +508,19 @@
 
         <!-- Bottom Navigation -->
         <div class="bottom-nav">
-            <div class="nav-item active">
+            <div class="nav-item active" id="nav-home">
                 <img src="icons/home.png" alt="Home" class="nav-icon">
                 <div>Home</div>
             </div>
-            <div class="nav-item">
+            <div class="nav-item" id="nav-cards">
                 <img src="icons/cards.png" alt="Cards" class="nav-icon">
                 <div>Cards</div>
             </div>
-            <div class="nav-item">
+            <div class="nav-item" id="nav-recipients">
                 <img src="icons/recipients.png" alt="Recipients" class="nav-icon">
                 <div>Recipients</div>
             </div>
-            <div class="nav-item">
+            <div class="nav-item" id="nav-payments">
                 <img src="icons/payments.png" alt="Payments" class="nav-icon">
                 <div>Payments</div>
             </div>
@@ -527,7 +529,7 @@
     </div>
 
     <script>
-        // Live rate functionality
+        // Live rate functionality (unchanged - everything kept exactly the same)
         const currencies = [
             { code: "USD", flag: "icons/us.png" },
             { code: "CNY", flag: "https://flagcdn.com/w320/cn.png" },
@@ -642,14 +644,20 @@
             }, 1200);
         }
 
-        // NEW: Handle action button clicks (Send, Add money, Request)
+        // Handle action buttons (Send, Add money, Request) - unchanged
         function makeActive(clickedBtn) {
-            // Remove active class from all three buttons
             document.querySelectorAll('.action-buttons .btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            // Add active class to the clicked button
             clickedBtn.classList.add('active');
+        }
+
+        // NEW: Handle bottom navigation clicks
+        function makeNavActive(clickedItem) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            clickedItem.classList.add('active');
         }
 
         // Initialize
@@ -684,7 +692,7 @@
             
             fetchLiveRate();
 
-            // Add click handlers to the three action buttons
+            // Action buttons
             const sendBtn = document.getElementById('btn-send');
             const addBtn = document.getElementById('btn-add');
             const requestBtn = document.getElementById('btn-request');
@@ -692,6 +700,17 @@
             sendBtn.addEventListener('click', () => makeActive(sendBtn));
             addBtn.addEventListener('click', () => makeActive(addBtn));
             requestBtn.addEventListener('click', () => makeActive(requestBtn));
+
+            // Bottom navigation
+            const navHome = document.getElementById('nav-home');
+            const navCards = document.getElementById('nav-cards');
+            const navRecipients = document.getElementById('nav-recipients');
+            const navPayments = document.getElementById('nav-payments');
+
+            navHome.addEventListener('click', () => makeNavActive(navHome));
+            navCards.addEventListener('click', () => makeNavActive(navCards));
+            navRecipients.addEventListener('click', () => makeNavActive(navRecipients));
+            navPayments.addEventListener('click', () => makeNavActive(navPayments));
         };
     </script>
 </body>
