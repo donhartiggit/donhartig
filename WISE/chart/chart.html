@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VISE • Transfer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0A0A0A;
+            color: #EEE;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .phone-frame {
+            width: 100%;
+            max-width: 420px;
+            background: #0F0F0F;
+            border: 14px solid #111;
+            border-radius: 52px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0,0,0,0.9);
+            position: relative;
+        }
+
+        .content {
+            min-height: 100%;
+            padding-bottom: 80px;
+        }
+
+        /* Page 1 - Home Style */
+        .header {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            background: #0F0F0F;
+        }
+
+        .profile {
+            width: 42px;
+            height: 42px;
+            background: #1C1C1C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #ace683;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .profile::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 12px;
+            height: 12px;
+            background: #FF3B30;
+            border: 2px solid #0F0F0F;
+            border-radius: 50%;
+        }
+
+        .earn-btn {
+            background: #ace683;
+            color: #000;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-left: auto;
+            font-size: 15px;
+        }
+
+        .balance-section {
+            padding: 0 20px 20px;
+        }
+
+        .total-label {
+            font-size: 15px;
+            color: #AAA;
+        }
+
+        .total-balance {
+            font-size: 38px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            padding: 0 20px;
+            margin: 20px 0 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: 30px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .btn-send { background: #ace683; color: #000; }
+
+        /* Transfer Calculator Section */
+        .transfer-section {
+            background: #1F2937;
+            margin: 0 16px;
+            border-radius: 24px;
+            padding: 20px;
+        }
+
+        .chart-container {
+            height: 220px;
+            background: #111827;
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .amount-input {
+            font-size: 2.1rem;
+            font-weight: 600;
+            background: transparent;
+            border: none;
+            outline: none;
+            text-align: right;
+            color: white;
+            width: 100%;
+        }
+
+        .flag-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .flag-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .input-box {
+            background: #374151;
+            border-radius: 20px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+        }
+
+        .label {
+            font-size: 13px;
+            color: #9CA3AF;
+            margin-bottom: 8px;
+        }
+
+        .swap-btn {
+            width: 46px;
+            height: 46px;
+            background: #4B5563;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -22px auto 12px;
+            border: 4px solid #1F2937;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .info-box {
+            background: #374151;
+            border-radius: 16px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        .send-btn {
+            background: #ace683;
+            color: #000;
+            font-weight: 700;
+            font-size: 20px;
+            padding: 18px;
+            border-radius: 9999px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: 420px;
+            margin: 0 auto;
+            background: #1C1C1C;
+            height: 78px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #333;
+            z-index: 100;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            font-size: 11px;
+        }
+
+        .nav-item.active {
+            color: #ace683;
+        }
+
+        .nav-icon {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .toy-footer {
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+            font-size: 11px;
+            padding: 6px 18px;
+            border-radius: 9999px;
+            font-weight: 700;
+            z-index: 200;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="content">
+
+            <!-- Top Bar -->
+            <div class="header">
+                <div class="profile">DH</div>
+                <div class="earn-btn">Earn HK$500</div>
+            </div>
+
+            <!-- Total Balance -->
+            <div class="balance-section">
+                <div class="total-label">Total balance</div>
+                <div class="total-balance">16,66 CNY <span style="font-size:18px;">📈</span></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <div class="btn btn-send">Send</div>
+                <div class="btn" style="background:#1C1C1C;">Add money</div>
+                <div class="btn" style="background:#1C1C1C;">Request</div>
+            </div>
+
+            <!-- Transfer Calculator Section -->
+            <div class="transfer-section">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-lg font-semibold">Quick Transfer</div>
+                </div>
+
+                <!-- Chart -->
+                <div class="chart-container">
+                    <canvas id="exchange-chart"></canvas>
+                </div>
+
+                <!-- Rate -->
+                <div id="exchange-rate-text" class="text-center text-2xl font-semibold mb-6">
+                    1 USD = 6.8293 CNY
+                </div>
+
+                <!-- You send -->
+                <div class="input-box">
+                    <div class="label">You send</div>
+                    <div class="flex items-center">
+                        <input id="amount-from" 
+                               type="text" 
+                               value="1000"
+                               class="amount-input flex-1"
+                               oninput="handleAmountInput(this, 'from')">
+                        <div class="flex items-center gap-3 ml-6">
+                            <div class="flag-circle">
+                                <img src="https://flagcdn.com/w320/us.png" alt="USD">
+                            </div>
+                            <select id="currency-from" onchange="handleCurrencyChange('from')" 
+                                    class="bg-transparent text-white font-semibold text-xl outline-none cursor-pointer">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swap -->
+                <div onclick="swapCurrencies()" class="swap-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ace683]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    </svg>
+                </div>
+
+                <!-- Recipient gets -->
+                <div class="input-box">
+                    <div class="label">Recipient gets</div>
+                    <div class="flex items-center">
+                        <input id="amount-to" 
+                               type="text" 
+                               value="6736.92"
+                               class="amount-input flex-1"
+                               oninput="handleAmountInput(this, 'to')">
+                        <div class="flex items-center gap-3 ml-6">
+                            <div class="flag-circle">
+                                <img src="https://flagcdn.com/w320/cn.png" alt="CNY">
+                            </div>
+                            <select id="currency-to" onchange="handleCurrencyChange('to')" 
+                                    class="bg-transparent text-white font-semibold text-xl outline-none cursor-pointer">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="info-box text-sm">
+                    <div>Includes fees<br><span id="fees-display" class="font-semibold">13.52 USD</span></div>
+                    <div class="text-right">Should arrive<br><span class="font-medium">In seconds</span></div>
+                </div>
+
+                <!-- Send Button -->
+                <button onclick="simulateSend()" class="send-btn">
+                    Send
+                </button>
+            </div>
+
+            <!-- Main Account Card (from Page 1) -->
+            <div style="margin: 30px 16px 20px; background: #1C1C1C; border-radius: 20px; padding: 20px;">
+                <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Main account</div>
+                <div style="font-size: 22px; font-weight: 700; color: white; margin-bottom: 20px;">16,66 CNY</div>
+
+                <div style="display: flex; align-items: center; padding: 12px 0; border-top: 1px solid #333;">
+                    <div style="font-size: 28px; margin-right: 14px;">🇺🇸</div>
+                    <div style="flex: 1; font-size: 16px;">US Dollar</div>
+                    <div style="font-weight: 600;">2,44 USD</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 12px 0; border-top: 1px solid #333;">
+                    <div style="font-size: 28px; margin-right: 14px;">🇪🇺</div>
+                    <div style="flex: 1; font-size: 16px;">Euro</div>
+                    <div style="font-weight: 600;">0,00 EUR</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div style="position: fixed; bottom: 0; left: 0; right: 0; max-width: 420px; margin: 0 auto; background: #1C1C1C; height: 78px; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #333;">
+            <div style="text-align: center; color: #ace683; font-size: 11px;">
+                <div style="font-size: 24px; margin-bottom: 4px;">🏠</div>
+                Home
+            </div>
+            <div style="text-align: center; color: #888; font-size: 11px;">
+                <div style="font-size: 24px; margin-bottom: 4px;">💳</div>
+                Cards
+            </div>
+            <div style="text-align: center; color: #888; font-size: 11px;">
+                <div style="font-size: 24px; margin-bottom: 4px;">👥</div>
+                Recipients
+            </div>
+            <div style="text-align: center; color: #888; font-size: 11px;">
+                <div style="font-size: 24px; margin-bottom: 4px;">↗️</div>
+                Payments
+            </div>
+        </div>
+
+        <!-- Toy Footer -->
+        <div style="position: absolute; bottom: 90px; left: 50%; transform: translateX(-50%); background: rgba(239, 68, 68, 0.9); color: white; font-size: 11px; padding: 6px 18px; border-radius: 9999px; font-weight: 700; z-index: 200;">
+            TOY DEMO — NOT A REAL BANKING APP
+        </div>
+    </div>
+
+    <script>
+        // Live rate functionality from Page 2
+        const currencies = [
+            { code: "USD", flag: "https://flagcdn.com/w320/us.png" },
+            { code: "CNY", flag: "https://flagcdn.com/w320/cn.png" },
+            { code: "EUR", flag: "https://flagcdn.com/w320/eu.png" },
+            { code: "GBP", flag: "https://flagcdn.com/w320/gb.png" },
+            { code: "JPY", flag: "https://flagcdn.com/w320/jp.png" }
+        ];
+
+        let fromCurrency = "USD";
+        let toCurrency = "CNY";
+        let fromAmount = 1000;
+        let toAmount = 6736.92;
+        let exchangeRate = 6.8293;
+        let lastEdited = "from";
+
+        function populateSelects() {
+            const fromSel = document.getElementById("currency-from");
+            const toSel = document.getElementById("currency-to");
+            
+            fromSel.innerHTML = "";
+            toSel.innerHTML = "";
+            
+            currencies.forEach(c => {
+                const opt1 = new Option(c.code, c.code);
+                if (c.code === fromCurrency) opt1.selected = true;
+                fromSel.appendChild(opt1);
+                
+                const opt2 = new Option(c.code, c.code);
+                if (c.code === toCurrency) opt2.selected = true;
+                toSel.appendChild(opt2);
+            });
+        }
+
+        async function fetchLiveRate() {
+            if (fromCurrency === toCurrency) {
+                exchangeRate = 1;
+                updateUI();
+                return;
+            }
+            
+            try {
+                const res = await fetch(`https://api.exchangerate.host/latest?base=${fromCurrency}&symbols=${toCurrency}`);
+                const data = await res.json();
+                if (data.rates && data.rates[toCurrency]) {
+                    exchangeRate = parseFloat(data.rates[toCurrency].toFixed(6));
+                }
+            } catch (e) {}
+            
+            if (lastEdited === "from") {
+                toAmount = fromAmount * exchangeRate;
+            } else {
+                fromAmount = toAmount / exchangeRate;
+            }
+            updateUI();
+        }
+
+        function updateUI() {
+            document.getElementById("amount-from").value = fromAmount;
+            document.getElementById("amount-to").value = Number(toAmount).toLocaleString('en-US', {minimumFractionDigits: 2});
+            
+            document.getElementById("exchange-rate-text").innerHTML = 
+                `1 <span style="color:#9CA3AF">${fromCurrency}</span> = <span style="color:#ace683">${exchangeRate.toFixed(4)}</span> <span style="color:#9CA3AF">${toCurrency}</span>`;
+            
+            const fee = (fromAmount * 0.01352).toFixed(2);
+            document.getElementById("fees-display").textContent = fee + " " + fromCurrency;
+        }
+
+        function handleAmountInput(el, side) {
+            lastEdited = side;
+            let val = parseFloat(el.value.replace(/[^0-9.]/g, '')) || 0;
+            
+            if (side === "from") {
+                fromAmount = val;
+                toAmount = val * exchangeRate;
+            } else {
+                toAmount = val;
+                fromAmount = val / exchangeRate;
+            }
+            updateUI();
+        }
+
+        function handleCurrencyChange(side) {
+            if (side === "from") fromCurrency = document.getElementById("currency-from").value;
+            else toCurrency = document.getElementById("currency-to").value;
+            
+            if (fromCurrency === toCurrency) {
+                const fallback = currencies.find(c => c.code !== fromCurrency);
+                if (fallback) {
+                    if (side === "from") fromCurrency = fallback.code;
+                    else toCurrency = fallback.code;
+                    document.getElementById(`currency-${side}`).value = fallback.code;
+                }
+            }
+            fetchLiveRate();
+        }
+
+        function swapCurrencies() {
+            [fromCurrency, toCurrency] = [toCurrency, fromCurrency];
+            [fromAmount, toAmount] = [toAmount, fromAmount];
+            lastEdited = "from";
+            populateSelects();
+            fetchLiveRate();
+        }
+
+        function simulateSend() {
+            const btn = document.querySelector(".send-btn");
+            const orig = btn.textContent;
+            btn.textContent = "Sending...";
+            setTimeout(() => {
+                btn.textContent = "✓ Sent successfully";
+                setTimeout(() => btn.textContent = orig, 1800);
+            }, 1200);
+        }
+
+        // Initialize
+        window.onload = () => {
+            populateSelects();
+            updateUI();
+            
+            // Chart
+            const ctx = document.getElementById("exchange-chart");
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["12 Mar", "", "", "", "", "", "Today"],
+                    datasets: [{
+                        data: [6.78, 6.85, 6.81, 6.90, 6.88, 6.85, 6.8293],
+                        borderColor: "#ace683",
+                        borderWidth: 3.5,
+                        tension: 0.4,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { color: "#374151" }, ticks: { color: "#9CA3AF", font: {size: 11} } },
+                        y: { grid: { color: "#374151" }, ticks: { color: "#9CA3AF", stepSize: 0.05 } }
+                    }
+                }
+            });
+            
+            fetchLiveRate();
+        };
+    </script>
+</body>
+</html>
