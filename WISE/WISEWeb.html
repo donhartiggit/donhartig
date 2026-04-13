@@ -19,7 +19,7 @@
             background: #0A0A0A;
             color: #EEE;
             min-height: 100vh;
-             
+            display: flex;
             align-items: center;
             justify-content: center;
             padding: 0px;
@@ -243,14 +243,15 @@
         }
 
         .amount-input {
-            font-size: 2.25rem;
-            font-weight: 600;
-            background: transparent;
-            border: none;
-            outline: none;
-            text-align: right;
-            color: white;
-            width: 100%;
+        font-size: 1.8rem;  /* Adjust this value as needed */
+        font-weight: 600;
+        background: transparent;
+        border: none;
+        outline: none;
+        text-align: left;
+        color: white;
+        width: 100%;
+        padding: 4px 0;   /* Optional: prevents jumping */
         }
 
         .flag-circle {
@@ -444,7 +445,7 @@
 
                 <!-- You send -->
                 <div class="input-box">
-                    <div class="label">You send</div>
+                     
                     <div class="flex items-center">
                         <input id="amount-from" 
                                type="text" 
@@ -471,7 +472,7 @@
 
                 <!-- Recipient gets -->
                 <div class="input-box">
-                    <div class="label">Recipient gets</div>
+                     
                     <div class="flex items-center">
                         <input id="amount-to" 
                                type="text" 
