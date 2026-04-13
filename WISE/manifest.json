@@ -1,7 +1,7 @@
 {
   "name": "WISE",
   "short_name": "WISE",
-  "start_url": "/WISEWeb.html",
+  "start_url": "WISE/WISEWeb.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
