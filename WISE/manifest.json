@@ -4,7 +4,7 @@
   "description": "WISE",
   "start_url": "/WISE/WISEWeb.html",
   "display": "standalone",
-  "theme_color": "#ace683",
+  "background_color": "#0A0A0A",
   "orientation": "portrait",
   "icons": [
     {
