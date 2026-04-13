@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>VISE • Toy Demo</title>
+    <title>WISE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
@@ -19,14 +19,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px;
+            padding: 0px;
         }
 
         .phone-frame {
             width: 100%;
-            max-width: 430px;
+            max-width: 440px;
             background: #0F0F0F;
-            border: 14px solid #111;
+            border:  px solid #111;
             border-radius: 52px;
             overflow: hidden;
             box-shadow: 0 0 50px rgba(0,0,0,0.9);
@@ -101,19 +101,25 @@
             gap: 12px;
             padding: 0 20px;
             margin: 20px 0 30px;
-            justify-content: center; /* Ensures buttons are centered if not full width */
+            justify-content: center;
         }
 
         .btn {
-            padding: 16px 24px; /* Increased horizontal padding for better text fit */
+            background: #173300;
+            padding: 12px 20px;
             border-radius: 30px;
-            text-align: center;
+            text-align: left;
             font-weight: 600;
-            font-size: 15px;
-            white-space: nowrap; /* Prevents text from wrapping */
+            font-size: 17px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .btn-send { background: #ace683; color: #000; }
+        .btn.active {
+            background: #ace683 !important;
+            color: #000 !important;
+        }
 
         .main-account {
             background: #1C1C1C;
@@ -172,6 +178,7 @@
         .see-all {
             color: #ace683;
             font-weight: 600;
+            text-decoration: underline;
             cursor: pointer;
         }
 
@@ -192,7 +199,7 @@
             justify-content: center;
             font-size: 22px;
             margin-right: 16px;
-            color: #ace683;
+            color: white;
         }
 
         .trans-info {
@@ -211,7 +218,7 @@
 
         .trans-amount {
             font-weight: 600;
-            color: #ace683;
+            color: white;
             text-align: right;
         }
 
@@ -363,19 +370,21 @@
             <div class="header">
                 <div class="profile">DH</div>
                 <div class="earn-btn">Earn HK$500</div>
+                <div style="width:68px;"> <img src="icons/eye.png"></div>            
             </div>
+            
 
             <!-- Total Balance -->
             <div class="balance-section">
                 <div class="total-label">Total balance</div>
-                <div class="total-balance">65374,66 EUR <span style="display:inline-block; width:45px; height:100%; vertical-align: middle; margin-left:10px;"><img src="icons/chart.png"></span></div>
+                <div class="total-balance">65374,66 EUR <span style="display:inline-block; width:45px; height:100%; vertical-align: middle; margin-left:10px;"><img src="icons/chart_ring.png"></span></div>
             </div>
 
-            <!-- Action Buttons - Now auto-adjust to text length -->
+            <!-- Action Buttons -->
             <div class="action-buttons">
-                <div class="btn btn-send">Send</div>
-                <div class="btn" style="background:#1C1C1C;">Add money</div>
-                <div class="btn" style="background:#1C1C1C;">Request</div>
+                <div class="btn" id="btn-send">Send</div>
+                <div class="btn" id="btn-add">Add money</div>
+                <div class="btn" id="btn-request">Request</div>
             </div>
 
             <!-- Main Account Card -->
@@ -643,6 +652,16 @@
             }, 1200);
         }
 
+        // NEW: Handle action button clicks (Send, Add money, Request)
+        function makeActive(clickedBtn) {
+            // Remove active class from all three buttons
+            document.querySelectorAll('.action-buttons .btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Add active class to the clicked button
+            clickedBtn.classList.add('active');
+        }
+
         // Initialize
         window.onload = () => {
             populateSelects();
@@ -674,6 +693,15 @@
             });
             
             fetchLiveRate();
+
+            // Add click handlers to the three action buttons
+            const sendBtn = document.getElementById('btn-send');
+            const addBtn = document.getElementById('btn-add');
+            const requestBtn = document.getElementById('btn-request');
+
+            sendBtn.addEventListener('click', () => makeActive(sendBtn));
+            addBtn.addEventListener('click', () => makeActive(addBtn));
+            requestBtn.addEventListener('click', () => makeActive(requestBtn));
         };
     </script>
 </body>
