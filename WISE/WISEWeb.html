@@ -45,6 +45,7 @@
             display: flex;
             align-items: center;
             background: #0F0F0F;
+            justify-content: space-between;   /* ← This pushes content to the sides */
         }
 
         .profile {
@@ -77,10 +78,10 @@
             background: #ace683;
             color: #000;
             font-weight: 700;
-            padding: 10px 20px;
+            padding: 9px 20px;
             border-radius: 30px;
-            margin-left: auto;
-            font-size: 15px;
+            font-size: 11px;
+            white-space: nowrap;
         }
 
         .balance-section {
@@ -316,47 +317,47 @@
             width: 100%;
         }
 
-/* Bottom Navigation */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 420px;
-    margin: 0 auto;
-    background: #1C1C1C;
-    height: 78px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid #333;
-    z-index: 100;
-}
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: 420px;
+            margin: 0 auto;
+            background: #1C1C1C;
+            height: 78px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #333;
+            z-index: 100;
+        }
 
-.nav-item {
-    text-align: center;
-    color: #888;
-    font-size: 14px;
-    width: 70px;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
+        .nav-item {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            width: 70px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
 
-.nav-item.active {
-    color: #ace683;
-}
+        .nav-item.active {
+            color: #ace683;
+        }
 
-.nav-item.active .nav-icon {
-    filter: brightness(0) saturate(100%) invert(65%) sepia(100%) hue-rotate(60deg) brightness(80%) contrast(200%);
-}
+        .nav-item.active .nav-icon {
+            filter: brightness(0) saturate(100%) invert(65%) sepia(100%) hue-rotate(60deg) brightness(80%) contrast(200%);
+        }
 
-.nav-icon {
-    width: 28px;
-    height: 28px;
-    margin: 0 auto 4px;
-    display: block;
-}
-</style>
+        .nav-icon {
+            width: 28px;
+            height: 28px;
+            margin: 0 auto 4px;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="phone-frame">
@@ -366,8 +367,14 @@
             <!-- Top Bar -->
             <div class="header">
                 <div class="profile">DH</div>
-                <div class="earn-btn">Earn HK$500</div>
-                <div style="width:68px;"> <img src="icons/eye.png"></div>            
+                
+                <!-- Right side group: Earn button + Eye icon, pushed to far right -->
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div class="earn-btn">Earn HK$500</div>
+                    <div style="width:48px; height:100%;">
+                        <img src="icons/eye.png" style="width:100%; height:100%; object-fit:contain;">
+                    </div>
+                </div>
             </div>
 
             <!-- Total Balance -->
@@ -531,7 +538,7 @@
     </div>
 
     <script>
-        // Live rate functionality (unchanged - everything kept exactly the same)
+        // Your entire script remains 100% unchanged
         const currencies = [
             { code: "USD", flag: "icons/us.png" },
             { code: "CNY", flag: "https://flagcdn.com/w320/cn.png" },
@@ -646,7 +653,6 @@
             }, 1200);
         }
 
-        // Handle action buttons (Send, Add money, Request) - unchanged
         function makeActive(clickedBtn) {
             document.querySelectorAll('.action-buttons .btn').forEach(btn => {
                 btn.classList.remove('active');
@@ -654,7 +660,6 @@
             clickedBtn.classList.add('active');
         }
 
-        // NEW: Handle bottom navigation clicks
         function makeNavActive(clickedItem) {
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.classList.remove('active');
@@ -662,12 +667,10 @@
             clickedItem.classList.add('active');
         }
 
-        // Initialize
         window.onload = () => {
             populateSelects();
             updateUI();
             
-            // Chart
             const ctx = document.getElementById("exchange-chart");
             new Chart(ctx, {
                 type: 'line',
@@ -694,7 +697,6 @@
             
             fetchLiveRate();
 
-            // Action buttons
             const sendBtn = document.getElementById('btn-send');
             const addBtn = document.getElementById('btn-add');
             const requestBtn = document.getElementById('btn-request');
@@ -703,7 +705,6 @@
             addBtn.addEventListener('click', () => makeActive(addBtn));
             requestBtn.addEventListener('click', () => makeActive(requestBtn));
 
-            // Bottom navigation
             const navHome = document.getElementById('nav-home');
             const navCards = document.getElementById('nav-cards');
             const navRecipients = document.getElementById('nav-recipients');
