@@ -1,3 +1,9 @@
 {
-    "display": "standalone"
+  "name": "WISE",
+  "icons": [
+    { "src": "/icons/wise.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/wise.png", "sizes": "512x512", "type": "image/png" }
+  ],
+
+  "display": "standalone"
 }
