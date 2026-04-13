@@ -1,9 +1,20 @@
 {
   "name": "WISE",
+  "short_name": "WISE",
+  "start_url": "/WISEWeb.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
   "icons": [
-    { "src": "/icons/wise.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icons/wise.png", "sizes": "512x512", "type": "image/png" }
-  ],
-
-  "display": "standalone"
+    {
+      "src": "icons/wise.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/wise.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
