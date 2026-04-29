@@ -5,74 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="MC-COEEIzavbIoTHTt6DkGeQp29IBH4Kg4PiQFxEFmo">
     <title>Don Hartig CV</title>
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Aldrich&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&amp;family=Aldrich&amp;display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            min-height: 100vh;
+
+        html, body {
+            height: 100%;
             font-family: Arial, sans-serif;
             background-color: slategray;
             color: white;
+        }
+
+        body {
             display: grid;
             grid-template-rows: auto 1fr auto;
         }
+
         header {
             text-align: center;
             padding: 2rem 1rem 1.5rem;
         }
+
         h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(2.5rem, 8vw, 4rem);
             color: black;
             margin-bottom: 0.5rem;
         }
+
         h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
             color: black;
         }
+
         main {
             padding: 2rem 1rem;
             display: flex;
             justify-content: center;
         }
+
         .indexgrid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
-            max-width: 1000px;
+            max-width: 1200px;
             width: 100%;
             justify-items: center;
         }
+
         .cell {
             text-align: center;
             text-decoration: none;
             color: inherit;
+            width: 100%;
+            max-width: 240px;
         }
+
         .celltitle {
             font-family: 'Orbitron', sans-serif;
             color: blue;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             margin-bottom: 1rem;
             display: block;
         }
+
         .cellimg {
-            width: 200px;
+            width: 100%;
+            max-width: 200px;
             height: 300px;
             object-fit: cover;
             border: 4px solid black;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
         }
+
         footer {
             background-color: black;
             color: lime;
@@ -80,42 +97,86 @@
             padding: 1.2rem 1rem;
             font-family: 'Orbitron', sans-serif;
         }
+
         footer a {
             color: aqua;
             text-decoration: none;
         }
+
         footer a:hover {
             text-decoration: underline;
         }
-        /* Small mobile adjustment */
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .indexgrid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1.8rem;
+            }
+            .cellimg {
+                height: 270px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .indexgrid {
+                grid-template-columns: 1fr; /* Stack vertically on very small screens */
+                gap: 2rem;
+            }
+            .cell {
+                max-width: 280px;
+            }
+            .cellimg {
+                max-width: 220px;
+                height: 290px;
+            }
+        }
+
         @media screen and (max-width: 320px) {
             .cellimg {
-                width: 180px;
-                height: 270px;
+                height: 260px;
             }
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1><u>Don Hartig</u></h1>
         <h2>CVs &amp; Portfolios</h2>
     </header>
+
     <main>
         <div class="indexgrid">
-            <!-- Original image paths restored -->
+            <!-- Localisation -->
             <a href="localisation.html" class="cell">
                 <span class="celltitle">Localisation</span>
-                <img src="Brown-rem.jpg" alt="Localisation Portfolio" class="cellimg">
+                <img src="images/me/Brown-rem.jpg" alt="Localisation Portfolio" class="cellimg">
             </a>
-            <a href="marketing.html" class="cell">
-                <span class="celltitle">Marketing</span>
-                <img src="broodingdon.jpg" alt="General CV" class="cellimg">
+
+            <!-- General CV -->
+            <a href="CV.html" class="cell">
+                <span class="celltitle">General</span>
+                <img src="images/me/broodingdon.jpg" alt="General CV" class="cellimg">
+            </a>
+
+            <!-- Writing Portfolio -->
+            <a href="writing.html" class="cell">
+                <span class="celltitle">Writing</span>
+                <img src="images/me/writerdon.jpg" alt="Writing Portfolio" class="cellimg">
+            </a>
+
+            <!-- Development Portfolio -->
+            <a href="development.html" class="cell">
+                <span class="celltitle">Development</span>
+                <img src="images/me/posedon.jpg" alt="Development Portfolio" class="cellimg">
             </a>
         </div>
     </main>
+
     <footer>
         <p>Coded by <a href="https://www.donhartig.com">Don Hartig</a></p>
     </footer>
+
 </body>
 </html>
