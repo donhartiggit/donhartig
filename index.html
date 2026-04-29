@@ -39,14 +39,14 @@
         h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(2.5rem, 8vw, 4rem);
-            color: black;
+            color: white;
             margin-bottom: 0.5rem;
         }
 
         h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
-            color: black;
+            color: #E0E0E0;
         }
 
         main {
@@ -56,20 +56,19 @@
         }
 
         .indexgrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
             max-width: 1200px;
             width: 100%;
-            justify-items: center;
         }
 
         .cell {
             text-align: center;
             text-decoration: none;
             color: inherit;
-            width: 100%;
-            max-width: 240px;
+            width: 240px; 
         }
 
         .celltitle {
@@ -85,6 +84,8 @@
             max-width: 200px;
             height: 300px;
             object-fit: cover;
+            /* Anchors the image to the top edge to prevent cutting off faces */
+            object-position: top; 
             border: 4px solid black;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             border-radius: 4px;
@@ -110,7 +111,6 @@
         /* Responsive Adjustments */
         @media screen and (max-width: 768px) {
             .indexgrid {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                 gap: 1.8rem;
             }
             .cellimg {
@@ -119,22 +119,13 @@
         }
 
         @media screen and (max-width: 480px) {
-            .indexgrid {
-                grid-template-columns: 1fr; /* Stack vertically on very small screens */
-                gap: 2rem;
-            }
             .cell {
+                width: 100%; 
                 max-width: 280px;
             }
             .cellimg {
                 max-width: 220px;
                 height: 290px;
-            }
-        }
-
-        @media screen and (max-width: 320px) {
-            .cellimg {
-                height: 260px;
             }
         }
     </style>
@@ -170,6 +161,18 @@
             <a href="development.html" class="cell">
                 <span class="celltitle">Development</span>
                 <img src="images/me/posedon.jpg" alt="Development Portfolio" class="cellimg">
+            </a>
+
+            <!-- Video Marketing -->
+            <a href="#.html" class="cell">
+                <span class="celltitle">Video Marketing</span>
+                <img src="images/me/chairdon.jpg" alt="Video Marketing" class="cellimg">
+            </a>
+
+            <!-- Trading Training -->
+            <a href="#.html" class="cell">
+                <span class="celltitle">Trading Training</span>
+                <img src="images/me/diamonddonfront.jpg" alt="Trading Training" class="cellimg">
             </a>
         </div>
     </main>
