@@ -68,7 +68,15 @@
             text-align: center;
             text-decoration: none;
             color: inherit;
-            width: 240px; 
+            width: 240px;
+            position: relative; /* Needed for z-index on hover */
+            transition: transform 0.3s ease; /* Smooth animation */
+        }
+
+        /* Hover effect */
+        .cell:hover {
+            transform: scale(1.05); /* Expands the link slightly */
+            z-index: 10; /* Keeps the expanded link above others */
         }
 
         .celltitle {
@@ -79,13 +87,16 @@
             display: block;
         }
 
+        .cell:hover .celltitle {
+            color: aqua; /* Changes title from blue to aqua when hovered */
+        }
+
         .cellimg {
             width: 100%;
             max-width: 200px;
             height: 300px;
             object-fit: cover;
-            /* Anchors the image to the top edge to prevent cutting off faces */
-            object-position: top; 
+            object-position: top;
             border: 4px solid black;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             border-radius: 4px;
@@ -127,7 +138,7 @@
                 max-width: 220px;
                 height: 290px;
             }
-        }
+        }            
     </style>
 </head>
 <body>
@@ -139,37 +150,31 @@
 
     <main>
         <div class="indexgrid">
-            <!-- Localisation -->
             <a href="localisation.html" class="cell">
                 <span class="celltitle">Localisation</span>
                 <img src="images/me/brownrem.jpg" alt="Localisation Portfolio" class="cellimg">
             </a>
 
-            <!-- Marketing CV -->
             <a href="marketing.html" class="cell">
                 <span class="celltitle">Marketing</span>
                 <img src="images/me/broodingdon.jpg" alt="General CV" class="cellimg">
             </a>
 
-            <!-- Writing Portfolio -->
             <a href="writing.html" class="cell">
                 <span class="celltitle">Writing</span>
                 <img src="images/me/writerdon.jpg" alt="Writing Portfolio" class="cellimg">
             </a>
 
-            <!-- Development Portfolio -->
             <a href="development.html" class="cell">
                 <span class="celltitle">Development</span>
                 <img src="images/me/posedon.jpg" alt="Development Portfolio" class="cellimg">
             </a>
 
-            <!-- Video Marketing -->
             <a href="#.html" class="cell">
                 <span class="celltitle">Video Marketing</span>
                 <img src="images/me/chairdon.jpg" alt="Video Marketing" class="cellimg">
             </a>
 
-            <!-- Trading Training -->
             <a href="#.html" class="cell">
                 <span class="celltitle">Trading Training</span>
                 <img src="images/me/diamonddonfront.jpg" alt="Trading Training" class="cellimg">
