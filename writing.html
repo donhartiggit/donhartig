@@ -7,6 +7,8 @@
     <meta name="keywords" content="content writer, copywriter, technical writer, seo content writer, freelance writer, blockchain writer, fintech writer, gaming writer, cybersecurity writer">
     <meta name="robots" content="index, follow">
     <title>Don Hartig | Content Writer &amp; Copywriter | SEO, Technical &amp; Marketing Writing</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
     
     <style>
         body {
@@ -31,6 +33,7 @@
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: top;
             border: 5px solid #0066cc;
             margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -126,24 +129,54 @@
             background: #0052a3;
         }
 
+        .filter-buttons {
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: #f1f1f1;
+            color: #333;
+            border: none;
+            padding: 10px 18px;
+            margin: 6px 4px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .filter-btn.active {
+            background: #0066cc;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .filter-btn {
+                padding: 9px 14px;
+                font-size: 0.95em;
+            }
+            .profile-image { width: 140px; height: 140px; }
+            h1 { font-size: 2.3em; }
+        }
+
         footer {
             text-align: center;
             padding: 25px;
             color: #666;
             font-size: 0.95em;
         }
-        @media (max-width: 768px) {
-            .profile-image { width: 140px; height: 140px; }
-            h1 { font-size: 2.3em; }
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="brownrem.jpg" alt="Don Hartig - Professional Content Writer and Copywriter" class="profile-image">
+        <img src="images/me/broodingdon.jpeg" alt="Don Hartig - Professional Content Writer and Copywriter" class="profile-image">
         <h1>Don Hartig</h1>
-        <p class="subtitle">Content Writer &amp; Copywriter | SEO, Technical &amp; Marketing Writing</p>
+        <p class="subtitle">Content Writer &amp; Copywriter | Tech Journalist | SEO, Technical &amp; Marketing Writer</p>
         <p class="contact-info">
             <strong>Email:</strong> <a href="mailto:don@donhartig.com">don@donhartig.com</a> | 
             <strong>Website:</strong> <a href="https://www.donhartig.com" target="_blank">donhartig.com</a><br>
@@ -183,89 +216,149 @@
             <li><strong>Cybersecurity &amp; Technology</strong> – Technical articles, product documentation, thought leadership</li>
             <li><strong>SaaS &amp; Software</strong> – Feature explainers, case studies, user onboarding content</li>
             <li><strong>Digital Marketing &amp; Web3 Projects</strong> – Landing pages, email campaigns, social media copy</li>
+            <li><strong>Legal Copywriting &amp; SEO Info Marketing</strong> – Legal services article marketikng, web copy, FAQs, informational articles</li>
+            <li><strong>Medial Copywriting &amp; Product Promotion</strong> – Informational articles, product marketing, web copy</li>
+            <li><strong>Product reviews &amp; Copywriting</strong> – Product descriptions, Product comparison articles, how-to guides, Amazon reviews</li>
         </ul>
     </section>
 
     <section id="samples">
         <h2>Selected Writing Samples</h2>
         
+        <!-- Filter Buttons -->
+        <div class="filter-buttons" style="text-align: center; margin-bottom: 25px;">
+            <button class="filter-btn active" data-filter="all">All Samples</button>
+            <button class="filter-btn" data-filter="crypto">Crypto, Blockchain, Web3, DeFi</button>
+            <button class="filter-btn" data-filter="fintech">FinTech</button>
+            <button class="filter-btn" data-filter="gaming">Gaming</button>
+            <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+            <button class="filter-btn" data-filter="saas">SaaS & Software</button>
+            <button class="filter-btn" data-filter="legal">Legal</button>
+            <button class="filter-btn" data-filter="medical">Medical</button>
+            <button class="filter-btn" data-filter="travel">Travel & Tourism</button>
+            <button class="filter-btn" data-filter="journalism">Journalism</button>
+            <button class="filter-btn" data-filter="ai">AI</button>
+        </div>
+
         <!-- Always visible samples -->
         <ul class="sample-list">
-            <li>
+            <li data-category="crypto fintech finance">
                 <div class="sample-title">The Benefits of Market Making</div>
-                <div class="sample-meta"><strong>Industry:</strong> Crypto / FinTech | <strong>Client:</strong> GSR</div>
+                <div class="sample-meta"><strong>Industry:</strong> Crypto / FinTech / Trading | <strong>Client:</strong> GSR</div>
                 <p>Professional analysis of market-making strategies in crypto trading.</p>
                 <p><a href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank" rel="noopener">View Sample (PDF)</a></p>
             </li>
-            <li>
+            <li data-category="crypto fintech">
                 <div class="sample-title">Understanding Cryptocurrency Volatility</div>
                 <div class="sample-meta"><strong>Industry:</strong> Crypto / FinTech | <strong>Client:</strong> GSR</div>
                 <p>Clear, in-depth explanation of volatility factors for traders and investors.</p>
                 <p><a href="https://drive.google.com/file/d/1jDB-Tx97USCuAaZa7jiL_rbb73Se0n37/view?usp=sharing" target="_blank" rel="noopener">View Sample (PDF)</a></p>
             </li>
-            <li>
+            <li data-category="nfts web3 crypto blockchain">
                 <div class="sample-title">What is an NFT?</div>
                 <div class="sample-meta"><strong>Industry:</strong> Gaming &amp; NFTs | <strong>Client:</strong> Coinformant</div>
                 <p>Beginner-friendly introduction to non-fungible tokens and their use cases.</p>
                 <p><a href="https://docs.google.com/document/d/1kpDwVg0lBZlfZDIqtIfEoXPfrz-P3Z_x1o27yh790xg/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
+            <li data-category="cybersecurity">
+                <div class="sample-title">What to Do After a Data Breach</div>
+                <div class="sample-meta"><strong>Industry:</strong> Cybersecurity | <strong>Client:</strong> Clario (US)</div>
+                <p>Practical guidance on steps to take following a data breach incident.</p>
+                <p><a href="https://drive.google.com/file/d/1IL9iWcSBGcc-KcyFNajB7-MLtiVhr68p/view?usp=sharing" target="_blank" rel="noopener">View Sample (PDF)</a></p>
+            </li>
+            <li data-category="journalism ai">
+                <div class="sample-title">The Shadow Cartographers: How AI Is Learning the World’s Forgotten Languages — And Why It Might Change Everything</div>
+                <div class="sample-meta"><strong>Industry:</strong> Journalism &amp; AI | <strong>Client:</strong> Various Publications</div>
+                <p>Feature article exploring AI's role in language preservation and its broader implications.</p>
+                <p><a href="https://docs.google.com/document/d/1YwcmM5VDskXtCgvHlJjqxNq4Sixx6dlY3d98bIXVvkM/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
+            </li>
         </ul>
 
         <!-- Collapsible extra samples -->
         <ul id="extra-samples" class="sample-list">
-            <li>
+            <li data-category="nfts web3 crypto blockchain">
                 <div class="sample-title">How to Make an NFT</div>
                 <div class="sample-meta"><strong>Industry:</strong> Gaming &amp; NFTs | <strong>Client:</strong> Coinformant</div>
                 <p>Practical step-by-step guide covering NFT creation, minting, and best practices.</p>
                 <p><a href="https://docs.google.com/document/d/1ZK1DW8hr6FWxa1A1cDiaDgzdUIyHnHZysJcVzBijzRw/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
-            <li>
+            <li data-category="nfts web3 crypto blockchain">
                 <div class="sample-title">How to Buy NFTs</div>
                 <div class="sample-meta"><strong>Industry:</strong> Gaming &amp; NFTs | <strong>Client:</strong> Coinformant</div>
                 <p>Step-by-step guide on purchasing NFTs safely and effectively.</p>
                 <p><a href="https://docs.google.com/document/d/1hTrKufD0YHKjaz5TAHMrpoz-lay_c98nNIpc70KB6kI/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
-            <li>
+            <li data-category="nfts web3 crypto blockchain">
                 <div class="sample-title">How to Sell an NFT</div>
                 <div class="sample-meta"><strong>Industry:</strong> Gaming &amp; NFTs | <strong>Client:</strong> Coinformant</div>
                 <p>Comprehensive guide on selling NFTs on various marketplaces.</p>
                 <p><a href="https://docs.google.com/document/d/1e3_XHKMRDRw58fQf_gHb6V_F5n5aVkw7_c_mt8ZYFJQ/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
-            <li>
+            <li data-category="nfts web3 crypto blockchain">
                 <div class="sample-title">Where Do You Store an NFT?</div>
                 <div class="sample-meta"><strong>Industry:</strong> Gaming &amp; NFTs | <strong>Client:</strong> Coinformant</div>
                 <p>Explanation of NFT storage options, wallets, and best security practices.</p>
                 <p><a href="https://docs.google.com/document/d/1LoQ8dn0mWEuFLxrhvGz6HGLuDuT9ToFvymonEmA-1MI/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
-            <li>
+            <li data-category="nfts web3 crypto blockchain">
                 <div class="sample-title">Why Does NFT Art Have Value?</div>
                 <div class="sample-meta"><strong>Industry:</strong> Gaming &amp; NFTs | <strong>Client:</strong> Coinformant</div>
                 <p>Analysis of the factors that give NFT art its perceived and real value.</p>
                 <p><a href="https://docs.google.com/document/d/1ltcwc0RyUPbdhvE-TJpA1GdfmpNA4SnXzsSnn85cBqU/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
-            <li>
-                <div class="sample-title">Deer Network Whitepaper</div>
-                <div class="sample-meta"><strong>Industry:</strong> Blockchain / Gaming | <strong>Client:</strong> Deer Network</div>
-                <p>Full technical whitepaper for the Deer Network blockchain project.</p>
-                <p><a href="https://drive.google.com/file/d/15FmqoB6RCUZJ0bydIeYRhM0Wc0vqy0LO/view?usp=drive_link" target="_blank" rel="noopener">View Whitepaper (PDF)</a></p>
+            <li data-category="cybersecurity legal gdpr">
+                <div class="sample-title">Personal Data Under the GDPR</div>
+                <div class="sample-meta"><strong>Industry:</strong> Cybersecurity &amp; Legal | <strong>Client:</strong> e-Boks (EU)</div>
+                <p>Clear explanation of personal data rights and obligations under GDPR.</p>
+                <p><a href="https://drive.google.com/file/d/1yx6ig4nTLHtBAfrRp_QNjoSz8c5btDyM/view?usp=sharing" target="_blank" rel="noopener">View Sample (PDF)</a></p>
             </li>
-            <li>
-                <div class="sample-title">Singularity Metaverse Whitepaper</div>
-                <div class="sample-meta"><strong>Industry:</strong> Metaverse / Web3 | <strong>Client:</strong> Singularity</div>
-                <p>Complete whitepaper for the Singularity Metaverse project.</p>
-                <p><a href="https://drive.google.com/file/d/14mKA1IS3XpkVvJQzoIDcxleDcv1nPJRu/view?usp=drive_link" target="_blank" rel="noopener">View Whitepaper (PDF)</a></p>
+            <li data-category="cybersecurity legal gdpr saas">
+                <div class="sample-title">What Does the GDPR Mean For Data Collection?</div>
+                <div class="sample-meta"><strong>Industry:</strong> Cybersecurity &amp; Legal | <strong>Client:</strong> e-Boks (EU)</div>
+                <p>In-depth look at GDPR implications for data collection practices.</p>
+                <p><a href="https://docs.google.com/document/d/133CqATo1mKJMjdNwOdrSXKDRyXzgxFBqZXzBs4im25Q/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
-            <li>
-                <div class="sample-title">Tokenized Asset Offering — Legal Considerations</div>
-                <div class="sample-meta"><strong>Industry:</strong> Blockchain / FinTech | <strong>Client:</strong> Blockchain Advocates</div>
-                <p>In-depth legal and regulatory analysis of tokenized asset offerings.</p>
-                <p><a href="https://docs.google.com/document/d/13dfcZKG_TFzYLbbjRzvrHGC42IGSQDxRAw15hwjjtJo/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
+            <li data-category="cybersecurity saas technology">
+                <div class="sample-title">7 Tips to Boost Your Website Speed in China</div>
+                <div class="sample-meta"><strong>Industry:</strong> Cybersecurity &amp; Technology | <strong>Client:</strong> GoClick China (Singapore)</div>
+                <p>Actionable tips for improving website performance in the Chinese market.</p>
+                <p><a href="https://docs.google.com/document/d/1wiNPtrf2sPOi12Y3cu5ovo8AkKO0Mwkc/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
-            <li>
-                <div class="sample-title">Bitget Insights — UX Feedback Report</div>
-                <div class="sample-meta"><strong>Industry:</strong> Crypto Exchange | <strong>Client:</strong> Bitget</div>
-                <p>Detailed UX feedback and insights report for Bitget platform.</p>
-                <p><a href="https://docs.google.com/document/d/1RLcMJL6dcONOwwo4mdZebn99ZWMF3OEaqYJWPCSz0nk/edit?usp=sharing" target="_blank" rel="noopener">View Report</a></p>
+            <li data-category="cybersecurity">
+                <div class="sample-title">October Cybersecurity Awareness Month: Tips to Keep Safe While Online</div>
+                <div class="sample-meta"><strong>Industry:</strong> Cybersecurity | <strong>Client:</strong> San Diego Cybersecurity (US)</div>
+                <p>Helpful tips and best practices for staying safe online during Cybersecurity Awareness Month.</p>
+                <p><a href="https://docs.google.com/document/d/1vI6rEw7DQCN54cvdvyMUWyZ5JxU7WrLr/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
+            </li>
+            <li data-category="legal">
+                <div class="sample-title">How Does Bail Work in Ontario?</div>
+                <div class="sample-meta"><strong>Industry:</strong> Legal | <strong>Client:</strong> KPA Lawyers (Canada)</div>
+                <p>Clear explanation of the bail process and procedures in Ontario, Canada.</p>
+                <p><a href="https://docs.google.com/document/d/17hFP7PcoWT1Db8md1aKlq71NtYTW5xQi2EWVP2rtfoA/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
+            </li>
+            <li data-category="medical healthcare saas">
+                <div class="sample-title">Telemedicine Billing Codes / CPT Codes</div>
+                <div class="sample-meta"><strong>Industry:</strong> Medical &amp; Healthcare | <strong>Client:</strong> CareTime (US)</div>
+                <p>Comprehensive guide to telemedicine billing and CPT codes used in the United States.</p>
+                <p><a href="https://www.caretimemd.com/telemedicine-cpt-codes/" target="_blank" rel="noopener">View Sample</a></p>
+            </li>
+            <li data-category="travel tourism">
+                <div class="sample-title">Glamping in Ireland</div>
+                <div class="sample-meta"><strong>Industry:</strong> Travel &amp; Tourism | <strong>Client:</strong> OSI (Ireland)</div>
+                <p>Engaging guide to the growing trend of glamping in Ireland.</p>
+                <p><a href="https://docs.google.com/document/d/1tfXto18kz_-jTpH4BWzUgyN8zHmy2X57oQ9IqoXh9po/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
+            </li>
+            <li data-category="travel tourism">
+                <div class="sample-title">Ways to Enjoy Ticknock</div>
+                <div class="sample-meta"><strong>Industry:</strong> Travel &amp; Tourism | <strong>Client:</strong> OSI (Ireland)</div>
+                <p>Local guide highlighting the best ways to enjoy Ticknock mountain and surrounding areas.</p>
+                <p><a href="https://docs.google.com/document/d/1XRZh4Q3yVzNV_IjNRMr-Jv2FjzWkENXaNCLzsBQLn9Q/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
+            </li>
+            <li data-category="travel tourism">
+                <div class="sample-title">Ireland's Most Incredible Rock Formations</div>
+                <div class="sample-meta"><strong>Industry:</strong> Travel &amp; Tourism | <strong>Client:</strong> OSI (Ireland)</div>
+                <p>Beautifully written overview of Ireland’s most striking geological rock formations.</p>
+                <p><a href="https://docs.google.com/document/d/1TRKndLawQLY9QIx8ZG2W9zMZ_yiNt9jT6hWzmSxKRQY/edit?usp=sharing" target="_blank" rel="noopener">View Sample</a></p>
             </li>
         </ul>
 
@@ -279,8 +372,8 @@
             <p class="job-title">Web Localiser, Language Optimiser &amp; Social Media Producer</p>
             <p class="job-date">2025 – Antarctic Exchange (Remote)</p>
             <ul>
-                <li>Localized full website from Chinese to natural, SEO-optimized English with strong CTAs.</li>
-                <li>Created engaging Medium articles and daily social media content.</li>
+                <li>Localized full <a href="https://www.antarcticexchange.com" target="_blank" rel="noopener">website</a>, including UI, from Chinese to natural, SEO-optimized English with strong CTAs.</li>
+                <li>Created engaging articles and daily social media content for the AX official X account.</li>
             </ul>
         </div>
 
@@ -325,7 +418,7 @@
             <li>Versatile writer capable of adapting to any industry tone and technical depth.</li>
             <li>Strong SEO knowledge combined with excellent research and storytelling skills.</li>
             <li>Proven experience managing content at scale and training writing teams.</li>
-            <li>Multilingual advantage with professional Chinese-to-English localization skills.</li>
+            <li>Multilingual advantage with professional Chinese-to-English, German, French, Spanish, Japanese and Dutch localization skills.</li>
             <li>Reliable delivery of high-quality content under tight deadlines.</li>
         </ul>
     </section>
@@ -356,6 +449,41 @@
                 button.textContent = "See Less";
             }
         }
+
+        // === FIXED FILTERING - Whole Word Match ===
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const allSamples = document.querySelectorAll('.sample-list li');
+            const extraSection = document.getElementById('extra-samples');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    allSamples.forEach(sample => {
+                        if (filterValue === 'all') {
+                            sample.style.display = 'block';
+                        } else {
+                            const categories = sample.getAttribute('data-category') || '';
+                            // Split into words and check for exact match (case-insensitive)
+                            const categoryArray = categories.toLowerCase().trim().split(/\s+/);
+                            const shouldShow = categoryArray.includes(filterValue.toLowerCase());
+                            
+                            sample.style.display = shouldShow ? 'block' : 'none';
+                        }
+                    });
+
+                    // Auto-show extra samples when filtering by specific category
+                    if (filterValue !== 'all') {
+                        extraSection.style.display = 'block';
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
