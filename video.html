@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Don Hartig | Video Commercial Director · AI Influencer Creator · 3D & AI Video Production</title>
+  <meta name="description" content="Don Hartig is a professional video commercial director, AI influencer creator, and 3D modeling & AI video specialist. Available for brand campaigns, advertising, and digital content worldwide." />
+  <meta name="keywords" content="video commercial director, AI influencer creation, 3D modeling, AI video editing, advertising videographer, brand video production, AI content creator, synthetic influencer, CGI video, motion graphics, Don Hartig" />
+  <meta name="author" content="Don Hartig" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://donhartig.com/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://donhartig.com/" />
+  <meta property="og:title" content="Don Hartig | Video Commercial Director & AI Creative" />
+  <meta property="og:description" content="Cinematic commercials. AI influencers. 3D worlds. Don Hartig creates next-generation visual content that converts." />
+  <meta property="og:image" content="https://donhartig.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Don Hartig | Video & AI Creative Director" />
+  <meta name="twitter:description" content="Cinematic commercials. AI influencers. 3D worlds. Let's build your brand." />
+
+  <!-- Structured Data / Schema.org (ATS + SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Don Hartig",
+    "jobTitle": "Video Commercial Director & AI Creative Specialist",
+    "description": "Don Hartig specializes in video commercial production, AI influencer creation, 3D modeling, and AI-assisted video editing for brands and agencies worldwide.",
+    "url": "https://donhartig.com",
+    "sameAs": [
+      "https://linkedin.com/in/donhartig",
+      "https://instagram.com/donhartig"
+    ],
+    "knowsAbout": [
+      "Video Commercial Production",
+      "AI Influencer Creation",
+      "3D Modeling",
+      "AI Video Editing",
+      "Brand Advertising",
+      "Motion Graphics",
+      "Generative AI",
+      "CGI Production"
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Video Commercial & Advertising",
+        "description": "Cinematic brand commercials and advertising video production"
+      },
+      {
+        "@type": "Offer",
+        "name": "AI Influencer Creation",
+        "description": "Custom AI-generated influencer personas for digital marketing campaigns"
+      },
+      {
+        "@type": "Offer",
+        "name": "3D Modeling & AI Video",
+        "description": "3D asset creation combined with AI video generation and editing"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── CSS Variables ─────────────────────────────── */
+    :root {
+      --black:   #080808;
+      --deep:    #0f0f0f;
+      --panel:   #141414;
+      --border:  #1e1e1e;
+      --muted:   #2a2a2a;
+      --text:    #e8e8e0;
+      --dim:     #888880;
+      --gold:    #c9a84c;
+      --gold2:   #e8c96a;
+      --accent:  #00d4ff;
+      --white:   #f5f5f0;
+      --danger:  #ff4d4d;
+      --radius:  4px;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-serif:   'Playfair Display', serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Noise Overlay ─────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 1000;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+    }
+
+    /* ── Nav ───────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+    .nav-links { display: flex; gap: 2.4rem; }
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--black); }
+
+    /* ── Hero ──────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 4rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0,212,255,0.05) 0%, transparent 60%),
+        linear-gradient(160deg, #0a0a0a 0%, #050505 100%);
+    }
+    /* Cinematic horizontal lines */
+    .hero-bg::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg, transparent, transparent 60px,
+        rgba(201,168,76,0.03) 60px, rgba(201,168,76,0.03) 61px
+      );
+    }
+    .hero-grid-line {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(201,168,76,0.15) 30%, rgba(201,168,76,0.15) 70%, transparent);
+    }
+    .hero-grid-line:nth-child(1) { left: 33.3%; }
+    .hero-grid-line:nth-child(2) { left: 66.6%; }
+
+    .hero-reel-tag {
+      position: absolute; top: 8rem; right: 4rem;
+      font-size: 0.68rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--dim);
+      writing-mode: vertical-rl;
+    }
+    .hero-avatar {
+      position: absolute;
+      right: 6rem; bottom: 0;
+      width: 38vw; max-width: 520px;
+      opacity: 0.85;
+      mix-blend-mode: luminosity;
+      filter: contrast(1.1) brightness(0.9);
+      z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 700px; }
+    .hero-eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 40px; height: 1px; background: var(--gold);
+    }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 1.6rem;
+    }
+    .hero-headline span { color: var(--gold); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--dim);
+      max-width: 460px; margin-bottom: 2.8rem;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      border: 1px solid var(--muted);
+      color: var(--dim);
+      font-size: 0.8rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-stats {
+      position: absolute; bottom: 5rem; right: 4rem; z-index: 2;
+      display: flex; gap: 3rem;
+    }
+    .stat { text-align: right; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem; color: var(--gold);
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--dim);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Section Shared ────────────────────────────── */
+    section { padding: 7rem 4rem; position: relative; }
+    .section-label {
+      font-size: 0.68rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .section-label::before {
+      content: ''; display: block;
+      width: 24px; height: 1px; background: var(--gold);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1;
+      color: var(--white);
+      letter-spacing: 0.03em;
+      margin-bottom: 1.2rem;
+    }
+    .section-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold);
+    }
+    .section-intro {
+      font-size: 1rem; color: var(--dim);
+      max-width: 540px; line-height: 1.75;
+    }
+    .divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    /* ── Services ──────────────────────────────────── */
+    #services { background: var(--deep); }
+    .services-header { max-width: 600px; margin-bottom: 5rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--border);
+      border: 1.5px solid var(--border);
+    }
+    .service-card {
+      background: var(--panel);
+      padding: 3rem 2.8rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      cursor: default;
+    }
+    .service-card:hover { background: #181818; }
+    .service-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-number {
+      font-family: var(--font-display);
+      font-size: 4rem; color: var(--muted);
+      line-height: 1; margin-bottom: 1.5rem;
+      transition: color 0.3s;
+    }
+    .service-card:hover .service-number { color: var(--gold); opacity: 0.4; }
+    .service-icon {
+      width: 44px; height: 44px; margin-bottom: 1.4rem;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+    }
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem; letter-spacing: 0.05em;
+      color: var(--white); margin-bottom: 0.9rem;
+    }
+    .service-desc {
+      font-size: 0.88rem; color: var(--dim);
+      line-height: 1.75; margin-bottom: 1.6rem;
+    }
+    .service-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .tag {
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--muted);
+      color: var(--dim);
+    }
+
+    /* ── Work / Portfolio ──────────────────────────── */
+    #work { background: var(--black); }
+    .work-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 4rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .work-filter {
+      display: flex; gap: 0.6rem;
+    }
+    .filter-btn {
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      background: none; color: var(--dim);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      border-color: var(--gold); color: var(--gold);
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.5px;
+      background: var(--border);
+    }
+    .work-item {
+      position: relative; overflow: hidden;
+      background: var(--panel);
+      aspect-ratio: auto;
+      cursor: pointer;
+    }
+    .work-item:first-child {
+      grid-row: span 2;
+      min-height: 600px;
+    }
+    .work-item:not(:first-child) { min-height: 280px; }
+    .work-thumb {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.4s;
+      filter: saturate(0.7) brightness(0.85);
+    }
+    .work-item:hover .work-thumb {
+      transform: scale(1.05);
+      filter: saturate(1) brightness(0.9);
+    }
+    .work-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 50%);
+      opacity: 0; transition: opacity 0.35s;
+      display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 2rem;
+    }
+    .work-item:hover .work-overlay { opacity: 1; }
+    .work-cat {
+      font-size: 0.62rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .work-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem; color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .work-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 56px; height: 56px;
+      border: 2px solid rgba(255,255,255,0.6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s, background 0.3s;
+      background: rgba(0,0,0,0.3);
+    }
+    .work-item:hover .work-play { opacity: 1; }
+    .work-play svg { margin-left: 4px; }
+
+    /* Placeholder canvas items */
+    .work-canvas {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.9rem; letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      background: var(--panel);
+    }
+
+    /* ── Process ───────────────────────────────────── */
+    #process {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .process-cols {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 6rem; align-items: start; margin-top: 4rem;
+    }
+    .process-sticky { display:none; position: sticky; top: 8rem; }
+    .process-steps { display: flex; flex-direction: column; gap: 0; }
+    .process-step {
+      padding: 2rem 0 2rem 2.5rem;
+      border-left: 1px solid var(--border);
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .process-step::before {
+      content: '';
+      position: absolute; left: -5px; top: 2.2rem;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--muted);
+      transition: background 0.3s;
+    }
+    .process-step:hover { border-color: var(--gold); }
+    .process-step:hover::before { background: var(--gold); }
+    .step-num {
+      font-size: 0.62rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.6rem;
+    }
+    .step-desc { font-size: 0.87rem; color: var(--dim); line-height: 1.7; }
+
+    /* ── About / CV ────────────────────────────────── */
+    #about { background: var(--black); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; margin-top: 4rem; align-items: start;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-frame {
+      position: relative;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .about-photo-frame::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .about-photo {
+        object-position: top center;
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(1.05);
+    }
+    /* Placeholder photo */
+    .photo-placeholder {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1rem; color: var(--muted);
+    }
+    .photo-placeholder svg { opacity: 0.3; }
+    .photo-placeholder span {
+      font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .about-accent-box {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--gold);
+      padding: 1.2rem 1.6rem;
+      z-index: 2;
+    }
+    .accent-box-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem; color: var(--black);
+      line-height: 1;
+    }
+    .accent-box-label {
+      font-size: 0.62rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: rgba(0,0,0,0.65);
+    }
+    .about-bio {
+      font-size: 1.05rem; color: var(--dim);
+      line-height: 1.8; margin-bottom: 2.5rem;
+    }
+    .cv-section { margin-bottom: 3rem; }
+    .cv-section-title {
+      font-size: 0.68rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.2rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cv-item {
+      display: flex; gap: 1.2rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .cv-item:last-child { border-bottom: none; }
+    .cv-year {
+      font-size: 0.72rem; color: var(--gold);
+      min-width: 60px; padding-top: 0.15rem;
+    }
+    .cv-role { font-size: 0.92rem; color: var(--white); font-weight: 400; }
+    .cv-org { font-size: 0.82rem; color: var(--dim); }
+    .skills-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    .skill-item {
+      font-size: 0.8rem; color: var(--dim);
+      padding: 0.5rem 0.8rem;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .skill-item::before {
+      content: ''; display: block;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+
+    /* ── Testimonials ──────────────────────────────── */
+    #testimonials {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+    }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      margin-top: 4rem;
+    }
+    .testimonial {
+      background: var(--panel);
+      padding: 2.5rem;
+      position: relative;
+    }
+    .testimonial::before {
+      content: '\201C';
+      font-family: var(--font-serif);
+      font-size: 5rem; color: var(--gold);
+      opacity: 0.25;
+      position: absolute; top: 1rem; left: 2rem;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 0.92rem; color: var(--dim);
+      line-height: 1.75; margin-bottom: 2rem;
+      position: relative; z-index: 1;
+    }
+    .testimonial-author {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem; color: var(--gold);
+    }
+    .author-name { font-size: 0.85rem; color: var(--white); font-weight: 400; }
+    .author-role { font-size: 0.72rem; color: var(--dim); }
+    .stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 1.4rem; }
+
+    /* ── CTA Band ──────────────────────────────────── */
+    #cta {
+      background: var(--gold);
+      padding: 6rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg, transparent, transparent 30px,
+        rgba(0,0,0,0.04) 30px, rgba(0,0,0,0.04) 31px
+      );
+    }
+    .cta-inner {
+      position: relative; z-index: 1;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 2rem;
+    }
+    .cta-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: var(--black);
+      line-height: 1; letter-spacing: 0.03em;
+    }
+    .cta-sub {
+      font-size: 1rem; color: rgba(0,0,0,0.6);
+      margin-top: 0.6rem;
+    }
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 1.1rem 2.8rem;
+      background: var(--black);
+      color: var(--gold);
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-dark:hover { background: #1a1a1a; transform: translateY(-2px); }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: var(--deep);
+      padding: 4rem 4rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem; margin-bottom: 3rem;
+    }
+    .footer-brand .nav-logo { font-size: 2rem; display: block; margin-bottom: 1rem; }
+    .footer-tagline { font-size: 0.85rem; color: var(--dim); max-width: 260px; line-height: 1.7; }
+    .footer-col-title {
+      font-size: 0.65rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-links a {
+      font-size: 0.82rem; color: var(--dim);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .social-links { display: flex; gap: 1.2rem; }
+    .social-links a {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--dim);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-links a:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── Scroll Animations ─────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
+    .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .fade-up:nth-child(3) { transition-delay: 0.2s; }
+
+    /* ── Responsive ────────────────────────────────── */
+    @media (max-width: 1024px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { display: none; }
+      section { padding: 5rem 2rem; }
+      #hero { padding: 0 2rem 4rem; }
+      .hero-headline { font-size: clamp(3rem, 10vw, 6rem); }
+      .hero-avatar { width: 50vw; right: 2rem; }
+      .hero-stats { right: 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .work-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .work-item:first-child { grid-row: span 1; min-height: 300px; grid-column: span 2; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .process-cols { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .hero-avatar { display: none; }
+      .hero-stats { position: static; margin-top: 3rem; justify-content: flex-start; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-item:first-child { grid-column: span 1; }
+      .skills-grid { grid-template-columns: 1fr; }
+      #cta { padding: 4rem 2rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────── -->
+  <nav>
+    <span class="nav-logo">DON HARTIG</span>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Clients</a>
+    </div>
+    <a href="#cta" class="nav-cta">Hire Me</a>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────────── -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-bg">
+      <div class="hero-grid-line"></div>
+      <div class="hero-grid-line"></div>
+    </div>
+
+    <span class="hero-reel-tag">Available for projects — 2025</span>
+
+    <!-- Don Hartig photo — swap src when image is available -->
+    <div class="hero-avatar" aria-hidden="true">
+      <!-- Stylized placeholder silhouette -->
+      <svg viewBox="0 0 520 720" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="figGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a2a2a"/>
+            <stop offset="100%" stop-color="#0f0f0f"/>
+          </linearGradient>
+        </defs>
+        <rect width="520" height="720" fill="url(#glow)"/>
+        <!-- Body silhouette -->
+        <ellipse cx="260" cy="175" rx="72" ry="82" fill="url(#figGrad)" opacity="0.85"/>
+        <path d="M130 720 C130 520 160 440 260 430 C360 440 390 520 390 720Z" fill="url(#figGrad)" opacity="0.85"/>
+        <!-- Lens flare accent -->
+        <circle cx="320" cy="120" r="3" fill="#c9a84c" opacity="0.8"/>
+        <circle cx="320" cy="120" r="12" fill="#c9a84c" opacity="0.15"/>
+        <line x1="295" y1="120" x2="348" y2="120" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+        <line x1="320" y1="95" x2="320" y2="148" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+        <!-- Grid overlay -->
+        <line x1="0" y1="240" x2="520" y2="240" stroke="#c9a84c" stroke-width="0.4" opacity="0.2"/>
+        <line x1="260" y1="0" x2="260" y2="720" stroke="#c9a84c" stroke-width="0.4" opacity="0.2"/>
+        <!-- Label -->
+        <text x="260" y="680" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="11" letter-spacing="4" fill="#c9a84c" opacity="0.5">DON HARTIG · PHOTO COMING</text>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Creative Director &amp; AI Specialist</p>
+      <h1 class="hero-headline">
+        VISUAL<br/>
+        STORIES<br/>
+        THAT <span>SELL</span>
+      </h1>
+      <p class="hero-sub">Cinematic commercials. AI-powered influencers. Next-gen 3D worlds. I build the content that converts browsers into buyers.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          View My Work
+        </a>
+        <!--<a href="#cta" class="btn-ghost">Start a Project</a>-->
+      </div>
+    </div>
+
+    <div class="hero-stats" aria-label="Key statistics">
+      <div class="stat">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── Services ─────────────────────────────────── -->
+  <section id="services" aria-labelledby="services-title">
+    <div class="services-header fade-up">
+      <p class="section-label">What I Do</p>
+      <h2 class="section-title" id="services-title">THREE SERVICES.<br/><em>Infinite impact.</em></h2>
+      <p class="section-intro">Whether you need a broadcast commercial, a synthetic brand ambassador, or stunning 3D visuals, I deliver work that commands attention and drives results.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <article class="service-card fade-up" itemscope itemtype="https://schema.org/Service">
+        <div class="service-number">01</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3 class="service-name" itemprop="name">VIDEO COMMERCIAL &amp; ADVERTISING</h3>
+        <p class="service-desc" itemprop="description">Broadcast-quality commercials and digital ad campaigns crafted to stop the scroll and move the needle. From concept to final cut, every frame is engineered for maximum emotional impact and conversion.</p>
+        <div class="service-tags">
+          <span class="tag">Brand Films</span>
+          <span class="tag">TV Commercials</span>
+          <span class="tag">Social Ads</span>
+          <span class="tag">Product Videos</span>
+          <span class="tag">Storytelling</span>
+        </div>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="service-card fade-up" itemscope itemtype="https://schema.org/Service">
+        <div class="service-number">02</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M19 8l2 2-2 2" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="service-name" itemprop="name">AI INFLUENCER CREATION</h3>
+        <p class="service-desc" itemprop="description">Design a fully synthetic brand ambassador that works 24/7, never has a bad day, and is 100% on-brand. I create AI influencer personas complete with visual identity, voice, content pipeline, and platform strategy.</p>
+        <div class="service-tags">
+          <span class="tag">Persona Design</span>
+          <span class="tag">AI Generation</span>
+          <span class="tag">Content Strategy</span>
+          <span class="tag">Brand Voice</span>
+          <span class="tag">Social Campaigns</span>
+        </div>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="service-card fade-up" itemscope itemtype="https://schema.org/Service">
+        <div class="service-number">03</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1,17 8,10 13,15 18,9 23,14"/><path d="M12 3l4 4-4 4M12 3v8"/><rect x="3" y="17" width="18" height="4" rx="1"/></svg>
+        </div>
+        <h3 class="service-name" itemprop="name">3D MODELING + AI VIDEO</h3>
+        <p class="service-desc" itemprop="description">Hyper-realistic 3D assets and environments fused with cutting-edge AI video generation. I produce visuals that are impossible to shoot traditionally — at a fraction of the cost and timeline.</p>
+        <div class="service-tags">
+          <span class="tag">3D Modeling</span>
+          <span class="tag">AI Video Gen</span>
+          <span class="tag">Motion Design</span>
+          <span class="tag">Product Viz</span>
+          <span class="tag">VFX</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── Work ──────────────────────────────────────── -->
+  <section id="work" aria-labelledby="work-title">
+    <div class="work-header">
+      <div>
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title" id="work-title">SELECTED<br/><em>Work</em></h2>
+      </div>
+      <div class="work-filter" role="group" aria-label="Filter portfolio">
+        <button class="filter-btn active" onclick="filterWork(this,'all')">All</button>
+        <button class="filter-btn" onclick="filterWork(this,'commercial')">Commercial</button>
+        <button class="filter-btn" onclick="filterWork(this,'ai')">AI</button>
+        <button class="filter-btn" onclick="filterWork(this,'3d')">3D</button>
+      </div>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+      <!-- Item 1 — featured commercial -->
+      <div class="work-item" data-cat="commercial" aria-label="Brand commercial project">
+        <div class="work-canvas" style="background: linear-gradient(135deg, #0d0d0d 0%, #1a1207 50%, #0d0a00 100%); min-height:600px; flex-direction:column; gap:1rem;">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" stroke="#c9a84c" stroke-width="1" opacity="0.4"/>
+            <polygon points="31,24 57,40 31,56" fill="#c9a84c" opacity="0.7"/>
+          </svg>
+          <span style="color:#c9a84c;opacity:0.4;font-size:0.7rem;letter-spacing:0.2em;">SAMPLE REEL</span>
+        </div>
+        <div class="work-overlay">
+          <p class="work-cat">Commercial · Brand Film</p>
+          <h3 class="work-title">APEX AUTOMOTIVE — LAUNCH CAMPAIGN</h3>
+        </div>
+        <div class="work-play" aria-label="Play video">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+      </div>
+
+      <!-- Item 2 — AI influencer -->
+      <div class="work-item" data-cat="ai" aria-label="AI influencer project">
+        <div class="work-canvas" style="background: linear-gradient(135deg, #050d12 0%, #001a24 100%);">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="22" r="14" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+            <path d="M10 55 C10 40 18 35 30 35 C42 35 50 40 50 55" stroke="#00d4ff" stroke-width="0.8" opacity="0.5" fill="none"/>
+            <circle cx="44" cy="14" r="4" fill="#00d4ff" opacity="0.6"/>
+            <line x1="40" y1="14" x2="50" y2="14" stroke="#00d4ff" stroke-width="0.5" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="work-overlay">
+          <p class="work-cat">AI Influencer</p>
+          <h3 class="work-title">NOVA — SYNTHETICS BEAUTY AMBASSADOR</h3>
+        </div>
+      </div>
+
+      <!-- Item 3 — 3D -->
+      <div class="work-item" data-cat="3d" aria-label="3D modeling project">
+        <div class="work-canvas" style="background: linear-gradient(160deg, #0a0a14 0%, #14141e 100%);">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+            <polygon points="30,5 55,45 5,45" stroke="#c9a84c" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <polygon points="30,18 47,45 13,45" fill="#c9a84c" opacity="0.07"/>
+            <circle cx="30" cy="5" r="3" fill="#c9a84c" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="work-overlay">
+          <p class="work-cat">3D + AI Video</p>
+          <h3 class="work-title">SOLARA — PRODUCT VISUALIZATION</h3>
+        </div>
+      </div>
+
+      <!-- Item 4 — commercial -->
+      <div class="work-item" data-cat="commercial" aria-label="Social advertising project">
+        <div class="work-canvas" style="background: linear-gradient(135deg, #140808 0%, #200d00 100%);">
+          <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <rect x="5" y="5" width="45" height="45" rx="4" stroke="#ff4d4d" stroke-width="0.8" opacity="0.4"/>
+            <rect x="14" y="14" width="27" height="27" rx="2" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="27.5" cy="27.5" r="7" fill="#c9a84c" opacity="0.2"/>
+          </svg>
+        </div>
+        <div class="work-overlay">
+          <p class="work-cat">Commercial · Social</p>
+          <h3 class="work-title">EMBER SPIRITS — PRODUCT LAUNCH</h3>
+        </div>
+      </div>
+
+      <!-- Item 5 — AI + 3D -->
+      <div class="work-item" data-cat="ai 3d" aria-label="AI and 3D hybrid project">
+        <div class="work-canvas" style="background: linear-gradient(135deg, #050e08 0%, #0a1e0f 100%);">
+          <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <circle cx="27.5" cy="27.5" r="20" stroke="#00d4ff" stroke-width="0.6" stroke-dasharray="4 3" opacity="0.4"/>
+            <circle cx="27.5" cy="27.5" r="10" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="27.5" cy="27.5" r="3" fill="#c9a84c" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="work-overlay">
+          <p class="work-cat">AI · 3D Hybrid</p>
+          <h3 class="work-title">ORBIS TECH — AI PROMO SERIES</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Process ───────────────────────────────────── -->
+  <section id="process" aria-labelledby="process-title">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title" id="process-title">A PROCESS BUILT<br/>FOR <em>Results</em></h2>
+
+    <div class="process-cols">
+      <div class="process-sticky">
+        <p class="section-intro">From first brief to final delivery, every project follows a battle-tested framework that eliminates guesswork and maximizes ROI on your creative investment.</p>
+        <br/><br/>
+        <a href="#cta" class="btn-primary" style="margin-top:1rem;">
+          Book a Free Consultation
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="process-steps">
+        <div class="process-step fade-up">
+          <p class="step-num">Step 01</p>
+          <h3 class="step-title">DISCOVERY &amp; STRATEGY</h3>
+          <p class="step-desc">We align on brand goals, audience insights, and KPIs. I research competitors and identify the creative angle that will make your brand impossible to ignore.</p>
+        </div>
+        <div class="process-step fade-up">
+          <p class="step-num">Step 02</p>
+          <h3 class="step-title">CONCEPT &amp; CREATIVE BRIEF</h3>
+          <p class="step-desc">I develop a detailed creative treatment — moodboards, storyboards, shot lists, or AI persona concepts — tailored to your campaign objectives.</p>
+        </div>
+        <div class="process-step fade-up">
+          <p class="step-num">Step 03</p>
+          <h3 class="step-title">PRODUCTION &amp; GENERATION</h3>
+          <p class="step-desc">Whether filming, 3D modeling, or AI generation — this is where the magic happens. Tight deadlines met. Quality never compromised.</p>
+        </div>
+        <div class="process-step fade-up">
+          <p class="step-num">Step 04</p>
+          <h3 class="step-title">EDIT, POLISH &amp; DELIVER</h3>
+          <p class="step-desc">Post-production, color grading, sound design, and revision rounds until the work is perfect. Deliverables formatted for every platform.</p>
+        </div>
+        <div class="process-step fade-up">
+          <p class="step-num">Step 05</p>
+          <h3 class="step-title">LAUNCH &amp; OPTIMIZE</h3>
+          <p class="step-desc">I don't disappear after delivery. I support campaign launches, provide platform-specific cuts, and analyze performance to iterate for better results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About / CV ─────────────────────────────────── -->
+  <section id="about" aria-labelledby="about-title">
+    <p class="section-label">About</p>
+    <h2 class="section-title" id="about-title">MEET <em>Don Hartig</em></h2>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-photo-frame">
+           <!--<img src="images/me/artdon.jpeg" alt="Don Hartig - Video Director & AI Creative" class="about-photo"> -->
+          <div class="photo-placeholder">
+            <img src="images/me/artdon.jpeg" alt="Don Hartig - Video Director & AI Creative" class="about-photo">
+            <span>Don Hartig</span>
+            <span style="font-size:0.58rem; opacity:0.5;">Place photo in images/me/</span>
+          </div>
+        </div>
+        <div class="about-accent-box">
+          <div class="accent-box-num">12+</div>
+          <div class="accent-box-label">Years in the Field</div>
+        </div>
+      </div>
+
+      <div>
+        <!-- ATS-friendly semantic bio -->
+        <p class="about-bio" itemprop="description">
+          Don Hartig is a <strong style="color:var(--white); font-weight:400">video commercial director</strong>, <strong style="color:var(--white); font-weight:400">AI influencer creator</strong>, and <strong style="color:var(--white); font-weight:400">3D visualization specialist</strong> with over a decade of experience crafting content that converts. He combines technical mastery with cinematic storytelling to produce work for brands ranging from lean startups to global enterprises.
+        </p>
+        <p class="about-bio">
+          With deep expertise in AI-assisted production workflows, generative video, and synthetic influencer development, Don sits at the intersection of creative direction and emerging technology — building the future of brand content today.
+        </p>
+
+        <!-- CV Sections (ATS-readable) -->
+        <div class="cv-section" itemscope itemtype="https://schema.org/Person">
+          <h3 class="cv-section-title">Experience</h3>
+          <div class="cv-item">
+            <span class="cv-year">2020–</span>
+            <div>
+              <div class="cv-role">Freelance Creative Director &amp; AI Specialist</div>
+              <div class="cv-org">Independent · Global Clients</div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="cv-year">2016–20</span>
+            <div>
+              <div class="cv-role">Senior Video Producer &amp; Director</div>
+              <div class="cv-org">Digital Agency · Brand Campaigns</div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="cv-year">2013–16</span>
+            <div>
+              <div class="cv-role">Motion Designer &amp; 3D Artist</div>
+              <div class="cv-org">Post-Production Studio</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3 class="cv-section-title">Core Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-item">Video Direction &amp; Cinematography</div>
+            <div class="skill-item">AI Video Generation (Sora, Runway, Kling)</div>
+            <div class="skill-item">3D Modeling &amp; Rendering (Blender, Cinema 4D)</div>
+            <div class="skill-item">AI Influencer &amp; Persona Design</div>
+            <div class="skill-item">Commercial Post-Production</div>
+            <div class="skill-item">Brand Strategy &amp; Storytelling</div>
+            <div class="skill-item">Motion Graphics &amp; VFX</div>
+            <div class="skill-item">Generative AI (Midjourney, Stable Diffusion)</div>
+            <div class="skill-item">Adobe Creative Suite (Premiere, AE, PS)</div>
+            <div class="skill-item">Social Content Strategy</div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3 class="cv-section-title">Industries Served</h3>
+          <div class="service-tags" style="margin-top:0.5rem;">
+            <span class="tag">Automotive</span>
+            <span class="tag">Beauty &amp; Fashion</span>
+            <span class="tag">Tech &amp; SaaS</span>
+            <span class="tag">F&amp;B</span>
+            <span class="tag">Real Estate</span>
+            <span class="tag">Fitness &amp; Wellness</span>
+            <span class="tag">Entertainment</span>
+            <span class="tag">E-Commerce</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ───────────────────────────────── -->
+  <section id="testimonials" aria-labelledby="testimonials-title">
+    <p class="section-label">Client Voices</p>
+    <h2 class="section-title" id="testimonials-title">WHAT CLIENTS<br/><em>Say</em></h2>
+
+    <div class="testimonials-grid">
+      <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">"Don delivered a commercial that exceeded every brief we gave him. The final piece drove a 340% increase in paid social engagement within the first week. Absolute professional from first call to final file."</p>
+        <footer class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">J</div>
+          <div>
+            <div class="author-name" itemprop="author">James K.</div>
+            <div class="author-role">CMO, Apex Automotive</div>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">"The AI influencer Don created for our brand has 80K followers in four months and costs us a fraction of a real ambassador. Genuinely transformative work. I can't recommend him enough."</p>
+        <footer class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">S</div>
+          <div>
+            <div class="author-name" itemprop="author">Sofia R.</div>
+            <div class="author-role">Founder, Solara Beauty</div>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" itemprop="reviewBody">"The 3D product visualizations Don produced saved us $40K in photography costs and looked better than anything we'd shot before. His AI video work is in a completely different league."</p>
+        <footer class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">M</div>
+          <div>
+            <div class="author-name" itemprop="author">Marcus T.</div>
+            <div class="author-role">Head of Marketing, Orbis Tech</div>
+          </div>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ── CTA Band ────────────────────────────────────── -->
+  <section id="cta" aria-labelledby="cta-headline">
+    <div class="cta-inner">
+      <div>
+        <h2 class="cta-headline" id="cta-headline">READY TO BUILD<br/>SOMETHING ICONIC?</h2>
+        <p class="cta-sub">Response guaranteed within 24 hours. No-commitment discovery call.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+        <a href="mailto:hello@donhartig.com" class="btn-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email Don
+        </a>
+        <a href="tel:+10000000000" class="btn-dark" style="background:#1a1a1a;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Book a Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">DON HARTIG</span>
+        <p class="footer-tagline">Video commercial director. AI influencer creator. 3D &amp; AI video specialist. Making brands unmissable.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Services</p>
+        <ul class="footer-links">
+          <li><a href="#services">Video Commercials</a></li>
+          <li><a href="#services">AI Influencer Creation</a></li>
+          <li><a href="#services">3D Modeling &amp; AI Video</a></li>
+          <li><a href="#work">Portfolio</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#cta">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@donhartig.com">don@donhartig.com</a></li>
+          <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Don Hartig. All rights reserved. · Video Commercial Director · AI Influencer Creator · 3D &amp; AI Video Production</p>
+      <div class="social-links" aria-label="Social media links">
+        <a href="#" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#000"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Scroll-triggered fade-ups ──────────────────── //
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ── Portfolio Filter ───────────────────────────── //
+    function filterWork(btn, cat) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.work-item').forEach(item => {
+        const cats = item.dataset.cat || '';
+        item.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+      });
+    }
+
+    // ── Smooth active nav link ─────────────────────── //
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
