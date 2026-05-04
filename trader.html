@@ -1,193 +1,1822 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="MC-COEEIzavbIoTHTt6DkGeQp29IBH4Kg4PiQFxEFmo">
-    <title>Things to do on donhartig.com</title>
-    
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #333;
-        }
-        h1 {
-            color: #1a73e8;
-            border-bottom: 3px solid #1a73e8;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #202124;
-            margin-top: 35px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 12px 0;
-            font-size: 1.05rem;
-        }
-        input[type="checkbox"] {
-            transform: scale(1.3);
-            margin-right: 12px;
-            accent-color: #1a73e8;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .note {
-            font-style: italic;
-            color: #555;
-            margin-top: 30px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>董夏庭 Don Hartig | 国际顶尖交易主题演讲嘉宾 | 加密货币・外汇・股票</title>
+  <meta name="description" content="董夏庭（Don Hartig）——国际多语种主题演讲嘉宾，普通话流利，拥有超过10年加密货币、外汇及股票交易行业经验。专为交易平台、券商及金融科技企业提供品牌推广演讲与培训活动。" />
+  <meta name="keywords" content="主题演讲嘉宾,交易演讲,加密货币演讲,外汇培训,股票交易嘉宾,Don Hartig,董夏庭,Crypto Speaker,Forex Speaker,MH Markets,Bitget,Bybit,Kraken,交易平台推广,金融科技演讲" />
+  <meta name="author" content="Don Hartig 董夏庭" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://donhartig.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="董夏庭 Don Hartig | 国际顶尖交易主题演讲嘉宾" />
+  <meta property="og:description" content="普通话流利的国际演讲嘉宾，专注加密货币、外汇与股票交易平台品牌推广演讲与培训。" />
+  <meta property="og:url" content="https://donhartig.com/" />
+  <meta property="og:image" content="images/me/don-hartig-stage.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="董夏庭 Don Hartig | 国际主题演讲嘉宾" />
+  <meta name="twitter:description" content="普通话流利 · 10年+交易行业经验 · 全球交易平台首选演讲嘉宾" />
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Don Hartig",
+    "alternateName": "董夏庭",
+    "jobTitle": "International Keynote Speaker & Trading Expert",
+    "description": "Multilingual keynote speaker fluent in Mandarin Chinese with 10+ years experience in crypto, forex, and stock trading industries. Senior Marketing Manager and Head of PR.",
+    "url": "https://donhartig.com",
+    "knowsLanguage": ["zh-CN", "en", "de"],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Keynote Speaker",
+      "occupationLocation": { "@type": "Country", "name": "Global" }
+    },
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM — Dark luxury finance aesthetic
+       Gold + deep navy + charcoal, refined editorial layout
+    ============================================================ */
+    :root {
+      --gold:        #C9A84C;
+      --gold-light:  #E8C96A;
+      --gold-dark:   #8B6914;
+      --navy:        #070D1A;
+      --navy-mid:    #0D1929;
+      --navy-card:   #111F35;
+      --navy-border: #1A2E4A;
+      --silver:      #A8B8CC;
+      --white:       #F5F0E8;
+      --white-muted: #C0B8A8;
+      --accent:      #1E6FCC;
+      --accent-glow: rgba(30,111,204,0.18);
+
+      --font-serif:  'Cormorant Garamond', 'Noto Serif SC', serif;
+      --font-zh:     'Noto Serif SC', serif;
+      --font-mono:   'DM Mono', monospace;
+
+      --transition: 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --shadow-gold: 0 0 40px rgba(201,168,76,0.15);
+      --shadow-card: 0 8px 48px rgba(0,0,0,0.45);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-zh);
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.45;
+    }
+
+    /* ─── UTILITY ─── */
+    .gold { color: var(--gold); }
+    .silver { color: var(--silver); }
+    .mono { font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.12em; }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(7,13,26,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      transition: var(--transition);
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.55rem 1.4rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10rem 3rem 6rem 5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.2s forwards;
+    }
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 5.5vw, 6.5rem);
+      font-weight: 700;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+    .hero-name-zh {
+      font-family: var(--font-zh);
+      font-size: clamp(1.8rem, 2.8vw, 3.2rem);
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
+    }
+    .hero-tagline {
+      font-size: clamp(1rem, 1.3vw, 1.25rem);
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--silver);
+      max-width: 480px;
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.7s forwards;
+    }
+    .hero-tagline strong { color: var(--white); font-weight: 500; }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.85s forwards;
+    }
+    .stat-item { text-align: left; }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-top: 0.3rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 0.9s 1s forwards;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 1rem 2.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold-light);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .btn-primary:hover::after { transform: scaleX(1); }
+    .btn-primary span { position: relative; z-index: 1; }
+    .btn-secondary {
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.4);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--gold-light); border-color: var(--gold); }
+
+    /* Hero Right — Image column */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-img-main {
+      position: absolute;
+      inset: 0;
+      background: var(--navy-card);
+      background-image: url('images/me/don-hartig-stage.jpg');
+      background-size: cover;
+      background-position: center top;
+    }
+    .hero-img-main::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        var(--navy) 0%,
+        rgba(7,13,26,0.25) 40%,
+        rgba(7,13,26,0.05) 100%
+      );
+    }
+    .hero-img-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--navy-card) 0%, #0a1628 100%);
+      border-left: 1px solid var(--navy-border);
+    }
+    .hero-img-placeholder-icon {
+      width: 120px;
+      height: 120px;
+      border: 2px solid var(--navy-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--navy-border);
+    }
+    .hero-img-placeholder p {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--navy-border);
+      text-transform: uppercase;
+    }
+    /* Gold accent line on right edge */
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      z-index: 3;
+    }
+
+    /* Decorative grid lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 0%, rgba(201,168,76,0.08) 30%, rgba(201,168,76,0.08) 70%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Scrolling ticker */
+    .ticker-bar {
+      background: var(--gold);
+      padding: 0.65rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 0;
+      animation: ticker 30s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-item {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 500;
+      padding: 0 2.5rem;
+      flex-shrink: 0;
+    }
+    .ticker-dot {
+      color: rgba(7,13,26,0.4);
+      padding: 0 0.5rem;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 7rem 0; }
+
+    /* ─── ABOUT SECTION ─── */
+    #about {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .about-image-stack {
+      position: relative;
+      height: 580px;
+    }
+    .about-img-main {
+      position: absolute;
+      top: 0; left: 0;
+      width: 82%;
+      height: 88%;
+      background: var(--navy-card);
+      background-image: url('images/me/don-hartig-speaking.jpg');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--navy-border);
+    }
+    .about-img-secondary {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 55%;
+      height: 60%;
+      background: var(--navy-card);
+      background-image: url('images/me/don-hartig-closeup.jpg');
+      background-size: cover;
+      background-position: center;
+      border: 2px solid var(--gold-dark);
+    }
+    .about-badge {
+      position: absolute;
+      top: 50%; left: 60%;
+      transform: translate(-50%, -50%);
+      background: var(--gold);
+      color: var(--navy);
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+      z-index: 2;
+    }
+    .about-badge-num {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+    }
+    .about-badge-text {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 0.2rem;
+    }
+    .about-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3.2vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .about-content p {
+      color: var(--silver);
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+    .about-content p strong { color: var(--white); font-weight: 500; }
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--navy-border);
+      color: var(--silver);
+      transition: var(--transition);
+    }
+    .tag:hover, .tag.highlight {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ─── SERVICES / EVENTS ─── */
+    #services {
+      position: relative;
+      overflow: hidden;
+    }
+    #services::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+    .services-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+    .services-header p {
+      color: var(--silver);
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--navy-border);
+    }
+    .service-card {
+      background: var(--navy-mid);
+      padding: 2.8rem 2.2rem;
+      position: relative;
+      transition: var(--transition);
+      cursor: default;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .service-card:hover { background: var(--navy-card); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dark);
+      margin-bottom: 1.5rem;
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+    }
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .service-desc {
+      color: var(--silver);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    /* ─── BRAND LOGOS ─── */
+    #clients {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
+      padding: 4.5rem 0;
+    }
+    .clients-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .clients-header p {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+    .brands-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .brand-pill {
+      padding: 1rem 2.4rem;
+      border-right: 1px solid var(--navy-border);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      color: var(--silver);
+      transition: color 0.3s;
+      text-transform: uppercase;
+    }
+    .brand-pill:last-child { border-right: none; }
+    .brand-pill:hover { color: var(--gold); }
+
+    /* ─── LANGUAGES ─── */
+    #languages {
+      position: relative;
+    }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .lang-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .lang-content p {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    .lang-content p strong { color: var(--white); font-weight: 500; }
+    .lang-bars { display: flex; flex-direction: column; gap: 1.8rem; }
+    .lang-item {}
+    .lang-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.6rem;
+    }
+    .lang-name-text {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .lang-level {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .lang-bar-track {
+      height: 2px;
+      background: var(--navy-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .lang-bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--gold-dark), var(--gold-light));
+      transform-origin: left;
+      animation: barGrow 1.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+      transform: scaleX(0);
+    }
+    @keyframes barGrow { to { transform: scaleX(1); } }
+
+    /* ─── EXPERIENCE TIMELINE ─── */
+    #experience {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .exp-header {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+    .exp-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .timeline {
+      position: relative;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold-dark) 15%, var(--gold-dark) 85%, transparent);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+    .timeline-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; }
+    .timeline-item:nth-child(odd) .tl-empty { grid-column: 2; }
+    .timeline-item:nth-child(even) .tl-empty { grid-column: 1; }
+    .timeline-item:nth-child(even) .tl-content { grid-column: 2; text-align: left; }
+    .tl-dot {
+      position: absolute;
+      left: 50%;
+      top: 0.5rem;
+      transform: translateX(-50%);
+      width: 10px; height: 10px;
+      background: var(--gold);
+      border: 2px solid var(--navy-mid);
+      border-radius: 50%;
+      z-index: 2;
+    }
+    .tl-year {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .tl-role {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .tl-desc {
+      font-size: 0.88rem;
+      color: var(--silver);
+      line-height: 1.8;
+    }
+
+    /* ─── QUOTE / SOCIAL PROOF ─── */
+    #social-proof {
+      padding: 8rem 0;
+      position: relative;
+    }
+    .proof-inner {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .proof-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .proof-quote::before {
+      content: '\201C';
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      color: var(--gold-dark);
+      position: absolute;
+      top: -2.5rem; left: -1.5rem;
+      line-height: 1;
+    }
+    .proof-attr {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .proof-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 5rem;
+      border: 1px solid var(--navy-border);
+    }
+    .metric-box {
+      padding: 2.5rem 1.5rem;
+      border-right: 1px solid var(--navy-border);
+      text-align: center;
+    }
+    .metric-box:last-child { border-right: none; }
+    .metric-num {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .metric-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* ─── INDUSTRIES ─── */
+    #industries {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .ind-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .ind-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3vw, 3.5rem);
+      font-weight: 700;
+    }
+    .ind-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--navy-border);
+    }
+    .ind-card {
+      background: var(--navy-mid);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .ind-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+    .ind-card:hover { background: var(--navy-card); }
+    .ind-card:hover::after { transform: scaleX(1); }
+    .ind-icon-bg {
+      width: 56px; height: 56px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .ind-icon-bg svg { width: 26px; height: 26px; color: var(--gold); }
+    .ind-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .ind-desc {
+      font-size: 0.88rem;
+      color: var(--silver);
+      line-height: 1.85;
+    }
+    .ind-clients {
+      margin-top: 1.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+    }
+
+    /* ─── GALLERY ─── */
+    #gallery {
+      padding: 7rem 0;
+    }
+    .gallery-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+    .gallery-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 2.8vw, 3rem);
+      font-weight: 700;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 1.5px;
+      background: var(--navy-border);
+    }
+    .gallery-cell {
+      background: var(--navy-card);
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-cell:first-child {
+      grid-row: 1 / 3;
+    }
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--navy-card);
+    }
+    .gallery-cell:hover .gallery-img { transform: scale(1.04); }
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.8rem;
+      color: var(--navy-border);
+    }
+    .gallery-placeholder svg { width: 36px; height: 36px; }
+    .gallery-placeholder p {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* ─── CONTACT / CTA ─── */
+    #contact {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--navy-border);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .contact-left h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 3.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+    .contact-left p {
+      color: var(--silver);
+      font-size: 1rem;
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+    .contact-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-info-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--silver);
+    }
+    .contact-info-list li svg {
+      width: 16px; height: 16px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .form-input, .form-textarea {
+      background: var(--navy);
+      border: 1px solid var(--navy-border);
+      color: var(--white);
+      padding: 0.85rem 1rem;
+      font-family: var(--font-zh);
+      font-size: 0.9rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.25s;
+      resize: none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--silver); opacity: 0.5; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+    .form-textarea { min-height: 130px; }
+    .form-submit {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 1.1rem 2.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: var(--transition);
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--navy-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-note {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      color: var(--silver);
+      opacity: 0.6;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--silver);
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .footer-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── FLOATING DECORATIVE ELEMENT ─── */
+    .deco-lines {
+      position: absolute;
+      right: 3rem; top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      opacity: 0.15;
+    }
+    .deco-line {
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 8rem 2rem 5rem; }
+      .hero-right { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-image-stack { height: 380px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .proof-metrics { grid-template-columns: repeat(2, 1fr); }
+      .ind-cards { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .lang-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-cell:first-child { grid-row: auto; }
+      .timeline::before { left: 0; }
+      .timeline-item { grid-template-columns: 1fr; padding-left: 2rem; }
+      .timeline-item:nth-child(odd) .tl-content,
+      .timeline-item:nth-child(even) .tl-content { grid-column: 1; text-align: left; }
+      .timeline-item:nth-child(odd) .tl-empty,
+      .timeline-item:nth-child(even) .tl-empty { display: none; }
+      .tl-dot { left: 0; transform: none; }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      footer { flex-direction: column; gap: 1.2rem; text-align: center; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+      .brands-row { gap: 0; }
+      .brand-pill { font-size: 0.75rem; padding: 0.8rem 1.2rem; }
+      .proof-metrics { grid-template-columns: 1fr 1fr; }
+      section { padding: 5rem 0; }
+    }
+
+    /* scroll indicator */
+    .scroll-line {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 1.3s forwards;
+    }
+    .scroll-line::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 3rem;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+    }
+    .scroll-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      writing-mode: vertical-lr;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Things to do on donhartig.com</h1>
+  <!-- NAV -->
+  <nav role="navigation" aria-label="主导航">
+    <div class="nav-logo">Don Hartig <span>董夏庭</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">关于</a></li>
+      <li><a href="#services">演讲服务</a></li>
+      <li><a href="#experience">从业经历</a></li>
+      <li><a href="#industries">行业</a></li>
+      <li><a href="#gallery">现场照片</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">立即预约</a>
+  </nav>
 
-<div class="section">
-        <h2>General tasks</h2>
-        <ul>
-            <li><input type="checkbox"> Add "Back Home" link on every page</li> 
-            <li><input type="checkbox"> Add "Download as PDF" button on each page (using window.print() + @media print CSS)</li>
-            <li><input type="checkbox"> Change order on home page to Management -> Writing -> Localisation -> Training -> AI Influencer</li>
-            <li><input type="checkbox"> Move WISE to GitHub private repo</li>
-            <li><input type="checkbox"> Change WISE repo name to something inconspicuous</li>
-            <li><input type="checkbox"> Consider changing images around to "more closely reflect" the categories on HOME PAGE</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h2>1. Management Section</h2>
-        <ul>
-            <li><input type="checkbox"> Add video to management page</li>
-        </ul>
-
-    <div class="section">
-        <h2>2. Writing Portfolio Improvements</h2>
-        <ul>
-            <li><input type="checkbox" checked disabled><s>Filter different samples OR create sections for different industries on writing.</s></li>
-            <li><input type="checkbox"> Link two writing samples for WIRED from writing.html page</li>
-            <li><input type="checkbox" checked disabled><s>Add "Journalism" section to writing portfolio</s></li>
-            <li><input type="checkbox"> Send application email to WIRED</li>
-            <li><input type="checkbox"> Add all other writing samples to portfolio</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>3. Localisation Page Optimization</h2>
-        <ul>
-            <li><input type="checkbox" checked disabled> <s>Optimize localisation.html page</s></li>
-            <li><input type="checkbox"> Add video to localisation page</li>
-            <li><input type="checkbox"> Update information about Trados and other CAT tools</li>
-            <li><input type="checkbox"> Add form to "Send Project Inquiry" button (in both places)<li>
-            <li><input type="checkbox"> Add testimonials to localisation page</li>
-            <li><input type="checkbox"> Add "Languages" section to localisation page (with flags and info about which languages I can work with)</li>
-            <li><input type="checkbox"> Add "Industries" section to localisation page (with info about which industries I have experience in)</li>    
-            <li><input type="checkbox"> Add "Services" section to localisation page (with info about which services I offer - translation, editing, proofreading, etc.)</li>
-            <li><input type="checkbox">Format prices section</li>
-            <li><input type="checkbox"> Link "Proz #3" button to actual customer feedback page</li>
-            <li><input type="checkbox"> Add social media icons at top and bottom - change to ORIGINAL colors</li>
-            <li><input type="checkbox"> Add company logos in customers section</li>
-            <li><input type="checkbox">Update CATs section</li>
-            <li><input type="checkbox">Split "Technical" & "Medical" in "Areas of Specialization"</li>
-            <li><input type="checkbox">Add "Automotive" section in "Areas of Specialization"</li>
-        </ul>
+  <!-- HERO -->
+  <section class="hero" aria-label="首屏介绍">
+    <div class="hero-left">
+      <div class="hero-eyebrow">国际金融主题演讲嘉宾 · 普通话母语级水平</div>
+      <h1 class="hero-name">Don Hartig</h1>
+      <div class="hero-name-zh">董夏庭</div>
+      <p class="hero-tagline">
+        专为<strong>加密货币、外汇与股票交易</strong>行业打造的国际演讲嘉宾。
+        普通话流利，足迹遍及全球，
+        帮助顶尖交易平台通过专业演讲与培训活动
+        <strong>赢得信任、扩大用户群体</strong>。
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">年行业经验</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7+</div>
+          <div class="stat-label">流利语言</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">品牌合作</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary"><span>预约演讲</span></a>
+        <a href="#services" class="btn-secondary">查看服务详情 →</a>
+      </div>
+      <div class="scroll-line" aria-hidden="true">
+        <span class="scroll-label">向下滚动</span>
+      </div>
     </div>
 
-<div class="section">
-        <h2>4. Development Page</h2>
-        <ul>
-            <li><input type="checkbox">Add thumbnail previews to portfolio section.  </li>
-            <li><input type="checkbox">Link email buttons (top and bottom) to actual email sending functionality</li>
-            <li><input type="checkbox">Add social media icons with links.</li>   
-            <li><input type="checkbox">CONSIDER changing to "front-end" web developer for better focus</li>
-        </ul>
-
-    
-    <div class="section">
-        <h2>5. Video Commercials / AI Influencer Services</h2>
-        <ul>
-            <li><input type="checkbox"> Add AI Influencer services link on index.html (and video.html)</li>
-            <li><input type="checkbox"> Add AI Influencer page with samples and prices</li>
-            <li><input type="checkbox"> Add AI Influencer Gig to Fiverr</li>
-        </ul>
-    </div> 
-
-    <div class="section">
-        <h2>6. Training & Mentorships</h2>
-        <ul>
-            <li><input type="checkbox"> Add 交易 Training/Mentorships link on index.html</li>
-            <li><input type="checkbox"> Add Training/Mentorships page (with details, contact info, and testimonials in 中文)</li>
-            <li><input type="checkbox"> Create an English version of the Training/Mentorships page</li>
-        </ul>
-    </div>
- 
-    <div class="section">
-        <h2>7. Additional Pages & Optimizations</h2>
-        <ul>
-            <li><input type="checkbox"> Add SMP page + optimized cropped hair image for FB</li>
-            <li><input type="checkbox"> Add Life Mentorships page + 1-on-1 consulting</li>
-            <li><input type="checkbox"> Add "Books Published" page (Life, Marketing, Trading, D-Code, etc.)</li>
-            <li><input type="checkbox"> Add "Businesses" page (Siamaya, SMP, Media, etc.)</li>
-            <li><input type="checkbox"> Add "Language Tutor" page + link to language learning book</li>
-            <li><input type="checkbox" checked disabled><s> Optimize image sizes on index.html</s></li>
-        </ul>
+    <div class="hero-right">
+      <img
+        src="images/me/chartdon.jpg"
+        alt="董夏庭 Don Hartig — 国际交易主题演讲嘉宾"
+        class="hero-photo"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <!-- Gold frame accent -->
+      <div class="hero-photo-frame" aria-hidden="true"></div>
     </div>
 
-    <div class="section">
-        <h2>8. Trader Trainer/Speaker</h2>
-        <ul>
-            <li><input type="checkbox"> Fix primary and secondary image scaling issues</li>
-            <li><input type="checkbox"> Adjust or remove clients section below</li>
-            <li><input type="checkbox"> Consider placing (another) image in header (such as "chineseeventdonright.png")</li>
-            <li><input type="checkbox"> Fix text in the "ticker-bar" not being horizontally centered.</li>
-            <li><input type="checkbox"> Consider adding "7 language intro video" and Silubium intro video and 非常勿扰 videos to page</li>
-            <li><input type="checkbox"> Add Senior Producer at Businext Dubai to header intro section</li>
-            <li><input type="checkbox"> Upscale images.</li>
-            <li><input type="checkbox"> Add images to gallery section / or remove gallery section</li>
-        </ul>
+    <!-- deco -->
+    <div class="deco-lines" aria-hidden="true">
+      <div class="deco-line" style="width:120px"></div>
+      <div class="deco-line" style="width:80px"></div>
+      <div class="deco-line" style="width:40px"></div>
+      <div class="deco-line" style="width:100px"></div>
+      <div class="deco-line" style="width:60px"></div>
     </div>
+  </section>
 
-    <div class="section">
-        <h2>Considerations / Future Ideas</h2>
-        <ul>
-            <li><input type="checkbox" checked disabled><s>Change "Marketing" title on index.html to "Management"</s></li>
-            <li><input type="checkbox"> Add "Video Marketing" section to Management page</li> 
-            <li><input type="checkbox"> Consider creating ONE BIG CV that includes everything (+ PDF version)</li>
-            <li><input type="checkbox"> Consider adding a "blog" section - op-eds, etc.</li>
-            <li><input type="checkbox"> Add dedicated "Technical Writing" page</li>
-            <li><input type="checkbox"> Add "Coded by Don Hartig" footer to every page</li>
-            <li><input type="checkbox"> Fix overlapping 预约演讲 button. </li>
-        </ul>
+  <!-- TICKER -->
+  <div class="ticker-bar" aria-hidden="true">
+    <div class="ticker-track">
+      <!-- repeated x2 for seamless loop -->
+      <span class="ticker-item">加密货币演讲嘉宾</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">外汇交易培训</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">股票市场主题演讲</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">平台推广活动</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">普通话・英语・德语</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Crypto Speaker</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Forex Training</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">10+ Years Experience</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">加密货币演讲嘉宾</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">外汇交易培训</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">股票市场主题演讲</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">平台推广活动</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">普通话・英语・德语</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Crypto Speaker</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Forex Training</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">10+ Years Experience</span><span class="ticker-dot">◆</span>
     </div>
+  </div>
 
-
-    <div class="section">
-        <h2>3. Multilingual Versions</h2>
-        <ul>
-            <li><input type="checkbox"> Create a Chinese version of index.html</li>
-            <li><input type="checkbox"> Create a Chinese version of marketing.html</li>
-            <li><input type="checkbox"> Create a Chinese version of localisation.html</li>
-            <li><input type="checkbox"> Create a Chinese version of writing.html</li>
-            <li><input type="checkbox"> Create Chinese versions of the other pages</li>
-            <li><input type="checkbox"> Create a German version of index.html</li>
-            <li><input type="checkbox"> Create a German version of marketing.html</li>
-            <li><input type="checkbox"> Create a German version of localisation.html</li>
-            <li><input type="checkbox"> Create a German version of writing.html</li>
-            <li><input type="checkbox"> Create German versions of the other pages</li>
-        </ul>
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-stack reveal">
+          <div class="about-img-main" role="img" aria-label="董夏庭演讲现场">
+             <img src="images/me/blockchaineventdonright.png" alt="董夏庭演讲现场">
+          </div>
+          <div class="about-img-secondary" role="img" aria-label="董夏庭近景照片">
+            <img src="images/me/chartdon.jpg" alt="董夏庭近景照片" style="width:100%; height:100%;">
+          </div>
+          <div class="about-badge">
+            <span class="about-badge-num">10+</span>
+            <span class="about-badge-text">年行业深耕</span>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <div class="section-label">关于董夏庭</div>
+          <h2 id="about-heading">金融市场<br /><span class="gold">国际演讲大师</span></h2>
+          <p>
+            Don Hartig（董夏庭）是一位<strong>普通话流利的国际多语种主题演讲嘉宾</strong>，
+            拥有超过10年在加密货币、外汇及股票交易行业的深厚积累。
+            他曾先后担任<strong>资深交易员、区块链专家、交易平台开发者，
+            以及多家金融科技企业的市场总监（Senior Marketing Manager）
+            与公关负责人（Head of PR）</strong>。
+          </p>
+          <p>
+            凭借横跨技术、市场与传播的复合背景，董夏庭能够在台上以
+            <strong>中英德三语无缝切换</strong>，用最接地气的方式
+            向中文受众深入浅出地讲解复杂的交易概念与平台优势，
+            帮助合作品牌在目标市场<strong>快速建立信任、激发用户转化</strong>。
+          </p>
+          <p>
+            无论是大型行业峰会、平台发布活动、线上培训直播，
+            还是品牌路演与客户教育工作坊，
+            董夏庭都能提供量身定制的高水准演讲与主持服务。
+          </p>
+          <div class="expertise-tags">
+            <span class="tag highlight">加密货币</span>
+            <span class="tag highlight">外汇 FX</span>
+            <span class="tag highlight">股票交易</span>
+            <span class="tag">交易平台推广</span>
+            <span class="tag">DeFi / Web3</span>
+            <span class="tag">市场分析</span>
+            <span class="tag">风险管理</span>
+            <span class="tag highlight">普通话演讲</span>
+            <span class="tag">品牌公关</span>
+            <span class="tag">用户培训</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <p class="note">
-        Tip: Check the boxes as you complete tasks. You can also add a "Download as PDF" button later using JavaScript.
-    </p>
+  <!-- CLIENTS / BRANDS -->
+  <section id="clients" aria-label="合作品牌类型">
+    <div class="container">
+      <div class="clients-header">
+        <div class="section-label" style="justify-content:center; margin-bottom:0.8rem;">曾服务品牌类型</div>
+        <p>为全球领先交易平台及金融科技企业提供专业演讲与培训服务</p>
+      </div>
+      <div class="brands-row" role="list">
+        <div class="brand-pill" role="listitem">Bitget</div>
+        <div class="brand-pill" role="listitem">Bybit</div>
+        <div class="brand-pill" role="listitem">Kraken</div>
+        <div class="brand-pill" role="listitem">MH Markets</div>
+        <div class="brand-pill" role="listitem">OKX</div>
+        <div class="brand-pill" role="listitem">Binance</div>
+        <div class="brand-pill" role="listitem">Gate.io</div>
+        <div class="brand-pill" role="listitem">Huobi / HTX</div>
+      </div>
+    </div>
+  </section>
 
+  <!-- SERVICES -->
+  <section id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="services-header reveal">
+        <div class="section-label" style="justify-content:center;">演讲与培训服务</div>
+        <h2 id="services-heading">专为交易平台设计的<br /><span class="gold">高影响力演讲方案</span></h2>
+        <p>每一场演讲都经过精心策划，确保品牌信息精准传达，受众深度参与。</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-num">01</div>
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+          </svg>
+          <h3 class="service-title">交易平台品牌推广演讲</h3>
+          <p class="service-desc">
+            以专业可信的形象，为您的交易平台进行深度推广演讲。
+            从平台功能解析到市场定位，帮助潜在用户建立信任、
+            激励注册与开户行动。适用于线下活动、展会及线上直播。
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">02</div>
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          <h3 class="service-title">用户教育与交易培训</h3>
+          <p class="service-desc">
+            为新用户及潜在客户提供系统化交易入门培训，
+            涵盖加密货币基础、外汇市场逻辑、技术分析工具与风险管理策略。
+            以中文授课，内容生动实用，显著提升用户留存率与活跃度。
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">03</div>
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+          </svg>
+          <h3 class="service-title">行业峰会主旨演讲</h3>
+          <p class="service-desc">
+            受邀出席金融科技、区块链与数字资产领域的顶级峰会，
+            以权威视角分享市场趋势与前沿洞察。
+            为您的品牌背书，在行业内树立专家形象与话语权。
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">04</div>
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+          <h3 class="service-title">线上直播与网络研讨</h3>
+          <p class="service-desc">
+            专业主持线上交易培训直播、平台发布会与市场分析直播间。
+            流畅的中英双语互动，有效触达全球华人交易社群，
+            最大化品牌曝光与用户互动。
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">05</div>
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <h3 class="service-title">VIP客户专属活动</h3>
+          <p class="service-desc">
+            为高净值交易者及VIP客户群体策划与主持专属深度活动，
+            提供私密圆桌对话、一对一市场解析及高端客户关系维护，
+            有效提升客户忠诚度与平台黏性。
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">06</div>
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <h3 class="service-title">内容营销与品牌公关</h3>
+          <p class="service-desc">
+            凭借资深市场总监与公关负责人背景，提供演讲内容策划、
+            品牌故事叙述与媒体关系管理，将每一场活动转化为
+            可持续发酵的品牌营销事件。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF / METRICS -->
+  <section id="social-proof" aria-label="数据与成就">
+    <div class="container">
+      <div class="proof-inner">
+        <div class="section-label" style="justify-content:center; margin-bottom:2rem;">口碑见证</div>
+        <blockquote class="proof-quote reveal">
+          "董夏庭是我们合作过的最专业的交易主题演讲嘉宾。
+          他以普通话流利与深厚的金融市场知识，
+          让我们的新客户培训活动取得了创纪录的转化率。"
+        </blockquote>
+        <div class="proof-attr reveal">— 亚太区交易平台合作方负责人</div>
+        <div class="proof-metrics reveal">
+          <div class="metric-box">
+            <span class="metric-num">10+</span>
+            <span class="metric-label">年交易行业经验</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-num">7</span>
+            <span class="metric-label">流利语言</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-num">10+</span>
+            <span class="metric-label">品牌合作案例</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-num">全球</span>
+            <span class="metric-label">多地区演讲足迹</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section id="industries" aria-labelledby="industries-heading">
+    <div class="container">
+      <div class="ind-header reveal">
+        <div class="section-label" style="justify-content:center;">专注行业领域</div>
+        <h2 id="industries-heading">深耕三大<span class="gold">核心交易市场</span></h2>
+      </div>
+      <div class="ind-cards">
+        <div class="ind-card reveal">
+          <div class="ind-icon-bg" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="ind-title">加密货币 &amp; 数字资产</h3>
+          <p class="ind-desc">
+            深度参与比特币、以太坊及主流山寨币市场超过10年，
+            精通DeFi、NFT、Web3及区块链底层技术。
+            为加密交易所、钱包平台及数字资产公司提供专业演讲与用户教育。
+          </p>
+          <div class="ind-clients">适合平台：Bitget · Bybit · Kraken · OKX · Binance</div>
+        </div>
+        <div class="ind-card reveal">
+          <div class="ind-icon-bg" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6h18M3 10h18M3 14h18M3 18h18"/>
+            </svg>
+          </div>
+          <h3 class="ind-title">外汇 &amp; 差价合约</h3>
+          <p class="ind-desc">
+            具备外汇市场实战交易经验，深刻理解零售FX生态与券商运营逻辑。
+            能够以中文为目标客户解析汇率机制、杠杆策略与风险管理，
+            有效提升新客开户转化率。
+          </p>
+          <div class="ind-clients">适合平台：MH Markets · IC Markets · Pepperstone 类型券商</div>
+        </div>
+        <div class="ind-card reveal">
+          <div class="ind-icon-bg" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="ind-title">股票 &amp; 证券投资</h3>
+          <p class="ind-desc">
+            覆盖A股、港股、美股及全球股票市场，
+            为证券公司及股票交易应用提供投资者教育活动，
+            帮助普通投资者建立正确的价值投资理念与交易纪律。
+          </p>
+          <div class="ind-clients">适合平台：证券券商 · 股票交易APP · 投资教育机构</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages" aria-labelledby="lang-heading">
+    <div class="container">
+      <div class="lang-grid">
+        <div class="lang-content reveal">
+          <div class="section-label">语言能力</div>
+          <h2 id="lang-heading">以<span class="gold">母语级中文</span><br />直达目标受众</h2>
+          <p>
+            在全球化金融市场中，语言是建立信任的第一道桥梁。
+            董夏庭<strong>普通话流利，接近母语水平</strong>，
+            能够以最自然、最具感染力的方式与华人交易者进行直接沟通。
+          </p>
+          <p>
+            这意味着您的品牌信息不会在翻译中流失，
+            潜在用户能够真正感受到<strong>被理解与被尊重</strong>，
+            从而大幅提升演讲现场的信任度与转化效果。
+          </p>
+        </div>
+        <div class="lang-bars reveal">
+          <div class="lang-item">
+            <div class="lang-name">
+              <span class="lang-name-text">普通话中文</span>
+              <span class="lang-level">流利 · 接近母语</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill" style="width:95%;animation-delay:0.1s"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name">
+              <span class="lang-name-text">英语</span>
+              <span class="lang-level">母语</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill" style="width:100%;animation-delay:0.3s"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-name">
+              <span class="lang-name-text">德语</span>
+              <span class="lang-level">流利</span>
+            </div>
+            <div class="lang-bar-track">
+              <div class="lang-bar-fill" style="width:82%;animation-delay:0.5s"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE TIMELINE -->
+  <section id="experience" aria-labelledby="exp-heading">
+    <div class="container">
+      <div class="exp-header reveal">
+        <div class="section-label" style="justify-content:center;">从业经历</div>
+        <h2 id="exp-heading">超过10年的<span class="gold">行业深耕</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="tl-content">
+            <div class="tl-year">2014 — 2016</div>
+            <div class="tl-role">专业交易员</div>
+            <div class="tl-desc">进入加密货币与外汇市场，开始系统化研究技术分析、量化交易策略及市场心理学，建立扎实的实战交易基础。</div>
+          </div>
+          <div class="tl-empty"></div>
+          <div class="tl-dot"></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-empty"></div>
+          <div class="tl-content">
+            <div class="tl-year">2016 — 2018</div>
+            <div class="tl-role">区块链专家 &amp; 交易平台开发者</div>
+            <div class="tl-desc">深入参与区块链底层技术研究与交易平台开发工作，积累横跨技术与业务的复合型专业能力，为日后的行业演讲奠定知识基础。</div>
+          </div>
+          <div class="tl-dot"></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-content">
+            <div class="tl-year">2018 — 2020</div>
+            <div class="tl-role">市场总监 (Senior Marketing Manager)</div>
+            <div class="tl-desc">主导多家金融科技企业的市场推广战略，制定面向亚太区用户的增长方案，显著提升品牌知名度与用户获取效率。</div>
+          </div>
+          <div class="tl-empty"></div>
+          <div class="tl-dot"></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-empty"></div>
+          <div class="tl-content">
+            <div class="tl-year">2020 — 2022</div>
+            <div class="tl-role">公关负责人 (Head of PR)</div>
+            <div class="tl-desc">负责企业媒体关系、危机公关与行业峰会演讲代表工作，建立与亚太区各大金融媒体及行业组织的深度合作关系。</div>
+          </div>
+          <div class="tl-dot"></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-content">
+            <div class="tl-year">2022 — 至今</div>
+            <div class="tl-role">国际主题演讲嘉宾 &amp; 交易顾问</div>
+            <div class="tl-desc">专注为全球领先交易平台与金融科技公司提供量身定制的主题演讲、用户培训及品牌推广活动，以普通话为核心语言深耕华人市场。</div>
+          </div>
+          <div class="tl-empty"></div>
+          <div class="tl-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <div>
+          <div class="section-label">演讲现场</div>
+          <h2 id="gallery-heading">舞台上的<span class="gold">专业风采</span></h2>
+        </div>
+        <a href="#contact" class="btn-secondary">预约演讲 →</a>
+      </div>
+      <div class="gallery-grid" role="list">
+        <div class="gallery-cell reveal" role="listitem">
+          <div class="gallery-img" style="background-image:url('images/me/don-hartig-stage-main.jpg')" role="img" aria-label="董夏庭主舞台演讲">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <p>images/me/don-hartig-stage-main.jpg</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-cell reveal" role="listitem">
+          <div class="gallery-img" style="background-image:url('images/me/don-hartig-audience.jpg')" role="img" aria-label="演讲现场与听众互动">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <p>images/me/don-hartig-audience.jpg</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-cell reveal" role="listitem">
+          <div class="gallery-img" style="background-image:url('images/me/don-hartig-conference.jpg')" role="img" aria-label="行业峰会演讲">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <p>images/me/don-hartig-conference.jpg</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-cell reveal" role="listitem">
+          <div class="gallery-img" style="background-image:url('images/me/don-hartig-panel.jpg')" role="img" aria-label="圆桌讨论">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <p>images/me/don-hartig-panel.jpg</p>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-cell reveal" role="listitem">
+          <div class="gallery-img" style="background-image:url('images/me/don-hartig-training.jpg')" role="img" aria-label="培训活动现场">
+            <div class="gallery-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <p>images/me/don-hartig-training.jpg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left reveal">
+          <div class="section-label">立即联系</div>
+          <h2 id="contact-heading">预约您的<br /><span class="gold">专属演讲嘉宾</span></h2>
+          <p>
+            准备好为您的下一场活动带来顶级的交易演讲体验了吗？
+            请填写右侧表单，或通过以下方式直接与董夏庭团队取得联系。
+            我们将在24小时内回复您的咨询。
+          </p>
+          <ul class="contact-info-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              don@donhartig.com
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              微信 / WeChat：Dongxiating
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+              全球接受邀约 · 线上线下均可
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+              服务语言：普通话 · 英语 · 德语
+            </li>
+          </ul>
+        </div>
+        <div class="contact-form reveal" role="form" aria-label="演讲预约表单">
+          <div class="form-group">
+            <label class="form-label" for="company">公司 / 平台名称</label>
+            <input class="form-input" type="text" id="company" name="company" placeholder="例：Bybit、MH Markets..." autocomplete="organization" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="name">联系人姓名</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="您的姓名" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">电子邮箱</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="your@company.com" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="event">活动类型 &amp; 时间</label>
+            <input class="form-input" type="text" id="event" name="event" placeholder="例：平台发布会 · 2025年8月" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">活动详情与需求</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="请描述您的活动规模、受众群体及对演讲嘉宾的具体期望..."></textarea>
+          </div>
+          <button class="form-submit" type="button" onclick="handleSubmit()">发送预约申请</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div class="footer-logo">Don Hartig <span>董夏庭</span></div>
+      <div class="footer-note">© 2026 Don Hartig · 国际交易主题演讲嘉宾</div>
+      <ul class="footer-links">
+        <li><a href="#about">关于</a></li>
+        <li><a href="#services">服务</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    /* ── SCROLL REVEAL ── */
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(r => io.observe(r));
+
+    /* ── NAV SCROLL EFFECT ── */
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 60
+        ? 'rgba(7,13,26,0.97)'
+        : 'rgba(7,13,26,0.85)';
+    }, { passive: true });
+
+    /* ── LANGUAGE BARS (trigger on scroll) ── */
+    const langSection = document.getElementById('languages');
+    const barsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.lang-bar-fill').forEach((bar, i) => {
+            bar.style.animationDelay = (i * 0.2 + 0.1) + 's';
+            bar.style.animationPlayState = 'running';
+          });
+          barsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    if (langSection) barsObserver.observe(langSection);
+    // Pause bars initially
+    document.querySelectorAll('.lang-bar-fill').forEach(b => b.style.animationPlayState = 'paused');
+
+    /* ── FORM SUBMIT ── */
+    function handleSubmit() {
+      const company = document.getElementById('company').value.trim();
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      if (!company || !name || !email) {
+        alert('请填写公司名称、联系人及电子邮箱。');
+        return;
+      }
+      const btn = document.querySelector('.form-submit');
+      btn.textContent = '✓ 申请已发送，我们将尽快与您联系！';
+      btn.style.background = '#2D7D46';
+      btn.disabled = true;
+    }
+
+    /* ── SMOOTH ANCHOR ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
