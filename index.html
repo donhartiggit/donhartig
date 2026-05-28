@@ -1,998 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Don Hartig — Senior Product Manager · Crypto & Web3</title>
-<!-- Favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="MC-COEEIzavbIoTHTt6DkGeQp29IBH4Kg4PiQFxEFmo">
+    <title>Don Hartig CV</title>
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --black: #090c10;
-    --surface: #0e1218;
-    --card: #141921;
-    --border: #1e2730;
-    --border-bright: #2a3545;
-    --gold: #c9a84c;
-    --gold-light: #e8c97a;
-    --gold-dim: rgba(201,168,76,0.15);
-    --teal: #4cc9c9;
-    --teal-dim: rgba(76,201,201,0.12);
-    --white: #f0ede6;
-    --muted: #8a97a8;
-    --text: #d4cfc7;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--black);
-    color: var(--text);
-    font-family: 'Lora', Georgia, serif;
-    font-size: 15px;
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  /* ── GRID NOISE TEXTURE ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px),
-      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .page {
-    position: relative;
-    z-index: 1;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 28px 80px;
-  }
-
-  /* ── HERO HEADER ── */
-  header {
-    padding: 72px 0 56px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-
-  header::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 180px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  .header-inner {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 40px;
-    align-items: end;
-  }
-
-  /* ── PROFILE PHOTO ── */
-  .profile-photo-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 4px;
-  }
-
-  .profile-photo {
-    width: 108px;
-    height: 108px;
-    border-radius: 2px;
-    object-fit: cover;
-    object-position: center top;
-    border: 1px solid var(--border-bright);
-    box-shadow:
-      0 0 0 4px var(--black),
-      0 0 0 5px var(--gold),
-      0 12px 40px rgba(0,0,0,0.6);
-    display: block;
-    filter: grayscale(15%) contrast(1.05);
-    transition: filter 0.3s;
-  }
-
-  .profile-photo:hover {
-    filter: grayscale(0%) contrast(1.08);
-  }
-
-  .eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 18px;
-  }
-
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(44px, 7vw, 72px);
-    font-weight: 800;
-    line-height: 0.95;
-    color: var(--white);
-    letter-spacing: -0.03em;
-  }
-
-  h1 span {
-    display: block;
-    color: var(--gold);
-  }
-
-  .title-line {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 22px;
-    border-left: 2px solid var(--gold);
-    padding-left: 14px;
-  }
-
-  .contact-block {
-    text-align: right;
-    font-family: 'DM Mono', monospace;
-    font-size: 11.5px;
-    line-height: 2.1;
-    color: var(--muted);
-  }
-
-  .contact-block a {
-    color: var(--teal);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .contact-block a:hover { color: var(--gold-light); }
-
-  .contact-label {
-    color: white;
-    margin-right: 6px;
-  }
-
-  /* ── AVAILABILITY BADGE ── */
-  .avail {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--gold-dim);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 2px;
-    padding: 6px 14px;
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: lime;
-    margin-bottom: 28px;
-  }
-
-  .avail::before {
-    content: '';
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--gold);
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.75); }
-  }
-
-  /* ── SUMMARY ── */
-  .summary {
-    padding: 48px 0 0;
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: 48px;
-    align-items: start;
-  }
-
-  .summary-text p {
-    font-size: 16px;
-    color: var(--text);
-    line-height: 1.85;
-  }
-
-  .summary-text p + p { margin-top: 16px; }
-
-  .stat-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .stat {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--gold);
-    padding: 16px 20px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .stat::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 40px; height: 100%;
-    background: linear-gradient(to left, rgba(201,168,76,0.04), transparent);
-  }
-
-  .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* ── SECTION STRUCTURE ── */
-  .section {
-    margin-top: 60px;
-  }
-
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-bottom: 32px;
-  }
-
-  .section-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    margin-top: 2px;
-  }
-
-  h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--white);
-  }
-
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, var(--border-bright), transparent);
-  }
-
-  /* ── EXPERIENCE CARDS ── */
-  .exp-item {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 32px;
-    padding: 32px 0;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-
-  .exp-item:last-child { border-bottom: none; }
-
-  .exp-meta {
-    padding-top: 3px;
-  }
-
-  .exp-period {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-  }
-
-  .exp-company {
-    font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-
-  .exp-location {
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-  }
-
-  .exp-tag {
-    display: inline-block;
-    margin-top: 12px;
-    background: var(--teal-dim);
-    border: 1px solid rgba(76,201,201,0.2);
-    color: var(--teal);
-    font-family: 'DM Mono', monospace;
-    font-size: 9.5px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 1px;
-  }
-
-  .exp-role {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 14px;
-    line-height: 1.2;
-  }
-
-  .exp-body ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-  }
-
-  .exp-body li {
-    padding-left: 20px;
-    position: relative;
-    font-size: 14.5px;
-    color: var(--text);
-    line-height: 1.65;
-  }
-
-  .exp-body li::before {
-    content: '◆';
-    position: absolute;
-    left: 0;
-    top: 5px;
-    font-size: 6px;
-    color: var(--gold);
-    line-height: 1;
-  }
-
-  /* highlight important keywords */
-  .exp-body strong {
-    color: var(--white);
-    font-weight: 500;
-  }
-
-  /* ── SKILLS MATRIX ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-
-  .skill-group {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 24px 22px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skill-group::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: linear-gradient(to right, var(--gold), transparent);
-  }
-
-  .skill-group-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
-
-  .skill-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .skill-list li {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--text);
-    padding-left: 14px;
-    position: relative;
-  }
-
-  .skill-list li::before {
-    content: '─';
-    position: absolute;
-    left: 0;
-    color: var(--border-bright);
-  }
-
-  /* ── CRYPTO DOMAIN STRIP ── */
-  .domain-strip {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--teal);
-    padding: 28px 32px;
-    margin-top: 2px;
-  }
-
-  .domain-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 16px;
-  }
-
-  .tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tag {
-    background: rgba(76,201,201,0.07);
-    border: 1px solid rgba(76,201,201,0.18);
-    color: var(--teal);
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    padding: 5px 12px;
-    border-radius: 1px;
-    letter-spacing: 0.05em;
-  }
-
-  .tag.gold {
-    background: var(--gold-dim);
-    border-color: rgba(201,168,76,0.25);
-    color: var(--gold-light);
-  }
-
-  /* ── LANGUAGES ── */
-  .lang-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-  }
-
-  .lang-item {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 20px 18px;
-    text-align: center;
-  }
-
-  .lang-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-
-  .lang-level {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .lang-level.native { color: var(--gold); }
-  .lang-level.fluent { color: var(--teal); }
-
-  /* ── NOTABLE WORK ── */
-  .works-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-  }
-
-  .work-item {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 24px 26px;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.25s;
-  }
-
-  .work-item:hover {
-    border-color: var(--border-bright);
-  }
-
-  .work-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    margin-bottom: 10px;
-    letter-spacing: 0.1em;
-  }
-
-  .work-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-
-  .work-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  .work-item a {
-    display: inline-block;
-    margin-top: 12px;
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    color: var(--teal);
-    text-decoration: none;
-    letter-spacing: 0.1em;
-  }
-
-  .work-item a:hover { color: var(--gold); }
-
-  /* ── FOOTER ── */
-  footer {
-    margin-top: 72px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 13px;
-    color: var(--white);
-    letter-spacing: 0.08em;
-  }
-
-  .footer-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  header { animation: fadeUp 0.6s ease both; }
-  .summary { animation: fadeUp 0.6s 0.1s ease both; }
-  .section { animation: fadeUp 0.6s 0.2s ease both; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 720px) {
-    .header-inner { grid-template-columns: 1fr; }
-    .profile-photo-wrap { flex-direction: row; justify-content: flex-start; }
-    .contact-block { text-align: left; }
-    .summary { grid-template-columns: 1fr; }
-    .stat-stack { flex-direction: row; flex-wrap: wrap; }
-    .stat { flex: 1; min-width: 120px; }
-    .exp-item { grid-template-columns: 1fr; gap: 16px; }
-    .skills-grid { grid-template-columns: 1fr; }
-    .lang-grid { grid-template-columns: repeat(2, 1fr); }
-    .works-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 12px; text-align: center; }
-  }
-
-  /* ── PRINT ── */
-  @media print {
-    body { background: white; color: #111; }
-    body::before { display: none; }
-    .avail::before { animation: none; }
-  }
-</style>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&amp;family=Aldrich&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: slategray;
+            color: white;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #E0E0E0;
+        }
+
+        main {
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .indexgrid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .cell {
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            width: 240px;
+            position: relative; /* Needed for z-index on hover */
+            transition: transform 0.3s ease; /* Smooth animation */
+        }
+
+        /* Hover effect */
+        .cell:hover {
+            transform: scale(1.05); /* Expands the link slightly */
+            z-index: 10; /* Keeps the expanded link above others */
+        }
+
+        .celltitle {
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            font-size: 1 rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cell:hover .celltitle {
+            color: aqua; /* Changes title from blue to aqua when hovered */
+        }
+
+        .cellimg {
+            width: 100%;
+            max-width: 200px;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+            border: 4px solid black;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: black;
+            color: lime;
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        footer a {
+            color: aqua;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .indexgrid {
+                gap: 1.8rem;
+            }
+            .cellimg {
+                height: 270px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .cell {
+                width: 100%; 
+                max-width: 280px;
+            }
+            .cellimg {
+                max-width: 220px;
+                height: 290px;
+            }
+        }            
+    </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- HEADER -->
-  <header>
-    <div class="avail">Available</div>
-    <div class="header-inner">
-      <div>
-        <div class="eyebrow">Senior Product Manager · Crypto · Web3 · DeFi</div>
-        <h1>Don<span>Hartig</span></h1>
-        <div class="title-line">Blockchain Architect · Crypto PM · Multi-Chain Product Strategy</div>
-      </div>
-      <div class="profile-photo-wrap">
-        <img src="images/me/newdonsmile.jpg" alt="Don Hartig" class="profile-photo">
-      </div>
-      <div class="contact-block">
-        <div><span class="contact-label">EMAIL</span><a href="mailto:don@donhartig.com">don@donhartig.com</a></div>
-        <div><span class="contact-label">WEB</span><a href="https://donhartig.com" target="_blank">donhartig.com</a></div>
-        <div><span class="contact-label">LINKEDIN</span><a href="https://linkedin.com/in/donhartig" target="_blank">linkedin.com/in/donhartig</a></div>
-        <div><span class="contact-label">UPWORK</span><a href="https://www.upwork.com/o/profiles/users/~01ea8f586089ac90e3/" target="_blank">5★ Verified</a></div>
-      </div>
-    </div>
-  </header>
+    <header>
+        <h1><u>Don Hartig</u></h1>
+        <h2>CVs &amp; Portfolios</h2>
+    </header>
 
-  <!-- SUMMARY -->
-  <div class="summary">
-    <div class="summary-text">
-      <p>
-        Senior crypto product professional with <strong>11+ years</strong> driving product strategy, content operations, and blockchain product development at top-tier exchanges and Web3 platforms. Founder of the <strong>Silubium ("四路币")</strong> blockchain project, serving as <strong>Engineering Team Lead and CMO</strong> — personally overseeing the design and architecture of a full blockchain feature set, wallet, and public ledger from concept through to ICO and mainnet launch.
-      </p>
-      <p>
-        Hands-on experience managing product pipelines at <strong>Bitget (top-10 global CEX)</strong>, providing UI/UX optimisation recommendations for the <em>Bitget Insights</em> social trading app pre-launch, and translating complex blockchain concepts into clear product specifications and documentation. A full-stack developer who builds with <strong>HTML, CSS, JavaScript, React, Node.js, and REST APIs</strong> — able to communicate fluently with engineering teams on technically complex features.
-      </p>
-      <p>
-        10+ years as a crypto market participant, fluent in <strong>7 languages</strong>, with a particular edge in Asian markets critical to global wallet adoption.
-      </p>
-    </div>
+    <main>
+        <div class="indexgrid">
+            <a href="management.html" class="cell">
+                <span class="celltitle">Marketing Management</span>
+                <img src="images/me/broodingdon.jpeg" alt="General CV" class="cellimg">
+            </a>
 
-    <div class="stat-stack">
-      <div class="stat">
-        <div class="stat-num">11+</div>
-        <div class="stat-label">Years Crypto Industry</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">7</div>
-        <div class="stat-label">Languages Fluent</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">40+</div>
-        <div class="stat-label">Web/App Projects Built</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">1</div>
-        <div class="stat-label">Blockchain Co-Founded</div>
-      </div>
-    </div>
-  </div>
+            <a href="productmanagement.html" class="cell">
+                <span class="celltitle">Product Management</span>
+                <img src="images/me/newdonsmile.jpg" alt="General CV" class="cellimg">
+            </a>
 
-  <!-- EXPERIENCE -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">01</span>
-      <h2>Product & Leadership Experience</h2>
-      <div class="section-line"></div>
-    </div>
+            <a href="writing.html" class="cell">
+                <span class="celltitle">Writing</span>
+                <img src="images/me/writerdon.jpeg" alt="Writing Portfolio" class="cellimg">
+            </a>
 
-    <!-- Bitget -->
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">2021 — 2022</div>
-        <div class="exp-company">Bitget</div>
-        <div class="exp-location">Remote · Full-time</div>
-        <div class="exp-tag">Top-10 Global CEX</div>
-      </div>
-      <div class="exp-body">
-        <div class="exp-role">Senior Content Operations Manager</div>
-        <ul>
-          <li>Built the Content Operations function <strong>from the ground up</strong> — restructured team roles, defined KPIs, set OKRs, and designed the end-to-end editorial workflow; a direct analogue to establishing PM process at a product-first company.</li>
-          <li>Provided <strong>UI/UX layout optimisation recommendations</strong> for the <em>Bitget Insights</em> social trading app pre-launch, working directly with the Product and BD teams to shape user experience decisions.</li>
-          <li>Assisted Product and BD teams with <strong>Mandarin Chinese → English localisation</strong> of product copy, UI/UX strings, press releases, and BD collateral — bridging the gap between technical requirements and user-facing language.</li>
-          <li>Managed a high-volume content pipeline (<strong>up to 40 posts per day</strong>) spanning technical analyses, listing announcements, and app updates — building rigorous quality standards across a distributed team.</li>
-          <li>Led hiring pipeline end-to-end: created recruitment forms, conducted interviews, and onboarded supervisors and writers within budget constraints.</li>
-          <li>Proactively brokered a <strong>strategic partnership</strong> with celebrity advertising agency NEON by leveraging an existing professional relationship — demonstrating an instinct for identifying growth opportunities.</li>
-        </ul>
-      </div>
-    </div>
+            <a href="localisation.html" class="cell">
+                <span class="celltitle">Localisation</span>
+                <img src="images/me/brownrem.jpeg" alt="Localisation Portfolio" class="cellimg">
+            </a>
 
-    <!-- Silubium -->
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">2017 — 2018</div>
-        <div class="exp-company">Silubium (丝路币)</div>
-        <div class="exp-location">China</div>
-        <div class="exp-tag">Blockchain Co-Founder</div>
-      </div>
-      <div class="exp-body">
-        <div class="exp-role">Co-Founder · Blockchain Systems Architect · CMO</div>
-        <ul>
-          <li>Co-designed the <strong>full Silubium blockchain feature set and rule architecture</strong> — responsible for defining what the chain could do, how it would behave, and how its components (source code, wallet, public ledger "Silkchain") fit together.</li>
-          <li>Served as <strong>Engineering Team Lead</strong> across two parallel development teams, overseeing the wallet application and public ledger from specification through to launch — the core product management function of a blockchain startup.</li>
-          <li>Directed the full international <strong>ICO marketing campaign</strong> end-to-end, from whitepaper to token go-live — managing timelines, deliverables, and cross-functional stakeholders across two countries and two languages.</li>
-          <li>Delivered keynote speeches at all ICO funding events in China, in Mandarin, translating highly technical blockchain concepts for investor audiences.</li>
-          <li>Produced bilingual video and advertising content for Chinese and international markets.</li>
-        </ul>
-      </div>
-    </div>
+            <a href="development.html" class="cell">
+                <span class="celltitle">Development</span>
+                <img src="images/me/posedon.jpeg" alt="Development Portfolio" class="cellimg">
+            </a>
 
-    <!-- Businext -->
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">2023 — 2024</div>
-        <div class="exp-company">Businext</div>
-        <div class="exp-location">Dubai, UAE · On-site</div>
-        <div class="exp-tag">Crypto & DeFi Media</div>
-      </div>
-      <div class="exp-body">
-        <div class="exp-role">Senior Producer — Crypto, DeFi & FinTech</div>
-        <ul>
-          <li>Led a cross-functional team producing daily long-form content on <strong>crypto, DeFi, blockchain, Web3, and FinTech</strong> — owning the full content calendar, editorial strategy, and team output quality.</li>
-          <li>Conducted on-camera interviews and produced video content across TikTok, X, and Instagram on crypto trends and market stories.</li>
-          <li>Recruited and hired writers, journalists, on-screen presenters, and KOL partners — implementing workflow and content distribution strategies to improve engagement metrics.</li>
-        </ul>
-      </div>
-    </div>
+            <a href="video.html" class="cell">
+                <span class="celltitle">Video Marketing</span>
+                <img src="images/me/artdon.jpeg" alt="Video Marketing" class="cellimg">
+            </a>
 
-    <!-- Antarctic Exchange -->
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">2025 — Present</div>
-        <div class="exp-company">Antarctic Exchange</div>
-        <div class="exp-location">Remote</div>
-        <div class="exp-tag">Crypto Exchange</div>
-      </div>
-      <div class="exp-body">
-        <div class="exp-role">Web Localiser · Language Optimiser · Social Media Producer</div>
-        <ul>
-          <li>Performed <strong>full-scope localisation of the exchange website</strong> from Chinese to English, optimising all copy for English-speaking market tone, idiom, and SEO intent.</li>
-          <li>Authored SEO-optimised CTA articles and daily social media content to drive inbound user acquisition.</li>
-        </ul>
-      </div>
-    </div>
+            <a href="trading.html" class="cell">
+                <span class="celltitle"><b>交易研讨会</b></span>
+                <img src="images/me/chartdon.jpg" alt="Trading Training" class="cellimg">
+            </a>
+        </div>
+    </main>
 
-    <!-- Singularity -->
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">2020 — 2021</div>
-        <div class="exp-company">Singularity</div>
-        <div class="exp-location">Singapore</div>
-        <div class="exp-tag">Web3 Gaming</div>
-      </div>
-      <div class="exp-body">
-        <div class="exp-role">Social Media & Marketing Localisation Manager</div>
-        <ul>
-          <li>Authored the full English-language <strong>whitepaper for the Singularity Metaverse</strong> — translating technical Web3 architecture into structured product documentation for a global audience.</li>
-          <li>Served as <strong>international PR contact and BD outreach lead</strong>, managing brand-to-partner communications for global markets.</li>
-          <li><em>Concurrent (Deer Network):</em> authored the full English whitepaper and performed complete website localisation.</li>
-        </ul>
-      </div>
-    </div>
+    <footer>
+        <p>Coded by <a href="https://www.donhartig.com">Don Hartig</a></p>
+    </footer>
 
-    <!-- Freelance -->
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">2018 — 2020</div>
-        <div class="exp-company">Freelance</div>
-        <div class="exp-location">Remote</div>
-        <div class="exp-tag">Multi-Client</div>
-      </div>
-      <div class="exp-body">
-        <div class="exp-role">Crypto Content & Technical Writer · Web Developer</div>
-        <ul>
-          <li>Delivered technical and marketing content for <strong>GSR, BingX, Blockchain Advocates, Coinformant, Antarctic Exchange</strong> and others — spanning whitepapers, technical analyses, product documentation, and educational guides.</li>
-          <li>Authored a legal considerations piece on <strong>Tokenized Asset Offerings</strong> for Blockchain Advocates — demonstrating command of regulatory and structural nuance in digital assets.</li>
-          <li>Began building web applications, accumulating <strong>40+ live projects</strong> across crypto, finance, e-commerce, and SaaS verticals.</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- CRYPTO DOMAIN EXPERTISE -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">02</span>
-      <h2>Crypto Domain Expertise</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="domain-strip">
-      <div class="domain-title">Blockchain & Protocol Knowledge</div>
-      <div class="tag-cloud">
-        <span class="tag">Bitcoin (BTC)</span>
-        <span class="tag">Ethereum (ETH)</span>
-        <span class="tag">Monero (XMR)</span>
-        <span class="tag">Solana (SOL)</span>
-        <span class="tag">Non-Custodial Wallets</span>
-        <span class="tag">Private Key Management</span>
-        <span class="tag">Multi-Chain UX</span>
-        <span class="tag">Blockchain Architecture</span>
-        <span class="tag">Tokenomics</span>
-        <span class="tag">ICO / IDO</span>
-        <span class="tag">DeFi Protocols</span>
-        <span class="tag">NFTs / Web3</span>
-        <span class="tag">CEX / DEX</span>
-        <span class="tag">Wallet UX</span>
-        <span class="tag">P2P Trading</span>
-        <span class="tag">Whitepaper Authorship</span>
-        <span class="tag">Market Making</span>
-        <span class="tag">Technical Analysis</span>
-      </div>
-    </div>
-
-    <div class="domain-strip" style="margin-top:2px; border-left-color: var(--gold);">
-      <div class="domain-title" style="color:var(--gold);">Product Management Competencies</div>
-      <div class="tag-cloud">
-        <span class="tag gold">Roadmap Ownership</span>
-        <span class="tag gold">KPI / OKR Definition</span>
-        <span class="tag gold">Cross-Functional Leadership</span>
-        <span class="tag gold">Feature Prioritisation</span>
-        <span class="tag gold">Product Requirements (PRDs)</span>
-        <span class="tag gold">UX Optimisation</span>
-        <span class="tag gold">Competitive Analysis</span>
-        <span class="tag gold">Go-to-Market Strategy</span>
-        <span class="tag gold">Team Building & Hiring</span>
-        <span class="tag gold">Agile / Iterative Delivery</span>
-        <span class="tag gold">Technical Documentation</span>
-        <span class="tag gold">Stakeholder Management</span>
-        <span class="tag gold">User Acquisition Funnels</span>
-        <span class="tag gold">Data-Driven Iteration</span>
-        <span class="tag gold">Post-Launch Analysis</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- TECHNICAL SKILLS -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">03</span>
-      <h2>Technical Skills</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-group">
-        <div class="skill-group-title">Development</div>
-        <ul class="skill-list">
-          <li>HTML5 / CSS3</li>
-          <li>JavaScript (ES6+)</li>
-          <li>React / Next.js</li>
-          <li>Node.js</li>
-          <li>REST APIs / GraphQL</li>
-          <li>Python</li>
-          <li>MySQL / PostgreSQL</li>
-          <li>MongoDB</li>
-          <li>Git / GitHub</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Product & Analytics</div>
-        <ul class="skill-list">
-          <li>Google Analytics</li>
-          <li>KPI Framework Design</li>
-          <li>A/B Testing</li>
-          <li>User Flow Analysis</li>
-          <li>Funnel Optimisation</li>
-          <li>SEO Strategy</li>
-          <li>UI/UX Feedback</li>
-          <li>Agile / Sprint Planning</li>
-          <li>Documentation Systems</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Platforms & Tools</div>
-        <ul class="skill-list">
-          <li>Google Workspace</li>
-          <li>Telegram / Discord</li>
-          <li>X / Twitter</li>
-          <li>Medium / Substack</li>
-          <li>GitHub</li>
-          <li>AWS / Cloud Hosting</li>
-          <li>WordPress / CMS</li>
-          <li>Upwork (5★ Verified)</li>
-          <li>TikTok / YouTube</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- LANGUAGES -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">04</span>
-      <h2>Language Capability</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="lang-grid">
-      <div class="lang-item">
-        <div class="lang-name">English</div>
-        <div class="lang-level native">Native</div>
-      </div>
-      <div class="lang-item">
-        <div class="lang-name">Mandarin</div>
-        <div class="lang-level fluent">Fluent · #3 Global</div>
-      </div>
-      <div class="lang-item">
-        <div class="lang-name">German</div>
-        <div class="lang-level fluent">Professional</div>
-      </div>
-      <div class="lang-item">
-        <div class="lang-name">+4 More</div>
-        <div class="lang-level">French · Spanish · Japanese · Dutch</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- NOTABLE WORK -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-num">05</span>
-      <h2>Selected Work & Writing</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="works-grid">
-      <div class="work-item">
-        <div class="work-num">01 · Bitget</div>
-        <div class="work-title">Bitget Insights — UX Feedback Report</div>
-        <div class="work-desc">Pre-launch UX review and optimisation recommendations for the Bitget Insights social trading app, delivered to the Product team.</div>
-        <a href="https://docs.google.com/document/d/1RLcMJL6dcONOwwo4mdZebn99ZWMF3OEaqYJWPCSz0nk/edit?usp=sharing" target="_blank">View Report →</a>
-      </div>
-      <div class="work-item">
-        <div class="work-num">02 · GSR</div>
-        <div class="work-title">The Benefits of Market Making</div>
-        <div class="work-desc">Professional analysis of crypto market-making strategies produced for GSR — one of the world's leading algorithmic trading firms.</div>
-        <a href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank">View PDF →</a>
-      </div>
-      <div class="work-item">
-        <div class="work-num">03 · Silubium</div>
-        <div class="work-title">Silubium Blockchain — Archived Project</div>
-        <div class="work-desc">Co-designed blockchain feature architecture, managed dual development teams (wallet + ledger), and led the ICO campaign to mainnet launch.</div>
-        <a href="http://donhartig.com/websites/silubium/silubium.html" target="_blank">View Archive →</a>
-      </div>
-      <div class="work-item">
-        <div class="work-num">04 · Deer Network</div>
-        <div class="work-title">Deer Network Whitepaper</div>
-        <div class="work-desc">Authored the complete English-language technical whitepaper for the Deer Network blockchain project, translating protocol design into structured documentation.</div>
-        <a href="https://drive.google.com/file/d/15FmqoB6RCUZJ0bydIeYRhM0Wc0vqy0LO/view?usp=drive_link" target="_blank">View Whitepaper →</a>
-      </div>
-      <div class="work-item">
-        <div class="work-num">05 · Singularity</div>
-        <div class="work-title">Singularity Metaverse Whitepaper</div>
-        <div class="work-desc">Full English whitepaper for the Singularity Web3 gaming platform — covering tokenomics, ecosystem design, and technical architecture.</div>
-        <a href="https://drive.google.com/file/d/14mKA1IS3XpkVvJQzoIDcxleDcv1nPJRu/view?usp=drive_link" target="_blank">View Whitepaper →</a>
-      </div>
-      <div class="work-item">
-        <div class="work-num">06 · Blockchain Advocates</div>
-        <div class="work-title">Tokenized Asset Offering — Legal Considerations</div>
-        <div class="work-desc">In-depth analysis of the legal and structural considerations for tokenized asset offerings — demonstrating command of regulatory frameworks in digital assets.</div>
-        <a href="https://docs.google.com/document/d/13dfcZKG_TFzYLbbjRzvrHGC42IGSQDxRAw15hwjjtJo/edit?usp=sharing" target="_blank">View Document →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-name">Don Hartig · don@donhartig.com</div>
-    <div class="footer-note">donhartig.com · Full-time Remote · Available Immediately</div>
-  </footer>
-
-</div>
 </body>
 </html>
