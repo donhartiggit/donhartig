@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USA Plumbing Service – Complete Plumbing & Rooter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1B2B;
+    --navy-mid: #122438;
+    --blue: #2196F3;
+    --blue-light: #42A5F5;
+    --amber: #F59E0B;
+    --white: #FFFFFF;
+    --gray-light: #F6F8FA;
+    --gray-mid: #E2E8F0;
+    --gray-text: #64748B;
+    --body-text: #334155;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--body-text);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11, 27, 43, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 1.35rem;
+    color: var(--white); letter-spacing: 0.02em;
+    text-transform: uppercase; text-decoration: none;
+  }
+  .nav-logo span { color: var(--blue); }
+
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none; font-size: 0.875rem; font-weight: 500;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    display: flex; align-items: center; gap: 0.5rem;
+    background: var(--amber); color: var(--navy);
+    font-weight: 700; font-size: 0.9rem; font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.55rem 1.25rem; border-radius: 4px;
+    text-decoration: none; transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: #FBBF24; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 7rem 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+
+  /* Animated pipe SVG background */
+  .hero-pipe {
+    position: absolute; inset: 0; pointer-events: none;
+    opacity: 0.07;
+  }
+
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(33, 150, 243, 0.15); border: 1px solid rgba(33,150,243,0.3);
+    color: var(--blue-light); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.35rem 0.85rem; border-radius: 100px; margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+  .hero-badge::before { content: ''; width: 7px; height: 7px; background: var(--blue); border-radius: 50%; animation: pulse 2s infinite; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.05; text-transform: uppercase; letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 .accent { color: var(--blue); }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.7;
+    max-width: 480px; margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--blue); color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    border: 2px solid var(--blue);
+  }
+  .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    color: var(--white); border: 2px solid rgba(255,255,255,0.25);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); }
+
+  /* Hero image card */
+  .hero-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 2rem;
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+
+  .trust-row {
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+  }
+  .trust-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(33,150,243,0.15);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .trust-icon svg { width: 18px; height: 18px; stroke: var(--blue); fill: none; stroke-width: 2; }
+  .trust-item-text { color: var(--white); font-size: 0.88rem; font-weight: 500; }
+  .trust-item-sub { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
+
+  .hero-phone {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 1rem; border-radius: 8px;
+    background: var(--amber); color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 1.4rem; letter-spacing: 0.02em;
+    text-decoration: none; justify-content: center;
+    transition: background 0.2s;
+  }
+  .hero-phone:hover { background: #FBBF24; }
+  .hero-phone svg { width: 22px; height: 22px; }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--blue);
+    padding: 1.25rem 2rem;
+  }
+  .stats-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    text-align: center; gap: 1rem;
+  }
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 2rem; color: var(--white);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.8); font-weight: 500; margin-top: 0.2rem; }
+
+  /* SERVICES */
+  .services {
+    padding: 5rem 2rem;
+    background: var(--gray-light);
+  }
+  .section-header {
+    text-align: center; max-width: 600px; margin: 0 auto 3rem;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 0.75rem;
+  }
+  .section-header h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: clamp(2rem, 3.5vw, 2.75rem);
+    text-transform: uppercase; letter-spacing: -0.01em;
+    color: var(--navy); line-height: 1.1;
+  }
+  .section-header p { color: var(--gray-text); margin-top: 0.75rem; font-size: 0.95rem; }
+
+  .services-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+  }
+
+  .service-card {
+    background: var(--white); border-radius: 10px;
+    border: 1px solid var(--gray-mid);
+    padding: 1.75rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border-color: var(--blue);
+  }
+  .service-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    background: rgba(33,150,243,0.1);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .service-icon svg { width: 24px; height: 24px; stroke: var(--blue); fill: none; stroke-width: 1.75; }
+  .service-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1.15rem; text-transform: uppercase;
+    letter-spacing: 0.03em; color: var(--navy); margin-bottom: 0.4rem;
+  }
+  .service-card p { color: var(--gray-text); font-size: 0.88rem; line-height: 1.6; }
+  .service-link {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    color: var(--blue); font-size: 0.83rem; font-weight: 600;
+    text-decoration: none; margin-top: 0.85rem;
+    letter-spacing: 0.02em;
+    transition: gap 0.15s;
+  }
+  .service-link:hover { gap: 0.5rem; }
+
+  /* ABOUT */
+  .about {
+    padding: 5rem 2rem;
+    background: var(--white);
+  }
+  .about-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .about-visual {
+    background: var(--navy);
+    border-radius: 12px; padding: 2.5rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+    position: relative; overflow: hidden;
+  }
+  .about-visual::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 160px; height: 160px; border-radius: 50%;
+    background: rgba(33,150,243,0.12);
+  }
+  .about-quote {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--white); line-height: 1.3;
+    position: relative; z-index: 1;
+  }
+  .about-quote span { color: var(--blue); }
+  .license-tag {
+    display: inline-flex; gap: 0.5rem; align-items: center;
+    background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3);
+    color: var(--amber); font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.45rem 0.85rem; border-radius: 6px;
+    width: fit-content;
+  }
+  .about-text h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: clamp(1.8rem, 3vw, 2.5rem);
+    text-transform: uppercase; letter-spacing: -0.01em;
+    color: var(--navy); line-height: 1.1; margin-bottom: 1rem;
+  }
+  .about-text p { color: var(--gray-text); line-height: 1.75; margin-bottom: 1rem; font-size: 0.95rem; }
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.5rem; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: 0.65rem;
+    color: var(--body-text); font-size: 0.9rem;
+  }
+  .checklist li::before {
+    content: '';
+    display: block; flex-shrink: 0;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: rgba(33,150,243,0.1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232196F3' stroke-width='2.5'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-size: 12px; background-repeat: no-repeat; background-position: center;
+    margin-top: 2px;
+  }
+
+  /* TESTIMONIAL */
+  .testimonials {
+    background: var(--navy);
+    padding: 5rem 2rem;
+  }
+  .testimonials .section-header h2 { color: var(--white); }
+  .testimonials .eyebrow { color: var(--blue-light); }
+  .testimonials .section-header p { color: rgba(255,255,255,0.55); }
+
+  .testi-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+  }
+  .testi-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 1.75rem;
+  }
+  .stars { color: var(--amber); font-size: 1rem; letter-spacing: 0.05em; margin-bottom: 0.85rem; }
+  .testi-card blockquote {
+    color: rgba(255,255,255,0.8); font-size: 0.9rem;
+    line-height: 1.7; margin-bottom: 1.25rem; font-style: italic;
+  }
+  .testi-author { color: var(--white); font-weight: 600; font-size: 0.85rem; }
+  .testi-location { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+
+  /* EMERGENCY */
+  .emergency {
+    background: var(--blue);
+    padding: 3.5rem 2rem; text-align: center;
+  }
+  .emergency h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: clamp(2rem, 4vw, 3rem);
+    text-transform: uppercase; letter-spacing: -0.01em;
+    color: var(--white); margin-bottom: 0.5rem;
+  }
+  .emergency p { color: rgba(255,255,255,0.85); margin-bottom: 1.75rem; font-size: 0.95rem; }
+  .emergency-phone {
+    display: inline-flex; align-items: center; gap: 0.65rem;
+    background: var(--white); color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 2rem; letter-spacing: 0.02em;
+    padding: 0.85rem 2.5rem; border-radius: 6px; text-decoration: none;
+    transition: transform 0.15s;
+  }
+  .emergency-phone:hover { transform: scale(1.02); }
+  .emergency-phone svg { width: 28px; height: 28px; }
+
+  /* CONTACT */
+  .contact {
+    padding: 5rem 2rem;
+    background: var(--gray-light);
+  }
+  .contact-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
+  }
+  .contact-info h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 2.25rem; text-transform: uppercase;
+    letter-spacing: -0.01em; color: var(--navy); margin-bottom: 0.5rem;
+  }
+  .contact-info p { color: var(--gray-text); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .contact-detail {
+    display: flex; align-items: flex-start; gap: 0.85rem;
+    margin-bottom: 1.1rem;
+  }
+  .contact-detail-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(33,150,243,0.1);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .contact-detail-icon svg { width: 18px; height: 18px; stroke: var(--blue); fill: none; stroke-width: 2; }
+  .contact-detail-label { font-size: 0.75rem; color: var(--gray-text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .contact-detail-val { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+
+  .contact-form { background: var(--white); border-radius: 10px; padding: 2rem; border: 1px solid var(--gray-mid); }
+  .contact-form h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1.2rem; text-transform: uppercase;
+    color: var(--navy); margin-bottom: 1.25rem;
+  }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--body-text); margin-bottom: 0.35rem; letter-spacing: 0.03em; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+    color: var(--body-text); background: var(--white);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--blue);
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .btn-submit {
+    width: 100%;
+    background: var(--navy); color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.85rem; border: none; border-radius: 6px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-submit:hover { background: var(--blue); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 3rem 2rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem;
+    padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 1.5rem;
+  }
+  .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.65; margin-top: 0.85rem; max-width: 320px; }
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 0.85rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col ul a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.88rem; transition: color 0.15s; }
+  .footer-col ul a:hover { color: var(--white); }
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    color: rgba(255,255,255,0.35); font-size: 0.78rem;
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.45); text-decoration: none; }
+  .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+  /* UTILS */
+  .divider { width: 40px; height: 3px; background: var(--blue); border-radius: 2px; margin: 0.75rem 0 1rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-inner, .about-inner, .contact-inner, .footer-inner { grid-template-columns: 1fr; }
+    .services-grid, .testi-grid { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .hero { padding-top: 5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">USA <span>Plumbing</span> Service</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:9096230033" class="nav-cta">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+    909-623-0033
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Pipe pattern background -->
+  <svg class="hero-pipe" viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <line x1="0" y1="200" x2="400" y2="200" stroke="white" stroke-width="3"/>
+    <path d="M400,200 Q440,200 440,240" stroke="white" stroke-width="3" fill="none"/>
+    <line x1="440" y1="240" x2="440" y2="400" stroke="white" stroke-width="3"/>
+    <path d="M440,400 Q440,440 480,440" stroke="white" stroke-width="3" fill="none"/>
+    <line x1="480" y1="440" x2="1400" y2="440" stroke="white" stroke-width="3"/>
+    <line x1="800" y1="0" x2="800" y2="200" stroke="white" stroke-width="3"/>
+    <path d="M800,200 Q800,240 840,240" stroke="white" stroke-width="3" fill="none"/>
+    <line x1="840" y1="240" x2="1200" y2="240" stroke="white" stroke-width="3"/>
+    <path d="M1200,240 Q1240,240 1240,280" stroke="white" stroke-width="3" fill="none"/>
+    <line x1="1240" y1="280" x2="1240" y2="800" stroke="white" stroke-width="3"/>
+    <circle cx="440" cy="200" r="6" fill="white"/>
+    <circle cx="440" cy="440" r="6" fill="white"/>
+    <circle cx="800" cy="200" r="6" fill="white"/>
+    <circle cx="1200" cy="240" r="6" fill="white"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">24 / 7 Emergency Service Available</div>
+      <h1>Your <span class="accent">Trusted</span><br>Plumber For<br>Over 25 Years</h1>
+      <p class="hero-sub">Licensed, bonded & insured — serving Rancho Cucamonga and the Inland Empire with fast, reliable plumbing from a family that cares.</p>
+      <div class="hero-actions">
+        <a href="tel:9096230033" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="#services" class="btn-ghost">View Services</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="trust-row">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="trust-item-text">CA License # 961844</div>
+            <div class="trust-item-sub">Fully Licensed & Verified</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+          </div>
+          <div>
+            <div class="trust-item-text">Bonded & Insured</div>
+            <div class="trust-item-sub">Full coverage on every job</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="trust-item-text">Same-Day Service</div>
+            <div class="trust-item-sub">Fast response, no hidden fees</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="trust-item-text">Family Owned & Operated</div>
+            <div class="trust-item-sub">Treating every home like our own</div>
+          </div>
+        </div>
+      </div>
+      <a href="tel:9096230033" class="hero-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        (909) 623-0033
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">25+</div>
+      <div class="stat-label">Years in Business</div>
+    </div>
+    <div>
+      <div class="stat-num">5,000+</div>
+      <div class="stat-label">Jobs Completed</div>
+    </div>
+    <div>
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Emergency Response</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Satisfaction Guaranteed</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section-header">
+    <span class="eyebrow">What We Do</span>
+    <h2>Complete Plumbing & Rooter Services</h2>
+    <p>From dripping faucets to full pipe replacements — we handle it all with speed, honesty, and expert craft.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Drain Cleaning</h3>
+      <p>Professional drain snaking and hydro-jetting to clear clogs fast and keep your pipes flowing freely.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>Pipe Repair</h3>
+      <p>Expert diagnosis and repair for leaky, cracked, or burst pipes — residential and commercial.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3>Slab Leak Detection</h3>
+      <p>Advanced electronic leak detection under concrete slabs — found fast, fixed right.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <h3>Water Heater Service</h3>
+      <p>Installation, repair, and maintenance for tank and tankless water heaters.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+      </div>
+      <h3>Leaky Toilets & Fixtures</h3>
+      <p>Stop wasting water and money — we repair or replace running toilets, sinks, and faucets.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      </div>
+      <h3>Garbage Disposal</h3>
+      <p>Service, repair, and installation for quieter, more reliable garbage disposals.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Backflow Prevention</h3>
+      <p>Code-compliant backflow prevention device testing, repair, and installation.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <h3>Bathtubs & Showers</h3>
+      <p>Drain repairs, fixture replacements, and full bathroom plumbing upgrades.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <h3>Sinks & Faucets</h3>
+      <p>Installation and repair of kitchen and bathroom sinks, faucets, and supply lines.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="license-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        CA License # 961844
+      </div>
+      <div class="about-quote">
+        "We treat every home<br>like it's <span>our own.</span>"
+      </div>
+      <p style="color:rgba(255,255,255,0.55); font-size:0.88rem; line-height:1.65;">
+        Family owned and operated since the late 1990s, USA Plumbing Service has built its reputation one honest job at a time across Rancho Cucamonga and the Inland Empire.
+      </p>
+      <div style="display:flex;gap:1.5rem;padding-top:0.5rem;">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2rem;color:#fff;">25+</div>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:500;">Years Serving<br>the IE</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2rem;color:#fff;">$0</div>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:500;">Hidden Fees.<br>Ever.</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2rem;color:#fff;">A+</div>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:500;">Customer<br>Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <span class="eyebrow">Why Choose Us</span>
+      <div class="divider"></div>
+      <h2>Honest Work.<br>Fair Prices.<br>Every Time.</h2>
+      <p>When you call USA Plumbing Service, you get a skilled plumber who shows up on time, diagnoses your issue accurately, and fixes it right the first time — no upselling, no surprises on the bill.</p>
+      <ul class="checklist">
+        <li>Fully licensed, bonded & insured for your protection</li>
+        <li>24/7 emergency plumbing — no extra charge for nights or weekends</li>
+        <li>Upfront, written quotes with no hidden fees</li>
+        <li>Courteous, uniformed technicians who respect your home</li>
+        <li>All work backed by our satisfaction guarantee</li>
+        <li>Serving Rancho Cucamonga, Ontario, Upland, Fontana & more</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:inline-flex;">Request Service</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+  <div class="section-header">
+    <span class="eyebrow">Customer Reviews</span>
+    <h2>What Our Customers Say</h2>
+    <p>Real feedback from real Inland Empire homeowners.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"They came out the same day, found the slab leak fast, and the price was exactly what they quoted. Will not call anyone else for plumbing again."</blockquote>
+      <div class="testi-author">Maria T.</div>
+      <div class="testi-location">Rancho Cucamonga, CA</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Honest, on time, and cleaned up after themselves. Fixed our water heater in under an hour. Refreshing to deal with a company that does what they say."</blockquote>
+      <div class="testi-author">James R.</div>
+      <div class="testi-location">Ontario, CA</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Called at 11pm with a burst pipe. They answered immediately, arrived within the hour, and had the water back on before midnight. Absolutely incredible service."</blockquote>
+      <div class="testi-author">Sandra K.</div>
+      <div class="testi-location">Upland, CA</div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY CTA -->
+<div class="emergency">
+  <h2>Plumbing Emergency? We Answer 24/7.</h2>
+  <p>Don't wait — water damage gets worse by the minute. Call us now for immediate help.</p>
+  <a href="tel:9096230033" class="emergency-phone">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+    (909) 623-0033
+  </a>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <span class="eyebrow">Get in Touch</span>
+      <div class="divider"></div>
+      <h2>Request Service Today</h2>
+      <p>Fill out the form and we'll call you back within the hour during business hours, or immediately for emergencies.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-val">(909) 623-0033</div>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-val">contact@usaplumbingservice.com</div>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact-detail-label">Location</div>
+          <div class="contact-detail-val">12729 Jessie Ct, Rancho Cucamonga, CA 91739</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Request a Free Quote</h3>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="John Smith">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(909) 000-0000">
+      </div>
+      <div class="form-group">
+        <label>Service Needed</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Drain Cleaning</option>
+          <option>Pipe Repair</option>
+          <option>Slab Leak Detection</option>
+          <option>Water Heater Service</option>
+          <option>Leaky Toilet / Fixture</option>
+          <option>Garbage Disposal</option>
+          <option>Backflow Prevention</option>
+          <option>Bathtub / Shower</option>
+          <option>Sink / Faucet</option>
+          <option>Other / Emergency</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Describe the Problem</label>
+        <textarea placeholder="Tell us what's going on..."></textarea>
+      </div>
+      <button class="btn-submit">Submit Request</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="font-size:1.1rem;">USA <span style="color:var(--blue)">Plumbing</span> Service</a>
+      <p>Family owned and operated complete plumbing & rooter service serving Rancho Cucamonga, Ontario, Upland, Fontana, and the greater Inland Empire since the late 1990s.</p>
+      <div style="margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.3);">CA License # 961844 &nbsp;|&nbsp; Bonded &nbsp;|&nbsp; Insured</div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Drain Cleaning</a></li>
+        <li><a href="#services">Pipe Repair</a></li>
+        <li><a href="#services">Slab Leak Detection</a></li>
+        <li><a href="#services">Water Heater Service</a></li>
+        <li><a href="#services">Garbage Disposal</a></li>
+        <li><a href="#services">Backflow Prevention</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 USA Plumbing Service. All rights reserved.</span>
+    <span>(909) 623-0033 &nbsp;·&nbsp; Rancho Cucamonga, CA</span>
+  </div>
+</footer>
+
+</body>
+</html>
