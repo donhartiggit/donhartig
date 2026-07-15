@@ -116,7 +116,7 @@
 
     /* ── Nav ───────────────────────────────────────── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      position: fixed; top: 38px; left: 0; right: 0; z-index: 900;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.2rem 4rem;
       background: rgba(8,8,8,0.88);
@@ -741,8 +741,18 @@
       .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
+<style>
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.97);padding:0.45rem 1.5rem;gap:1rem;box-shadow:0 1px 0 rgba(255,255,255,0.06);}
+._topbar button{font-family:inherit;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#c9a84c;color:#000;border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;}
+._topbar button:hover{opacity:0.85;}
+._topbar a._langbtn{font-family:inherit;font-size:0.7rem;color:#888;text-decoration:none;letter-spacing:0.04em;padding:0.3rem 0.75rem;border:1px solid rgba(255,255,255,0.18);border-radius:3px;white-space:nowrap;}
+._topbar a._langbtn:hover{color:#fff;border-color:rgba(255,255,255,0.5);}
+@media print{._topbar{display:none!important;}}
+</style>
 </head>
 <body>
+<div class="_topbar"><button onclick="window.print()">⬇ Download PDF</button><a class="_langbtn" href="视频营销.html">中文版</a></div>
+
 
   <!-- ── Navigation ───────────────────────────────── -->
   <nav>
