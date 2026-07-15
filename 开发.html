@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Don Hartig — Full-Stack Web Developer specializing in modern, high-performance websites and web applications. Available for freelance and full-time opportunities.">
+<meta name="keywords" content="web developer, full-stack developer, freelance web developer, Don Hartig, website design, web development Chiang Mai">
+<meta property="og:title" content="Don Hartig | Web Developer">
+<meta property="og:description" content="Full-stack web developer crafting fast, beautiful, effective websites. View portfolio and get in touch.">
+<meta property="og:type" content="website">
+<title>董夏庭 | 网页开发者</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0e0e0e;
+    --ink-mid: #444;
+    --ink-light: #888;
+    --cream: #f5f2eb;
+    --white: #ffffff;
+    --accent: #c8522a;
+    --accent-light: #f0d5c8;
+    --accent-dark: #8c3518;
+    --border: rgba(14,14,14,0.12);
+    --ff-display: 'Playfair Display', Georgia, serif;
+    --ff-body: 'DM Sans', system-ui, sans-serif;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--ff-body);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 38px; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5vw;
+    background: rgba(245,242,235,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--ff-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink-mid);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--cream) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent) !important; color: var(--white) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 9rem 5vw 4rem;
+    gap: 4rem;
+  }
+  .hero-text { max-width: 540px; }
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px; height: 2px;
+    background: var(--accent);
+  }
+  .hero-name {
+    font-family: var(--ff-display);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .hero-title {
+    font-family: var(--ff-display);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-mid);
+    margin-bottom: 1.6rem;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    margin-bottom: 2.2rem;
+    font-weight: 300;
+    max-width: 460px;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+  .btn-ghost {
+    color: var(--ink);
+    padding: 0.8rem 1.8rem;
+    border: 1.5px solid var(--ink);
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+  /* hero stats */
+  .hero-stats {
+    display: flex; gap: 2rem; margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: var(--ff-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.78rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
+
+  /* hero image */
+  .hero-image-wrap {
+    position: relative;
+    display: flex; justify-content: flex-end; align-items: center;
+  }
+  .hero-img-frame {
+    position: relative;
+    width: min(420px, 90%);
+    aspect-ratio: 4/5;
+  }
+  .hero-img-frame::before {
+    content: '';
+    position: absolute;
+    inset: -18px 18px 18px -18px;
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    z-index: 0;
+  }
+  .hero-img-frame img {
+    position: relative; z-index: 1;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    filter: grayscale(15%);
+  }
+  .hero-img-placeholder {
+    position: relative; z-index: 1;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #d4c9b8 0%, #b5a99a 100%);
+    border-radius: 4px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #7a6e62;
+    font-size: 0.85rem;
+  }
+  .hero-img-placeholder svg { margin-bottom: 0.5rem; opacity: 0.5; }
+
+  /* floating badge */
+  .hero-badge {
+    position: absolute;
+    bottom: -1rem; left: -2rem; z-index: 10;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    display: flex; align-items: center; gap: 0.7rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    font-size: 0.82rem;
+  }
+  .badge-dot { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+  .badge-text { font-weight: 500; color: var(--ink); }
+  .badge-sub { color: var(--ink-light); font-size: 0.75rem; }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 6rem 5vw; }
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  .section-heading {
+    font-family: var(--ff-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    max-width: 560px;
+  }
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    max-width: 540px;
+    margin-top: 0.8rem;
+    line-height: 1.8;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--white); }
+  .services-header { margin-bottom: 3.5rem; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .service-card {
+    background: var(--white);
+    padding: 2rem;
+    transition: background 0.25s;
+  }
+  .service-card:hover { background: var(--cream); }
+  .service-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+  .service-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+  .service-title { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .service-desc { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.65; font-weight: 300; }
+
+  /* ── PORTFOLIO ── */
+  #portfolio { background: var(--cream); }
+  .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap; }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  .project-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.10); }
+  .project-thumb {
+    height: 180px;
+    background: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .project-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s var(--ease-out);
+  }
+  .project-card:hover .project-thumb img { transform: scale(1.04); }
+  .thumb-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+  }
+  .thumb-domain {
+    font-family: var(--ff-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink-mid);
+    letter-spacing: -0.01em;
+  }
+  .thumb-ext { font-size: 0.78rem; color: var(--ink-light); }
+  .project-info { padding: 1.25rem 1.4rem 1.4rem; }
+  .project-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+  .project-name {
+    font-family: var(--ff-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .project-url { font-size: 0.8rem; color: var(--ink-light); display: flex; align-items: center; gap: 0.3rem; }
+  .project-url svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .project-arrow {
+    display: flex; align-items: center; justify-content: flex-end;
+    padding: 0 1.4rem 1.1rem;
+    font-size: 0.8rem; font-weight: 500;
+    color: var(--accent);
+    gap: 0.3rem;
+    transition: gap 0.2s;
+  }
+  .project-card:hover .project-arrow { gap: 0.6rem; }
+
+  /* thumb color variants */
+  .thumb-1 { background: #e8f0ee; }
+  .thumb-2 { background: #f0ede8; }
+  .thumb-3 { background: #e8ecf0; }
+  .thumb-4 { background: #f0e8e8; }
+  .thumb-5 { background: #ede8f0; }
+  .thumb-6 { background: #e8f0e8; }
+  .thumb-7 { background: #f0ece8; }
+  .thumb-8 { background: #e8e8f0; }
+  .thumb-9 { background: #f0e8ed; }
+  .thumb-10 { background: #eaf0e8; }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--ink); }
+  #skills .section-label { color: var(--accent-light); }
+  #skills .section-heading { color: var(--white); }
+  #skills .section-sub { color: rgba(255,255,255,0.55); }
+  .skills-wrap { margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+  .skill-pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    transition: background 0.2s;
+  }
+  .skill-pill:hover { background: rgba(200,82,42,0.15); border-color: rgba(200,82,42,0.4); }
+  .skill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .skill-name { font-size: 0.9rem; color: rgba(255,255,255,0.85); font-weight: 400; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+  .about-img-wrap { position: relative; }
+  .about-img-frame {
+    aspect-ratio: 3/4;
+    max-width: 380px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .about-img-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%); }
+  .about-decor {
+    position: absolute;
+    bottom: -2rem; right: -2rem;
+    width: 180px; height: 180px;
+    background: var(--accent-light);
+    border-radius: 8px;
+    z-index: -1;
+  }
+  .about-content p { color: var(--ink-mid); margin-bottom: 1.2rem; font-weight: 300; font-size: 1.02rem; }
+  .about-highlights { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.8rem 0; }
+  .highlight-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.95rem; }
+  .highlight-check { color: var(--accent); font-size: 1.1rem; line-height: 1.5; flex-shrink: 0; }
+
+  /* ── CTA ── */
+  #contact { background: var(--cream); text-align: center; padding: 7rem 5vw; }
+  .cta-wrap { max-width: 640px; margin: 0 auto; }
+  #contact .section-heading { max-width: none; margin: 0 auto 0.5rem; }
+  #contact .section-sub { margin: 0 auto 2.5rem; }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2.5rem; }
+  .contact-link { font-size: 0.9rem; color: var(--ink-mid); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+  .contact-link:hover { color: var(--accent); }
+  .contact-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 1.5rem 5vw;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+  footer a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--accent-light); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 7rem; gap: 2.5rem; }
+    .hero-image-wrap { justify-content: center; }
+    .hero-img-frame { width: min(320px, 80%); }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img-wrap { display: none; }
+    nav { padding: 0.9rem 4vw; }
+    .nav-links { gap: 1.2rem; }
+  }
+  @media (max-width: 580px) {
+    .nav-links li:not(:last-child) { display: none; }
+    .hero-stats { gap: 1.2rem; }
+    .portfolio-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+<style>
+.top-bar-zh{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;justify-content:space-between;align-items:center;background:rgba(245,242,235,0.97);border-bottom:1px solid rgba(14,14,14,0.12);padding:0.45rem 1.5rem;gap:1rem;}
+.top-bar-zh button{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#c8522a;color:#fff;border:none;padding:0.35rem 0.9rem;border-radius:100px;cursor:pointer;}
+.top-bar-zh a{font-size:0.68rem;color:#888;text-decoration:none;}
+.top-bar-zh a:hover{color:#c8522a;}
+@media print{.top-bar-zh{display:none!important;}}
+</style>
+</head>
+<body>
+<div class="top-bar-zh"><button onclick="window.print()">⬇ 下载 PDF</button><a href="https://donhartig.com/development.html">English →</a></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">董夏庭</a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">作品</a></li>
+    <li><a href="#skills">技术</a></li>
+    <li><a href="#about">关于</a></li>
+    <li><a href="#contact" class="nav-cta">雇用我</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text fade-up">
+    <p class="hero-eyebrow">接受项目合作</p>
+    <h1 class="hero-name">Don<br>Hartig</h1>
+    <p class="hero-title">Full-Stack Web & App Developer</p>
+    <p class="hero-desc">我构建快速、精美且以转化为导向的网站与网络应用——从简洁的品牌站点到复杂的数据驱动平台。</p>
+    <div class="hero-btns">
+      <a href="#portfolio" class="btn-primary">查看作品</a>
+      <a href="#contact" class="btn-ghost">联系我</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">40+</div>
+        <div class="stat-label">已上线网站</div>
+      </div>
+      <div>
+        <div class="stat-num">Full</div>
+        <div class="stat-label">全栈开发</div>
+      </div>
+      <div>
+        <div class="stat-num">Fast</div>
+        <div class="stat-label">交付周期</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image-wrap fade-up" style="transition-delay:0.15s">
+    <div class="hero-img-frame">
+      <img src="images/me/posedon.jpeg" alt="Don Hartig, Web Developer" onerror="this.parentNode.innerHTML='<div class=\'hero-img-placeholder\'><svg width=\'48\' height=\'48\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.2\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M4 20c0-4 3.6-7 8-7s8 3 8 7\'/></svg><span>Don Hartig</span></div>'">
+    </div>
+    <div class="hero-badge">
+      <div class="badge-dot"></div>
+      <div>
+        <div class="badge-text">接受工作邀约</div>
+        <div class="badge-sub">Freelance & Full-Time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header fade-up">
+    <p class="section-label">服务内容</p>
+    <h2 class="section-heading">端到端网页开发，从概念到上线</h2>
+  </div>
+  <div class="services-grid fade-up" style="transition-delay:0.1s">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="service-title">Website Design & Dev</div>
+      <div class="service-desc">自适应、像素级精准的网站，在各类屏幕上均能出色呈现，加载如闪电般迅速。</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="service-title">全栈应用程序</div>
+      <div class="service-desc">具备强大后端、简洁API及直观前端界面的可扩展Web应用。</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20"/><path d="M2 12h20"/></svg>
+      </div>
+      <div class="service-title">电商解决方案</div>
+      <div class="service-desc">以转化为核心构建的在线商店——集成支付、库存管理及流畅结账流程。</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="service-title">性能优化</div>
+      <div class="service-desc">速度审计、核心网页指标（Core Web Vitals）改善及SEO调优，助您提升排名与转化率。</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="portfolio-header fade-up">
+    <div>
+      <p class="section-label">作品集</p>
+      <h2 class="section-heading">精选作品 — 均已在线上线</h2>
+    </div>
+    <p class="section-sub" style="max-width:300px; margin-top:0; font-size:0.95rem;">每个项目均注重性能、清晰度与实际效果。</p>
+  </div>
+  <div class="portfolio-grid">
+
+    <a href="https://majikfood.com/" class="project-card fade-up" style="transition-delay:0.00s">
+      <div class="project-thumb thumb-1">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">majikfood</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">Food & Lifestyle</div>
+        <div class="project-name">Majik Food</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          majikfood.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="https://siamayachina.com/" class="project-card fade-up" style="transition-delay:0.05s">
+      <div class="project-thumb thumb-2">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">siamaya</span>
+          <span class="thumb-ext">china.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">精品巧克力</div>
+        <div class="project-name">Siamaya China</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          siamayachina.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="https://donhartig.com/" class="project-card fade-up" style="transition-delay:0.10s">
+      <div class="project-thumb thumb-3">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">donhartig</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">个人品牌 / 作品集网站</div>
+        <div class="project-name">DonHartig.com</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          donhartig.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="https://donhartiggit.github.io/spcarb/" class="project-card fade-up" style="transition-delay:0.15s">
+      <div class="project-thumb thumb-4">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">spcarb</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">汽车</div>
+        <div class="project-name">SP Carb</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          spcarb.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="#" class="project-card fade-up" style="transition-delay:0.20s">
+      <div class="project-thumb thumb-5">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">silubium</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">技术</div>
+        <div class="project-name">Silubium</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          silubium.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="#" class="project-card fade-up" style="transition-delay:0.25s">
+      <div class="project-thumb thumb-6">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">smpchiangmai</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">本地商业</div>
+        <div class="project-name">SMP Chiang Mai</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          smpchiangmai.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="https://donhartiggit.github.io/deleyart/" class="project-card fade-up" style="transition-delay:0.30s">
+      <div class="project-thumb thumb-7">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">deleyart</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">Art & Creative</div>
+        <div class="project-name">Deley Art</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          deleyart.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="#" class="project-card fade-up" style="transition-delay:0.35s">
+      <div class="project-thumb thumb-8">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">logonbranchout</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">营销</div>
+        <div class="project-name">Logon Branch Out</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          logonbranchout.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="#" class="project-card fade-up" style="transition-delay:0.40s">
+      <div class="project-thumb thumb-9">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">donhartiggames</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">游戏</div>
+        <div class="project-name">Don Hartig Games</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          donhartiggames.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+    <a href="#" class="project-card fade-up" style="transition-delay:0.45s">
+      <div class="project-thumb thumb-10">
+        <div class="thumb-placeholder">
+          <span class="thumb-domain">fundfan</span>
+          <span class="thumb-ext">.com</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag">众筹 / 金融</div>
+        <div class="project-name">FundFan</div>
+        <div class="project-url">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          fundfan.com
+        </div>
+      </div>
+      <div class="project-arrow">查看项目 →</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label fade-up">技术技能</p>
+  <h2 class="section-heading fade-up" style="color:var(--white)">完整技术栈 — 前端到后端</h2>
+  <p class="section-sub fade-up" style="color:rgba(255,255,255,0.5); transition-delay:0.1s">从线框图到部署上线，我负责技术栈的每一层。</p>
+  <div class="skills-wrap fade-up" style="transition-delay:0.15s">
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">HTML5 / CSS3</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">JavaScript (ES6+)</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">React / Next.js</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">Node.js</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">PHP / WordPress</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">Python</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">MySQL / PostgreSQL</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">MongoDB</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">REST APIs / GraphQL</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">Git / GitHub</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">AWS / Cloud Hosting</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">SEO优化</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">UI/UX Design</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">电商 / WooCommerce</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">性能调优</span></div>
+    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">游戏开发</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap fade-up">
+      <div class="about-img-frame">
+        <img src="posedon.jpg" alt="Don Hartig" onerror="this.style.display='none'">
+      </div>
+      <div class="about-decor"></div>
+    </div>
+    <div class="fade-up" style="transition-delay:0.1s">
+      <p class="section-label">关于我</p>
+      <h2 class="section-heading">像商业思维者一样思考的开发者</h2>
+      <div class="about-content" style="margin-top:1.5rem">
+        <p>我是董夏庭，一名全栈网页开发者，热衷于构建真正能产生业务效果的数字产品。多年来，我在食品、汽车、艺术、旅游、游戏及金融领域交付了大量项目——每一个都凝聚着同等的工艺精神与结果导向。</p>
+        <p>我的项目范围从简洁的营销网站到复杂的Web应用。我将技术深度与敏锐的设计眼光融入每一个项目中。</p>
+        <div class="about-highlights">
+          <div class="highlight-item"><span class="highlight-check">✓</span><span>简洁、可维护、可扩展的代码</span></div>
+          <div class="highlight-item"><span class="highlight-check">✓</span><span>默认响应式、移动优先</span></div>
+          <div class="highlight-item"><span class="highlight-check">✓</span><span>高效交付与清晰沟通</span></div>
+          <div class="highlight-item"><span class="highlight-check">✓</span><span>从第一天起就注重SEO的开发</span></div>
+          <div class="highlight-item"><span class="highlight-check">✓</span><span>欢迎自由职业与全职合作</span></div>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:inline-block">携手共建</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section id="contact">
+  <div class="cta-wrap fade-up">
+    <p class="section-label" style="text-align:center">联系我</p>
+    <h2 class="section-heading" style="text-align:center">准备好打造精彩作品了吗？</h2>
+    <p class="section-sub" style="text-align:center; margin-top:0.6rem">无论您心中已有项目方向，还是只想探索各种可能性——欢迎随时联系。我会迅速回复。</p>
+    <div class="cta-btns" style="margin-top:2rem">
+      <a href="mailto:don@donhartig.com" class="btn-primary">发送邮件</a>
+      <a href="http://www.donhartig.com" class="btn-ghost" target="_blank" rel="noopener">访问 DonHartig.com</a>
+    </div>
+    <div class="contact-links">
+      <a href="http://www.donhartig.com" class="contact-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        donhartig.com
+      </a>
+      <a href="mailto:don@donhartig.com" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        don@donhartig.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  制作：<a href="http://www.donhartig.com" target="_blank" rel="noopener">董夏庭</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-up').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+  });
+</script>
+</body>
+</html>

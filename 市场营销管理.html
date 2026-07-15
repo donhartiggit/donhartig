@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>董夏庭 – 高级市场营销经理 | 加密货币 | Web3 | DeFi</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-49976807-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-49976807-8');
+</script>
+
+<style>
+  :root {
+    --black:   #0a0a0a;
+    --white:   #ffffff;
+    --offwhite:#f7f6f3;
+    --accent:  #0057ff;
+    --accent2: #00c896;
+    --muted:   #6b6b6b;
+    --border:  #e0ddd8;
+    --tag-bg:  #eef3ff;
+    --tag-col: #0047cc;
+    --serif:   'DM Sans', sans-serif;
+    --mono:    'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--serif);
+    background: var(--offwhite);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── LAYOUT ─────────────────────────────────── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+  }
+
+  /* ── HEADER ─────────────────────────────────── */
+  .cv-header {
+    background: var(--black);
+    color: var(--white);
+    padding: 3rem 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cv-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 40px solid var(--accent);
+    opacity: 0.15;
+  }
+  .cv-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: 200px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 25px solid var(--accent2);
+    opacity: 0.12;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cv-name {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .cv-name .chinese {
+    font-size: 0.45em;
+    font-weight: 300;
+    opacity: 0.6;
+    margin-left: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .cv-title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--accent2);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+  }
+  .contact-grid a { color: rgba(255,255,255,0.9); text-decoration: none; }
+  .contact-grid a:hover { color: var(--accent2); }
+  .contact-label { opacity: 0.5; margin-right: 0.25rem; }
+
+  .availability-badge {
+    background: var(--accent2);
+    color: var(--black);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 0.3rem;
+  }
+
+  .header-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.2);
+    display: block;
+  }
+
+  /* ── SUMMARY BAR ─────────────────────────────── */
+  .summary-bar {
+    background: var(--accent);
+    color: var(--white);
+    padding: 1.1rem 3rem;
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* ── BODY ────────────────────────────────────── */
+  .cv-body {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 0;
+  }
+
+  /* ── MAIN COLUMN ─────────────────────────────── */
+  .main-col {
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+    border-right: 1px solid var(--border);
+  }
+
+  /* ── SIDEBAR ─────────────────────────────────── */
+  .side-col {
+    padding: 2.5rem 2rem 2.5rem 2rem;
+    background: var(--offwhite);
+  }
+
+  /* ── SECTION ─────────────────────────────────── */
+  .section { margin-bottom: 2.2rem; }
+  .section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── JOB ENTRY ───────────────────────────────── */
+  .job { margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid var(--border); }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .job-company {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+  }
+  .job-tenure {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .job-role {
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+  }
+  .job-location {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .job ul {
+    list-style: none;
+    padding: 0;
+  }
+  .job ul li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.87rem;
+    line-height: 1.55;
+    color: #222;
+  }
+  .job ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent2);
+    font-size: 0.7rem;
+    top: 0.15em;
+  }
+
+  /* ── METRIC HIGHLIGHT ────────────────────────── */
+  .metric {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  /* ── SKILLS TAGS ─────────────────────────────── */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+  }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-col);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── SIDEBAR ELEMENTS ────────────────────────── */
+  .side-section { margin-bottom: 2rem; }
+  .side-section:last-child { margin-bottom: 0; }
+
+  .side-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    color: var(--black);
+  }
+  .skill-bar-label span { color: var(--muted); font-size: 0.72rem; }
+  .bar-track {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 2px;
+  }
+
+  .lang-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-entry:last-child { border-bottom: none; }
+  .lang-level {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+
+  .edu-entry { margin-bottom: 1rem; font-size: 0.82rem; }
+  .edu-degree { font-weight: 600; }
+  .edu-school { color: var(--muted); font-size: 0.78rem; }
+
+  .link-item {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    word-break: break-all;
+  }
+  .link-item:hover { text-decoration: underline; }
+  .link-label { display: block; font-size: 0.7rem; color: var(--muted); margin-bottom: 0.1rem; }
+
+  /* ── WRITING SAMPLES ─────────────────────────── */
+  .samples-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .sample-item {
+    font-size: 0.82rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .sample-num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    min-width: 1.5rem;
+  }
+  .sample-item a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .sample-item a:hover { text-decoration: underline; }
+  .sample-client {
+    font-size: 0.72rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  .cv-footer {
+    background: var(--black);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.72rem;
+    font-family: var(--mono);
+  }
+  .cv-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+  /* ── PRINT ───────────────────────────────────── */
+  @media print {
+    [style*="position:fixed"] { display:none !important; }
+    [style*="height:38px"] { display:none !important; }
+    body { background: white; font-size: 11pt; }
+    .page { box-shadow: none; max-width: 100%; }
+    .cv-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .summary-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .side-col { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cv-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 680px) {
+    .cv-header { padding: 2rem 1.5rem 2rem; }
+    .header-inner { grid-template-columns: 1fr; }
+    .header-photo { display: none; }
+    .summary-bar { padding: 1rem 1.5rem; }
+    .cv-body { grid-template-columns: 1fr; }
+    .main-col { padding: 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .side-col { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div style="position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.95);padding:0.45rem 1.5rem;gap:1rem;">
+  <button onclick="window.print()" style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#00c896;color:#000;border:none;padding:0.35rem 0.9rem;border-radius:2px;cursor:pointer;">⬇ 下载 PDF</button>
+  <a href="https://donhartig.com/management.html" style="font-size:0.7rem;color:#aaa;text-decoration:none;letter-spacing:0.04em;">English →</a>
+</div>
+<div style="height:38px;"></div>
+<div class="page">
+
+  <!-- ══ HEADER ══════════════════════════════════ -->
+  <header class="cv-header">
+    <div class="header-inner">
+      <div>
+        <div class="cv-name">董夏庭 <span class="chinese">Don Hartig</span></div>
+        <div class="cv-title">高级市场营销经理 · 加密货币 · DeFi · Web3 · 内容战略 · 本地化</div>
+        <div class="contact-grid">
+          <span><span class="contact-label">邮箱</span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
+          <span><span class="contact-label">网站</span><a href="https://www.donhartig.com" target="_blank">donhartig.com</a></span>
+          <span><span class="contact-label">领英</span><a href="https://www.linkedin.com/in/donhartig" target="_blank">linkedin.com/in/donhartig</a></span>
+          <span><span class="contact-label">Upwork</span><a href="https://www.upwork.com/o/profiles/users/~01ea8f586089ac90e3/" target="_blank">查看主页及评价</a></span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:1rem;">
+        <img src="images/me/brownremcroppedleftcentered.jpeg" alt="Don Hartig" class="header-photo">
+        <div class="availability-badge">✦ 现已接受邀约</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ SUMMARY ════════════════════════════════════ -->
+  <div class="summary-bar">
+    资深加密货币市场营销专业人士，拥有 <strong>8年以上</strong>在顶级交易所及Web3平台组建并领导内容、本地化和增长团队的经验。在 <strong>Bitget</strong>（全球前十CEX）和 <strong>Businesxt</strong>（迪拜）主导编辑流程管理，成绩卓著。区块链项目联合创始人兼CMO，全程参与从ICO到主网的发展历程。精通 <strong>7种语言</strong>——在全球加密货币GTM与本地化战略中具有罕见优势。欢迎全职远程或驻场合作。
+  </div>
+
+  <!-- ══ BODY ═══════════════════════════════════════ -->
+  <div class="cv-body">
+
+    <!-- ── MAIN COLUMN ──────────────────────────── -->
+    <main class="main-col">
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+        <div class="section-title">职业经历</div>
+
+        <!-- Antarctic Exchange -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Antarctic Exchange</div>
+            <div class="job-tenure">2025 — Present</div>
+          </div>
+          <div class="job-role">网站本地化专员 · 语言优化师 · 社交媒体制作人</div>
+          <div class="job-location">远程</div>
+          <ul>
+            <li>对中文网站进行全面英文本地化，优化全部文案以符合英语市场语气、习语与SEO导向</li>
+            <li>在多个平台上持续产出日常社交媒体内容，保持品牌声音一致性</li>
+            <li>为Medium平台撰写并发布经SEO优化的CTA文章，驱动自然流量获客</li>
+          </ul>
+        </div>
+
+        <!-- Businesxt -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Businext</div>
+            <div class="job-tenure">2023 — 2024</div>
+          </div>
+          <div class="job-role">高级制作人 — 加密货币、DeFi与金融科技</div>
+          <div class="job-location">阿联酋迪拜 · 全职驻场</div>
+          <ul>
+            <li>领导由<span class="metric">记者、撰稿人、联合制作人及视频编辑</span>组成的跨职能团队，每日产出加密货币、区块链、Web3、DeFi及金融科技领域深度长篇内容</li>
+            <li>全面掌管内容日历：向新闻编辑室推选每日选题，监督并审核团队所有输出内容</li>
+            <li>为TikTok、X（Twitter）及Instagram制作视频内容；就加密货币趋势与市场动态进行镜头前采访</li>
+            <li>招募并引进撰稿人、记者、主持人及KOL合作伙伴以扩大品牌影响力</li>
+            <li>向总编辑（Ted Kemp）提出并落实工作流程及内容分发策略，提升受众触达与互动指标</li>
+          </ul>
+        </div>
+
+        <!-- Bitget -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Bitget</div>
+            <div class="job-tenure">2021 — 2022</div>
+          </div>
+          <div class="job-role">高级内容运营经理（Senior Content Operations Manager）</div>
+          <div class="job-location">全职 · 全球前十中心化交易所</div>
+          <ul>
+            <li>从零重建内容运营团队——重新划定岗位职责，为所有直属下级制定KPI并设立OKR</li>
+            <li>设计并落地<span class="metric">端到端编辑工作流程</span>（选题分配→事实核查→编辑→审批），覆盖多个部门，并对全体成员进行系统培训</li>
+            <li>每日审核并编辑<span class="metric">多达40篇</span>内容，涵盖技术分析、新闻报道、教育内容、上币公告及APP更新</li>
+            <li>管理招聘流程：设计招聘表单、主持面试，在预算范围内完成主管及撰稿人的入职培训</li>
+            <li>协助产品及BD团队完成<span class="metric">普通话中文→英文</span>产品文案、UI/UX字符串、新闻稿及BD资料的本地化</li>
+            <li>在<em>Bitget Insights</em>社交交易APP上线前提供UI/UX布局优化建议</li>
+            <li>主动介绍与明星广告代理公司NEON达成<strong>战略合作</strong>，充分利用既有专业人脉</li>
+            <li>每周用中文向市场总监提交管理报告；每两周与全体团队成员进行一对一谈话，跟进个人发展并收集反馈</li>
+          </ul>
+        </div>
+
+        <!-- Singularity -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Singularity（Web3游戏平台）</div>
+            <div class="job-tenure">2020 — 2021</div>
+          </div>
+          <div class="job-role">社交媒体与营销本地化经理</div>
+          <div class="job-location">新加坡 · 全职 + 兼职（Deer Network）</div>
+          <ul>
+            <li>担任英文长篇文案写手、中英社交媒体内容翻译、国际公关联络人及全球市场BD负责人</li>
+            <li><em>兼职（Deer Network）：</em>撰写完整英文白皮书并完成全站本地化</li>
+          </ul>
+        </div>
+
+        <!-- Silubium -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Silubium (丝路币)</div>
+            <div class="job-tenure">2017 — 2018</div>
+          </div>
+          <div class="job-role">联合创始人 · 区块链系统架构师 · CMO</div>
+          <div class="job-location">中国</div>
+          <ul>
+            <li>以笔名 <em>Ryker Freegeld</em> 联合设计Silubium区块链全套功能及规则架构</li>
+            <li>作为工程团队负责人，管理两支并行开发团队（源代码 + 钱包 + 公共账本"Silkchain"）</li>
+            <li>端到端主导国际ICO营销活动全流程，直至代币正式上线</li>
+            <li>在中国各ICO融资活动中以普通话发表主旨演讲</li>
+            <li>为中国及国际投资者受众制作双语视频及广告内容</li>
+          </ul>
+        </div>
+
+        <!-- Freelance -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">自由职业 — 加密货币、金融与科技</div>
+            <div class="job-tenure">2018 — 2020</div>
+          </div>
+          <div class="job-role">内容写手 · 文案撰稿人 · 社交媒体经理</div>
+          <div class="job-location">远程</div>
+          <ul>
+            <li>为GSR、Coinformant、Blockchain Advocates、BingX、Silktrader等客户在加密货币、游戏、网络安全、SaaS及区块链领域提供内容服务</li>
+            <li>内容类型：白皮书、技术分析、SEO文章、新闻稿、邮件营销、网站文案、社交媒体文案、产品评测、操作指南、新闻简报及视频脚本</li>
+            <li>本地化：将中文、德文、日文、法文及西班牙文的交易所和加密货币新闻内容译为英文</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- WRITING SAMPLES -->
+      <section class="section">
+        <div class="section-title">发表写作样本</div>
+        <div class="samples-grid">
+          <div class="sample-item"><span class="sample-num">01</span><a href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank">做市商的优势</a><span class="sample-client">&nbsp;— GSR</span></div>
+          <div class="sample-item"><span class="sample-num">02</span><a href="https://drive.google.com/file/d/1jDB-Tx97USCuAaZa7jiL_rbb73Se0n37/view?usp=sharing" target="_blank">理解加密货币波动性</a><span class="sample-client">&nbsp;— GSR</span></div>
+          <div class="sample-item"><span class="sample-num">03</span><a href="https://docs.google.com/document/d/1kpDwVg0lBZlfZDIqtIfEoXPfrz-P3Z_x1o27yh790xg/edit?usp=sharing" target="_blank">什么是NFT？</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">04</span><a href="https://docs.google.com/document/d/1ZK1DW8hr6FWxa1A1cDiaDgzdUIyHnHZysJcVzBijzRw/edit?usp=sharing" target="_blank">如何制作NFT</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">05</span><a href="https://docs.google.com/document/d/1hTrKufD0YHKjaz5TAHMrpoz-lay_c98nNIpc70KB6kI/edit?usp=sharing" target="_blank">如何购买NFT</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">06</span><a href="https://docs.google.com/document/d/1e3_XHKMRDRw58fQf_gHb6V_F5n5aVkw7_c_mt8ZYFJQ/edit?usp=sharing" target="_blank">如何出售NFT</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">07</span><a href="https://docs.google.com/document/d/1LoQ8dn0mWEuFLxrhvGz6HGLuDuT9ToFvymonEmA-1MI/edit?usp=sharing" target="_blank">NFT存放在哪里？</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">08</span><a href="https://docs.google.com/document/d/1ltcwc0RyUPbdhvE-TJpA1GdfmpNA4SnXzsSnn85cBqU/edit?usp=sharing" target="_blank">NFT艺术为何有价值？</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">09</span><a href="https://drive.google.com/file/d/15FmqoB6RCUZJ0bydIeYRhM0Wc0vqy0LO/view?usp=drive_link" target="_blank">Deer Network 白皮书</a><span class="sample-client">&nbsp;— Deer Network</span></div>
+          <div class="sample-item"><span class="sample-num">10</span><a href="https://drive.google.com/file/d/14mKA1IS3XpkVvJQzoIDcxleDcv1nPJRu/view?usp=drive_link" target="_blank">Singularity 元宇宙白皮书</a><span class="sample-client">&nbsp;— Singularity</span></div>
+          <div class="sample-item"><span class="sample-num">11</span><a href="https://docs.google.com/document/d/13dfcZKG_TFzYLbbjRzvrHGC42IGSQDxRAw15hwjjtJo/edit?usp=sharing" target="_blank">代币化资产发行 — 法律考量</a><span class="sample-client">&nbsp;— Blockchain Advocates</span></div>
+          <div class="sample-item"><span class="sample-num">12</span><a href="https://docs.google.com/document/d/1RLcMJL6dcONOwwo4mdZebn99ZWMF3OEaqYJWPCSz0nk/edit?usp=sharing" target="_blank">Bitget Insights — UX反馈报告</a><span class="sample-client">&nbsp;— Bitget</span></div>
+          <div class="sample-item"><span class="sample-num">13</span><a href="http://donhartig.com/websites/silubium/silubium.html" target="_blank">Silubium区块链项目（存档网站）</a><span class="sample-client">&nbsp;— Silubium</span></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── SIDEBAR ───────────────────────────────── -->
+    <aside class="side-col">
+
+      <!-- CORE COMPETENCIES -->
+      <div class="side-section">
+        <div class="side-title">核心能力</div>
+        <div class="tags">
+          <span class="tag">内容战略</span>
+          <span class="tag">编辑管理</span>
+          <span class="tag">团队领导</span>
+          <span class="tag">SEO文案</span>
+          <span class="tag">加密货币 / DeFi</span>
+          <span class="tag">Web3营销</span>
+          <span class="tag">代币经济学</span>
+          <span class="tag">白皮书写作</span>
+          <span class="tag">本地化</span>
+          <span class="tag">GTM战略</span>
+          <span class="tag">KOL管理</span>
+          <span class="tag">社交媒体</span>
+          <span class="tag">新闻稿</span>
+          <span class="tag">技术分析</span>
+          <span class="tag">KPI / OKR设定</span>
+          <span class="tag">招聘与入职</span>
+          <span class="tag">品牌叙事</span>
+          <span class="tag">视频脚本</span>
+          <span class="tag">邮件营销</span>
+          <span class="tag">UI/UX文案</span>
+          <span class="tag">社群管理</span>
+          <span class="tag">CEX / DEX</span>
+          <span class="tag">区块链架构</span>
+          <span class="tag">ICO / IDO</span>
+        </div>
+      </div>
+
+      <!-- PLATFORMS & TOOLS -->
+      <div class="side-section">
+        <div class="side-title">平台与工具</div>
+        <div class="tags">
+          <span class="tag">Google Analytics</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">TikTok</span>
+          <span class="tag">X / Twitter</span>
+          <span class="tag">Instagram</span>
+          <span class="tag">Telegram</span>
+          <span class="tag">Discord</span>
+          <span class="tag">LinkedIn</span>
+          <span class="tag">Medium</span>
+          <span class="tag">Upwork</span>
+          <span class="tag">YouTube</span>
+          <span class="tag">HTML / CSS</span>
+        </div>
+      </div>
+
+      <!-- MARKETING SKILLS PROFILE -->
+      <div class="side-section">
+        <div class="side-title">技能概况</div>
+
+        <div class="skill-bar-label">内容战略与写作 <span>专家</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+
+        <div class="skill-bar-label">加密货币/Web3领域 <span>专家</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+
+        <div class="skill-bar-label">本地化（中→英） <span>专家</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+
+        <div class="skill-bar-label">团队与编辑管理 <span>高级</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+
+        <div class="skill-bar-label">SEO与CTA优化 <span>高级</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+
+        <div class="skill-bar-label">社交媒体营销 <span>高级</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="side-section">
+        <div class="side-title">语言能力（7种）</div>
+        <div class="lang-entry"><span>英语</span><span class="lang-level">母语</span></div>
+        <div class="lang-entry"><span>普通话中文</span><span class="lang-level">流利／职业</span></div>
+        <div class="lang-entry"><span>德语</span><span class="lang-level">职业</span></div>
+        <div class="lang-entry"><span>法语</span><span class="lang-level">职业</span></div>
+        <div class="lang-entry"><span>西班牙语</span><span class="lang-level">职业</span></div>
+        <div class="lang-entry"><span>日语</span><span class="lang-level">工作级</span></div>
+        <div class="lang-entry"><span>荷兰语</span><span class="lang-level">工作级</span></div>
+        <div style="font-size:0.72rem; color:var(--muted); margin-top:0.6rem;">中英翻译全球排名 <strong>#3</strong>（母语译者）</div>
+      </div>
+
+      <!-- NOTABLE CLIENTS -->
+      <div class="side-section">
+        <div class="side-title">主要客户与雇主</div>
+        <div style="font-size:0.82rem; line-height:1.9; color:#333;">
+          Bitget &nbsp;·&nbsp; GSR &nbsp;·&nbsp; Businesxt<br>
+          Singularity &nbsp;·&nbsp; Deer Network<br>
+          Blockchain Advocates &nbsp;·&nbsp; BingX<br>
+          Coinformant &nbsp;·&nbsp; Silktrader<br>
+          Antarctic Exchange
+        </div>
+      </div>
+
+      <!-- ADDITIONAL INFO -->
+      <div class="side-section">
+        <div class="side-title">补充信息</div>
+        <div style="font-size:0.8rem; line-height:1.8; color:#333;">
+          <div>✦ 接受全职及项目合作</div>
+          <div>✦ 远程及驻场（全球）</div>
+          <div>✦ 经验丰富的公开演讲者（中／英）</div>
+          <div>✦ 区块链联合创始人（ICO → 主网）</div>
+          <div>✦ Upwork 认证 — 客户五星好评</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ══ FOOTER ══════════════════════════════════ -->
+  <footer class="cv-footer">
+    <a href="https://www.donhartig.com">donhartig.com</a> &nbsp;·&nbsp; don@donhartig.com &nbsp;·&nbsp; 制作：董夏庭
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="MC-COEEIzavbIoTHTt6DkGeQp29IBH4Kg4PiQFxEFmo">
+    <title>董夏庭 简历</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Aldrich&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: slategray;
+            color: white;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #E0E0E0;
+        }
+
+        main {
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .indexgrid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .cell {
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            width: 240px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .cell:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .celltitle {
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cell:hover .celltitle {
+            color: aqua;
+        }
+
+        .cellimg {
+            width: 100%;
+            max-width: 200px;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+            border: 4px solid black;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: black;
+            color: lime;
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        footer a {
+            color: aqua;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* English link */
+        .lang-link {
+            position: fixed;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 0.78rem;
+            color: #ddd;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            z-index: 100;
+            font-family: Arial, sans-serif;
+        }
+        .lang-link:hover { color: aqua; }
+
+        @media screen and (max-width: 768px) {
+            .indexgrid { gap: 1.8rem; }
+            .cellimg { height: 270px; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .cell { width: 100%; max-width: 280px; }
+            .cellimg { max-width: 220px; height: 290px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="lang-link" href="https://donhartig.com/">English →</a>
+
+    <header>
+        <h1><u>董夏庭</u></h1>
+        <h2>简历 &amp; 作品集</h2>
+    </header>
+
+    <main>
+        <div class="indexgrid">
+            <a href="市场营销管理.html" class="cell">
+                <span class="celltitle">市场营销管理</span>
+                <img src="images/me/broodingdon.jpeg" alt="市场营销管理简历" class="cellimg">
+            </a>
+
+            <a href="产品管理.html" class="cell">
+                <span class="celltitle">产品管理</span>
+                <img src="images/me/newdonsmile.jpg" alt="产品管理简历" class="cellimg">
+            </a>
+
+            <a href="写作.html" class="cell">
+                <span class="celltitle">写作</span>
+                <img src="images/me/writerdon.jpeg" alt="写作作品集" class="cellimg">
+            </a>
+
+            <a href="本地化.html" class="cell">
+                <span class="celltitle">本地化</span>
+                <img src="images/me/brownrem.jpeg" alt="本地化作品集" class="cellimg">
+            </a>
+
+            <a href="开发.html" class="cell">
+                <span class="celltitle">开发</span>
+                <img src="images/me/posedon.jpeg" alt="开发作品集" class="cellimg">
+            </a>
+
+            <a href="视频营销.html" class="cell">
+                <span class="celltitle">视频营销</span>
+                <img src="images/me/artdon.jpeg" alt="视频营销" class="cellimg">
+            </a>
+
+            <a href="trading.html" class="cell">
+                <span class="celltitle"><b>交易研讨会</b></span>
+                <img src="images/me/chartdon.jpg" alt="交易培训" class="cellimg">
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>制作：<a href="https://www.donhartig.com">董夏庭</a></p>
+    </footer>
+
+</body>
+</html>
