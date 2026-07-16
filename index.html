@@ -69,26 +69,25 @@
             text-decoration: none;
             color: inherit;
             width: 240px;
-            position: relative; /* Needed for z-index on hover */
-            transition: transform 0.3s ease; /* Smooth animation */
+            position: relative;
+            transition: transform 0.3s ease;
         }
 
-        /* Hover effect */
         .cell:hover {
-            transform: scale(1.05); /* Expands the link slightly */
-            z-index: 10; /* Keeps the expanded link above others */
+            transform: scale(1.05);
+            z-index: 10;
         }
 
         .celltitle {
             font-family: 'Orbitron', sans-serif;
             color: white;
-            font-size: 1 rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
             display: block;
         }
 
         .cell:hover .celltitle {
-            color: aqua; /* Changes title from blue to aqua when hovered */
+            color: aqua;
         }
 
         .cellimg {
@@ -119,37 +118,36 @@
             text-decoration: underline;
         }
 
-        /* Responsive Adjustments */
+        .lang-link {
+            position: fixed;
+            top: 1rem;
+            right: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            color: #fff;
+            background: #cc0000;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            z-index: 100;
+            padding: 0.3rem 0.85rem;
+            border-radius: 3px;
+        }
+        .lang-link:hover { background: #ee0000; color: #fff; }
+
         @media screen and (max-width: 768px) {
-            .indexgrid {
-                gap: 1.8rem;
-            }
-            .cellimg {
-                height: 270px;
-            }
+            .indexgrid { gap: 1.8rem; }
+            .cellimg { height: 270px; }
         }
 
         @media screen and (max-width: 480px) {
-            .cell {
-                width: 100%; 
-                max-width: 280px;
-            }
-            .cellimg {
-                max-width: 220px;
-                height: 290px;
-            }
-        }            
+            .cell { width: 100%; max-width: 280px; }
+            .cellimg { max-width: 220px; height: 290px; }
+        }
     </style>
-<style>
-._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:flex-end;align-items:center;background:rgba(0,0,0,0.55);padding:0.5rem 1.2rem;}
-._topbar a._langbtn{font-family:'Orbitron',sans-serif;font-size:0.65rem;color:#fff;text-decoration:none;letter-spacing:0.08em;padding:0.3rem 0.85rem;border:1px solid rgba(255,255,255,0.4);border-radius:3px;}
-._topbar a._langbtn:hover{border-color:aqua;color:aqua;}
-@media print{._topbar{display:none!important;}}
-</style>
 </head>
 <body>
-<div class="_topbar"><a class="_langbtn" href="DonHartig_董夏庭.html">中文版</a></div>
 
+    <a class="lang-link" href="DonHartig_董夏庭.html"><b>中文</b></a>
 
     <header>
         <h1><u>Don Hartig</u></h1>
