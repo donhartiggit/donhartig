@@ -436,6 +436,47 @@
     .work-item:hover .work-play { opacity: 1; }
     .work-play svg { margin-left: 4px; }
 
+    /* ── Video Lightbox Modal ────────────────────────── */
+    .video-modal {
+      position: fixed; inset: 0; z-index: 2000;
+      display: none; align-items: center; justify-content: center;
+      padding: 3rem 1.5rem;
+      background: rgba(4,4,4,0.94);
+      backdrop-filter: blur(6px);
+    }
+    .video-modal.open { display: flex; }
+    .video-modal-inner {
+      position: relative;
+      width: 100%; max-width: 1040px;
+    }
+    .video-modal-frame {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: var(--panel);
+      border: 1px solid var(--border);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    }
+    .video-modal-frame iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .video-modal-close {
+      position: absolute; top: -3rem; right: 0;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+      color: var(--dim);
+      background: rgba(20,20,20,0.8);
+      cursor: pointer; transition: color 0.2s, border-color 0.2s;
+    }
+    .video-modal-close:hover { color: var(--gold); border-color: var(--gold); }
+    @media (max-width: 640px) {
+      .video-modal { padding: 1rem; }
+      .video-modal-close { top: -2.6rem; width: 34px; height: 34px; }
+    }
+
     /* Placeholder canvas items */
     .work-canvas {
       width: 100%; height: 100%;
@@ -921,10 +962,10 @@
 
     <div class="work-grid" id="workGrid">
       <!-- Item 1 — featured video sample -->
-      <a href="https://youtu.be/yM6qxM0ZMaA" target="_blank" rel="noopener noreferrer" class="work-item work-item-video" data-cat="commercial video" aria-label="Watch video sample on YouTube" style="display:block;">
+      <a href="https://youtu.be/yM6qxM0ZMaA" class="work-item work-item-video" data-cat="commercial video" aria-label="Play video sample" style="display:block;" onclick="return openVideoModal(event,'yM6qxM0ZMaA');">
         <img class="work-thumb" src="https://img.youtube.com/vi/yM6qxM0ZMaA/hqdefault.jpg" alt="Video sample thumbnail" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/yM6qxM0ZMaA/mqdefault.jpg';" />
         <div class="work-overlay">
-          <p class="work-cat">Video Sample · Watch on YouTube</p>
+          <p class="work-cat">Video Sample · Play</p>
           <h3 class="work-title">CLIENT PROJECT — VIDEO SAMPLE</h3>
         </div>
         <div class="work-play" aria-label="Play video">
@@ -933,10 +974,10 @@
       </a>
 
       <!-- Item 2 — video sample -->
-      <a href="https://youtu.be/1qvG2bswb-8" target="_blank" rel="noopener noreferrer" class="work-item work-item-video" data-cat="ai video" aria-label="Watch video sample on YouTube" style="display:block;">
+      <a href="https://youtu.be/1qvG2bswb-8" class="work-item work-item-video" data-cat="ai video" aria-label="Play video sample" style="display:block;" onclick="return openVideoModal(event,'1qvG2bswb-8');">
         <img class="work-thumb" src="https://img.youtube.com/vi/1qvG2bswb-8/hqdefault.jpg" alt="Video sample thumbnail" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/1qvG2bswb-8/mqdefault.jpg';" />
         <div class="work-overlay">
-          <p class="work-cat">Video Sample · Watch on YouTube</p>
+          <p class="work-cat">Video Sample · Play</p>
           <h3 class="work-title">CLIENT PROJECT — VIDEO SAMPLE</h3>
         </div>
         <div class="work-play" aria-label="Play video">
@@ -1239,7 +1280,39 @@
     </div>
   </footer>
 
+  <!-- ── Video Lightbox Modal ───────────────────────── -->
+  <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="video-modal-inner">
+      <button type="button" class="video-modal-close" id="videoModalClose" aria-label="Close video">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="video-modal-frame">
+        <iframe id="videoModalIframe" src="" title="Video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // ── Video Lightbox Modal ────────────────────────── //
+    const videoModal = document.getElementById('videoModal');
+    const videoModalIframe = document.getElementById('videoModalIframe');
+
+    function openVideoModal(e, id) {
+      if (e) e.preventDefault();
+      videoModalIframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+      videoModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      return false;
+    }
+    function closeVideoModal() {
+      videoModal.classList.remove('open');
+      videoModalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+    document.getElementById('videoModalClose').addEventListener('click', closeVideoModal);
+    videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideoModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && videoModal.classList.contains('open')) closeVideoModal(); });
+
     // ── Scroll-triggered fade-ups ──────────────────── //
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
