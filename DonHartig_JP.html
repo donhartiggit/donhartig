@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="MC-COEEIzavbIoTHTt6DkGeQp29IBH4Kg4PiQFxEFmo">
+    <title>Don Hartig · ドン・ハーティグ — CV</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&amp;family=Aldrich&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: slategray;
+            color: white;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #E0E0E0;
+        }
+
+        main {
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .indexgrid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .cell {
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            width: 240px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .cell:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .celltitle {
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cell:hover .celltitle {
+            color: aqua;
+        }
+
+        .cellimg {
+            width: 100%;
+            max-width: 200px;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+            border: 4px solid black;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: black;
+            color: lime;
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        footer a {
+            color: aqua;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            .indexgrid { gap: 1.8rem; }
+            .cellimg { height: 270px; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .cell { width: 100%; max-width: 280px; }
+            .cellimg { max-width: 220px; height: 290px; }
+        }
+    </style>
+    <style>
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:center;align-items:center;background:rgba(10,10,10,0.96);padding:0.45rem 1.5rem;box-shadow:0 1px 0 rgba(255,255,255,0.06);}
+._langrow{display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;}
+._topbar a._langbtn{font-family:'Orbitron',sans-serif;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._langbtn:hover{opacity:0.85;}
+@media print{._topbar{display:none!important;}}
+    </style>
+</head>
+<body>
+
+    <div class="_topbar"><div class="_langrow"><a class="_langbtn" href="index.html">English</a><a class="_langbtn" href="DonHartig_ZH.html">中文</a><a class="_langbtn" href="DonHartig_DE.html">Deutsch</a><a class="_langbtn" href="DonHartig_FR.html">Français</a><a class="_langbtn" href="DonHartig_ES.html">Español</a><a class="_langbtn" href="DonHartig_AF.html">Afrikaans</a></div></div>
+    <script>
+    (function(){
+      var bar = document.querySelector('._topbar');
+      function syncPadding(){ document.body.style.paddingTop = bar.offsetHeight + 'px'; }
+      syncPadding();
+      window.addEventListener('resize', syncPadding);
+      window.addEventListener('load', syncPadding);
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncPadding); }
+    })();
+    </script>
+
+    <header>
+        <h1><a href="DonHartig_JP.html" style="color:inherit;text-decoration:inherit;"><u>Don Hartig · ドン・ハーティグ</u></a></h1>
+        <h2>履歴書とポートフォリオ</h2>
+    </header>
+
+    <main>
+        <div class="indexgrid">
+            <a href="management.html" class="cell">
+                <span class="celltitle">マーケティングマネジメント</span>
+                <img src="images/me/broodingdon.jpeg" alt="一般履歴書" class="cellimg">
+            </a>
+
+            <a href="productmanagement_JP.html" class="cell">
+                <span class="celltitle">プロダクトマネジメント</span>
+                <img src="images/me/newdonsmile.jpg" alt="一般履歴書" class="cellimg">
+            </a>
+
+            <a href="writing.html" class="cell">
+                <span class="celltitle">ライティング</span>
+                <img src="images/me/writerdon.jpeg" alt="ライティングポートフォリオ" class="cellimg">
+            </a>
+
+            <a href="localisation.html" class="cell">
+                <span class="celltitle">ローカライゼーション</span>
+                <img src="images/me/brownrem.jpeg" alt="ローカライゼーションポートフォリオ" class="cellimg">
+            </a>
+
+            <a href="development.html" class="cell">
+                <span class="celltitle">開発</span>
+                <img src="images/me/posedon.jpeg" alt="開発ポートフォリオ" class="cellimg">
+            </a>
+
+            <a href="video.html" class="cell">
+                <span class="celltitle">動画マーケティング</span>
+                <img src="images/me/artdon.jpeg" alt="動画マーケティング" class="cellimg">
+            </a>
+
+            <a href="trading.html" class="cell">
+                <span class="celltitle"><b>トレーディング</b></span>
+                <img src="images/me/chartdon.jpg" alt="トレーディング研修" class="cellimg">
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>制作：<a href="https://www.donhartig.com">Don Hartig</a></p>
+    </footer>
+
+</body>
+</html>
