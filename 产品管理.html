@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>董夏庭 Don Hartig — 高级产品经理 · 加密货币 & Web3</title>
+<title>Don Hartig | 董夏庭 — 高级产品经理 · 加密货币 & Web3</title>
 <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -528,8 +528,38 @@
     .avail::before { animation: none; }
   }
 </style>
+<style>
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.96);padding:0.45rem 1.5rem;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 0 rgba(255,255,255,0.06);}
+._topbar button{font-family:inherit;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#0057ff;color:#fff;border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;}
+._topbar button:hover{opacity:0.85;}
+._navgroup{display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;}
+._langrow{display:flex;gap:0.4rem;flex-wrap:wrap;}
+._topbar a._langbtn{font-family:inherit;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._langbtn:hover{opacity:0.85;}
+._topbar a._homebtn{font-family:inherit;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#1e8e3e;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._homebtn:hover{opacity:0.85;}
+@media (max-width:960px){
+  ._topbar{flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+  ._navgroup{display:flex;flex-direction:column;align-items:center;width:100%;gap:0.5rem;}
+  ._langrow{justify-content:center;width:100%;}
+}
+@media print{._topbar{display:none!important;}}
+</style>
 </head>
 <body>
+<div class="_topbar"><button onclick="window.print()">⬇ 下载PDF</button><div class="_navgroup"><a class="_homebtn" href="DonHartig_ZH.html">首页</a><div class="_langrow"><a class="_langbtn" href="productmanagement.html">English</a><a class="_langbtn" href="productmanagement_DE.html">Deutsch</a><a class="_langbtn" href="productmanagement_FR.html">Français</a><a class="_langbtn" href="productmanagement_JP.html">日本語</a><a class="_langbtn" href="productmanagement_ES.html">Español</a><a class="_langbtn" href="productmanagement_AF.html">Afrikaans</a></div></div></div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
 <div class="page">
 
   <header>
@@ -537,13 +567,14 @@
     <div class="header-inner">
       <div>
         <div class="eyebrow">高级产品经理 · 加密货币 · Web3 · DeFi</div>
-        <h1>董夏庭<span>Don Hartig</span></h1>
+        <h1><a href="DonHartig_ZH.html" style="color:inherit;text-decoration:none;">Don Hartig<span> | 董夏庭</span></a></h1>
         <div class="title-line">区块链架构师 · 加密产品经理 · 多链产品战略</div>
       </div>
       <div class="profile-photo-wrap">
         <img src="images/me/newdonsmile.jpg" alt="董夏庭 Don Hartig" class="profile-photo">
       </div>
       <div class="contact-block">
+        <div style="margin-bottom:8px; color:var(--gold);">我可以亲自用以下语言与您交流：English, 中文, Deutsch, Français, 日本語, Español, Afrikaans</div>
         <div><span class="contact-label">邮箱</span><a href="mailto:don@donhartig.com">don@donhartig.com</a></div>
         <div><span class="contact-label">官网</span><a href="https://donhartig.com" target="_blank">donhartig.com</a></div>
         <div><span class="contact-label">领英</span><a href="https://linkedin.com/in/donhartig" target="_blank">linkedin.com/in/donhartig</a></div>
