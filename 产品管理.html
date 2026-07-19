@@ -479,25 +479,27 @@
     margin-top: 72px;
     padding-top: 32px;
     border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-name {
-    font-family: 'PingFang SC', 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 13px;
-    color: var(--white);
-    letter-spacing: 0.06em;
-  }
-
-  .footer-note {
+    text-align: center;
     font-family: 'PingFang SC', 'DM Mono', monospace;
     font-size: 11px;
+    letter-spacing: 0.06em;
     color: var(--muted);
+  }
+
+  .footer-links a { color: var(--teal); text-decoration: none; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-credit { margin-top: 6px; }
+  .footer-credit a {
+    font-family: 'PingFang SC', 'Syne', sans-serif;
+    font-weight: 800;
+    color: var(--teal);
+    text-decoration: none;
     letter-spacing: 0.06em;
   }
+  .footer-credit a:hover { color: var(--gold-light); }
+
+  .footer-avail { margin-top: 6px; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -895,8 +897,9 @@
   </div>
 
   <footer>
-    <div class="footer-name">董夏庭 Don Hartig · don@donhartig.com</div>
-    <div class="footer-note">donhartig.com · 全职远程 · 即刻可入职</div>
+    <div class="footer-links"><a href="mailto:don@donhartig.com">don@donhartig.com</a> · <a href="https://donhartig.com" target="_blank">donhartig.com</a></div>
+    <div class="footer-credit">制作：<a href="董夏庭.html">Don Hartig</a></div>
+    <div class="footer-avail">全职远程 · 即刻可入职</div>
   </footer>
 
 </div>

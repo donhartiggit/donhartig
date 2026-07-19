@@ -571,25 +571,27 @@
     margin-top: 72px;
     padding-top: 32px;
     border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 13px;
-    color: var(--white);
-    letter-spacing: 0.08em;
-  }
-
-  .footer-note {
+    text-align: center;
     font-family: 'DM Mono', monospace;
     font-size: 10.5px;
-    color: var(--muted);
     letter-spacing: 0.1em;
+    color: var(--muted);
   }
+
+  .footer-links a { color: var(--teal); text-decoration: none; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-credit { margin-top: 6px; }
+  .footer-credit a {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    color: var(--teal);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+  }
+  .footer-credit a:hover { color: var(--gold-light); }
+
+  .footer-avail { margin-top: 6px; }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -1021,8 +1023,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-name">Don Hartig · don@donhartig.com</div>
-    <div class="footer-note">donhartig.com · Voltyds Afgeleë · Onmiddellik Beskikbaar</div>
+    <div class="footer-links"><a href="mailto:don@donhartig.com">don@donhartig.com</a> · <a href="https://donhartig.com" target="_blank">donhartig.com</a></div>
+    <div class="footer-credit">Gekodeer deur <a href="DonHartig_AF.html">Don Hartig</a></div>
+    <div class="footer-avail">Voltyds Afgeleë · Onmiddellik Beskikbaar</div>
   </footer>
 
 </div>
