@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Hartig — Senior Produkbestuurder · Crypto & Web3</title>
+<!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #090c10;
+    --surface: #0e1218;
+    --card: #141921;
+    --border: #1e2730;
+    --border-bright: #2a3545;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: rgba(201,168,76,0.15);
+    --teal: #4cc9c9;
+    --teal-dim: rgba(76,201,201,0.12);
+    --white: #f0ede6;
+    --muted: #8a97a8;
+    --text: #d4cfc7;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID NOISE TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 28px 80px;
+  }
+
+  /* ── HERO HEADER ── */
+  header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 180px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 40px;
+    align-items: end;
+  }
+
+  /* ── PROFILE PHOTO ── */
+  .profile-photo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 4px;
+  }
+
+  .profile-photo {
+    width: 108px;
+    height: 108px;
+    border-radius: 2px;
+    object-fit: cover;
+    object-position: center top;
+    border: 1px solid var(--border-bright);
+    box-shadow:
+      0 0 0 4px var(--black),
+      0 0 0 5px var(--gold),
+      0 12px 40px rgba(0,0,0,0.6);
+    display: block;
+    filter: grayscale(15%) contrast(1.05);
+    transition: filter 0.3s;
+  }
+
+  .profile-photo:hover {
+    filter: grayscale(0%) contrast(1.08);
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(44px, 7vw, 72px);
+    font-weight: 800;
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: -0.03em;
+  }
+
+  h1 span {
+    display: block;
+    color: var(--gold);
+  }
+
+  .title-line {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 22px;
+    border-left: 2px solid var(--gold);
+    padding-left: 14px;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    line-height: 2.1;
+    color: var(--muted);
+  }
+
+  .contact-block a {
+    color: var(--teal);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-block a:hover { color: var(--gold-light); }
+
+  .contact-label {
+    color: white;
+    margin-right: 6px;
+  }
+
+  /* ── AVAILABILITY BADGE ── */
+  .avail {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 2px;
+    padding: 6px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: lime;
+    margin-bottom: 28px;
+  }
+
+  .avail::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.75); }
+  }
+
+  /* ── SUMMARY ── */
+  .summary {
+    padding: 48px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .summary-text p {
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.85;
+  }
+
+  .summary-text p + p { margin-top: 16px; }
+
+  .stat-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40px; height: 100%;
+    background: linear-gradient(to left, rgba(201,168,76,0.04), transparent);
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── SECTION STRUCTURE ── */
+  .section {
+    margin-top: 60px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border-bright), transparent);
+  }
+
+  /* ── EXPERIENCE CARDS ── */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-meta {
+    padding-top: 3px;
+  }
+
+  .exp-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  .exp-company {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .exp-location {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  .exp-tag {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--teal-dim);
+    border: 1px solid rgba(76,201,201,0.2);
+    color: var(--teal);
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 1px;
+  }
+
+  .exp-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .exp-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .exp-body li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 14.5px;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .exp-body li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-size: 6px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  /* highlight important keywords */
+  .exp-body strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* ── SKILLS MATRIX ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .skill-group {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-group::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .skill-list li {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text);
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .skill-list li::before {
+    content: '─';
+    position: absolute;
+    left: 0;
+    color: var(--border-bright);
+  }
+
+  /* ── CRYPTO DOMAIN STRIP ── */
+  .domain-strip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    padding: 28px 32px;
+    margin-top: 2px;
+  }
+
+  .domain-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    background: rgba(76,201,201,0.07);
+    border: 1px solid rgba(76,201,201,0.18);
+    color: var(--teal);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 1px;
+    letter-spacing: 0.05em;
+  }
+
+  .tag.gold {
+    background: var(--gold-dim);
+    border-color: rgba(201,168,76,0.25);
+    color: var(--gold-light);
+  }
+
+  /* ── LANGUAGES ── */
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .lang-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px 18px;
+    text-align: center;
+  }
+
+  .lang-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .lang-level {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .lang-level.native { color: var(--gold); }
+  .lang-level.fluent { color: var(--teal); }
+
+  /* ── NOTABLE WORK ── */
+  .works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .work-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px 26px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+
+  .work-item:hover {
+    border-color: var(--border-bright);
+  }
+
+  .work-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .work-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .work-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .work-item a {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--teal);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+  }
+
+  .work-item a:hover { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 72px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--white);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  header { animation: fadeUp 0.6s ease both; }
+  .summary { animation: fadeUp 0.6s 0.1s ease both; }
+  .section { animation: fadeUp 0.6s 0.2s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .header-inner { grid-template-columns: 1fr; }
+    .profile-photo-wrap { flex-direction: row; justify-content: flex-start; }
+    .contact-block { text-align: left; }
+    .summary { grid-template-columns: 1fr; }
+    .stat-stack { flex-direction: row; flex-wrap: wrap; }
+    .stat { flex: 1; min-width: 120px; }
+    .exp-item { grid-template-columns: 1fr; gap: 16px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .lang-grid { grid-template-columns: repeat(2, 1fr); }
+    .works-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; color: #111; }
+    body::before { display: none; }
+    .avail::before { animation: none; }
+  }
+</style>
+<style>
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.96);padding:0.45rem 1.5rem;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 0 rgba(255,255,255,0.06);}
+._topbar button{font-family:inherit;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#0057ff;color:#fff;border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;}
+._topbar button:hover{opacity:0.85;}
+._navgroup{display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;}
+._langrow{display:flex;gap:0.4rem;flex-wrap:wrap;}
+._topbar a._langbtn{font-family:inherit;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._langbtn:hover{opacity:0.85;}
+._topbar a._homebtn{font-family:inherit;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#1e8e3e;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._homebtn:hover{opacity:0.85;}
+@media (max-width:960px){
+  ._topbar{flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+  ._navgroup{display:flex;flex-direction:column;align-items:center;width:100%;gap:0.5rem;}
+  ._langrow{justify-content:center;width:100%;}
+}
+@media print{._topbar{display:none!important;}}
+</style>
+</head>
+<body>
+<div class="_topbar"><button onclick="window.print()">⬇ Laai PDF af</button><div class="_navgroup"><a class="_homebtn" href="DonHartig_AF.html">Tuis</a><div class="_langrow"><a class="_langbtn" href="productmanagement.html">English</a><a class="_langbtn" href="产品管理.html">中文</a><a class="_langbtn" href="productmanagement_DE.html">Deutsch</a><a class="_langbtn" href="productmanagement_FR.html">Français</a><a class="_langbtn" href="productmanagement_JP.html">日本語</a><a class="_langbtn" href="productmanagement_ES.html">Español</a></div></div></div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="avail">Beskikbaar</div>
+    <div class="header-inner">
+      <div>
+        <div class="eyebrow">Senior Produkbestuurder · Crypto · Web3 · DeFi</div>
+        <h1><a href="DonHartig_AF.html" style="color:inherit;text-decoration:none;">Don<span>Hartig</span></a></h1>
+        <div class="title-line">Blockchain-argitek · Crypto-PB · Multi-Chain Produkstrategie</div>
+      </div>
+      <div class="profile-photo-wrap">
+        <img src="images/me/newdonsmile.jpg" alt="Don Hartig" class="profile-photo">
+      </div>
+      <div class="contact-block">
+        <div style="margin-bottom:8px; color:var(--gold);">Praat persoonlik met my in: English, 中文, Deutsch, Français, 日本語, Español, Afrikaans</div>
+        <div><span class="contact-label">E-POS</span><a href="mailto:don@donhartig.com">don@donhartig.com</a></div>
+        <div><span class="contact-label">WEB</span><a href="https://donhartig.com" target="_blank">donhartig.com</a></div>
+        <div><span class="contact-label">LINKEDIN</span><a href="https://linkedin.com/in/donhartig" target="_blank">linkedin.com/in/donhartig</a></div>
+        <div><span class="contact-label">UPWORK</span><a href="https://www.upwork.com/o/profiles/users/~01ea8f586089ac90e3/" target="_blank">5★ Geverifieer</a></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <div class="summary-text">
+      <p>
+        Senior crypto-produkkenner met <strong>meer as 11 jaar</strong> ervaring in produkstrategie, inhoudbedrywighede en blockchain-produkontwikkeling by topgehalte-beurse en Web3-platforms. <strong>Stigter van die Silubium («四路币») blockchain-projek</strong>, as <strong>Ingenieursspanleier en CMO</strong> — persoonlik verantwoordelik vir die ontwerp en argitektuur van 'n volledige blockchain-funksiestel, beursie en openbare grootboek, van konsep tot ICO en mainnet-bekendstelling.
+      </p>
+      <p>
+        Praktiese ervaring in die bestuur van produkpyplyne by <strong>Bitget (top-10 wêreldwye CEX)</strong>, met UI/UX-optimeringsaanbevelings vir die <em>Bitget Insights</em> sosiale handel-app voor bekendstelling, en die vertaling van komplekse blockchain-konsepte in duidelike produkspesifikasies en dokumentasie. <strong>'n Volstapel-ontwikkelaar wat met HTML, CSS, JavaScript, React, Node.js en REST-API's bou</strong> — in staat om vlot met ingenieurspanne oor tegnies komplekse funksies te kommunikeer.
+      </p>
+      <p>
+        Meer as 10 jaar as 'n crypto-markdeelnemer, vlot in <strong>7 tale</strong>, met 'n besondere voorsprong in Asiatiese markte wat krities is vir wêreldwye beursie-aanvaarding.
+      </p>
+    </div>
+
+    <div class="stat-stack">
+      <div class="stat">
+        <div class="stat-num">11+</div>
+        <div class="stat-label">Jaar in Crypto-bedryf</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Tale Vlot Gepraat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">Web-/App-projekte Gebou</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Blockchain Mede-gestig</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Produk- & Leierskapervaring</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Bitget -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">2021 — 2022</div>
+        <div class="exp-company">Bitget</div>
+        <div class="exp-location">Afgeleë · Voltyds</div>
+        <div class="exp-tag">Top-10 Wêreldwye CEX</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Senior Content Operations Manager</div>
+        <ul>
+          <li>Het die Inhoudbedrywighede-funksie <strong>van voor af</strong> opgebou — herstruktureer spanrolle, definieer KPI's, stel OKR's op en ontwerp die volledige redaksionele werkvloei; 'n direkte ekwivalent aan die vestiging van PB-prosesse by 'n produkgedrewe maatskappy.</li>
+          <li>Het <strong>UI/UX-uitlegoptimeringsaanbevelings</strong> verskaf vir die <em>Bitget Insights</em> sosiale handel-app voor bekendstelling, deur direk saam te werk met die Produk- en BD-spanne om gebruikerservaringsbesluite te vorm.</li>
+          <li>Het Produk- en BD-spanne bygestaan met <strong>Mandaryns-Chinees na Engelse lokalisering</strong> van produkteks, UI/UX-stringe, persverklarings en BD-materiaal — en die gaping tussen tegniese vereistes en gebruikersgerigte taal oorbrug.</li>
+          <li>Het 'n hoëvolume inhoudpyplyn bestuur (<strong>tot 40 plasings per dag</strong>) wat tegniese ontledings, noteringsaankondigings en app-opdaterings insluit — en streng gehalte-standaarde regoor 'n verspreide span gevestig.</li>
+          <li>Het die volledige aanstellingsproses gelei: het werwingsvorms geskep, onderhoude gevoer en toesighouers en skrywers binne begrotingsbeperkings ingebring.</li>
+          <li>Het proaktief 'n <strong>strategiese vennootskap</strong> met die BV-adverteringsagentskap NEON bewerkstellig deur 'n bestaande professionele verhouding te benut — wat 'n instink vir die identifisering van groeigeleenthede demonstreer.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Silubium -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">2017 — 2018</div>
+        <div class="exp-company">Silubium (丝路币)</div>
+        <div class="exp-location">China</div>
+        <div class="exp-tag">Blockchain Mede-stigter</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Mede-stigter · Blockchain-stelselargitek · CMO</div>
+        <ul>
+          <li>Het die <strong>volledige Silubium blockchain-funksiestel en reëlargitektuur</strong> mede-ontwerp — verantwoordelik vir die definisie van wat die ketting kon doen, hoe dit sou gedra, en hoe die komponente (bronkode, beursie, openbare grootboek 'Silkchain') saamgepas het.</li>
+          <li>Het as <strong>Ingenieursspanleier</strong> oor twee parallelle ontwikkelingspanne gedien, en die beursie-toepassing en openbare grootboek van spesifikasie tot bekendstelling toesig gehou — die kern produkbestuurfunksie van 'n blockchain-beginonderneming.</li>
+          <li>Het die volledige internasionale <strong>ICO-bemarkingsveldtog</strong> end-tot-end gelei, van witskrif tot token-bekendstelling — en tydlyne, opleweringsitems en kruisfunksionele belanghebbendes oor twee lande en twee tale bestuur.</li>
+          <li>Het hoofredes by alle ICO-befondsingsgeleenthede in China in Mandaryns gelewer, en hoogs tegniese blockchain-konsepte vir beleggersgehore vertaal.</li>
+          <li>Het tweetalige video- en advertensie-inhoud vir die Chinese en internasionale markte geproduseer.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Businext -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">2023 — 2024</div>
+        <div class="exp-company">Businext</div>
+        <div class="exp-location">Dubai, VAE · Op-perseel</div>
+        <div class="exp-tag">Crypto- & DeFi-media</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Senior Vervaardiger — Crypto, DeFi & FinTech</div>
+        <ul>
+          <li>Het 'n kruisfunksionele span gelei wat daagliks langvorm-inhoud oor <strong>crypto, DeFi, blockchain, Web3 en FinTech</strong> vervaardig — verantwoordelik vir die volledige inhoudkalender, redaksionele strategie en spanuitsetgehalte.</li>
+          <li>Het onderhoude voor die kamera gevoer en video-inhoud oor TikTok, X en Instagram vervaardig oor crypto-neigings en markverhale.</li>
+          <li>Het skrywers, joernaliste, aanbieders en KOL-vennote gewerf en aangestel — en werkvloei- en inhoudverspreidingstrategieë geïmplementeer om betrokkenheidsmaatstawwe te verbeter.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Antarctic Exchange -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">2025 — Huidig</div>
+        <div class="exp-company">Antarctic Exchange</div>
+        <div class="exp-location">Afgeleë</div>
+        <div class="exp-tag">Crypto-beurs</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Weblokaliseerder · Taaloptimeerder · Sosiale Media-vervaardiger</div>
+        <ul>
+          <li>Het <strong>volledige lokalisering van die beurs se webwerf</strong> van Chinees na Engels uitgevoer, en alle teks vir Engelssprekende markstoon, idioom en SEO-bedoeling geoptimeer.</li>
+          <li>Het SEO-geoptimeerde CTA-artikels en daaglikse sosiale media-inhoud geskryf om inkomende gebruikerwerwing te dryf.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Singularity -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">2020 — 2021</div>
+        <div class="exp-company">Singularity</div>
+        <div class="exp-location">Singapoer</div>
+        <div class="exp-tag">Web3-speletjies</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Bestuurder: Sosiale Media- & Bemarkingslokalisering</div>
+        <ul>
+          <li>Het die volledige Engelse <strong>witskrif vir die Singularity Metaverse</strong> geskryf — en tegniese Web3-argitektuur in gestruktureerde produkdokumentasie vir 'n wêreldwye gehoor vertaal.</li>
+          <li>Het as <strong>internasionale skakel vir openbare betrekkinge en BO-uitreiking</strong> gedien, en handelsmerk-na-vennoot-kommunikasie vir wêreldwye markte bestuur.</li>
+          <li><em>Gelyktydig (Deer Network):</em> het die volledige Engelse witskrif geskryf en volledige webwerflokalisering uitgevoer.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Freelance -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">2018 — 2020</div>
+        <div class="exp-company">Freelance</div>
+        <div class="exp-location">Afgeleë</div>
+        <div class="exp-tag">Meervoudige Kliënte</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Crypto-inhoud- & Tegniese Skrywer · Webontwikkelaar</div>
+        <ul>
+          <li>Het tegniese inhoud en bemarkingsinhoud gelewer vir <strong>GSR, BingX, Blockchain Advocates, Coinformant, Antarctic Exchange</strong> en ander — insluitend witskrifte, tegniese ontledings, produkdokumentasie en opvoedkundige gidse.</li>
+          <li>Het 'n stuk oor regsoorwegings vir <strong>Tokenized Asset Offerings</strong> vir Blockchain Advocates geskryf — en beheersing van regulatoriese en strukturele nuanses in digitale bates gedemonstreer.</li>
+          <li>Het begin om webtoepassings te bou, en meer as <strong>40 lewendige projekte</strong> oor crypto-, finansiële-, e-handel- en SaaS-sektore versamel.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CRYPTO DOMAIN EXPERTISE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Crypto-vakkundigheid</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="domain-strip">
+      <div class="domain-title">Blockchain- & Protokolkennis</div>
+      <div class="tag-cloud">
+        <span class="tag">Bitcoin (BTC)</span>
+        <span class="tag">Ethereum (ETH)</span>
+        <span class="tag">Monero (XMR)</span>
+        <span class="tag">Solana (SOL)</span>
+        <span class="tag">Non-Custodial Wallets</span>
+        <span class="tag">Private Key Management</span>
+        <span class="tag">Multi-Chain UX</span>
+        <span class="tag">Blockchain Architecture</span>
+        <span class="tag">Tokenomics</span>
+        <span class="tag">ICO / IDO</span>
+        <span class="tag">DeFi Protocols</span>
+        <span class="tag">NFTs / Web3</span>
+        <span class="tag">CEX / DEX</span>
+        <span class="tag">Wallet UX</span>
+        <span class="tag">P2P Trading</span>
+        <span class="tag">Whitepaper Authorship</span>
+        <span class="tag">Market Making</span>
+        <span class="tag">Technical Analysis</span>
+      </div>
+    </div>
+
+    <div class="domain-strip" style="margin-top:2px; border-left-color: var(--gold);">
+      <div class="domain-title" style="color:var(--gold);">Produkbestuurvaardighede</div>
+      <div class="tag-cloud">
+        <span class="tag gold">Roadmap-eienaarskap</span>
+        <span class="tag gold">KPI-/OKR-definisie</span>
+        <span class="tag gold">Kruisfunksionele Leierskap</span>
+        <span class="tag gold">Funksieprioritisering</span>
+        <span class="tag gold">Produkvereistes (PRD's)</span>
+        <span class="tag gold">UX-optimering</span>
+        <span class="tag gold">Mededingende Ontleding</span>
+        <span class="tag gold">Bekendstellingstrategie</span>
+        <span class="tag gold">Spanbou & Aanstelling</span>
+        <span class="tag gold">Rats / Iteratiewe Lewering</span>
+        <span class="tag gold">Tegniese Dokumentasie</span>
+        <span class="tag gold">Belanghebbendebestuur</span>
+        <span class="tag gold">Gebruikerwerwingstregters</span>
+        <span class="tag gold">Datagedrewe Iterasie</span>
+        <span class="tag gold">Post-bekendstellingsontleding</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Tegniese Vaardighede</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Ontwikkeling</div>
+        <ul class="skill-list">
+          <li>HTML5 / CSS3</li>
+          <li>JavaScript (ES6+)</li>
+          <li>React / Next.js</li>
+          <li>Node.js</li>
+          <li>REST APIs / GraphQL</li>
+          <li>Python</li>
+          <li>MySQL / PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>Git / GitHub</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Produk & Analise</div>
+        <ul class="skill-list">
+          <li>Google Analytics</li>
+          <li>KPI-raamwerkontwerp</li>
+          <li>A/B Testing</li>
+          <li>Gebruikervloei-ontleding</li>
+          <li>Tregteroptimering</li>
+          <li>SEO-strategie</li>
+          <li>UI/UX Feedback</li>
+          <li>Rats / Sprintbeplanning</li>
+          <li>Dokumentasiestelsels</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Platforms & Nutsmiddels</div>
+        <ul class="skill-list">
+          <li>Google Workspace</li>
+          <li>Telegram / Discord</li>
+          <li>X / Twitter</li>
+          <li>Medium / Substack</li>
+          <li>GitHub</li>
+          <li>AWS / Wolkbediening</li>
+          <li>WordPress / CMS</li>
+          <li>Upwork (5★ Geverifieer)</li>
+          <li>TikTok / YouTube</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Taalvaardigheid</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-item">
+        <div class="lang-name">Engels</div>
+        <div class="lang-level native">Moedertaal</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name">Mandaryns</div>
+        <div class="lang-level fluent">Vlot · #3 Wêreldwyd</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name">Duits</div>
+        <div class="lang-level fluent">Professioneel</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name">+4 Meer</div>
+        <div class="lang-level">Frans · Spaans · Japannees · Nederlands</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTABLE WORK -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Gekose Werk & Skryfwerk</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="works-grid">
+      <div class="work-item">
+        <div class="work-num">01 · Bitget</div>
+        <div class="work-title">Bitget Insights — UX-terugvoerverslag</div>
+        <div class="work-desc">Voorbekendstelling UX-oorsig en optimeringsaanbevelings vir die Bitget Insights sosiale handel-app, gelewer aan die Produkspan.</div>
+        <a href="https://docs.google.com/document/d/1RLcMJL6dcONOwwo4mdZebn99ZWMF3OEaqYJWPCSz0nk/edit?usp=sharing" target="_blank">Bekyk Verslag →</a>
+      </div>
+      <div class="work-item">
+        <div class="work-num">02 · GSR</div>
+        <div class="work-title">Die Voordele van Markmaking</div>
+        <div class="work-desc">Professionele ontleding van crypto-markmakingstrategieë vir GSR vervaardig — een van die wêreld se voorste algoritmiese handelsmaatskappye.</div>
+        <a href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank">Bekyk PDF →</a>
+      </div>
+      <div class="work-item">
+        <div class="work-num">03 · Silubium</div>
+        <div class="work-title">Silubium Blockchain — Geargiveerde Projek</div>
+        <div class="work-desc">Mede-ontwerp van blockchain-funksie-argitektuur, bestuur van twee ontwikkelingspanne (beursie + grootboek), en leiding van die ICO-veldtog tot mainnet-bekendstelling.</div>
+        <a href="http://donhartig.com/websites/silubium/silubium.html" target="_blank">Bekyk Argief →</a>
+      </div>
+      <div class="work-item">
+        <div class="work-num">04 · Deer Network</div>
+        <div class="work-title">Deer Network Whitepaper</div>
+        <div class="work-desc">Het die volledige Engelse tegniese witskrif vir die Deer Network blockchain-projek geskryf, en protokolontwerp in gestruktureerde dokumentasie vertaal.</div>
+        <a href="https://drive.google.com/file/d/15FmqoB6RCUZJ0bydIeYRhM0Wc0vqy0LO/view?usp=drive_link" target="_blank">Bekyk Witskrif →</a>
+      </div>
+      <div class="work-item">
+        <div class="work-num">05 · Singularity</div>
+        <div class="work-title">Singularity Metaverse Whitepaper</div>
+        <div class="work-desc">Volledige Engelse witskrif vir die Singularity Web3-speletjieplatform — wat tokenomika, ekosisteemontwerp en tegniese argitektuur dek.</div>
+        <a href="https://drive.google.com/file/d/14mKA1IS3XpkVvJQzoIDcxleDcv1nPJRu/view?usp=drive_link" target="_blank">Bekyk Witskrif →</a>
+      </div>
+      <div class="work-item">
+        <div class="work-num">06 · Blockchain Advocates</div>
+        <div class="work-title">Tokenized Asset Offering — Regsoorwegings</div>
+        <div class="work-desc">Diepgaande ontleding van die regs- en strukturele oorwegings vir tokenized asset offerings — wat beheersing van regulatoriese raamwerke in digitale bates demonstreer.</div>
+        <a href="https://docs.google.com/document/d/13dfcZKG_TFzYLbbjRzvrHGC42IGSQDxRAw15hwjjtJo/edit?usp=sharing" target="_blank">Bekyk Dokument →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Don Hartig · don@donhartig.com</div>
+    <div class="footer-note">donhartig.com · Voltyds Afgeleë · Onmiddellik Beskikbaar</div>
+  </footer>
+
+</div>
+</body>
+</html>
