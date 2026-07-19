@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Hartig – シニアマーケティングマネージャー | 暗号資産 | Web3 | DeFi</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-49976807-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-49976807-8');
+</script>
+
+<style>
+  :root {
+    --black:   #0a0a0a;
+    --white:   #ffffff;
+    --offwhite:#f7f6f3;
+    --accent:  #0057ff;
+    --accent2: #00c896;
+    --muted:   #6b6b6b;
+    --border:  #e0ddd8;
+    --tag-bg:  #eef3ff;
+    --tag-col: #0047cc;
+    --serif:   'DM Sans', sans-serif;
+    --mono:    'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--serif);
+    background: var(--offwhite);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── LAYOUT ─────────────────────────────────── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+  }
+
+  /* ── HEADER ─────────────────────────────────── */
+  .cv-header {
+    background: var(--black);
+    color: var(--white);
+    padding: 3rem 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cv-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 40px solid var(--accent);
+    opacity: 0.15;
+  }
+  .cv-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: 200px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 25px solid var(--accent2);
+    opacity: 0.12;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cv-name {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .cv-name .chinese {
+    font-size: 0.45em;
+    font-weight: 300;
+    opacity: 0.6;
+    margin-left: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .cv-title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--accent2);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+  }
+  .contact-grid a { color: rgba(255,255,255,0.9); text-decoration: none; }
+  .contact-grid a:hover { color: var(--accent2); }
+  .contact-label { opacity: 0.5; margin-right: 0.25rem; }
+
+  .availability-badge {
+    background: var(--accent2);
+    color: var(--black);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 0.3rem;
+  }
+
+  .header-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.2);
+    display: block;
+  }
+
+  /* ── SUMMARY BAR ─────────────────────────────── */
+  .summary-bar {
+    background: var(--accent);
+    color: var(--white);
+    padding: 1.1rem 3rem;
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* ── BODY ────────────────────────────────────── */
+  .cv-body {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 0;
+  }
+
+  /* ── MAIN COLUMN ─────────────────────────────── */
+  .main-col {
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+    border-right: 1px solid var(--border);
+  }
+
+  /* ── SIDEBAR ─────────────────────────────────── */
+  .side-col {
+    padding: 2.5rem 2rem 2.5rem 2rem;
+    background: var(--offwhite);
+  }
+
+  /* ── SECTION ─────────────────────────────────── */
+  .section { margin-bottom: 2.2rem; }
+  .section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── JOB ENTRY ───────────────────────────────── */
+  .job { margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid var(--border); }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .job-company {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+  }
+  .job-tenure {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .job-role {
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+  }
+  .job-location {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .job ul {
+    list-style: none;
+    padding: 0;
+  }
+  .job ul li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.87rem;
+    line-height: 1.55;
+    color: #222;
+  }
+  .job ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent2);
+    font-size: 0.7rem;
+    top: 0.15em;
+  }
+
+  /* ── METRIC HIGHLIGHT ────────────────────────── */
+  .metric {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  /* ── SKILLS TAGS ─────────────────────────────── */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+  }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-col);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── SIDEBAR ELEMENTS ────────────────────────── */
+  .side-section { margin-bottom: 2rem; }
+  .side-section:last-child { margin-bottom: 0; }
+
+  .side-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    color: var(--black);
+  }
+  .skill-bar-label span { color: var(--muted); font-size: 0.72rem; }
+  .bar-track {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 2px;
+  }
+
+  .lang-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-entry:last-child { border-bottom: none; }
+  .lang-level {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+
+  .edu-entry { margin-bottom: 1rem; font-size: 0.82rem; }
+  .edu-degree { font-weight: 600; }
+  .edu-school { color: var(--muted); font-size: 0.78rem; }
+
+  .link-item {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    word-break: break-all;
+  }
+  .link-item:hover { text-decoration: underline; }
+  .link-label { display: block; font-size: 0.7rem; color: var(--muted); margin-bottom: 0.1rem; }
+
+  /* ── WRITING SAMPLES ─────────────────────────── */
+  .samples-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .sample-item {
+    font-size: 0.82rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .sample-num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    min-width: 1.5rem;
+  }
+  .sample-item a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .sample-item a:hover { text-decoration: underline; }
+  .sample-client {
+    font-size: 0.72rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  .cv-footer {
+    background: var(--black);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.72rem;
+    font-family: var(--mono);
+  }
+  .cv-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+  /* ── PRINT ───────────────────────────────────── */
+  @media print {
+    body { background: white; font-size: 11pt; }
+    .page { box-shadow: none; max-width: 100%; }
+    .cv-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .summary-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .side-col { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cv-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 680px) {
+    .cv-header { padding: 2rem 1.5rem 2rem; }
+    .header-inner { grid-template-columns: 1fr; }
+    .header-photo { display: none; }
+    .summary-bar { padding: 1rem 1.5rem; }
+    .cv-body { grid-template-columns: 1fr; }
+    .main-col { padding: 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .side-col { padding: 1.5rem; }
+  }
+</style>
+<style>
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.96);padding:0.45rem 1.5rem;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 0 rgba(255,255,255,0.06);}
+._topbar button{font-family:inherit;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#0057ff;color:#fff;border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;}
+._topbar button:hover{opacity:0.85;}
+._navgroup{display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;}
+._langrow{display:flex;gap:0.4rem;flex-wrap:wrap;}
+._topbar a._langbtn{font-family:inherit;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._langbtn:hover{opacity:0.85;}
+._topbar a._homebtn{font-family:inherit;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#1e8e3e;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._homebtn:hover{opacity:0.85;}
+@media (max-width:960px){
+  ._topbar{flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+  ._navgroup{display:flex;flex-direction:column;align-items:center;width:100%;gap:0.5rem;}
+  ._langrow{justify-content:center;width:100%;}
+}
+@media print{._topbar{display:none!important;}}
+</style>
+</head>
+<body>
+<div class="_topbar"><button onclick="window.print()">⬇ PDFをダウンロード</button><div class="_navgroup"><a class="_homebtn" href="DonHartig_JP.html">ホーム</a><div class="_langrow"><a class="_langbtn" href="marketing.html">English</a><a class="_langbtn" href="市场营销管理.html">中文</a><a class="_langbtn" href="marketing_DE.html">Deutsch</a><a class="_langbtn" href="marketing_FR.html">Français</a><a class="_langbtn" href="marketing_ES.html">Español</a><a class="_langbtn" href="marketing_AF.html">Afrikaans</a></div></div></div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
+<div class="page" style="margin-top:0;">
+
+  <!-- ══ HEADER ══════════════════════════════════ -->
+  <header class="cv-header">
+    <div class="header-inner">
+      <div>
+        <div class="cv-name"><a href="DonHartig_JP.html" style="color:inherit;text-decoration:none;">Don Hartig <span class="chinese">董夏庭</span></a></div>
+        <div class="cv-title">シニアマーケティングマネージャー · 暗号資産 · DeFi · Web3 · コンテンツ戦略 · ローカライゼーション</div>
+        <div class="contact-grid">
+          <div style="width:100%; font-size:0.82rem; color:var(--accent2); margin-bottom:0.2rem;">以下の言語で直接お話しできます：<strong>English</strong>, <strong>中文</strong>, <strong>Deutsch</strong>, <strong>Français</strong>, <strong>日本語</strong>, <strong>Español</strong>, <strong>Afrikaans</strong></div>
+          <span><span class="contact-label">メール</span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
+          <span><span class="contact-label">ウェブ</span><a href="https://www.donhartig.com" target="_blank">donhartig.com</a></span>
+          <span><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/donhartig" target="_blank">linkedin.com/in/donhartig</a></span>
+          <span><span class="contact-label">Upwork</span><a href="https://www.upwork.com/o/profiles/users/~01ea8f586089ac90e3/" target="_blank">プロフィール・レビューを見る</a></span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:1rem;">
+        <img src="images/me/brownremcroppedleftcentered.jpeg" alt="Don Hartig" class="header-photo">
+        <div class="availability-badge">✦ 即対応可能</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ SUMMARY ════════════════════════════════════ -->
+  <div class="summary-bar">
+    トップクラスの取引所やWeb3プラットフォームにおいて、コンテンツ・ローカライゼーション・グロースチームの構築とリードを<strong>8年以上</strong>担ってきたシニア暗号資産マーケティング専門家。<strong>Bitget</strong>(世界トップ10のCEX)や<strong>Businext</strong>(ドバイ)で編集パイプラインを管理してきた実績を持つ。ICOからメインネットまでを手掛けたブロックチェーンプロジェクトの共同創業者兼CMO。<strong>7言語</strong>に堪能であり、グローバルな暗号資産GTMおよびローカライゼーション戦略において希少な強みを持つ。フルタイムでリモートまたは出社対応可能。
+  </div>
+
+  <!-- ══ BODY ═══════════════════════════════════════ -->
+  <div class="cv-body">
+
+    <!-- ── MAIN COLUMN ──────────────────────────── -->
+    <main class="main-col">
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+        <div class="section-title">職務経歴</div>
+
+        <!-- Antarctic Exchange -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Antarctic Exchange</div>
+            <div class="job-tenure">2025 — Present</div>
+          </div>
+          <div class="job-role">ウェブローカライザー · 言語最適化担当 · ソーシャルメディアプロデューサー</div>
+          <div class="job-location">リモート</div>
+          <ul>
+            <li>中国語ウェブサイトの英語への全面的なローカライズを実施し、英語圏市場のトーン、慣用表現、SEO意図に合わせてすべてのコピーを最適化</li>
+            <li>複数のプラットフォームで日々ソーシャルメディアコンテンツを制作し、ブランドボイスの一貫性を維持</li>
+            <li>インバウンド獲得を促進するため、SEOに最適化されたCTA記事をMedium向けに執筆・改稿</li>
+          </ul>
+        </div>
+
+        <!-- Businesxt -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Businext</div>
+            <div class="job-tenure">2023 — 2024</div>
+          </div>
+          <div class="job-role">シニアプロデューサー — 暗号資産・DeFi・FinTech</div>
+          <div class="job-location">ドバイ、UAE・フルタイム出社</div>
+          <ul>
+            <li>暗号資産、ブロックチェーン、Web3、DeFi、FinTechに関する長尺コンテンツを日々制作する<span class="metric">ジャーナリスト、ライター、共同プロデューサー、動画編集者</span>から成る部門横断チームを主導</li>
+            <li>コンテンツカレンダー全体を統括：日々のニューストピックをニュースルームに提案し、公開前に全チームの成果物を監修・編集</li>
+            <li>TikTok、X(Twitter)、Instagram向けに動画コンテンツを制作。暗号資産のトレンドや市場動向に関するカメラ出演インタビューを実施</li>
+            <li>ブランドの認知拡大のため、ライター、ジャーナリスト、出演者、KOLパートナーの採用・雇用を実施</li>
+            <li>オーディエンスリーチとエンゲージメント指標を改善するため、編集長(Ted Kemp)にワークフローおよびコンテンツ配信戦略を提案・実施</li>
+          </ul>
+        </div>
+
+        <!-- Bitget -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Bitget</div>
+            <div class="job-tenure">2021 — 2022</div>
+          </div>
+          <div class="job-role">シニア・コンテンツオペレーションズマネージャー (高级内容经理)</div>
+          <div class="job-location">フルタイム・世界トップ10の中央集権型取引所</div>
+          <ul>
+            <li>コンテンツオペレーションチームをゼロから再構築 — 役割を再編成し、直属の全メンバーに対してKPIとOKRを定義</li>
+            <li>トピック割り当て→ファクトチェック→編集→承認に至る<span class="metric">エンドツーエンドの編集ワークフロー</span>を複数部門にわたり設計・実装。全チームメンバーに実行方法を研修</li>
+            <li>技術分析、ニュース記事、教育コンテンツ、上場発表、アプリアップデートを含む<span class="metric">1日最大40件の投稿</span>を承認・編集</li>
+            <li>採用プロセスを管理：応募フォームの作成、面接の実施、予算制約内でのスーパーバイザーおよびライターのオンボーディングを実施</li>
+            <li>プロダクト・BDチームを支援し、製品コピー、UI/UX文言、プレスリリース、BD資料の<span class="metric">中国語(標準語)から英語へのローカライズ</span>を実施</li>
+            <li>ローンチ前のソーシャルトレーディングアプリ「<em>Bitget Insights</em>」のUI/UXレイアウト最適化提案を実施</li>
+            <li>既存の職業上の関係を活かし、著名人広告代理店NEONとの<strong>戦略的パートナーシップ</strong>を主体的に構築</li>
+            <li>マーケティングディレクター向けに中国語で週次管理報告書を作成。全チームメンバーと隔週で1対1面談を実施し、個人の成長を追跡しフィードバックを収集</li>
+          </ul>
+        </div>
+
+        <!-- Singularity -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Singularity(Web3ゲーミングプラットフォーム)</div>
+            <div class="job-tenure">2020 — 2021</div>
+          </div>
+          <div class="job-role">ソーシャルメディア・マーケティングローカライゼーションマネージャー</div>
+          <div class="job-location">シンガポール・フルタイム+パートタイム(Deer Network)</div>
+          <ul>
+            <li>英語の長文コピーライター、中国語から英語へのソーシャルメディアコンテンツ翻訳者、国際的なPR窓口およびBDアウトリーチリードとして、グローバル市場向けに従事</li>
+            <li><em>並行して(Deer Network):</em>英語版ホワイトペーパー全体を執筆し、ウェブサイトの完全なローカライズを実施</li>
+          </ul>
+        </div>
+
+        <!-- Silubium -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Silubium (丝路币)</div>
+            <div class="job-tenure">2017 — 2018</div>
+          </div>
+          <div class="job-role">共同創業者 · ブロックチェーンシステムアーキテクト · CMO</div>
+          <div class="job-location">中国</div>
+          <ul>
+            <li>偽名<em>Ryker Freegeld</em>のもと、Silubiumブロックチェーンの全機能セットとルールアーキテクチャを共同設計</li>
+            <li>エンジニアリングチームリードとして、2つの並行開発チーム(ソースコード+ウォレット+パブリック台帳「Silkchain」)を管理</li>
+            <li>国際的なICOマーケティングキャンペーンをトークンローンチまでエンドツーエンドで指揮</li>
+            <li>中国国内のすべてのICO資金調達イベントで基調講演を実施(標準中国語)</li>
+            <li>中国および国際的な投資家層向けにバイリンガルの動画・広告コンテンツを制作</li>
+          </ul>
+        </div>
+
+        <!-- Freelance -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">フリーランス — 暗号資産・金融・テック</div>
+            <div class="job-tenure">2018 — 2020</div>
+          </div>
+          <div class="job-role">コンテンツライター · コピーライター · ソーシャルメディアマネージャー</div>
+          <div class="job-location">リモート</div>
+          <ul>
+            <li>GSR、Coinformant、Blockchain Advocates、BingX、Silktraderなど向けに、暗号資産、ゲーム、サイバーセキュリティ、SaaS、ブロックチェーン分野のコンテンツを提供</li>
+            <li>コンテンツの種類：ホワイトペーパー、技術分析、SEO記事、プレスリリース、メールキャンペーン、ウェブコピー、ソーシャルメディアコピー、製品レビュー、ハウツーガイド、ニュースレター、動画スクリプト</li>
+            <li>ローカライゼーション：取引所および暗号資産ニュースサイトのコンテンツを中国語、ドイツ語、日本語、フランス語、スペイン語から英語へ</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- WRITING SAMPLES -->
+      <section class="section">
+        <div class="section-title">掲載済み執筆サンプル</div>
+        <div class="samples-grid">
+          <div class="sample-item"><span class="sample-num">01</span><a href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank">マーケットメイキングの利点</a><span class="sample-client">&nbsp;— GSR</span></div>
+          <div class="sample-item"><span class="sample-num">02</span><a href="https://drive.google.com/file/d/1jDB-Tx97USCuAaZa7jiL_rbb73Se0n37/view?usp=sharing" target="_blank">暗号資産のボラティリティを理解する</a><span class="sample-client">&nbsp;— GSR</span></div>
+          <div class="sample-item"><span class="sample-num">03</span><a href="https://docs.google.com/document/d/1kpDwVg0lBZlfZDIqtIfEoXPfrz-P3Z_x1o27yh790xg/edit?usp=sharing" target="_blank">NFTとは？</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">04</span><a href="https://docs.google.com/document/d/1ZK1DW8hr6FWxa1A1cDiaDgzdUIyHnHZysJcVzBijzRw/edit?usp=sharing" target="_blank">NFTの作り方</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">05</span><a href="https://docs.google.com/document/d/1hTrKufD0YHKjaz5TAHMrpoz-lay_c98nNIpc70KB6kI/edit?usp=sharing" target="_blank">NFTの買い方</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">06</span><a href="https://docs.google.com/document/d/1e3_XHKMRDRw58fQf_gHb6V_F5n5aVkw7_c_mt8ZYFJQ/edit?usp=sharing" target="_blank">NFTの売り方</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">07</span><a href="https://docs.google.com/document/d/1LoQ8dn0mWEuFLxrhvGz6HGLuDuT9ToFvymonEmA-1MI/edit?usp=sharing" target="_blank">NFTはどこに保管する？</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">08</span><a href="https://docs.google.com/document/d/1ltcwc0RyUPbdhvE-TJpA1GdfmpNA4SnXzsSnn85cBqU/edit?usp=sharing" target="_blank">なぜNFTアートに価値があるのか？</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">09</span><a href="https://drive.google.com/file/d/15FmqoB6RCUZJ0bydIeYRhM0Wc0vqy0LO/view?usp=drive_link" target="_blank">Deer Networkホワイトペーパー</a><span class="sample-client">&nbsp;— Deer Network</span></div>
+          <div class="sample-item"><span class="sample-num">10</span><a href="https://drive.google.com/file/d/14mKA1IS3XpkVvJQzoIDcxleDcv1nPJRu/view?usp=drive_link" target="_blank">Singularity Metaverseホワイトペーパー</a><span class="sample-client">&nbsp;— Singularity</span></div>
+          <div class="sample-item"><span class="sample-num">11</span><a href="https://docs.google.com/document/d/13dfcZKG_TFzYLbbjRzvrHGC42IGSQDxRAw15hwjjtJo/edit?usp=sharing" target="_blank">Tokenized Asset Offering — 法的考察</a><span class="sample-client">&nbsp;— Blockchain Advocates</span></div>
+          <div class="sample-item"><span class="sample-num">12</span><a href="https://docs.google.com/document/d/1RLcMJL6dcONOwwo4mdZebn99ZWMF3OEaqYJWPCSz0nk/edit?usp=sharing" target="_blank">Bitget Insights — UXフィードバックレポート</a><span class="sample-client">&nbsp;— Bitget</span></div>
+          <div class="sample-item"><span class="sample-num">13</span><a href="http://donhartig.com/websites/silubium/silubium.html" target="_blank">Silubiumブロックチェーンプロジェクト(アーカイブサイト)</a><span class="sample-client">&nbsp;— Silubium</span></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── SIDEBAR ───────────────────────────────── -->
+    <aside class="side-col">
+
+      <!-- CORE COMPETENCIES -->
+      <div class="side-section">
+        <div class="side-title">中核能力</div>
+        <div class="tags">
+          <span class="tag">コンテンツ戦略</span>
+          <span class="tag">編集管理</span>
+          <span class="tag">チームリーダーシップ</span>
+          <span class="tag">SEOコピーライティング</span>
+          <span class="tag">暗号資産 / DeFi</span>
+          <span class="tag">Web3マーケティング</span>
+          <span class="tag">トークノミクス</span>
+          <span class="tag">ホワイトペーパー作成</span>
+          <span class="tag">ローカライゼーション</span>
+          <span class="tag">GTM戦略</span>
+          <span class="tag">KOL管理</span>
+          <span class="tag">ソーシャルメディア</span>
+          <span class="tag">プレスリリース</span>
+          <span class="tag">テクニカル分析</span>
+          <span class="tag">KPI/OKR設定</span>
+          <span class="tag">採用・オンボーディング</span>
+          <span class="tag">ブランドナラティブ</span>
+          <span class="tag">動画スクリプト作成</span>
+          <span class="tag">メールマーケティング</span>
+          <span class="tag">UI/UXコピーライティング</span>
+          <span class="tag">コミュニティ管理</span>
+          <span class="tag">CEX / DEX</span>
+          <span class="tag">ブロックチェーンアーキテクチャ</span>
+          <span class="tag">ICO / IDO</span>
+        </div>
+      </div>
+
+      <!-- PLATFORMS & TOOLS -->
+      <div class="side-section">
+        <div class="side-title">プラットフォーム・ツール</div>
+        <div class="tags">
+          <span class="tag">Google Analytics</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">TikTok</span>
+          <span class="tag">X / Twitter</span>
+          <span class="tag">Instagram</span>
+          <span class="tag">Telegram</span>
+          <span class="tag">Discord</span>
+          <span class="tag">LinkedIn</span>
+          <span class="tag">Medium</span>
+          <span class="tag">Upwork</span>
+          <span class="tag">YouTube</span>
+          <span class="tag">HTML / CSS</span>
+        </div>
+      </div>
+
+      <!-- MARKETING SKILLS PROFILE -->
+      <div class="side-section">
+        <div class="side-title">スキルプロフィール</div>
+
+        <div class="skill-bar-label">コンテンツ戦略・執筆 <span>エキスパート</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+
+        <div class="skill-bar-label">暗号資産・Web3領域 <span>エキスパート</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+
+        <div class="skill-bar-label">ローカライゼーション(中→英) <span>エキスパート</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+
+        <div class="skill-bar-label">チーム・編集管理 <span>上級<span></span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+
+        <div class="skill-bar-label">SEO・CTA最適化 <span>上級</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+
+        <div class="skill-bar-label">ソーシャルメディアマーケティング <span>上級</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="side-section">
+        <div class="side-title">言語(7)</div>
+        <div class="lang-entry"><span>英語</span><span class="lang-level">ネイティブ</span></div>
+        <div class="lang-entry"><span>標準中国語</span><span class="lang-level">流暢・ビジネスレベル</span></div>
+        <div class="lang-entry"><span>ドイツ語</span><span class="lang-level">ビジネスレベル</span></div>
+        <div class="lang-entry"><span>フランス語</span><span class="lang-level">ビジネスレベル</span></div>
+        <div class="lang-entry"><span>スペイン語</span><span class="lang-level">ビジネスレベル</span></div>
+        <div class="lang-entry"><span>日本語</span><span class="lang-level">実務レベル</span></div>
+        <div class="lang-entry"><span>オランダ語</span><span class="lang-level">実務レベル</span></div>
+        <div style="font-size:0.72rem; color:var(--muted); margin-top:0.6rem;">中国語→英語(ネイティブ)翻訳で<strong>世界第3位</strong>にランクイン</div>
+      </div>
+
+      <!-- NOTABLE CLIENTS -->
+      <div class="side-section">
+        <div class="side-title">主要クライアント・雇用主</div>
+        <div style="font-size:0.82rem; line-height:1.9; color:#333;">
+          Bitget &nbsp;·&nbsp; GSR &nbsp;·&nbsp; Businesxt<br>
+          Singularity &nbsp;·&nbsp; Deer Network<br>
+          Blockchain Advocates &nbsp;·&nbsp; BingX<br>
+          Coinformant &nbsp;·&nbsp; Silktrader<br>
+          Antarctic Exchange
+        </div>
+      </div>
+
+      <!-- ADDITIONAL INFO -->
+      <div class="side-section">
+        <div class="side-title">その他</div>
+        <div style="font-size:0.8rem; line-height:1.8; color:#333;">
+          <div>✦ フルタイム・プロジェクト単位に対応可能</div>
+          <div>✦ リモート・出社対応(世界各地)</div>
+          <div>✦ 経験豊富な公開講演者(中国語/英語)</div>
+          <div>✦ ブロックチェーン共同創業者(ICO→メインネット)</div>
+          <div>✦ Upwork認証済み — 5★クライアントレビュー</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ══ FOOTER ══════════════════════════════════ -->
+  <footer class="cv-footer">
+    <a href="https://www.donhartig.com">donhartig.com</a> &nbsp;·&nbsp; don@donhartig.com &nbsp;·&nbsp; 制作：Don Hartig
+  </footer>
+
+</div>
+</body>
+</html>

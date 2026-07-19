@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Hartig – Senior Marketing Manager | Crypto | Web3 | DeFi</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-49976807-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-49976807-8');
+</script>
+
+<style>
+  :root {
+    --black:   #0a0a0a;
+    --white:   #ffffff;
+    --offwhite:#f7f6f3;
+    --accent:  #0057ff;
+    --accent2: #00c896;
+    --muted:   #6b6b6b;
+    --border:  #e0ddd8;
+    --tag-bg:  #eef3ff;
+    --tag-col: #0047cc;
+    --serif:   'DM Sans', sans-serif;
+    --mono:    'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--serif);
+    background: var(--offwhite);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── LAYOUT ─────────────────────────────────── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+  }
+
+  /* ── HEADER ─────────────────────────────────── */
+  .cv-header {
+    background: var(--black);
+    color: var(--white);
+    padding: 3rem 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cv-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 40px solid var(--accent);
+    opacity: 0.15;
+  }
+  .cv-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: 200px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 25px solid var(--accent2);
+    opacity: 0.12;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cv-name {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .cv-name .chinese {
+    font-size: 0.45em;
+    font-weight: 300;
+    opacity: 0.6;
+    margin-left: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .cv-title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--accent2);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+  }
+  .contact-grid a { color: rgba(255,255,255,0.9); text-decoration: none; }
+  .contact-grid a:hover { color: var(--accent2); }
+  .contact-label { opacity: 0.5; margin-right: 0.25rem; }
+
+  .availability-badge {
+    background: var(--accent2);
+    color: var(--black);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 0.3rem;
+  }
+
+  .header-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.2);
+    display: block;
+  }
+
+  /* ── SUMMARY BAR ─────────────────────────────── */
+  .summary-bar {
+    background: var(--accent);
+    color: var(--white);
+    padding: 1.1rem 3rem;
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* ── BODY ────────────────────────────────────── */
+  .cv-body {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 0;
+  }
+
+  /* ── MAIN COLUMN ─────────────────────────────── */
+  .main-col {
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+    border-right: 1px solid var(--border);
+  }
+
+  /* ── SIDEBAR ─────────────────────────────────── */
+  .side-col {
+    padding: 2.5rem 2rem 2.5rem 2rem;
+    background: var(--offwhite);
+  }
+
+  /* ── SECTION ─────────────────────────────────── */
+  .section { margin-bottom: 2.2rem; }
+  .section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── JOB ENTRY ───────────────────────────────── */
+  .job { margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid var(--border); }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .job-company {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+  }
+  .job-tenure {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .job-role {
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+  }
+  .job-location {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .job ul {
+    list-style: none;
+    padding: 0;
+  }
+  .job ul li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.87rem;
+    line-height: 1.55;
+    color: #222;
+  }
+  .job ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent2);
+    font-size: 0.7rem;
+    top: 0.15em;
+  }
+
+  /* ── METRIC HIGHLIGHT ────────────────────────── */
+  .metric {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  /* ── SKILLS TAGS ─────────────────────────────── */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+  }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-col);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── SIDEBAR ELEMENTS ────────────────────────── */
+  .side-section { margin-bottom: 2rem; }
+  .side-section:last-child { margin-bottom: 0; }
+
+  .side-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    color: var(--black);
+  }
+  .skill-bar-label span { color: var(--muted); font-size: 0.72rem; }
+  .bar-track {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 2px;
+  }
+
+  .lang-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-entry:last-child { border-bottom: none; }
+  .lang-level {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+
+  .edu-entry { margin-bottom: 1rem; font-size: 0.82rem; }
+  .edu-degree { font-weight: 600; }
+  .edu-school { color: var(--muted); font-size: 0.78rem; }
+
+  .link-item {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    word-break: break-all;
+  }
+  .link-item:hover { text-decoration: underline; }
+  .link-label { display: block; font-size: 0.7rem; color: var(--muted); margin-bottom: 0.1rem; }
+
+  /* ── WRITING SAMPLES ─────────────────────────── */
+  .samples-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .sample-item {
+    font-size: 0.82rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .sample-num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    min-width: 1.5rem;
+  }
+  .sample-item a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .sample-item a:hover { text-decoration: underline; }
+  .sample-client {
+    font-size: 0.72rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  .cv-footer {
+    background: var(--black);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.72rem;
+    font-family: var(--mono);
+  }
+  .cv-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+  /* ── PRINT ───────────────────────────────────── */
+  @media print {
+    body { background: white; font-size: 11pt; }
+    .page { box-shadow: none; max-width: 100%; }
+    .cv-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .summary-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .side-col { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cv-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 680px) {
+    .cv-header { padding: 2rem 1.5rem 2rem; }
+    .header-inner { grid-template-columns: 1fr; }
+    .header-photo { display: none; }
+    .summary-bar { padding: 1rem 1.5rem; }
+    .cv-body { grid-template-columns: 1fr; }
+    .main-col { padding: 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .side-col { padding: 1.5rem; }
+  }
+</style>
+<style>
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.96);padding:0.45rem 1.5rem;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 0 rgba(255,255,255,0.06);}
+._topbar button{font-family:inherit;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#0057ff;color:#fff;border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;}
+._topbar button:hover{opacity:0.85;}
+._navgroup{display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;}
+._langrow{display:flex;gap:0.4rem;flex-wrap:wrap;}
+._topbar a._langbtn{font-family:inherit;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._langbtn:hover{opacity:0.85;}
+._topbar a._homebtn{font-family:inherit;font-size:0.66rem;font-weight:600;letter-spacing:0.03em;background:#1e8e3e;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;}
+._topbar a._homebtn:hover{opacity:0.85;}
+@media (max-width:960px){
+  ._topbar{flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+  ._navgroup{display:flex;flex-direction:column;align-items:center;width:100%;gap:0.5rem;}
+  ._langrow{justify-content:center;width:100%;}
+}
+@media print{._topbar{display:none!important;}}
+</style>
+</head>
+<body>
+<div class="_topbar"><button onclick="window.print()">⬇ PDF Herunterladen</button><div class="_navgroup"><a class="_homebtn" href="DonHartig_DE.html">Startseite</a><div class="_langrow"><a class="_langbtn" href="marketing.html">English</a><a class="_langbtn" href="市场营销管理.html">中文</a><a class="_langbtn" href="marketing_FR.html">Français</a><a class="_langbtn" href="marketing_JP.html">日本語</a><a class="_langbtn" href="marketing_ES.html">Español</a><a class="_langbtn" href="marketing_AF.html">Afrikaans</a></div></div></div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
+<div class="page" style="margin-top:0;">
+
+  <!-- ══ HEADER ══════════════════════════════════ -->
+  <header class="cv-header">
+    <div class="header-inner">
+      <div>
+        <div class="cv-name"><a href="DonHartig_DE.html" style="color:inherit;text-decoration:none;">Don Hartig <span class="chinese">董夏庭</span></a></div>
+        <div class="cv-title">Senior Marketing Manager · Krypto · DeFi · Web3 · Content-Strategie · Lokalisierung</div>
+        <div class="contact-grid">
+          <div style="width:100%; font-size:0.82rem; color:var(--accent2); margin-bottom:0.2rem;">Sprechen Sie persönlich mit mir in: <strong>English</strong>, <strong>中文</strong>, <strong>Deutsch</strong>, <strong>Français</strong>, <strong>日本語</strong>, <strong>Español</strong>, <strong>Afrikaans</strong></div>
+          <span><span class="contact-label">E-Mail</span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
+          <span><span class="contact-label">Web</span><a href="https://www.donhartig.com" target="_blank">donhartig.com</a></span>
+          <span><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/donhartig" target="_blank">linkedin.com/in/donhartig</a></span>
+          <span><span class="contact-label">Upwork</span><a href="https://www.upwork.com/o/profiles/users/~01ea8f586089ac90e3/" target="_blank">Profil &amp; Bewertungen ansehen</a></span>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:1rem;">
+        <img src="images/me/brownremcroppedleftcentered.jpeg" alt="Don Hartig" class="header-photo">
+        <div class="availability-badge">✦ Sofort Verfügbar</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ SUMMARY ════════════════════════════════════ -->
+  <div class="summary-bar">
+    Erfahrener Krypto-Marketing-Experte mit <strong>über 8 Jahren</strong> Erfahrung im Aufbau und der Leitung von Content-, Lokalisierungs- und Wachstumsteams bei erstklassigen Börsen und Web3-Plattformen. Nachgewiesene Erfolgsbilanz in der Steuerung redaktioneller Pipelines bei <strong>Bitget</strong> (Top-10-CEX weltweit) und <strong>Businext</strong> (Dubai). Mitgründer und CMO eines Blockchain-Projekts vom ICO bis zum Mainnet. Fließend in <strong>7 Sprachen</strong> — ein seltener Vorteil für globale Krypto-GTM- und Lokalisierungsstrategien. Verfügbar in Vollzeit, remote oder vor Ort.
+  </div>
+
+  <!-- ══ BODY ═══════════════════════════════════════ -->
+  <div class="cv-body">
+
+    <!-- ── MAIN COLUMN ──────────────────────────── -->
+    <main class="main-col">
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+        <div class="section-title">Berufserfahrung</div>
+
+        <!-- Antarctic Exchange -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Antarctic Exchange</div>
+            <div class="job-tenure">2025 — Present</div>
+          </div>
+          <div class="job-role">Web-Lokalisierer · Sprachoptimierer · Social-Media-Producer</div>
+          <div class="job-location">Remote</div>
+          <ul>
+            <li>Führte die vollständige Lokalisierung der chinesischen Website ins Englische durch und optimierte alle Texte hinsichtlich Tonalität, Idiomatik und SEO-Absicht für den englischsprachigen Markt</li>
+            <li>Produzierte täglich Social-Media-Inhalte für mehrere Plattformen und sorgte für eine konsistente Markenstimme</li>
+            <li>Überarbeitete und verfasste SEO-optimierte CTA-Artikel für Medium zur Steigerung der Inbound-Nutzergewinnung</li>
+          </ul>
+        </div>
+
+        <!-- Businesxt -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Businext</div>
+            <div class="job-tenure">2023 — 2024</div>
+          </div>
+          <div class="job-role">Senior Producer — Krypto, DeFi &amp; FinTech</div>
+          <div class="job-location">Dubai, VAE · Vollzeit, Vor Ort</div>
+          <ul>
+            <li>Leitete ein funktionsübergreifendes Team aus <span class="metric">Journalisten, Autoren, Co-Produzenten und Videoeditoren</span>, das täglich Long-Form-Inhalte zu Krypto, Blockchain, Web3, DeFi und FinTech produzierte</li>
+            <li>Verantwortlich für den gesamten Redaktionskalender: schlug der Redaktion täglich Themen vor, überwachte und redigierte alle Teamergebnisse vor der Veröffentlichung</li>
+            <li>Produzierte Videoinhalte für TikTok, X (Twitter) und Instagram; führte Interviews vor der Kamera zu Krypto-Trends und Marktgeschichten</li>
+            <li>Rekrutierte und stellte Autoren, Journalisten, Moderatoren und KOL-Partner ein, um die Markenreichweite zu erweitern</li>
+            <li>Empfahl und implementierte gegenüber dem Chefredakteur (Ted Kemp) Workflow- und Content-Distributionsstrategien zur Verbesserung von Reichweite und Engagement-Kennzahlen</li>
+          </ul>
+        </div>
+
+        <!-- Bitget -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Bitget</div>
+            <div class="job-tenure">2021 — 2022</div>
+          </div>
+          <div class="job-role">Senior Content Operations Manager (高级内容经理)</div>
+          <div class="job-location">Vollzeit · Top-10 Zentralisierte Börse Weltweit</div>
+          <ul>
+            <li>Baute das Content-Operations-Team von Grund auf neu auf — restrukturierte Rollen, definierte KPIs und legte OKRs für alle direkten Mitarbeiter fest</li>
+            <li>Entwarf und implementierte den <span class="metric">durchgängigen redaktionellen Workflow</span> (Themenzuweisung → Faktenprüfung → Redigieren → Freigabe) über mehrere Abteilungen hinweg; schulte alle Teammitglieder in der Umsetzung</li>
+            <li>Genehmigte und redigierte <span class="metric">bis zu 40 Beiträge pro Tag</span>, darunter technische Analysen, Nachrichtenartikel, Lerninhalte, Listing-Ankündigungen und App-Updates</li>
+            <li>Steuerte den Recruiting-Prozess: erstellte Bewerbungsformulare, führte Interviews durch und onboardete Supervisor und Autoren innerhalb des Budgetrahmens</li>
+            <li>Unterstützte Product- und BD-Teams bei der <span class="metric">Lokalisierung von Mandarin-Chinesisch ins Englische</span> für Produkttexte, UI/UX-Strings, Pressemitteilungen und BD-Unterlagen</li>
+            <li>Lieferte UI/UX-Layout-Optimierungsempfehlungen für die Social-Trading-App <em>Bitget Insights</em> vor dem Launch</li>
+            <li>Initiierte proaktiv eine <strong>strategische Partnerschaft</strong> mit der Promi-Werbeagentur NEON durch Nutzung einer bestehenden beruflichen Beziehung</li>
+            <li>Verfasste wöchentliche Managementberichte auf Chinesisch für den Marketingdirektor; führte alle zwei Wochen 1:1-Gespräche mit allen Teammitgliedern zur Verfolgung der persönlichen Entwicklung und zum Einholen von Feedback</li>
+          </ul>
+        </div>
+
+        <!-- Singularity -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Singularity (Web3-Gaming-Plattform)</div>
+            <div class="job-tenure">2020 — 2021</div>
+          </div>
+          <div class="job-role">Social Media &amp; Marketing Lokalisierungsmanager</div>
+          <div class="job-location">Singapur · Vollzeit + Teilzeit (Deer Network)</div>
+          <ul>
+            <li>Fungierte als englischer Long-Form-Texter, Chinesisch-Englisch-Übersetzer für Social-Media-Inhalte, internationaler PR-Kontakt und BD-Outreach-Lead für globale Märkte</li>
+            <li><em>Parallel (Deer Network):</em> Verfasste das vollständige englischsprachige Whitepaper und führte die komplette Website-Lokalisierung durch</li>
+          </ul>
+        </div>
+
+        <!-- Silubium -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Silubium (丝路币)</div>
+            <div class="job-tenure">2017 — 2018</div>
+          </div>
+          <div class="job-role">Mitgründer · Blockchain-Systemarchitekt · CMO</div>
+          <div class="job-location">China</div>
+          <ul>
+            <li>Mitgestaltung des vollständigen Silubium-Blockchain-Funktionsumfangs und der Regelarchitektur unter dem Pseudonym <em>Ryker Freegeld</em></li>
+            <li>Leitete als Engineering Team Lead zwei parallele Entwicklungsteams (Quellcode + Wallet + öffentliches Ledger „Silkchain")</li>
+            <li>Leitete die internationale ICO-Marketingkampagne end-to-end bis zum Token-Go-live</li>
+            <li>Hielt Keynote-Vorträge auf allen ICO-Finanzierungsveranstaltungen in China (auf Mandarin-Chinesisch)</li>
+            <li>Produzierte zweisprachige Video- und Werbeinhalte für chinesische und internationale Investorenzielgruppen</li>
+          </ul>
+        </div>
+
+        <!-- Freelance -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-company">Freiberuflich — Krypto, Finanzen &amp; Tech</div>
+            <div class="job-tenure">2018 — 2020</div>
+          </div>
+          <div class="job-role">Content-Autor · Texter · Social-Media-Manager</div>
+          <div class="job-location">Remote</div>
+          <ul>
+            <li>Lieferte Inhalte für GSR, Coinformant, Blockchain Advocates, BingX, Silktrader und weitere in den Bereichen Krypto, Gaming, Cybersicherheit, SaaS und Blockchain</li>
+            <li>Inhaltstypen: Whitepapers, technische Analysen, SEO-Artikel, Pressemitteilungen, E-Mail-Kampagnen, Webtexte, Social-Media-Texte, Produktbewertungen, Anleitungen, Newsletter und Videoskripte</li>
+            <li>Lokalisierung: Inhalte von Börsen- und Krypto-Nachrichtenseiten aus dem Chinesischen, Deutschen, Japanischen, Französischen und Spanischen ins Englische</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- WRITING SAMPLES -->
+      <section class="section">
+        <div class="section-title">Veröffentlichte Schreibproben</div>
+        <div class="samples-grid">
+          <div class="sample-item"><span class="sample-num">01</span><a href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank">Die Vorteile von Market Making</a><span class="sample-client">&nbsp;— GSR</span></div>
+          <div class="sample-item"><span class="sample-num">02</span><a href="https://drive.google.com/file/d/1jDB-Tx97USCuAaZa7jiL_rbb73Se0n37/view?usp=sharing" target="_blank">Kryptowährungsvolatilität verstehen</a><span class="sample-client">&nbsp;— GSR</span></div>
+          <div class="sample-item"><span class="sample-num">03</span><a href="https://docs.google.com/document/d/1kpDwVg0lBZlfZDIqtIfEoXPfrz-P3Z_x1o27yh790xg/edit?usp=sharing" target="_blank">Was ist ein NFT?</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">04</span><a href="https://docs.google.com/document/d/1ZK1DW8hr6FWxa1A1cDiaDgzdUIyHnHZysJcVzBijzRw/edit?usp=sharing" target="_blank">Wie man ein NFT erstellt</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">05</span><a href="https://docs.google.com/document/d/1hTrKufD0YHKjaz5TAHMrpoz-lay_c98nNIpc70KB6kI/edit?usp=sharing" target="_blank">Wie man NFTs kauft</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">06</span><a href="https://docs.google.com/document/d/1e3_XHKMRDRw58fQf_gHb6V_F5n5aVkw7_c_mt8ZYFJQ/edit?usp=sharing" target="_blank">Wie man ein NFT verkauft</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">07</span><a href="https://docs.google.com/document/d/1LoQ8dn0mWEuFLxrhvGz6HGLuDuT9ToFvymonEmA-1MI/edit?usp=sharing" target="_blank">Wo speichert man ein NFT?</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">08</span><a href="https://docs.google.com/document/d/1ltcwc0RyUPbdhvE-TJpA1GdfmpNA4SnXzsSnn85cBqU/edit?usp=sharing" target="_blank">Warum hat NFT-Kunst einen Wert?</a><span class="sample-client">&nbsp;— Coinformant</span></div>
+          <div class="sample-item"><span class="sample-num">09</span><a href="https://drive.google.com/file/d/15FmqoB6RCUZJ0bydIeYRhM0Wc0vqy0LO/view?usp=drive_link" target="_blank">Deer Network Whitepaper</a><span class="sample-client">&nbsp;— Deer Network</span></div>
+          <div class="sample-item"><span class="sample-num">10</span><a href="https://drive.google.com/file/d/14mKA1IS3XpkVvJQzoIDcxleDcv1nPJRu/view?usp=drive_link" target="_blank">Singularity Metaverse Whitepaper</a><span class="sample-client">&nbsp;— Singularity</span></div>
+          <div class="sample-item"><span class="sample-num">11</span><a href="https://docs.google.com/document/d/13dfcZKG_TFzYLbbjRzvrHGC42IGSQDxRAw15hwjjtJo/edit?usp=sharing" target="_blank">Tokenized Asset Offering — Rechtliche Aspekte</a><span class="sample-client">&nbsp;— Blockchain Advocates</span></div>
+          <div class="sample-item"><span class="sample-num">12</span><a href="https://docs.google.com/document/d/1RLcMJL6dcONOwwo4mdZebn99ZWMF3OEaqYJWPCSz0nk/edit?usp=sharing" target="_blank">Bitget Insights — UX-Feedback-Bericht</a><span class="sample-client">&nbsp;— Bitget</span></div>
+          <div class="sample-item"><span class="sample-num">13</span><a href="http://donhartig.com/websites/silubium/silubium.html" target="_blank">Silubium Blockchain-Projekt (archivierte Website)</a><span class="sample-client">&nbsp;— Silubium</span></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── SIDEBAR ───────────────────────────────── -->
+    <aside class="side-col">
+
+      <!-- CORE COMPETENCIES -->
+      <div class="side-section">
+        <div class="side-title">Kernkompetenzen</div>
+        <div class="tags">
+          <span class="tag">Content-Strategie</span>
+          <span class="tag">Redaktionelles Management</span>
+          <span class="tag">Teamführung</span>
+          <span class="tag">SEO-Texten</span>
+          <span class="tag">Krypto / DeFi</span>
+          <span class="tag">Web3-Marketing</span>
+          <span class="tag">Tokenomics</span>
+          <span class="tag">Whitepaper-Erstellung</span>
+          <span class="tag">Lokalisierung</span>
+          <span class="tag">GTM-Strategie</span>
+          <span class="tag">KOL-Management</span>
+          <span class="tag">Social Media</span>
+          <span class="tag">Pressemitteilungen</span>
+          <span class="tag">Technische Analyse</span>
+          <span class="tag">KPI-/OKR-Festlegung</span>
+          <span class="tag">Recruiting &amp; Onboarding</span>
+          <span class="tag">Markenerzählung</span>
+          <span class="tag">Video-Skripterstellung</span>
+          <span class="tag">E-Mail-Marketing</span>
+          <span class="tag">UI/UX-Texten</span>
+          <span class="tag">Community-Management</span>
+          <span class="tag">CEX / DEX</span>
+          <span class="tag">Blockchain-Architektur</span>
+          <span class="tag">ICO / IDO</span>
+        </div>
+      </div>
+
+      <!-- PLATFORMS & TOOLS -->
+      <div class="side-section">
+        <div class="side-title">Plattformen &amp; Tools</div>
+        <div class="tags">
+          <span class="tag">Google Analytics</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">TikTok</span>
+          <span class="tag">X / Twitter</span>
+          <span class="tag">Instagram</span>
+          <span class="tag">Telegram</span>
+          <span class="tag">Discord</span>
+          <span class="tag">LinkedIn</span>
+          <span class="tag">Medium</span>
+          <span class="tag">Upwork</span>
+          <span class="tag">YouTube</span>
+          <span class="tag">HTML / CSS</span>
+        </div>
+      </div>
+
+      <!-- MARKETING SKILLS PROFILE -->
+      <div class="side-section">
+        <div class="side-title">Kompetenzprofil</div>
+
+        <div class="skill-bar-label">Content-Strategie &amp; Schreiben <span>Experte</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+
+        <div class="skill-bar-label">Krypto-/Web3-Bereich <span>Experte</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+
+        <div class="skill-bar-label">Lokalisierung (ZH→EN) <span>Experte</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+
+        <div class="skill-bar-label">Team- &amp; Redaktionsmanagement <span>Fortgeschritten</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+
+        <div class="skill-bar-label">SEO- &amp; CTA-Optimierung <span>Fortgeschritten</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+
+        <div class="skill-bar-label">Social-Media-Marketing <span>Fortgeschritten</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="side-section">
+        <div class="side-title">Sprachen (7)</div>
+        <div class="lang-entry"><span>Englisch</span><span class="lang-level">Muttersprache</span></div>
+        <div class="lang-entry"><span>Mandarin-Chinesisch</span><span class="lang-level">Fließend / Verhandlungssicher</span></div>
+        <div class="lang-entry"><span>Deutsch</span><span class="lang-level">Verhandlungssicher</span></div>
+        <div class="lang-entry"><span>Französisch</span><span class="lang-level">Verhandlungssicher</span></div>
+        <div class="lang-entry"><span>Spanisch</span><span class="lang-level">Verhandlungssicher</span></div>
+        <div class="lang-entry"><span>Japanisch</span><span class="lang-level">Grundkenntnisse<span></div>
+        <div class="lang-entry"><span>Niederländisch</span><span class="lang-level">Grundkenntnisse</span></div>
+        <div style="font-size:0.72rem; color:var(--muted); margin-top:0.6rem;">Weltweit auf <strong>Platz 3</strong> für Chinesisch → Englisch (Muttersprache) Übersetzung</div>
+      </div>
+
+      <!-- NOTABLE CLIENTS -->
+      <div class="side-section">
+        <div class="side-title">Namhafte Kunden &amp; Arbeitgeber</div>
+        <div style="font-size:0.82rem; line-height:1.9; color:#333;">
+          Bitget &nbsp;·&nbsp; GSR &nbsp;·&nbsp; Businesxt<br>
+          Singularity &nbsp;·&nbsp; Deer Network<br>
+          Blockchain Advocates &nbsp;·&nbsp; BingX<br>
+          Coinformant &nbsp;·&nbsp; Silktrader<br>
+          Antarctic Exchange
+        </div>
+      </div>
+
+      <!-- ADDITIONAL INFO -->
+      <div class="side-section">
+        <div class="side-title">Zusätzliches</div>
+        <div style="font-size:0.8rem; line-height:1.8; color:#333;">
+          <div>✦ Offen für Vollzeit &amp; Projektbasis</div>
+          <div>✦ Remote &amp; vor Ort (weltweit)</div>
+          <div>✦ Erfahrener Redner (CN/EN)</div>
+          <div>✦ Blockchain-Mitgründer (ICO → Mainnet)</div>
+          <div>✦ Upwork-verifiziert — 5★ Kundenbewertungen</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ══ FOOTER ══════════════════════════════════ -->
+  <footer class="cv-footer">
+    <a href="https://www.donhartig.com">donhartig.com</a> &nbsp;·&nbsp; don@donhartig.com &nbsp;·&nbsp; Programmiert von Don Hartig
+  </footer>
+
+</div>
+</body>
+</html>
