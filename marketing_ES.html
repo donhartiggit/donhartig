@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49976807-8"></script>
@@ -20,25 +20,33 @@
 
 <style>
   :root {
-    --black:   #0a0a0a;
-    --white:   #ffffff;
-    --offwhite:#f7f6f3;
-    --accent:  #0057ff;
-    --accent2: #00c896;
-    --muted:   #6b6b6b;
-    --border:  #e0ddd8;
-    --tag-bg:  #eef3ff;
-    --tag-col: #0047cc;
-    --serif:   'DM Sans', sans-serif;
-    --mono:    'DM Mono', monospace;
+    --black:        #090c10;
+    --card:         #141921;
+    --white:        #f0ede6;
+    --text:         #d4cfc7;
+    --accent:       #c9a84c;
+    --gold-light:   #e8c97a;
+    --gold-dim:     rgba(201,168,76,0.15);
+    --accent2:      #4cc9c9;
+    --accent2-bright: #7fe3e3;
+    --teal-dim:     rgba(76,201,201,0.12);
+    --cyber:        #39ff88;
+    --muted:        #8a97a8;
+    --border:       #1e2730;
+    --border-bright:#2a3545;
+    --tag-bg:       #141921;
+    --tag-col:      #4cc9c9;
+    --serif:        'DM Sans', sans-serif;
+    --display:      'Syne', sans-serif;
+    --mono:         'DM Mono', monospace;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     font-family: var(--serif);
-    background: var(--offwhite);
-    color: var(--black);
+    background: var(--black);
+    color: var(--text);
     font-size: 15px;
     line-height: 1.6;
     min-height: 100vh;
@@ -48,17 +56,30 @@
   .page {
     max-width: 860px;
     margin: 0 auto;
-    background: var(--white);
-    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+    background: var(--black);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px);
+    pointer-events: none;
+    z-index: 0;
   }
 
   /* ── HEADER ─────────────────────────────────── */
   .cv-header {
-    background: var(--black);
     color: var(--white);
     padding: 3rem 3rem 2.5rem;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    z-index: 1;
   }
   .cv-header::before {
     content: '';
@@ -67,7 +88,7 @@
     width: 220px; height: 220px;
     border-radius: 50%;
     border: 40px solid var(--accent);
-    opacity: 0.15;
+    opacity: 0.12;
   }
   .cv-header::after {
     content: '';
@@ -76,7 +97,7 @@
     width: 120px; height: 120px;
     border-radius: 50%;
     border: 25px solid var(--accent2);
-    opacity: 0.12;
+    opacity: 0.1;
   }
 
   .header-inner {
@@ -89,25 +110,29 @@
   }
 
   .cv-name {
+    font-family: var(--display);
     font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 600;
-    letter-spacing: -0.03em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     line-height: 1.1;
+    color: var(--white);
     margin-bottom: 0.3rem;
   }
   .cv-name .chinese {
+    font-family: var(--serif);
     font-size: 0.45em;
     font-weight: 300;
-    opacity: 0.6;
+    color: var(--accent);
     margin-left: 0.5rem;
     letter-spacing: 0.05em;
   }
 
   .cv-title {
-    font-size: 1rem;
+    font-family: var(--mono);
     font-weight: 400;
-    color: var(--accent2);
-    letter-spacing: 0.04em;
+    color: var(--cyber);
+    text-shadow: 0 0 10px rgba(57,255,136,0.4);
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     font-size: 0.78rem;
     margin-bottom: 1.2rem;
@@ -118,17 +143,20 @@
     flex-wrap: wrap;
     gap: 0.5rem 1.5rem;
     font-size: 0.82rem;
-    color: rgba(255,255,255,0.75);
+    font-family: var(--mono);
+    color: var(--accent2-bright);
   }
-  .contact-grid a { color: rgba(255,255,255,0.9); text-decoration: none; }
-  .contact-grid a:hover { color: var(--accent2); }
-  .contact-label { opacity: 0.5; margin-right: 0.25rem; }
+  .contact-grid a { color: var(--accent2-bright); text-decoration: none; }
+  .contact-grid a:hover { color: var(--gold-light); }
+  .contact-label { font-family: var(--serif); color: var(--white); opacity: 1; margin-right: 0.25rem; }
 
   .availability-badge {
-    background: var(--accent2);
-    color: var(--black);
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.35);
+    color: var(--cyber);
+    font-family: var(--mono);
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     padding: 0.3rem 0.8rem;
@@ -143,22 +171,28 @@
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(255,255,255,0.2);
+    border: 3px solid rgba(201,168,76,0.3);
     display: block;
   }
 
   /* ── SUMMARY BAR ─────────────────────────────── */
   .summary-bar {
-    background: var(--accent);
-    color: var(--white);
+    position: relative;
+    z-index: 1;
+    background: var(--gold-dim);
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
     padding: 1.1rem 3rem;
     font-size: 0.88rem;
     font-weight: 400;
     line-height: 1.6;
   }
+  .summary-bar strong { color: var(--gold-light); font-weight: 500; }
 
   /* ── BODY ────────────────────────────────────── */
   .cv-body {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr 260px;
     gap: 0;
@@ -173,7 +207,7 @@
   /* ── SIDEBAR ─────────────────────────────────── */
   .side-col {
     padding: 2.5rem 2rem 2.5rem 2rem;
-    background: var(--offwhite);
+    background: rgba(255,255,255,0.015);
   }
 
   /* ── SECTION ─────────────────────────────────── */
@@ -181,12 +215,13 @@
   .section:last-child { margin-bottom: 0; }
 
   .section-title {
+    font-family: var(--mono);
     font-size: 0.68rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 1px solid var(--border-bright);
     padding-bottom: 0.4rem;
     margin-bottom: 1.2rem;
   }
@@ -205,9 +240,10 @@
   }
 
   .job-company {
+    font-family: var(--display);
     font-size: 1rem;
-    font-weight: 600;
-    color: var(--black);
+    font-weight: 700;
+    color: var(--white);
   }
   .job-tenure {
     font-family: var(--mono);
@@ -217,7 +253,7 @@
   }
   .job-role {
     font-size: 0.82rem;
-    color: var(--accent);
+    color: var(--accent2);
     font-weight: 500;
     margin-bottom: 0.1rem;
   }
@@ -237,13 +273,13 @@
     margin-bottom: 0.35rem;
     font-size: 0.87rem;
     line-height: 1.55;
-    color: #222;
+    color: var(--text);
   }
   .job ul li::before {
     content: '▸';
     position: absolute;
     left: 0;
-    color: var(--accent2);
+    color: var(--accent);
     font-size: 0.7rem;
     top: 0.15em;
   }
@@ -251,7 +287,7 @@
   /* ── METRIC HIGHLIGHT ────────────────────────── */
   .metric {
     font-weight: 600;
-    color: var(--accent);
+    color: var(--gold-light);
   }
 
   /* ── SKILLS TAGS ─────────────────────────────── */
@@ -263,6 +299,7 @@
   }
   .tag {
     background: var(--tag-bg);
+    border: 1px solid var(--border-bright);
     color: var(--tag-col);
     font-size: 0.72rem;
     font-weight: 500;
@@ -276,12 +313,13 @@
   .side-section:last-child { margin-bottom: 0; }
 
   .side-title {
+    font-family: var(--mono);
     font-size: 0.68rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 1px solid var(--border-bright);
     padding-bottom: 0.4rem;
     margin-bottom: 1rem;
   }
@@ -291,9 +329,9 @@
     justify-content: space-between;
     font-size: 0.8rem;
     margin-bottom: 0.3rem;
-    color: var(--black);
+    color: var(--white);
   }
-  .skill-bar-label span { color: var(--muted); font-size: 0.72rem; }
+  .skill-bar-label span { color: var(--muted); font-size: 0.72rem; font-family: var(--mono); }
   .bar-track {
     height: 4px;
     background: var(--border);
@@ -314,27 +352,28 @@
     font-size: 0.82rem;
     padding: 0.35rem 0;
     border-bottom: 1px solid var(--border);
+    color: var(--text);
   }
   .lang-entry:last-child { border-bottom: none; }
   .lang-level {
     font-size: 0.7rem;
-    color: var(--muted);
+    color: var(--accent2-bright);
     font-family: var(--mono);
   }
 
-  .edu-entry { margin-bottom: 1rem; font-size: 0.82rem; }
-  .edu-degree { font-weight: 600; }
+  .edu-entry { margin-bottom: 1rem; font-size: 0.82rem; color: var(--text); }
+  .edu-degree { font-weight: 600; color: var(--white); }
   .edu-school { color: var(--muted); font-size: 0.78rem; }
 
   .link-item {
     display: block;
     font-size: 0.78rem;
-    color: var(--accent);
+    color: var(--accent2);
     text-decoration: none;
     margin-bottom: 0.5rem;
     word-break: break-all;
   }
-  .link-item:hover { text-decoration: underline; }
+  .link-item:hover { text-decoration: underline; color: var(--gold-light); }
   .link-label { display: block; font-size: 0.7rem; color: var(--muted); margin-bottom: 0.1rem; }
 
   /* ── WRITING SAMPLES ─────────────────────────── */
@@ -348,6 +387,7 @@
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
+    color: var(--text);
   }
   .sample-num {
     font-family: var(--mono);
@@ -356,10 +396,10 @@
     min-width: 1.5rem;
   }
   .sample-item a {
-    color: var(--accent);
+    color: var(--accent2);
     text-decoration: none;
   }
-  .sample-item a:hover { text-decoration: underline; }
+  .sample-item a:hover { text-decoration: underline; color: var(--gold-light); }
   .sample-client {
     font-size: 0.72rem;
     color: var(--muted);
@@ -368,19 +408,24 @@
 
   /* ── FOOTER ──────────────────────────────────── */
   .cv-footer {
+    position: relative;
+    z-index: 1;
     background: var(--black);
-    color: rgba(255,255,255,0.4);
+    border-top: 1px solid var(--border);
+    color: var(--muted);
     text-align: center;
     padding: 1rem 2rem;
     font-size: 0.72rem;
     font-family: var(--mono);
   }
-  .cv-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  .cv-footer a { color: var(--cyber); text-decoration: none; }
+  .cv-footer a:hover { color: var(--gold-light); }
 
   /* ── PRINT ───────────────────────────────────── */
   @media print {
-    body { background: white; font-size: 11pt; }
-    .page { box-shadow: none; max-width: 100%; }
+    body { background: white; color: #111; font-size: 11pt; }
+    .page { box-shadow: none; max-width: 100%; background: white; }
+    .page::before { display: none; }
     .cv-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .summary-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -398,7 +443,7 @@
     .main-col { padding: 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
     .side-col { padding: 1.5rem; }
   }
-</style>
+</style></style>
 <style>
 ._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.96);padding:0.45rem 1.5rem;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 0 rgba(255,255,255,0.06);}
 ._topbar button{font-family:inherit;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#0057ff;color:#fff;border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;}
@@ -441,7 +486,7 @@
         <div class="cv-name"><a href="DonHartig_ES.html" style="color:inherit;text-decoration:none;">Don Hartig <span class="chinese">董夏庭</span></a></div>
         <div class="cv-title">Gerente de Marketing Senior · Cripto · DeFi · Web3 · Estrategia de Contenido · Localización</div>
         <div class="contact-grid">
-          <div style="width:100%; font-size:0.82rem; color:var(--accent2); margin-bottom:0.2rem;">Hábleme personalmente en: <strong>English</strong>, <strong>中文</strong>, <strong>Deutsch</strong>, <strong>Français</strong>, <strong>日本語</strong>, <strong>Español</strong>, <strong>Afrikaans</strong></div>
+          <div style="width:100%; font-size:0.82rem; color:var(--accent); margin-bottom:0.2rem;">Hábleme personalmente en: <strong>English</strong>, <strong>中文</strong>, <strong>Deutsch</strong>, <strong>Français</strong>, <strong>日本語</strong>, <strong>Español</strong>, <strong>Afrikaans</strong></div>
           <span><span class="contact-label">Correo</span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
           <span><span class="contact-label">Web</span><a href="https://www.donhartig.com" target="_blank">donhartig.com</a></span>
           <span><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/donhartig" target="_blank">linkedin.com/in/donhartig</a></span>
@@ -648,6 +693,9 @@
       <div class="side-section">
         <div class="side-title">Perfil de Habilidades</div>
 
+        <div class="skill-bar-label">Gestión de Equipo y Editorial <span>Maestro</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:99%"></div></div>
+
         <div class="skill-bar-label">Estrategia de Contenido y Redacción <span>Experto</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
 
@@ -656,9 +704,6 @@
 
         <div class="skill-bar-label">Localización (ZH→EN) <span>Experto</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
-
-        <div class="skill-bar-label">Gestión de Equipo y Editorial <span>Avanzado</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
 
         <div class="skill-bar-label">Optimización SEO y CTA <span>Avanzado</span></div>
         <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
@@ -683,7 +728,7 @@
       <!-- NOTABLE CLIENTS -->
       <div class="side-section">
         <div class="side-title">Clientes y Empleadores Destacados</div>
-        <div style="font-size:0.82rem; line-height:1.9; color:#333;">
+        <div style="font-size:0.82rem; line-height:1.9; color:var(--accent2-bright);">
           Bitget &nbsp;·&nbsp; GSR &nbsp;·&nbsp; Businesxt<br>
           Singularity &nbsp;·&nbsp; Deer Network<br>
           Blockchain Advocates &nbsp;·&nbsp; BingX<br>
@@ -695,7 +740,7 @@
       <!-- ADDITIONAL INFO -->
       <div class="side-section">
         <div class="side-title">Adicional</div>
-        <div style="font-size:0.8rem; line-height:1.8; color:#333;">
+        <div style="font-size:0.8rem; line-height:1.8; color:var(--accent2-bright);">
           <div>✦ Abierto a tiempo completo y por proyecto</div>
           <div>✦ Remoto y presencial (global)</div>
           <div>✦ Orador público experimentado (CN/EN)</div>
@@ -709,7 +754,8 @@
 
   <!-- ══ FOOTER ══════════════════════════════════ -->
   <footer class="cv-footer">
-    <a href="https://www.donhartig.com">donhartig.com</a> &nbsp;·&nbsp; don@donhartig.com &nbsp;·&nbsp; Codificado por Don Hartig
+    <div><a href="mailto:don@donhartig.com">don@donhartig.com</a> &nbsp;·&nbsp; <a href="https://www.donhartig.com">donhartig.com</a></div>
+    <div style="margin-top:0.3rem;">Codificado por <a href="DonHartig_ES.html">Don Hartig</a></div>
   </footer>
 
 </div>
