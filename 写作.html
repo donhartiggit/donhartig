@@ -1,505 +1,700 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="董夏庭 - 专业内容写手、文案撰稿人与技术写手，拥有8年以上跨加密货币、金融科技、游戏、网络安全、SaaS及技术领域的丰富经验。">
-    <meta name="keywords" content="content writer, copywriter, technical writer, seo content writer, freelance writer, blockchain writer, fintech writer, gaming writer, cybersecurity writer">
-    <meta name="robots" content="index, follow">
-    <title>董夏庭 | 内容写手与文案撰稿人 | SEO、技术与营销写作</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
-    
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            background: white;
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top;
-            border: 5px solid #0066cc;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h1 {
-            margin: 10px 0 12px 0;
-            font-size: 2.6em;
-            color: #1a1a1a;
-        }
-        .subtitle {
-            font-size: 1.35em;
-            color: #0066cc;
-            margin-bottom: 20px;
-        }
-        .contact-info {
-            font-size: 1.1em;
-        }
-        .contact-info a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        section {
-            background: white;
-            padding: 35px;
-            margin-bottom: 35px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        h2 {
-            color: #1a1a1a;
-            border-bottom: 3px solid #0066cc;
-            padding-bottom: 12px;
-            margin-top: 0;
-        }
-        ul {
-            padding-left: 22px;
-        }
-        li {
-            margin-bottom: 16px;
-        }
-        .job {
-            margin-bottom: 32px;
-        }
-        .job-title {
-            font-weight: bold;
-            font-size: 1.18em;
-            color: #0066cc;
-        }
-        .job-date {
-            color: #555;
-            font-style: italic;
-        }
-        .sample-list {
-            list-style: none;
-            padding: 0;
-        }
-        .sample-list li {
-            background: #fafafa;
-            padding: 20px 24px;
-            margin-bottom: 18px;
-            border-left: 5px solid #0066cc;
-            border-radius: 4px;
-        }
-        .sample-title {
-            font-size: 1.16em;
-            font-weight: bold;
-            margin-bottom: 6px;
-            color: #1a1a1a;
-        }
-        .sample-meta {
-            color: #555;
-            font-size: 0.98em;
-            margin-bottom: 10px;
-        }
-
-        /* Collapsible styles */
-        #extra-samples {
-            display: none;
-        }
-        #toggle-samples {
-            background: #0066cc;
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            font-size: 1.05em;
-            border-radius: 6px;
-            cursor: pointer;
-            margin: 20px auto;
-            display: block;
-            transition: background 0.3s;
-        }
-        #toggle-samples:hover {
-            background: #0052a3;
-        }
-
-        .filter-buttons {
-            margin-bottom: 30px;
-        }
-
-        .filter-btn {
-            background: #f1f1f1;
-            color: #333;
-            border: none;
-            padding: 10px 18px;
-            margin: 6px 4px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: all 0.3s;
-        }
-
-        .filter-btn:hover {
-            background: #e0e0e0;
-        }
-
-        .filter-btn.active {
-            background: #0066cc;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .filter-btn {
-                padding: 9px 14px;
-                font-size: 0.95em;
-            }
-            .profile-image { width: 140px; height: 140px; }
-            h1 { font-size: 2.3em; }
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #666;
-            font-size: 0.95em;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Don Hartig — 专业内容策略师、文案撰稿人及技术写作者，在加密货币、金融科技、游戏、网络安全、SaaS 与科技领域拥有近二十年经验。">
+<meta name="keywords" content="内容策略师, 文案撰稿人, 技术写作者, SEO内容策略师, 自由撰稿人, 区块链撰稿人, 金融科技撰稿人, 游戏撰稿人, 网络安全撰稿人">
+<meta name="robots" content="index, follow">
+<title>Don Hartig｜内容策略师与文案撰稿人｜SEO、技术与营销写作</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <style>
-.top-bar-zh{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);border-bottom:1px solid #ddd;padding:0.45rem 1.5rem;gap:1rem;}
-.top-bar-zh button{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#0066cc;color:#fff;border:none;padding:0.35rem 0.9rem;border-radius:4px;cursor:pointer;}
-.top-bar-zh a{font-size:0.7rem;color:#666;text-decoration:none;}
-.top-bar-zh a:hover{color:#0066cc;}
-@media print{.top-bar-zh{display:none!important;}}
+/* ── WARM BROWN PALETTE ── */
+:root{
+  --night:#3D2310; --night2:#150E07; --night3:#4F3120;
+  --aged:#F5ECD8; --cream:#FAF7EF;
+  --vermilion:#8C2316; --verm-light:#A8392A;
+  --gold:#D4A840; --gold-bright:#E8C86A;
+  --pale:#E0C89A; --faded:#C4A070;
+  --ink:#100A03; --ink2:#271708;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--night);color:var(--aged);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.7;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.038;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;}
+
+/* ── TOPBAR (matches productmanagement.html structure) ── */
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,6,2,0.96);padding:0.45rem 1.5rem;gap:1rem;flex-wrap:wrap;box-shadow:0 1px 0 rgba(212,168,64,0.2);border-bottom:1px solid rgba(212,168,64,0.15);}
+._topbar button{font-family:'Space Grotesk',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;transition:background .2s;}
+._topbar button:hover{background:var(--gold-bright);}
+._navgroup{display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;}
+._langrow{display:flex;gap:0.4rem;flex-wrap:wrap;}
+._topbar a._langbtn{font-family:'Space Grotesk',sans-serif;font-size:0.66rem;font-weight:500;letter-spacing:.06em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;transition:opacity .2s;}
+._topbar a._langbtn:hover{opacity:0.85;}
+._topbar a._homebtn{font-family:'Space Grotesk',sans-serif;font-size:0.66rem;font-weight:500;letter-spacing:.06em;background:#1e8e3e;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;transition:opacity .2s;}
+._topbar a._homebtn:hover{opacity:0.85;}
+@media(max-width:960px){
+  ._topbar{flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+  ._navgroup{display:flex;flex-direction:column;align-items:center;width:100%;gap:0.5rem;}
+  ._langrow{justify-content:center;width:100%;}
+}
+@media print{._topbar{display:none!important;}}
+
+/* topbar spacer - fixed height replaces JS measurement */
+body{padding-top:46px;}
+/* cover zoom - pure CSS animation replaces JS class toggle */
+@keyframes kenBurns{from{transform:scale(1.04)}to{transform:scale(1)}}
+.cover-bg{animation:kenBurns 8s ease-out forwards;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;} .reveal-delay-2{transition-delay:.2s;} .reveal-delay-3{transition-delay:.3s;} .reveal-delay-4{transition-delay:.4s;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+.label{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;}
+
+/* ── COVER ── */
+.cover{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+.cover-bg{position:absolute;inset:0;background-color:#3D2310;background-image:url('images/me/broodingdon.jpeg');background-size:cover;background-position:right 20%;filter:grayscale(100%) sepia(40%) contrast(1.1) brightness(.55);animation:kenBurns 8s ease-out forwards;}
+.cover-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(61,35,16,.1) 0%,rgba(61,35,16,.35) 40%,rgba(61,35,16,.88) 78%,rgba(61,35,16,1) 100%);}
+.cover-content{position:relative;z-index:2;padding:0 clamp(28px,6vw,96px) 72px;}
+.cover-kicker{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block;opacity:0;animation:fadeUp .9s .2s cubic-bezier(.22,1,.36,1) forwards;}
+.cover-name{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(4.5rem,10vw,6rem);line-height:.88;letter-spacing:-0.025em;color:var(--cream);opacity:0;animation:fadeUp 1s .35s cubic-bezier(.22,1,.36,1) forwards;}
+.cover-name a,.cover-name a:link,.cover-name a:visited,.cover-name a:hover,.cover-name a:active{color:var(--cream);text-decoration:none;}
+.cover-name a .given{color:var(--pale);}
+.cover-name .given{display:block;font-weight:400;font-style:italic;font-size:.42em;color:var(--pale);letter-spacing:.01em;margin-bottom:6px;line-height:1;}
+.cover-rule{width:0;height:1px;background:var(--gold);margin:28px 0;opacity:.7;animation:growRule 1s .7s cubic-bezier(.22,1,.36,1) forwards;}
+.cover-sub{font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.5rem);color:var(--pale);max-width:580px;line-height:1.55;opacity:0;animation:fadeUp .9s .85s cubic-bezier(.22,1,.36,1) forwards;}
+.cover-meta{margin-top:28px;display:flex;gap:28px;flex-wrap:wrap;font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--pale);opacity:0;animation:fadeUp .9s 1s cubic-bezier(.22,1,.36,1) forwards;}
+.cover-meta a{color:var(--aged);text-decoration:none;border-bottom:1px solid rgba(212,168,64,.5);padding-bottom:1px;}
+.cover-meta a:hover{color:var(--gold-bright);}
+.cover-scroll-hint{position:absolute;bottom:0;right:clamp(28px,6vw,96px);writing-mode:vertical-rl;letter-spacing:.22em;font-family:'Space Grotesk',sans-serif;font-size:9px;text-transform:uppercase;color:var(--faded);display:flex;align-items:center;gap:12px;padding-bottom:32px;opacity:0;animation:fadeUp .9s 1.2s cubic-bezier(.22,1,.36,1) forwards;}
+.cover-scroll-hint::after{content:"";width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);opacity:.5;}
+@media(max-width:900px){.cover-scroll-hint{display:none;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes growRule{from{width:0}to{width:80px}}
+
+.cover-name-row{display:flex;align-items:center;gap:clamp(16px,3vw,36px);}
+.cover-portrait-wrap{
+  position:relative;flex-shrink:0;
+  opacity:0;animation:fadeUp .9s .4s cubic-bezier(.22,1,.36,1) forwards;
+  display:flex;align-items:center;justify-content:center;
+}
+.cover-portrait-wrap::before{
+  content:"";position:absolute;inset:-10px;
+  border:1px solid rgba(212,168,64,.3);
+  border-radius:52% 52% 50% 50% / 44% 44% 56% 56%;
+  pointer-events:none;
+}
+.cover-portrait-wrap::after{
+  content:"";position:absolute;inset:-20px;
+  border:1px solid rgba(212,168,64,.12);
+  border-radius:52% 52% 50% 50% / 44% 44% 56% 56%;
+  pointer-events:none;
+}
+.cover-portrait{
+  display:block;width:auto;height:calc(clamp(4.5rem,10vw,6rem) * 2 * 0.88);
+  aspect-ratio:3/4;
+  object-fit:cover;object-position:top;
+  border-radius:50% 50% 48% 48% / 42% 42% 58% 58%;
+  filter:grayscale(100%) sepia(35%) contrast(1.08) brightness(.85);
+}
+
+/* ── FILIGREE ── */
+.filigree-divider{display:flex;flex-direction:column;align-items:center;padding:52px 0 24px;gap:20px;}
+.filigree-divider .label{margin:0;font-size:14px;letter-spacing:.28em;}
+.filigree-svg{opacity:.7;transform:scale(1.5);}
+
+/* ── PARCHMENT PANEL ── */
+.panel{background:var(--cream);color:var(--ink);padding:72px clamp(28px,8vw,110px);}
+.panel .label{color:var(--vermilion);margin-bottom:10px;}
+.panel h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.15;color:var(--ink);margin-bottom:32px;}
+.panel p{font-size:1.03em;line-height:1.85;margin-bottom:16px;color:var(--ink2);}
+.panel p:last-child{margin-bottom:0;}
+.panel strong{color:var(--vermilion);font-weight:500;}
+.dropcap::first-letter{font-family:'Playfair Display',serif;font-weight:900;font-size:3em;float:left;line-height:.9;padding:4px 12px 0 0;color:var(--vermilion);}
+
+/* ── DARK SECTION ── */
+.dark-section{padding:20px clamp(28px,8vw,110px) 72px;}
+.dark-section .label{margin-bottom:10px;}
+.dark-section h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--cream);margin-bottom:32px;}
+
+/* ── PULLQUOTE ── */
+.pullquote{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.6;color:var(--aged);text-align:center;padding:60px clamp(28px,10vw,160px);max-width:1000px;margin:0 auto;}
+.pullquote::before{content:"\201C";font-size:3em;line-height:1;vertical-align:-.25em;color:var(--gold);opacity:.6;margin-right:6px;font-style:normal;}
+.pullquote::after{content:"\201D";font-size:3em;line-height:1;vertical-align:-.25em;color:var(--gold);opacity:.6;margin-left:6px;font-style:normal;}
+
+/* ── CLIENTS ── */
+.clients{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;padding:40px clamp(28px,6vw,96px) 36px;border-top:1px solid rgba(212,168,64,.4);border-bottom:none;background:var(--cream);}
+.clients span{font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);padding:8px 22px;position:relative;}
+.clients span:not(:last-child)::after{content:"◆";color:var(--vermilion);opacity:.5;position:absolute;right:-3px;font-size:6px;top:50%;transform:translateY(-50%);}
+/* ── EXPERTISE GRID ── */
+.expertise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(212,168,64,.18);border:1px solid rgba(212,168,64,.18);}
+@media(max-width:1024px){.expertise-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:760px){.expertise-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.expertise-grid{grid-template-columns:1fr;}}
+.expertise-item{background:var(--night2);padding:32px 30px;transition:background .25s, transform .3s cubic-bezier(.22,1,.36,1);transform:scale(1);}
+.expertise-item:hover{background:#2a1a0e;transform:scale(1.06);position:relative;z-index:2;}
+.expertise-item .item-label{font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;transition:color .25s;}
+.expertise-item:hover .item-label{color:var(--gold-bright);}
+.expertise-item p{font-family:'EB Garamond',serif;font-size:.97em;color:var(--pale);line-height:1.65;margin:0;}
+
+/* ── INTERSTITIAL QUOTE ── */
+.interstitial-quote{background:var(--cream);padding:56px clamp(28px,10vw,160px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;}
+.interstitial-quote blockquote{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.2vw,1.7rem);line-height:1.6;color:var(--ink);max-width:720px;margin:0;}
+.interstitial-quote cite{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--vermilion);}
+.interstitial-rule{width:48px;height:1px;background:rgba(140,35,22,.3);}
+
+/* ── INDUSTRY LIST DARK ── */
+.industry-list-dark{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(212,168,64,.18);border:1px solid rgba(212,168,64,.18);}
+@media(max-width:1024px){.industry-list-dark{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:760px){.industry-list-dark{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.industry-list-dark{grid-template-columns:1fr;}}
+.industry-list-dark li{background:var(--night2);padding:22px 26px;font-size:.98em;color:var(--pale);line-height:1.6;transition:background .25s,transform .3s cubic-bezier(.22,1,.36,1);transform:scale(1);}
+.industry-list-dark li:hover{background:#2a1a0e;transform:scale(1.06);position:relative;z-index:2;}
+.industry-list-dark li strong{color:var(--gold);display:block;font-family:'Playfair Display',serif;font-weight:500;font-size:1.05em;margin-bottom:4px;}
+
+/* ── FILTER BUTTONS ── */
+.filter-wrap{text-align:center;margin-bottom:36px;}
+.filter-btn{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:transparent;color:var(--pale);border:1px solid rgba(212,168,64,.3);padding:9px 18px;margin:5px 4px;cursor:pointer;transition:all .2s ease;}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold);}
+.filter-btn.active{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+
+/* ── SAMPLE CARDS ── */
+.samples-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:none;border:1px solid rgba(212,168,64,.2);}
+.sample-card{background:#f0e8d4;padding:34px 32px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .25s;border:1px solid rgba(212,168,64,.2);}
+.sample-card.hidden{display:none;}
+@media(max-width:640px){.samples-grid{grid-template-columns:1fr;}}
+.sample-card:hover{background:var(--cream);}
+.sample-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--vermilion);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.22,1,.36,1);}
+.sample-card:hover::before{transform:scaleX(1);}
+.card-category{font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--verm-light);margin-bottom:14px;display:block;}
+
+.card-num{font-family:'Playfair Display',serif;font-style:italic;font-size:3.2em;color:rgba(140,35,22,.18);line-height:1;position:absolute;top:10px;right:26px;font-weight:900;}
+.card-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1.2em;color:var(--ink);line-height:1.3;margin-bottom:8px;}
+
+.card-client{font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faded);margin-bottom:12px;display:block;}
+
+.card-desc{font-family:'EB Garamond',serif;font-style:italic;font-size:1em;color:var(--ink2);line-height:1.6;flex:1;}
+
+.card-link{margin-top:20px;align-self:flex-start;font-family:'Space Grotesk',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(16,10,3,.3);padding-bottom:3px;transition:color .2s,border-color .2s;}
+
+.card-link:hover{color:var(--vermilion);border-color:var(--vermilion);}
+.card-link::after{content:" →";}
+
+#toggle-samples{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;background:transparent;color:var(--gold);border:1px solid rgba(212,168,64,.5);padding:14px 36px;cursor:pointer;display:block;margin:36px auto 0;transition:all .2s;}
+#toggle-samples:hover{background:var(--gold);color:var(--ink);}
+
+/* ── WHY HIRE ── */
+.why-list{list-style:none;padding:0;}
+.why-list li{font-size:1.03em;line-height:1.8;color:var(--pale);padding:16px 0;border-bottom:1px solid rgba(212,168,64,.15);display:flex;gap:16px;align-items:baseline;}
+.why-list li:last-child{border-bottom:none;}
+.why-list li::before{content:"✦";color:var(--gold);font-size:.65em;flex-shrink:0;margin-top:4px;}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;}
+.timeline::before{content:"";position:absolute;left:120px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(212,168,64,.5),rgba(212,168,64,.1));}
+.entry{display:grid;grid-template-columns:120px 1fr;position:relative;}
+.entry:last-child .entry-body{border-bottom:none;}
+.entry-meta{padding:0 24px 52px 0;text-align:right;position:relative;}
+.entry-meta::after{content:"";position:absolute;right:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--night);border:1px solid var(--gold);}
+.entry-year{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1.4em;color:var(--gold);line-height:1;display:block;margin-bottom:6px;}
+.entry-company{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--faded);line-height:1.6;display:block;}
+.entry-location{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--faded);opacity:.6;display:block;margin-top:4px;}
+.entry-body{padding:0 0 52px 36px;border-bottom:1px solid rgba(212,168,64,.12);position:relative;}
+.entry-role{font-family:'Playfair Display',serif;font-weight:500;font-style:italic;font-size:1.3em;color:var(--aged);margin-bottom:16px;line-height:1.3;}
+.entry-ghost{position:absolute;right:0;top:-10px;font-family:'Playfair Display',serif;font-style:italic;font-weight:900;font-size:5em;color:rgba(212,168,64,.07);line-height:1;pointer-events:none;user-select:none;}
+.entry-body ul{padding-left:0;list-style:none;}
+.entry-body li{font-size:.97em;color:var(--pale);line-height:1.8;margin-bottom:12px;}
+.entry-body li::before{content:"— ";color:var(--gold);opacity:.6;}
+.entry-body a{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(232,200,106,.4);}
+.entry-body a:hover{color:var(--cream);}
+@media(max-width:640px){
+  .timeline::before{display:none;}
+  .entry{grid-template-columns:1fr;}
+  .entry-meta{text-align:left;padding:0 0 6px 0;}
+  .entry-meta::after{display:none;}
+  .entry-body{padding:0 0 40px 0;}
+  .entry-ghost{display:none;}
+}
+
+/* ── CTA ── */
+.cta{padding:80px clamp(28px,8vw,110px);text-align:center;background:var(--cream);}
+.cta h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--ink);margin-bottom:16px;}
+.cta p{font-family:'EB Garamond',serif;font-style:italic;font-size:1.15em;color:var(--ink2);margin-bottom:36px;max-width:540px;margin-left:auto;margin-right:auto;}
+.cta-btn{font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);background:var(--gold-bright);border:none;padding:18px 44px;text-decoration:none;display:inline-block;transition:background .2s,letter-spacing .2s;}
+.cta-btn:hover{background:var(--gold);letter-spacing:.3em;}
+
+/* ── SIGN-OFF ── */
+.signoff{text-align:center;padding:80px 24px 60px;background:var(--night);}
+.signoff-rule{width:56px;height:1px;background:var(--gold);margin:0 auto 40px;opacity:.6;}
+.signoff p{font-family:'EB Garamond',serif;font-style:italic;font-size:1.1em;color:var(--pale);margin-bottom:30px;}
+.signoff p a{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(232,200,106,.4);font-weight:500;}
+.sig{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:3.8em;color:var(--gold-bright);line-height:1;}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:28px 24px;border-top:1px solid rgba(212,168,64,.15);font-family:'Space Grotesk',sans-serif;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faded);background:#1A0C04;line-height:2;}
+footer a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(212,168,64,.4);padding-bottom:2px;}
+footer a:hover{color:var(--gold-bright);}
+
+@media(max-width:640px){
+  .cover{min-height:100svh;} .cover-scroll-hint{display:none;}
+  .panel,.dark-section,.cta,.signoff{padding-left:24px;padding-right:24px;}
+}
 </style>
 </head>
 <body>
-<div class="top-bar-zh"><button onclick="window.print()">⬇ 下载 PDF</button><a href="https://donhartig.com/writing.html">English version</a></div>
-<div style="height:40px;"></div>
 
-    <header>
-        <a href="https://donhartig.com"><img src="images/me/broodingdon.jpeg" alt="Don Hartig - Professional Content Writer and Copywriter" class="profile-image"></a>
-        <h1>董夏庭</h1>
-        <p class="subtitle">内容写手与文案撰稿人 | 科技记者 | SEO、技术与营销写作</p>
-        <p class="contact-info">
-            <strong>Email:</strong> <a href="mailto:don@donhartig.com">don@donhartig.com</a> | 
-            <strong>Website:</strong> <a href="https://www.donhartig.com" target="_blank">donhartig.com</a><br>
-            欢迎远程及国际（驻场）合作机会 | 英语母语 · 精通7种语言并具备认证翻译资质
-        </p>
-    </header>
+<!-- ── TOPBAR ── -->
+<div class="_topbar">
+  <button onclick="window.print()">⬇ 下载 PDF</button>
+  <div class="_navgroup">
+    <a class="_homebtn" href="董夏庭.html">首页</a>
+    <div class="_langrow">
+      <a class="_langbtn" href="writing.html">English</a>
+      <a class="_langbtn" href="writing_DE.html">Deutsch</a>
+      <a class="_langbtn" href="writing_FR.html">Français</a>
+      <a class="_langbtn" href="writing_JP.html">日本語</a>
+      <a class="_langbtn" href="writing_ES.html">Español</a>
+      <a class="_langbtn" href="writing_AF.html">Afrikaans</a>
+    </div>
+  </div>
+</div>
+<div id="_topbarSpacer" style="height:0;"></div>
 
-    <section id="summary">
-        <h2>跨行业多面内容写手与文案撰稿人</h2>
-        <p>专业<strong>内容写手</strong>、<strong>文案撰稿人</strong>及<strong>技术写手</strong>，拥有8年以上为加密货币与区块链、金融科技、游戏、网络安全、SaaS、技术及数字营销等多元行业创作高质量、结果导向内容的丰富经验。</p>
-        <p>擅长产出经SEO优化的长篇文章、技术白皮书、劝说性营销文案、教育指南、新闻稿及社交媒体内容。具备领导内容团队、管理高产量内容生产，以及交付（尤其是中译英）本地化内容以触达全球受众的丰富经验。</p>
-    </section>
+<!-- ══ COVER ══ -->
+<section class="cover">
+  <div class="cover-bg" id="coverBg"></div>
+  <div class="cover-overlay"></div>
+  <div class="cover-content">
+    <span class="cover-kicker">作品集</span>
+    <div class="cover-name-row">
+      <h1 class="cover-name"><a href="董夏庭.html"><span class="given">Don</span>Hartig</a></h1>
+    </div>
+    <div class="cover-rule"></div>
+    <p class="cover-sub">内容策略师、品牌撰稿人、文案撰稿人、作者、叙事与脚本撰稿人、科技记者 — 以文字传递信息、说服人心并经久流传，跨越近二十年与七种语言。</p>
+    <div class="cover-meta">
+      <span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
+      <span><a href="https://donhartig.com">donhartig.com</a></span>
+      <span><a href="https://linkedin.com/in/donhartig">LinkedIn</a></span>
+      <span style="flex-basis:100%;">远程与国际 · 英语母语 · 精通七种语言（EN, DE, ZH, FR, ES, JP, AF）</span>
+    </div>
+  </div>
+  <div class="cover-scroll-hint">向下滚动</div>
+</section>
 
-    <section id="expertise">
-        <h2>核心写作专长</h2>
-        <p>已证明的能力：根据不同受众和行业灵活调整语气、深度与风格。</p>
-        <div>
-            <span class="skill-tag">SEO内容写作</span>
-            <span class="skill-tag">技术写作与白皮书</span>
-            <span class="skill-tag">营销文案</span>
-            <span class="skill-tag">长篇文章与指南</span>
-            <span class="skill-tag">新闻稿与新闻写作</span>
-            <span class="skill-tag">内容本地化（中↔英）</span>
-            <span class="skill-tag">落地页文案</span>
-            <span class="skill-tag">社交媒体与短内容</span>
-            <span class="skill-tag">编辑与团队领导</span>
-            <span class="skill-tag">多语言内容本土化</span>
-        </div>
-    </section>
+<!-- ══ INTERSTITIAL QUOTE ══ -->
+<div class="interstitial-quote reveal">
+  <span class="interstitial-rule"></span>
+  <blockquote>我不只是为各行各业而写。我从它们的内部书写。</blockquote>
+  <cite>— Don Hartig</cite>
+  <span class="interstitial-rule"></span>
+</div>
 
-    <section id="industries">
-        <h2>服务行业</h2>
+<!-- ══ FILIGREE I ══ -->
+<div class="filigree-divider reveal">
+  <span class="label">一 — 概览</span>
+  <svg class="filigree-svg" width="380" height="42" viewBox="0 0 380 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="21" x2="148" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/><line x1="232" y1="21" x2="380" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/>
+    <path d="M148 21 C152 14,156 8,162 7 C166 6.5,168 10,166 13 C164 16,160 15,158 18 C156 21,159 26,163 25 C167 24,168 20,165 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <path d="M148 21 C152 28,156 34,162 35 C166 35.5,168 32,166 29 C164 26,160 27,158 24 C156 21,159 16,163 17 C167 18,168 22,165 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="148" cy="21" r="1.8" fill="#D4A840" opacity=".6"/>
+    <path d="M232 21 C228 14,224 8,218 7 C214 6.5,212 10,214 13 C216 16,220 15,222 18 C224 21,221 26,217 25 C213 24,212 20,215 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <path d="M232 21 C228 28,224 34,218 35 C214 35.5,212 32,214 29 C216 26,220 27,222 24 C224 21,221 16,217 17 C213 18,212 22,215 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="232" cy="21" r="1.8" fill="#D4A840" opacity=".6"/>
+    <path d="M190 12 L196 21 L190 30 L184 21 Z" stroke="#D4A840" stroke-width="1" fill="none" opacity=".9"/>
+    <path d="M190 16 L193.5 21 L190 26 L186.5 21 Z" fill="#D4A840" opacity=".5"/>
+    <circle cx="172" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="178" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="202" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="208" cy="21" r="1.2" fill="#D4A840" opacity=".45"/>
+  </svg>
+</div>
+
+<!-- ══ OVERVIEW ══ -->
+<div class="dark-section">
+  <label class="label reveal">关于作者</label>
+  <h2 class="reveal" style="color:var(--cream);">二十年的文字<br><em style="font-style:italic;font-weight:400">切实奏效</em></h2>
+  <p class="dropcap reveal" style="color:var(--pale);">专业<strong>内容策略师</strong>、<strong>文案撰稿人</strong>及<strong>技术写作者</strong>，拥有近二十年经验，为<strong>加密货币与区块链</strong>、<strong>金融科技</strong>、<strong>游戏</strong>、<strong>网络安全</strong>、<strong>SaaS</strong>、科技与数字营销等多元行业创作高质量、以成果为导向的内容。</p>
+  <p class="reveal reveal-delay-1" style="color:var(--pale);">擅长撰写经 SEO 优化的长篇文章、技术白皮书、极具说服力的营销文案、教育指南、新闻稿及社交媒体内容。在带领内容团队、管理高产量制作，以及交付本地化内容 — 涵盖<strong>七种语言</strong> — 以吸引全球受众方面经验丰富。</p>
+</div>
+
+<div class="interstitial-quote reveal">
+  <span class="interstitial-rule"></span>
+  <blockquote style="font-size:clamp(1.5rem,3vw,2.4rem);">措辞得当的文字，正是"被听见"与"被理解"之间的分野。</blockquote>
+  <cite>— Don Hartig</cite>
+  <span class="interstitial-rule"></span>
+</div>
+
+
+<!-- ══ FILIGREE II ══ -->
+<div class="filigree-divider reveal" style="padding-top:80px;">
+  <span class="label">二 — 核心专长</span>
+  <svg class="filigree-svg" width="380" height="42" viewBox="0 0 380 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="21" x2="148" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/><line x1="232" y1="21" x2="380" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/>
+    <path d="M148 21 C152 14,156 8,162 7 C166 6.5,168 10,166 13 C164 16,160 15,158 18 C156 21,159 26,163 25 C167 24,168 20,165 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M148 21 C152 28,156 34,162 35 C166 35.5,168 32,166 29 C164 26,160 27,158 24 C156 21,159 16,163 17 C167 18,168 22,165 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="148" cy="21" r="1.8" fill="#D4A840" opacity=".6"/>
+    <path d="M232 21 C228 14,224 8,218 7 C214 6.5,212 10,214 13 C216 16,220 15,222 18 C224 21,221 26,217 25 C213 24,212 20,215 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M232 21 C228 28,224 34,218 35 C214 35.5,212 32,214 29 C216 26,220 27,222 24 C224 21,221 16,217 17 C213 18,212 22,215 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="232" cy="21" r="1.8" fill="#D4A840" opacity=".6"/><path d="M190 12 L196 21 L190 30 L184 21 Z" stroke="#D4A840" stroke-width="1" fill="none" opacity=".9"/><path d="M190 16 L193.5 21 L190 26 L186.5 21 Z" fill="#D4A840" opacity=".5"/>
+    <circle cx="172" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="178" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="202" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="208" cy="21" r="1.2" fill="#D4A840" opacity=".45"/>
+  </svg>
+</div>
+
+<!-- ══ EXPERTISE ══ -->
+<div class="dark-section">
+  <label class="label reveal">我为每一项委托带来的价值</label>
+  <h2 class="reveal">匠艺</h2>
+  <div class="expertise-grid">
+    <div class="expertise-item reveal reveal-delay-1"><span class="item-label">SEO 与长篇内容</span><p>以研究为依托的文章与指南，既为搜索排名而作 — 也为在算法更迭之后仍被长久阅读而作。</p></div>
+    <div class="expertise-item reveal reveal-delay-2"><span class="item-label">技术写作</span><p>白皮书、文档与解说，让真正复杂的理念对任何读者都变得轻松易懂。</p></div>
+    <div class="expertise-item reveal reveal-delay-3"><span class="item-label">营销文案</span><p>落地页、电子邮件营销与社交内容，专为促成转化而设计，却不露痕迹。</p></div>
+    <div class="expertise-item reveal reveal-delay-1"><span class="item-label">新闻稿与新闻</span><p>及时、权威的新闻稿与新闻文章，能被恰当的人群转载并阅读。</p></div>
+    <div class="expertise-item reveal reveal-delay-2"><span class="item-label">本地化</span><p>专业的中译英 — 以及另外六种语言 — 具备机器翻译无法复制的文化流畅度。</p></div>
+    <div class="expertise-item reveal reveal-delay-3"><span class="item-label">编辑与领导</span><p>团队管理、编辑策略，以及每日多达 150 篇发布量的高产量内容运营。</p></div>
+    <div class="expertise-item reveal reveal-delay-1"><span class="item-label">落地页文案</span><p>高转化率的落地页与网页文案，在清晰、说服力与品牌声音之间取得平衡。</p></div>
+    <div class="expertise-item reveal reveal-delay-2"><span class="item-label">社交与短篇内容</span><p>为每个平台与受众量身打造的、有力而吸引人的社交媒体内容与短篇文案。</p></div>
+    <div class="expertise-item reveal reveal-delay-3"><span class="item-label">新闻报道</span><p>为全球出版物撰写关于科技、金融与文化的长篇特稿与调查报道。</p></div>
+    <div class="expertise-item reveal reveal-delay-1"><span class="item-label">B2B 写作</span><p>为商业受众提供顶级内容 — 案例研究、思想领导力、销售赋能及高管代笔。</p></div>
+    <div class="expertise-item reveal reveal-delay-2"><span class="item-label">品牌故事写作</span><p>塑造品牌的叙事弧线 — 它的声音、它的起源，以及让客户信服其理念的故事。</p></div>
+    <div class="expertise-item reveal reveal-delay-3"><span class="item-label">虚构创作</span><p>短篇小说、连载小说与创意叙事 — 这门修炼能磨砺其他一切类型的写作。</p></div>
+  </div>
+</div>
+
+<!-- ══ INTERSTITIAL QUOTE ══ -->
+<div class="interstitial-quote reveal">
+  <span class="interstitial-rule"></span>
+  <blockquote>我不只是撰写关于复杂行业的内容 — 我沉浸其中。在加密货币、金融科技、网络安全及更广领域深耕二十年，让我明白：最好的内容并非从外部旁观而写成。它出自一个做足功课、提出正确问题、并确切知道哪些字句能让持疑读者身体前倾的人之手。</blockquote>
+  <cite>— Don Hartig</cite>
+  <span class="interstitial-rule"></span>
+</div>
+
+<!-- ══ FILIGREE III ══ -->
+<div class="filigree-divider reveal">
+  <span class="label">三 — 服务行业</span>
+  <svg class="filigree-svg" width="380" height="42" viewBox="0 0 380 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="21" x2="148" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/><line x1="232" y1="21" x2="380" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/>
+    <path d="M148 21 C152 14,156 8,162 7 C166 6.5,168 10,166 13 C164 16,160 15,158 18 C156 21,159 26,163 25 C167 24,168 20,165 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M148 21 C152 28,156 34,162 35 C166 35.5,168 32,166 29 C164 26,160 27,158 24 C156 21,159 16,163 17 C167 18,168 22,165 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="148" cy="21" r="1.8" fill="#D4A840" opacity=".6"/>
+    <path d="M232 21 C228 14,224 8,218 7 C214 6.5,212 10,214 13 C216 16,220 15,222 18 C224 21,221 26,217 25 C213 24,212 20,215 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M232 21 C228 28,224 34,218 35 C214 35.5,212 32,214 29 C216 26,220 27,222 24 C224 21,221 16,217 17 C213 18,212 22,215 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="232" cy="21" r="1.8" fill="#D4A840" opacity=".6"/><path d="M190 12 L196 21 L190 30 L184 21 Z" stroke="#D4A840" stroke-width="1" fill="none" opacity=".9"/><path d="M190 16 L193.5 21 L190 26 L186.5 21 Z" fill="#D4A840" opacity=".5"/>
+    <circle cx="172" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="178" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="202" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="208" cy="21" r="1.2" fill="#D4A840" opacity=".45"/>
+  </svg>
+</div>
+
+<!-- ══ INDUSTRIES ══ -->
+<div class="dark-section">
+  <label class="label reveal">领域与专长</label>
+  <h2 class="reveal" style="color:var(--cream);">服务行业</h2>
+  <ul class="industry-list-dark reveal">
+    <li><strong>加密货币与区块链</strong>SEO 文章、白皮书、DeFi 解说、市场分析</li>
+    <li><strong>金融科技与金融服务</strong>教育内容、交易指南、合规材料</li>
+    <li><strong>Web3 与 NFT</strong>游戏指南、NFT 解说、推广内容</li>
+    <li><strong>网络安全与科技</strong>技术文章、产品文档、思想领导力</li>
+    <li><strong>SaaS 与软件</strong>功能解说、案例研究、用户引导内容</li>
+    <li><strong>数字营销</strong>落地页、电子邮件营销、社交媒体文案</li>
+    <li><strong>法律文案</strong>网页文案、常见问题、资讯文章、SEO 法律内容</li>
+    <li><strong>医疗与健康</strong>资讯文章、产品营销、网页文案</li>
+    <li><strong>产品评测与文案</strong>产品描述、对比文章、操作指南</li>
+    <li><strong>房地产</strong>房源信息、社区指南、投资内容、经纪人简介</li>
+    <li><strong>旅游与观光</strong>目的地指南、本地体验、酒店款待与生活方式内容</li>
+    <li><strong>AI 与新兴科技</strong>关于人工智能的解说、思想领导力与长篇特稿</li>
+  </ul>
+</div>
+
+<!-- ══ INTERSTITIAL QUOTE II ══ -->
+<div class="interstitial-quote reveal">
+  <span class="interstitial-rule"></span>
+  <blockquote>我写的每一篇文章都始于一个问题：读者读完之后，究竟需要相信什么？答案塑造了一切 — 结构、语气、技术细节的深浅。好的文字不仅仅是准确。它能打动人心。</blockquote>
+  <cite>— Don Hartig</cite>
+  <span class="interstitial-rule"></span>
+</div>
+
+<!-- ══ FILIGREE IV ══ -->
+<div class="filigree-divider reveal">
+  <span class="label">四 — 精选作品</span>
+  <svg class="filigree-svg" width="380" height="42" viewBox="0 0 380 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="21" x2="148" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/><line x1="232" y1="21" x2="380" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/>
+    <path d="M148 21 C152 14,156 8,162 7 C166 6.5,168 10,166 13 C164 16,160 15,158 18 C156 21,159 26,163 25 C167 24,168 20,165 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M148 21 C152 28,156 34,162 35 C166 35.5,168 32,166 29 C164 26,160 27,158 24 C156 21,159 16,163 17 C167 18,168 22,165 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="148" cy="21" r="1.8" fill="#D4A840" opacity=".6"/>
+    <path d="M232 21 C228 14,224 8,218 7 C214 6.5,212 10,214 13 C216 16,220 15,222 18 C224 21,221 26,217 25 C213 24,212 20,215 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M232 21 C228 28,224 34,218 35 C214 35.5,212 32,214 29 C216 26,220 27,222 24 C224 21,221 16,217 17 C213 18,212 22,215 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="232" cy="21" r="1.8" fill="#D4A840" opacity=".6"/><path d="M190 12 L196 21 L190 30 L184 21 Z" stroke="#D4A840" stroke-width="1" fill="none" opacity=".9"/><path d="M190 16 L193.5 21 L190 26 L186.5 21 Z" fill="#D4A840" opacity=".5"/>
+    <circle cx="172" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="178" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="202" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="208" cy="21" r="1.2" fill="#D4A840" opacity=".45"/>
+  </svg>
+</div>
+
+<!-- ══ SAMPLES ══ -->
+<div class="dark-section">
+  <label class="label reveal">已发表作品精选</label>
+  <h2 class="reveal">写作样稿</h2>
+  <p class="reveal" style="font-family:'EB Garamond',serif;font-style:italic;font-size:0.95em;color:var(--pale);margin-bottom:12px;margin-top:-16px;">点击下方类别以筛选样稿</p>
+  <div class="filter-wrap reveal">
+    <button class="filter-btn active" data-filter="all">全部样稿</button>
+    <button class="filter-btn" data-filter="crypto">加密货币与区块链</button>
+    <button class="filter-btn" data-filter="fintech">FinTech</button>
+    <button class="filter-btn" data-filter="gaming">游戏</button>
+    <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+    <button class="filter-btn" data-filter="saas">SaaS 与软件</button>
+    <button class="filter-btn" data-filter="legal">Legal</button>
+    <button class="filter-btn" data-filter="medical">Medical</button>
+    <button class="filter-btn" data-filter="travel">旅游与观光</button>
+    <button class="filter-btn" data-filter="journalism">新闻报道</button>
+    <button class="filter-btn" data-filter="ai">AI</button>
+  </div>
+  <div class="samples-grid" id="all-samples">
+    <div class="sample-card" data-category="crypto fintech finance"><span class="card-category">Crypto · FinTech · Trading</span><div class="card-num">01</div><h3 class="card-title">The Benefits of Market Making</h3><span class="card-client">Client: GSR</span><p class="card-desc">对做市策略及其在打造流动性充足、高效加密市场中作用的专业分析。</p><a class="card-link" href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card" data-category="crypto fintech"><span class="card-category">Crypto · FinTech</span><div class="card-num">02</div><h3 class="card-title">Understanding Cryptocurrency Volatility</h3><span class="card-client">Client: GSR</span><p class="card-desc">为交易者与投资者清晰、深入地解说加密市场的波动因素。</p><a class="card-link" href="https://drive.google.com/file/d/1jDB-Tx97USCuAaZa7jiL_rbb73Se0n37/view?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card" data-category="nfts web3 crypto blockchain"><span class="card-category">Web3 · NFTs</span><div class="card-num">03</div><h3 class="card-title">What is an NFT?</h3><span class="card-client">Client: Coinformant</span><p class="card-desc">面向初学者、通俗易懂地介绍非同质化代币及其机制与应用场景。</p><a class="card-link" href="https://docs.google.com/document/d/1kpDwVg0lBZlfZDIqtIfEoXPfrz-P3Z_x1o27yh790xg/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card" data-category="cybersecurity"><span class="card-category">Cybersecurity</span><div class="card-num">04</div><h3 class="card-title">What to Do After a Data Breach</h3><span class="card-client">Client: Clario (US)</span><p class="card-desc">就数据泄露发生后应采取的关键步骤，提供权威而实用的指导。</p><a class="card-link" href="https://drive.google.com/file/d/1IL9iWcSBGcc-KcyFNajB7-MLtiVhr68p/view?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card" data-category="journalism ai"><span class="card-category">新闻报道 · AI</span><div class="card-num">05</div><h3 class="card-title">The Shadow Cartographers: How AI Is Learning the World's Forgotten Languages</h3><span class="card-client">Various publications</span><p class="card-desc">探讨人工智能在语言保护中的作用及其深远文化意义的特稿。</p><a class="card-link" href="https://docs.google.com/document/d/1YwcmM5VDskXtCgvHlJjqxNq4Sixx6dlY3d98bIXVvkM/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="nfts web3 crypto blockchain"><span class="card-category">Web3 · NFTs</span><div class="card-num">06</div><h3 class="card-title">How to Make an NFT</h3><span class="card-client">Client: Coinformant</span><p class="card-desc">涵盖 NFT 创作、铸造平台与最佳实践的实用分步指南。</p><a class="card-link" href="https://docs.google.com/document/d/1ZK1DW8hr6FWxa1A1cDiaDgzdUIyHnHZysJcVzBijzRw/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="gaming"><span class="card-category">游戏</span><div class="card-num">07</div><h3 class="card-title">Getting Started with Retro 游戏</h3><span class="card-client">Online Vendor</span><p class="card-desc">为某在线硬件商家的爱好者与新手受众撰写的复古游戏入门。</p><a class="card-link" href="https://drive.google.com/file/d/1OnKBaugdktI1p7mrRlRB20RLeZjo__Gm/view?usp=drive_link" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="nfts web3 crypto blockchain"><span class="card-category">Web3 · NFTs</span><div class="card-num">08</div><h3 class="card-title">How to Buy NFTs</h3><span class="card-client">Client: Coinformant</span><p class="card-desc">关于如何在多个市场安全、有效地购买 NFT 的分步指南。</p><a class="card-link" href="https://docs.google.com/document/d/1hTrKufD0YHKjaz5TAHMrpoz-lay_c98nNIpc70KB6kI/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="nfts web3 crypto blockchain"><span class="card-category">Web3 · NFTs</span><div class="card-num">09</div><h3 class="card-title">How to Sell an NFT</h3><span class="card-client">Client: Coinformant</span><p class="card-desc">关于在主流市场上架并出售 NFT 的全面指南。</p><a class="card-link" href="https://docs.google.com/document/d/1e3_XHKMRDRw58fQf_gHb6V_F5n5aVkw7_c_mt8ZYFJQ/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="nfts web3 crypto blockchain"><span class="card-category">Web3 · NFTs</span><div class="card-num">10</div><h3 class="card-title">Where Do You Store an NFT?</h3><span class="card-client">Client: Coinformant</span><p class="card-desc">解说 NFT 的存储选项、数字钱包及最佳安全实践。</p><a class="card-link" href="https://docs.google.com/document/d/1LoQ8dn0mWEuFLxrhvGz6HGLuDuT9ToFvymonEmA-1MI/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="nfts web3 crypto blockchain"><span class="card-category">Web3 · NFTs</span><div class="card-num">11</div><h3 class="card-title">Why Does NFT Art Have Value?</h3><span class="card-client">Client: Coinformant</span><p class="card-desc">分析赋予 NFT 艺术品其感知价值与市场价值的各项因素。</p><a class="card-link" href="https://docs.google.com/document/d/1ltcwc0RyUPbdhvE-TJpA1GdfmpNA4SnXzsSnn85cBqU/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="cybersecurity legal gdpr"><span class="card-category">Cybersecurity · Legal</span><div class="card-num">12</div><h3 class="card-title">Personal Data Under the GDPR</h3><span class="card-client">Client: e-Boks (EU)</span><p class="card-desc">清晰解说 GDPR 之下的个人数据权利与企业义务。</p><a class="card-link" href="https://drive.google.com/file/d/1yx6ig4nTLHtBAfrRp_QNjoSz8c5btDyM/view?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="cybersecurity legal gdpr saas"><span class="card-category">Cybersecurity · Legal</span><div class="card-num">13</div><h3 class="card-title">What Does the GDPR Mean For Data Collection?</h3><span class="card-client">Client: e-Boks (EU)</span><p class="card-desc">深入探讨 GDPR 对欧洲市场数据收集实践的影响。</p><a class="card-link" href="https://docs.google.com/document/d/133CqATo1mKJMjdNwOdrSXKDRyXzgxFBqZXzBs4im25Q/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="cybersecurity saas technology"><span class="card-category">Cybersecurity · Technology</span><div class="card-num">14</div><h3 class="card-title">7 Tips to Boost Your Website Speed in 中国</h3><span class="card-client">Client: GoClick 中国 (新加坡)</span><p class="card-desc">为提升网站在中国市场表现提供切实可行的建议。</p><a class="card-link" href="https://docs.google.com/document/d/1wiNPtrf2sPOi12Y3cu5ovo8AkKO0Mwkc/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="cybersecurity"><span class="card-category">Cybersecurity</span><div class="card-num">15</div><h3 class="card-title">October Cybersecurity Awareness Month: Tips to Keep Safe While Online</h3><span class="card-client">Client: San Diego Cybersecurity (US)</span><p class="card-desc">在网络安全意识月期间保持在线安全的最佳实践。</p><a class="card-link" href="https://docs.google.com/document/d/1vI6rEw7DQCN54cvdvyMUWyZ5JxU7WrLr/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="legal"><span class="card-category">Legal</span><div class="card-num">16</div><h3 class="card-title">How Does Bail Work in Ontario?</h3><span class="card-client">Client: KPA Lawyers (Canada)</span><p class="card-desc">清晰解说加拿大安大略省的保释流程与法律程序。</p><a class="card-link" href="https://docs.google.com/document/d/17hFP7PcoWT1Db8md1aKlq71NtYTW5xQi2EWVP2rtfoA/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="medical healthcare saas"><span class="card-category">Medical · Healthcare</span><div class="card-num">17</div><h3 class="card-title">Telemedicine Billing Codes / CPT Codes</h3><span class="card-client">Client: CareTime (US)</span><p class="card-desc">关于美国所用远程医疗计费与 CPT 代码的全面指南。</p><a class="card-link" href="https://www.caretimemd.com/telemedicine-cpt-codes/" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="travel tourism"><span class="card-category">Travel · Tourism</span><div class="card-num">18</div><h3 class="card-title">Glamping in Ireland</h3><span class="card-client">Client: OSI (Ireland)</span><p class="card-desc">介绍爱尔兰乡间日益兴盛的豪华露营潮流的精彩指南。</p><a class="card-link" href="https://docs.google.com/document/d/1tfXto18kz_-jTpH4BWzUgyN8zHmy2X57oQ9IqoXh9po/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="travel tourism"><span class="card-category">Travel · Tourism</span><div class="card-num">19</div><h3 class="card-title">Ways to Enjoy Ticknock</h3><span class="card-client">Client: OSI (Ireland)</span><p class="card-desc">重点介绍畅游蒂克诺克山及其周边最佳方式的本地指南。</p><a class="card-link" href="https://docs.google.com/document/d/1XRZh4Q3yVzNV_IjNRMr-Jv2FjzWkENXaNCLzsBQLn9Q/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+    <div class="sample-card extra hidden" data-category="travel tourism"><span class="card-category">Travel · Tourism</span><div class="card-num">20</div><h3 class="card-title">Ireland's Most Incredible Rock Formations</h3><span class="card-client">Client: OSI (Ireland)</span><p class="card-desc">对爱尔兰最壮观地质构造的优美概述。</p><a class="card-link" href="https://docs.google.com/document/d/1TRKndLawQLY9QIx8ZG2W9zMZ_yiNt9jT6hWzmSxKRQY/edit?usp=sharing" target="_blank" rel="noopener">查看样稿</a></div>
+  </div>
+  <button id="toggle-samples">查看更多样稿</button>
+</div>
+
+<!-- ══ INTERSTITIAL QUOTE III ══ -->
+<div class="interstitial-quote reveal">
+  <span class="interstitial-rule"></span>
+  <blockquote>每一篇文字的背后，都有一段在实战中积累的职业生涯 — 在全球十大交易所带领团队、联合创办一个区块链项目，并从一个永不停歇的行业前线发回报道。</blockquote>
+  <cite>— Don Hartig</cite>
+  <span class="interstitial-rule"></span>
+</div>
+
+<!-- ══ FILIGREE V ══ -->
+<div class="filigree-divider reveal">
+  <span class="label">五 — 经历</span>
+  <svg class="filigree-svg" width="380" height="42" viewBox="0 0 380 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="21" x2="148" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/><line x1="232" y1="21" x2="380" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/>
+    <path d="M148 21 C152 14,156 8,162 7 C166 6.5,168 10,166 13 C164 16,160 15,158 18 C156 21,159 26,163 25 C167 24,168 20,165 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M148 21 C152 28,156 34,162 35 C166 35.5,168 32,166 29 C164 26,160 27,158 24 C156 21,159 16,163 17 C167 18,168 22,165 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="148" cy="21" r="1.8" fill="#D4A840" opacity=".6"/>
+    <path d="M232 21 C228 14,224 8,218 7 C214 6.5,212 10,214 13 C216 16,220 15,222 18 C224 21,221 26,217 25 C213 24,212 20,215 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M232 21 C228 28,224 34,218 35 C214 35.5,212 32,214 29 C216 26,220 27,222 24 C224 21,221 16,217 17 C213 18,212 22,215 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="232" cy="21" r="1.8" fill="#D4A840" opacity=".6"/><path d="M190 12 L196 21 L190 30 L184 21 Z" stroke="#D4A840" stroke-width="1" fill="none" opacity=".9"/><path d="M190 16 L193.5 21 L190 26 L186.5 21 Z" fill="#D4A840" opacity=".5"/>
+    <circle cx="172" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="178" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="202" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="208" cy="21" r="1.2" fill="#D4A840" opacity=".45"/>
+  </svg>
+</div>
+
+<!-- ══ EXPERIENCE ══ -->
+<div class="dark-section">
+  <label class="label reveal">职业履历</label>
+  <h2 class="reveal">作品诞生之地</h2>
+
+  <div class="timeline">
+
+    <div class="entry reveal">
+      <div class="entry-meta">
+        <span class="entry-year">2025–26</span>
+        <span class="entry-company">独立</span>
+        <span class="entry-location">全球 · 远程</span>
+      </div>
+      <div class="entry-body">
+        <div class="entry-ghost">25</div>
+        <p class="entry-role">特约撰稿人 — 科技、金融与文化</p>
         <ul>
-            <li><strong>加密货币与区块链</strong> — SEO文章、白皮书、DeFi解读、市场分析</li>
-            <li><strong>金融科技与金融服务</strong> — 教育内容、交易指南、合规材料</li>
-            <li><strong>Web3与NFT</strong> — 游戏指南、NFT解读、推广内容</li>
-            <li><strong>网络安全与技术</strong> — 技术文章、产品文档、思想领导力</li>
-            <li><strong>SaaS与软件</strong> — 功能解读、案例研究、用户引导内容</li>
-            <li><strong>数字营销与Web3项目</strong> — 落地页、邮件营销、社交媒体文案</li>
-            <li><strong>法律文案与SEO信息营销</strong> — 法律服务文章营销、网站文案、FAQ、信息类文章</li>
-            <li><strong>医疗文案与产品推广</strong> — 信息类文章、产品营销、网站文案</li>
-            <li><strong>产品评测与文案</strong> — 产品描述、产品对比文章、操作指南、亚马逊评测</li>
+          <li>撰写关于人工智能、新兴市场及一个瞬息万变世界之文化断层的长篇特稿与调查报道 — 为那些需要一位能在 5,000 字的篇幅内始终紧扣复杂论点、一次也不让读者掉队的撰稿人的出版物与客户服务。</li>
+          <li>为那些希望听起来像真人、而非新闻稿的 Web3 与金融科技品牌，承接精选的文案与内容策略委托。</li>
+          <li>在科技与语言的交汇处开展原创编辑项目 — 其中包括 <a href="https://docs.google.com/document/d/1YwcmM5VDskXtCgvHlJjqxNq4Sixx6dlY3d98bIXVvkM/edit?usp=sharing" target="_blank" rel="noopener">The Shadow Cartographers</a>，一篇探讨人工智能在濒危语言保护中作用的特稿。</li>
         </ul>
-    </section>
+      </div>
+    </div>
 
-    <section id="samples">
-        <h2>精选写作样本</h2>
-        
-        <!-- Filter Buttons -->
-        <div class="filter-buttons" style="text-align: center; margin-bottom: 25px;">
-            <button class="filter-btn active" data-filter="all">全部样本</button>
-            <button class="filter-btn" data-filter="crypto">加密货币、区块链、Web3、DeFi</button>
-            <button class="filter-btn" data-filter="fintech">金融科技</button>
-            <button class="filter-btn" data-filter="gaming">游戏</button>
-            <button class="filter-btn" data-filter="cybersecurity">网络安全</button>
-            <button class="filter-btn" data-filter="saas">SaaS & Software</button>
-            <button class="filter-btn" data-filter="legal">法律</button>
-            <button class="filter-btn" data-filter="medical">医疗</button>
-            <button class="filter-btn" data-filter="travel">Travel & Tourism</button>
-            <button class="filter-btn" data-filter="journalism">新闻</button>
-            <button class="filter-btn" data-filter="ai">人工智能</button>
-        </div>
-
-        <!-- Always visible samples -->
-        <ul class="sample-list">
-            <li data-category="crypto fintech finance">
-                <div class="sample-title">做市商的优势</div>
-                <div class="sample-meta"><strong>行业：</strong>加密货币 / 金融科技 / 交易 | <strong>客户：</strong>GSR</div>
-                <p>对加密货币交易中做市策略的专业分析。</p>
-                <p><a href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank" rel="noopener">查看样本（PDF）</a></p>
-            </li>
-            <li data-category="crypto fintech">
-                <div class="sample-title">理解加密货币波动性</div>
-                <div class="sample-meta"><strong>行业：</strong>加密货币 / 金融科技 | <strong>客户：</strong>GSR</div>
-                <p>面向交易者和投资者的波动性因素深度解读。</p>
-                <p><a href="https://drive.google.com/file/d/1jDB-Tx97USCuAaZa7jiL_rbb73Se0n37/view?usp=sharing" target="_blank" rel="noopener">查看样本（PDF）</a></p>
-            </li>
-            <li data-category="nfts web3 crypto blockchain">
-                <div class="sample-title">什么是NFT？</div>
-                <div class="sample-meta"><strong>行业：</strong>Web3与NFT | <strong>客户：</strong>Coinformant</div>
-                <p>面向初学者的非同质化代币及其应用场景友好介绍。</p>
-                <p><a href="https://docs.google.com/document/d/1kpDwVg0lBZlfZDIqtIfEoXPfrz-P3Z_x1o27yh790xg/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="cybersecurity">
-                <div class="sample-title">数据泄露后该怎么做</div>
-                <div class="sample-meta"><strong>行业：</strong>网络安全 | <strong>客户：</strong>Clario（美国）</div>
-                <p>数据泄露事件后的实用应对步骤指南。</p>
-                <p><a href="https://drive.google.com/file/d/1IL9iWcSBGcc-KcyFNajB7-MLtiVhr68p/view?usp=sharing" target="_blank" rel="noopener">查看样本（PDF）</a></p>
-            </li>
-            <li data-category="journalism ai">
-                <div class="sample-title">影子制图师：AI如何学习世界上被遗忘的语言——以及它可能改变一切的原因</div>
-                <div class="sample-meta"><strong>行业：</strong>新闻与AI | <strong>客户：</strong>各类媒体</div>
-                <p>探讨AI在语言保护中的角色及其更广泛影响的深度特稿。</p>
-                <p><a href="https://docs.google.com/document/d/1YwcmM5VDskXtCgvHlJjqxNq4Sixx6dlY3d98bIXVvkM/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-        </ul>
-
-        <!-- Collapsible extra samples -->
-        <ul id="extra-samples" class="sample-list">
-            <li data-category="nfts web3 crypto blockchain">
-                <div class="sample-title">如何制作NFT</div>
-                <div class="sample-meta"><strong>行业：</strong>Web3与NFT | <strong>客户：</strong>Coinformant</div>
-                <p>涵盖NFT创作、铸造及最佳实践的实用分步指南。</p>
-                <p><a href="https://docs.google.com/document/d/1ZK1DW8hr6FWxa1A1cDiaDgzdUIyHnHZysJcVzBijzRw/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="gaming">
-                <div class="sample-title">复古游戏入门</div>
-                <div class="sample-meta"><strong>行业：</strong>游戏 | <strong>客户：</strong>某线上零售商</div>
-                <p>为线上硬件零售商撰写的复古游戏入门介绍。</p>
-                <p><a href="https://drive.google.com/file/d/1OnKBaugdktI1p7mrRlRB20RLeZjo__Gm/view?usp=drive_link" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="nfts web3 crypto blockchain">
-                <div class="sample-title">如何购买NFT</div>
-                <div class="sample-meta"><strong>行业：</strong>Web3与NFT | <strong>客户：</strong>Coinformant</div>
-                <p>安全有效购买NFT的分步指南。</p>
-                <p><a href="https://docs.google.com/document/d/1hTrKufD0YHKjaz5TAHMrpoz-lay_c98nNIpc70KB6kI/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="nfts web3 crypto blockchain">
-                <div class="sample-title">如何出售NFT</div>
-                <div class="sample-meta"><strong>行业：</strong>Web3与NFT | <strong>客户：</strong>Coinformant</div>
-                <p>在各类平台出售NFT的综合指南。</p>
-                <p><a href="https://docs.google.com/document/d/1e3_XHKMRDRw58fQf_gHb6V_F5n5aVkw7_c_mt8ZYFJQ/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="nfts web3 crypto blockchain">
-                <div class="sample-title">NFT存放在哪里？</div>
-                <div class="sample-meta"><strong>行业：</strong>Web3与NFT | <strong>客户：</strong>Coinformant</div>
-                <p>关于NFT存储选项、钱包及安全最佳实践的解读。</p>
-                <p><a href="https://docs.google.com/document/d/1LoQ8dn0mWEuFLxrhvGz6HGLuDuT9ToFvymonEmA-1MI/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="nfts web3 crypto blockchain">
-                <div class="sample-title">NFT艺术为何有价值？</div>
-                <div class="sample-meta"><strong>行业：</strong>Web3与NFT | <strong>客户：</strong>Coinformant</div>
-                <p>赋予NFT艺术感知价值与实际价值的因素分析。</p>
-                <p><a href="https://docs.google.com/document/d/1ltcwc0RyUPbdhvE-TJpA1GdfmpNA4SnXzsSnn85cBqU/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="cybersecurity legal gdpr">
-                <div class="sample-title">GDPR下的个人数据</div>
-                <div class="sample-meta"><strong>行业：</strong>网络安全与法律 | <strong>客户：</strong>e-Boks（欧盟）</div>
-                <p>对GDPR下个人数据权利与义务的清晰解读。</p>
-                <p><a href="https://drive.google.com/file/d/1yx6ig4nTLHtBAfrRp_QNjoSz8c5btDyM/view?usp=sharing" target="_blank" rel="noopener">查看样本（PDF）</a></p>
-            </li>
-            <li data-category="cybersecurity legal gdpr saas">
-                <div class="sample-title">GDPR对数据收集意味着什么？</div>
-                <div class="sample-meta"><strong>行业：</strong>网络安全与法律 | <strong>客户：</strong>e-Boks（欧盟）</div>
-                <p>对GDPR在数据收集实践中影响的深度解读。</p>
-                <p><a href="https://docs.google.com/document/d/133CqATo1mKJMjdNwOdrSXKDRyXzgxFBqZXzBs4im25Q/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="cybersecurity saas technology">
-                <div class="sample-title">在中国加快网站速度的7个技巧</div>
-                <div class="sample-meta"><strong>行业：</strong>网络安全与技术 | <strong>客户：</strong>GoClick China（新加坡）</div>
-                <p>提升网站在中国市场性能的可操作建议。</p>
-                <p><a href="https://docs.google.com/document/d/1wiNPtrf2sPOi12Y3cu5ovo8AkKO0Mwkc/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="cybersecurity">
-                <div class="sample-title">十月网络安全意识月：上网安全提示</div>
-                <div class="sample-meta"><strong>行业：</strong>网络安全 | <strong>客户：</strong>San Diego Cybersecurity（美国）</div>
-                <p>网络安全意识月期间的上网安全实用提示与最佳实践。</p>
-                <p><a href="https://docs.google.com/document/d/1vI6rEw7DQCN54cvdvyMUWyZ5JxU7WrLr/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="legal">
-                <div class="sample-title">安大略省保释是如何运作的？</div>
-                <div class="sample-meta"><strong>行业：</strong>法律 | <strong>客户：</strong>KPA Lawyers（加拿大）</div>
-                <p>对加拿大安大略省保释流程及程序的清晰解读。</p>
-                <p><a href="https://docs.google.com/document/d/17hFP7PcoWT1Db8md1aKlq71NtYTW5xQi2EWVP2rtfoA/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="medical healthcare saas">
-                <div class="sample-title">远程医疗计费代码 / CPT代码</div>
-                <div class="sample-meta"><strong>行业：</strong>医疗与健康 | <strong>客户：</strong>CareTime（美国）</div>
-                <p>美国远程医疗计费及CPT代码综合指南。</p>
-                <p><a href="https://www.caretimemd.com/telemedicine-cpt-codes/" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="travel tourism">
-                <div class="sample-title">爱尔兰豪华露营</div>
-                <div class="sample-meta"><strong>行业：</strong>旅游 | <strong>客户：</strong>OSI（爱尔兰）</div>
-                <p>关于爱尔兰豪华露营日益兴起趋势的引人入胜指南。</p>
-                <p><a href="https://docs.google.com/document/d/1tfXto18kz_-jTpH4BWzUgyN8zHmy2X57oQ9IqoXh9po/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="travel tourism">
-                <div class="sample-title">游览Ticknock的方式</div>
-                <div class="sample-meta"><strong>行业：</strong>旅游 | <strong>客户：</strong>OSI（爱尔兰）</div>
-                <p>介绍游览Ticknock山及周边地区最佳方式的本地指南。</p>
-                <p><a href="https://docs.google.com/document/d/1XRZh4Q3yVzNV_IjNRMr-Jv2FjzWkENXaNCLzsBQLn9Q/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-            <li data-category="travel tourism">
-                <div class="sample-title">Ireland's Most Incredible Rock Formations</div>
-                <div class="sample-meta"><strong>行业：</strong>旅游 | <strong>客户：</strong>OSI（爱尔兰）</div>
-                <p>对爱尔兰最壮观地质岩层的精彩综述。</p>
-                <p><a href="https://docs.google.com/document/d/1TRKndLawQLY9QIx8ZG2W9zMZ_yiNt9jT6hWzmSxKRQY/edit?usp=sharing" target="_blank" rel="noopener">查看样本</a></p>
-            </li>
-        </ul>
-
-        <button id="toggle-samples" onclick="toggleSamples()">查看更多样本</button>
-    </section>
-
-    <section id="experience">
-        <h2>专业写作经历</h2>
-        
-        <div class="job">
-            <p class="job-title">网站本地化专员、语言优化师与社交媒体制作人</p>
-            <p class="job-date">2025 — Antarctic Exchange（远程）</p>
-            <ul>
-                <li>将完整<a href="https://www.antarcticexchange.com" target="_blank" rel="noopener">网站</a>（包括UI）从中文本地化为自然、经SEO优化的英文，并配以强力CTA。</li>
-                <li>为AX官方X账号创作引人入胜的文章及每日社交媒体内容。</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <p class="job-title">高级制作人 — 加密货币、DeFi与金融科技内容</p>
-            <p class="job-date">2023 — 2024 — BUSINEXT（迪拜）</p>
-            <ul>
-                <li>领导内容团队每日产出区块链及金融科技领域的深度长篇文章。</li>
-                <li>主持采访并制定编辑战略。</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <p class="job-title">高级内容运营经理</p>
-            <p class="job-date">2021 — 2022 — Bitget</p>
-            <ul>
-                <li>培训写手并管理高产量内容生产（每日多达150篇）。</li>
-                <li>处理SEO文章、新闻稿、本地化及UI/UX文案优化。</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <p class="job-title">自由内容写手与文案撰稿人</p>
-            <p class="job-date">2018 — 2020</p>
-            <ul>
-                <li>为加密货币、游戏、网络安全、SaaS及区块链领域客户交付白皮书、SEO文章、技术分析、营销文案及文档。</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <p class="job-title">联合创始人、开发者兼CMO — Silubium</p>
-            <p class="job-date">早期职位</p>
-            <ul>
-                <li>以中英双语开发完整营销内容、ICO材料、主旨演讲及推广素材。</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="whyhire">
-        <h2>为何选择董夏庭担任您的写手？</h2>
+    <div class="entry reveal reveal-delay-1">
+      <div class="entry-meta">
+        <span class="entry-year">2023–24</span>
+        <span class="entry-company">BUSINEXT</span>
+        <span class="entry-location">迪拜</span>
+      </div>
+      <div class="entry-body">
+        <div class="entry-ghost">23</div>
+        <p class="entry-role">高级制作人 — 加密货币、DeFi 与金融科技</p>
         <ul>
-            <li>多才多艺的写手，能够适应任何行业语气和技术深度。</li>
-            <li>扎实的SEO知识，结合出色的研究与叙事能力。</li>
-            <li>拥有规模化内容管理及写手团队培训的丰富经验。</li>
-            <li>多语言优势，具备专业的中英、德语、法语、西班牙语、日语及荷兰语本地化能力。</li>
-            <li>在紧迫截止日期内可靠交付高质量内容。</li>
+          <li>为一家报道区块链、DeFi 与金融科技的日更新闻编辑室制定编辑方针 — 在每一篇内容上线前进行选题、撰写与编辑，为一个两者兼求的国际读者群坚守准确与清晰。</li>
+          <li>将一个粗糙的内容运营转变为一个有观点的出版物 — 在数字媒体中最拥挤、最喧嚣的垂直领域之一建立起权威。</li>
+          <li>招募并带领一支记者与撰稿人团队，能够维持每日的发布节奏，而不让质量沦为次要。</li>
         </ul>
-    </section>
+      </div>
+    </div>
 
-    <section id="calltoaction">
-        <h2>共同创造有影响力的内容</h2>
-        <p>欢迎自由职业、合同或全职合作机会。无论您需要SEO博客文章、技术白皮书、劝说性营销文案还是完整内容战略——我将为您交付清晰、引人入胜且结果导向的写作。</p>
-        <p style="text-align:center; margin-top:30px; font-size:1.15em;">
-            <strong>准备好开启您的下一个项目了吗？</strong><br>
-            <a href="mailto:don@donhartig.com" style="color:#0066cc;">联系我：don@donhartig.com</a>
-        </p>
-    </section>
+    <div class="entry reveal reveal-delay-2">
+      <div class="entry-meta">
+        <span class="entry-year">2021–22</span>
+        <span class="entry-company">Bitget</span>
+        <span class="entry-location">远程</span>
+      </div>
+      <div class="entry-body">
+        <div class="entry-ghost">21</div>
+        <p class="entry-role">高级内容运营经理</p>
+        <ul>
+          <li>在全球十大加密货币交易所之一，每日编辑并审核多达 40 篇内容 — 技术分析、市场动态、教育解说与产品公告 — 绝不让数量成为平庸的借口。</li>
+          <li>将 Bitget 面向英语用户的产品文案、界面字符串与新闻稿从普通话重写：这类文字要么赢得一个市场的信任，要么在第一句话就将其失去。</li>
+          <li>为营销总监以中文撰写每周高管内容报告 — 精准、具备政治敏感度，并对那些没有耐心听废话的人切实有用。</li>
+        </ul>
+      </div>
+    </div>
 
-    <footer>
-        <p>董夏庭 — 专业内容写手与文案撰稿人 • © 2026</p>
-    </footer>
+    <div class="entry reveal reveal-delay-3">
+      <div class="entry-meta">
+        <span class="entry-year">2020–21</span>
+        <span class="entry-company">Singularity · Deer Network</span>
+        <span class="entry-location">新加坡</span>
+      </div>
+      <div class="entry-body">
+        <div class="entry-ghost">20</div>
+        <p class="entry-role">白皮书作者与品牌文案撰稿人</p>
+        <ul>
+          <li>接连撰写两份完整的技术白皮书 — <a href="https://drive.google.com/file/d/14mKA1IS3XpkVvJQzoIDcxleDcv1nPJRu/view?usp=drive_link" target="_blank" rel="noopener">Singularity Metaverse</a> 与 <a href="https://drive.google.com/file/d/15FmqoB6RCUZJ0bydIeYRhM0Wc0vqy0LO/view?usp=drive_link" target="_blank" rel="noopener">Deer Network</a>  — 将密集的区块链架构转译为投资者水准的文字，使非技术读者能够跟上、技术读者也挑不出毛病。</li>
+          <li>在所有文案、社交内容与公关中担任 Singularity 唯一的英语之声 — 让一个源自中国的 Web3 项目获得了在全球市场被认真看待所需的公信力。</li>
+        </ul>
+      </div>
+    </div>
 
-    <script>
-        function toggleSamples() {
-            const extra = document.getElementById('extra-samples');
-            const button = document.getElementById('toggle-samples');
-            
-            if (extra.style.display === "block") {
-                extra.style.display = "none";
-                button.textContent = "查看更多样本";
-            } else {
-                extra.style.display = "block";
-                button.textContent = "收起";
-            }
-        }
+    <div class="entry reveal reveal-delay-1">
+      <div class="entry-meta">
+        <span class="entry-year">2018–20</span>
+        <span class="entry-company">GSR · Coinformant · Blockchain Advocates</span>
+        <span class="entry-location">自由职业</span>
+      </div>
+      <div class="entry-body">
+        <div class="entry-ghost">18</div>
+        <p class="entry-role">自由撰稿人与文案撰稿人</p>
+        <ul>
+          <li>Wrote <a href="https://drive.google.com/file/d/17Re9uSoN-naOkSIo4fBKezKSuF--xf2u/view?usp=sharing" target="_blank" rel="noopener">The Benefits of Market Making</a> 为 GSR 撰写 — 将加密货币中最被误解的机制之一，写得清晰而有说服力，面向一群但凡撰稿人不懂便会立刻察觉的资深交易者读者。</li>
+          <li>Produced a <a href="https://docs.google.com/document/d/13dfcZKG_TFzYLbbjRzvrHGC42IGSQDxRAw15hwjjtJo/edit?usp=sharing" target="_blank" rel="noopener">legal analysis of tokenized asset offerings</a> 为 Blockchain Advocates 撰写 — 在监管层面准确无误、在商业受众层面又通俗易读的文字。</li>
+          <li>从零构建了 Coinformant 的 NFT 内容库：既能在搜索中获得排名、又能将读者留住足够久，从而把新手转化为知情参与者的长篇教育内容。</li>
+        </ul>
+      </div>
+    </div>
 
-        // === FIXED FILTERING - Whole Word Match ===
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const allSamples = document.querySelectorAll('.sample-list li');
-            const extraSection = document.getElementById('extra-samples');
+    <div class="entry reveal reveal-delay-2">
+      <div class="entry-meta">
+        <span class="entry-year">2017–18</span>
+        <span class="entry-company">Silubium</span>
+        <span class="entry-location">中国</span>
+      </div>
+      <div class="entry-body">
+        <div class="entry-ghost">17</div>
+        <p class="entry-role">联合创始人兼首席营销官 — Silubium Blockchain</p>
+        <ul>
+          <li>写就了一切让任何人相信 Silubium 的内容：技术白皮书、投资者叙事、路演材料，以及在中国各地融资活动上以普通话发表的主题演讲。</li>
+          <li>将一个区块链项目从一个构想推进到获得融资、成功上线的主网 — 而正是文字让投资者打开了钱包。这是最清晰的明证：措辞得当的文字，能够撬动资本。</li>
+        </ul>
+      </div>
+    </div>
 
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
+  </div>
+</div>
 
-                    const filterValue = this.getAttribute('data-filter');
+<!-- ══ INTERSTITIAL QUOTE IV ══ -->
+<div class="interstitial-quote reveal">
+  <span class="interstitial-rule"></span>
+  <blockquote>我写下的每一个字，都服务于对某个人而言重要的事物 — 一个正在寻找自身声音的品牌、一位正在做出决定的投资者、一位初次理解某事的读者。这正是好文字的作为。历经近二十年、跨越七种语言与十余个行业，它依然是我唯一有志于做的事。</blockquote>
+  <cite>— Don Hartig</cite>
+  <span class="interstitial-rule"></span>
+</div>
 
-                    allSamples.forEach(sample => {
-                        if (filterValue === 'all') {
-                            sample.style.display = 'block';
-                        } else {
-                            const categories = sample.getAttribute('data-category') || '';
-                            // Split into words and check for exact match (case-insensitive)
-                            const categoryArray = categories.toLowerCase().trim().split(/\s+/);
-                            const shouldShow = categoryArray.includes(filterValue.toLowerCase());
-                            
-                            sample.style.display = shouldShow ? 'block' : 'none';
-                        }
-                    });
+<!-- ══ FILIGREE VI ══ -->
+<div class="filigree-divider reveal">
+  <span class="label">六 — 为何聘用 Don Hartig</span>
+  <svg class="filigree-svg" width="380" height="42" viewBox="0 0 380 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="21" x2="148" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/><line x1="232" y1="21" x2="380" y2="21" stroke="#D4A840" stroke-width=".8" opacity=".5"/>
+    <path d="M148 21 C152 14,156 8,162 7 C166 6.5,168 10,166 13 C164 16,160 15,158 18 C156 21,159 26,163 25 C167 24,168 20,165 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M148 21 C152 28,156 34,162 35 C166 35.5,168 32,166 29 C164 26,160 27,158 24 C156 21,159 16,163 17 C167 18,168 22,165 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="148" cy="21" r="1.8" fill="#D4A840" opacity=".6"/>
+    <path d="M232 21 C228 14,224 8,218 7 C214 6.5,212 10,214 13 C216 16,220 15,222 18 C224 21,221 26,217 25 C213 24,212 20,215 18" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/><path d="M232 21 C228 28,224 34,218 35 C214 35.5,212 32,214 29 C216 26,220 27,222 24 C224 21,221 16,217 17 C213 18,212 22,215 24" stroke="#D4A840" stroke-width="1" fill="none" opacity=".8"/>
+    <circle cx="232" cy="21" r="1.8" fill="#D4A840" opacity=".6"/><path d="M190 12 L196 21 L190 30 L184 21 Z" stroke="#D4A840" stroke-width="1" fill="none" opacity=".9"/><path d="M190 16 L193.5 21 L190 26 L186.5 21 Z" fill="#D4A840" opacity=".5"/>
+    <circle cx="172" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="178" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="202" cy="21" r="1.2" fill="#D4A840" opacity=".45"/><circle cx="208" cy="21" r="1.2" fill="#D4A840" opacity=".45"/>
+  </svg>
+</div>
 
-                    // Auto-show extra samples when filtering by specific category
-                    if (filterValue !== 'all') {
-                        extraSection.style.display = 'block';
-                    }
-                });
-            });
-        });
-    </script>
+<!-- ══ WHY HIRE ══ -->
+<div class="dark-section">
+  <label class="label reveal">聘用 Don Hartig 的理由</label>
+  <h2 class="reveal">为何聘我为您的撰稿人？</h2>
+  <ul class="why-list reveal">
+    <li>多才多艺的撰稿人，能够适应任何行业语气与技术深度。</li>
+    <li>扎实的 SEO 知识，辅以出色的研究与叙事能力。</li>
+    <li>在大规模内容管理与培训写作团队方面拥有验证过的经验。</li>
+    <li>多语种优势，具备中译英以及德、法、西、日、荷语的专业本地化能力。</li>
+    <li>在紧迫的截稿期限内，可靠地交付高质量内容。</li>
+  </ul>
+</div>
 
+<!-- ══ CTA ══ -->
+<div class="cta reveal">
+  <h2>让我们一同创造非凡之作</h2>
+  <p>可承接自由职业、合同或全职机会。无论您需要 SEO 博客文章、技术白皮书、极具说服力的营销文案，还是完整的内容策略 — 我都将交付清晰、引人入胜、以成果为导向的文字。</p>
+  <a class="cta-btn" href="mailto:don@donhartig.com">与我联系</a>
+</div>
+
+<!-- ══ SIGN-OFF ══ -->
+<div class="signoff reveal">
+  <div class="signoff-rule"></div>
+  <p>可直接通过以下方式联系我： <a href="mailto:don@donhartig.com">don@donhartig.com</a></p>
+  <div class="sig">Don Hartig</div>
+</div>
+
+<div class="clients reveal">
+  <div style="width:100%;text-align:center;font-family:'Playfair Display',serif;font-style:italic;font-size:1.1em;letter-spacing:.06em;text-transform:none;color:var(--ink2);margin-bottom:22px;">曾为以下品牌撰稿</div>
+  <span>GSR</span><span>Bitget</span><span>BUSINEXT</span><span>e-Boks</span><span>Antarctic Exchange</span><span>Clario</span><span>Coinformant</span>
+</div>
+
+<footer>
+  <div>© MMXXVI &nbsp;·&nbsp; Don Hartig</div>
+  <div style="margin-top:6px;">由 Don Hartig 设计、撰写并编写代码</div>
+  <div style="margin-top:8px;"><a href="https://donhartig.com">donhartig.com</a></div>
+</footer>
+
+<script>
+
+const revealEls=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+},{threshold:.1});
+revealEls.forEach(el=>obs.observe(el));
+
+const filterBtns=document.querySelectorAll('.filter-btn');
+const allCards=document.querySelectorAll('.sample-card');
+const toggleBtn=document.getElementById('toggle-samples');
+let extraOpen=false;
+let currentFilter='all';
+
+function applyState(){
+  allCards.forEach(card=>{
+    const isExtra=card.classList.contains('extra');
+    const cats=(card.dataset.category||'').toLowerCase().trim().split(/\s+/);
+    const matchesFilter=currentFilter==='all'||cats.includes(currentFilter);
+    const visible=matchesFilter&&(!isExtra||extraOpen||currentFilter!=='all');
+    card.classList.toggle('hidden',!visible);
+  });
+  toggleBtn.textContent=extraOpen?'收起部分样稿':'查看更多样稿';
+}
+
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter=btn.dataset.filter;
+    if(currentFilter!=='all') extraOpen=true;
+    applyState();
+  });
+});
+
+toggleBtn.addEventListener('click',()=>{
+  extraOpen=!extraOpen;
+  applyState();
+});
+</script>
 </body>
 </html>
