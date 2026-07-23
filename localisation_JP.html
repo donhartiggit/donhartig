@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Don Hartig — Localisation & Translation Specialist</title>
+<title>ドン・ハーティグ — ローカライズ・翻訳スペシャリスト</title>
 <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -268,6 +268,12 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
   .hero-contact { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
   .contact-label { text-align: center; }
 }
+
+/* CJK Specific Adjustments */
+html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
 </style>
 </head>
 
@@ -276,14 +282,14 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <div class="mesh-bg"></div>
 
 <div class="_topbar">
-  <button onclick="window.print()">⬇ Download PDF</button>
+  <button onclick="window.print()">⬇ PDFをダウンロード</button>
   <div class="_navgroup">
-    <a class="_homebtn" href="index.html">Home</a>
+    <a class="_homebtn" href="index_JP.html">ホーム</a>
     <div class="_langrow">
       <a class="_langbtn" href="本地化.html">中文</a>
+      <a class="_langbtn" href="localisation.html">English</a>
       <a class="_langbtn" href="localisation_DE.html">Deutsch</a>
       <a class="_langbtn" href="localisation_FR.html">Français</a>
-      <a class="_langbtn" href="localisation_JP.html">日本語</a>
       <a class="_langbtn" href="localisation_ES.html">Español</a>
       <a class="_langbtn" href="localisation_AF.html">Afrikaans</a>
     </div>
@@ -293,17 +299,17 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <nav>
   <a href="#" class="nav-logo">Don Hartig</a>
   <ul class="nav-links">
-    <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#rates">Pricing</a></li>
-    <li><a href="mailto:don@donhartig.com">Contact</a></li>
+    <li><a href="#expertise">専門知識</a></li>
+    <li><a href="#rates">料金</a></li>
+    <li><a href="mailto:don@donhartig.com">お問い合わせ</a></li>
   </ul>
 </nav>
 
 <section class="hero">
   <div class="hero-content reveal">
-    <span class="hero-label">High-Velocity Localisation</span>
+    <span class="hero-label">高速ローカライズ</span>
     <h1 class="cover-name">
-      <a href="index.html">
+      <a href="index_JP.html">
         <span class="given">Don</span>
         Hartig
       </a>
@@ -311,11 +317,11 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 
     <div class="hero-contact">
       <div class="contact-item">
-        <div class="contact-label">Email</div>
+        <div class="contact-label">メール</div>
         <div class="contact-value"><a href="mailto:don@donhartig.com">don@donhartig.com</a></div>
       </div>
       <div class="contact-item">
-        <div class="contact-label">Mobile/WhatsApp</div>
+        <div class="contact-label">携帯/WhatsApp</div>
         <div class="contact-value">(+86) 159 0238 5400</div>
       </div>
       <div class="contact-item">
@@ -327,14 +333,14 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
         <div class="contact-value">Dongxiating</div>
       </div>
     </div>
-    <p class="hero-sub">Native English linguist ranked #3 worldwide on ProZ. Bridging cultures for AAA game studios and global software giants.</p>
-    <a href="mailto:don@donhartig.com" style="display:inline-flex; background:var(--gold); color:#fff; padding:1.4rem 3rem; text-decoration:none; font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; border-radius:50px;">Enquire &rarr;</a>
+    <p class="hero-sub">ProZで世界第3位にランクされた英語ネイティブの言語学者。AAAゲームスタジオやグローバルなソフトウェア大手のために、文化の架け橋となります。</p>
+    <a href="mailto:don@donhartig.com" style="display:inline-flex; background:var(--gold); color:#fff; padding:1.4rem 3rem; text-decoration:none; font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; border-radius:50px;">お問い合わせ &rarr;</a>
   </div>
   <div class="hero-portrait-wrap reveal">
     <img src="images/me/brown.png" alt="Don Hartig" class="hero-portrait">
     <div class="floating-card">
       <span class="val">#3</span>
-      <span class="lab">World Rank<br>ZH &rsaquo; EN</span>
+      <span class="lab">世界ランク<br>ZH &rsaquo; EN</span>
     </div>
   </div>
 </section>
@@ -343,92 +349,92 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
   <div class="stats-grid">
     <div class="stat-item reveal">
       <h4>1M+</h4>
-      <p>Chars Handled</p>
+      <p>処理文字数</p>
     </div>
     <div class="stat-item reveal">
       <h4>9+</h4>
-      <p>Languages</p>
+      <p>対応言語</p>
     </div>
     <div class="stat-item reveal">
       <h4>15+</h4>
-      <p>Global Studios</p>
+      <p>グローバルスタジオ</p>
     </div>
     <div class="stat-item reveal">
-      <h4>11y</h4>
-      <p>Experience</p>
+      <h4>11年</h4>
+      <p>経験</p>
     </div>
     <div class="stat-item reveal">
       <h4>5</h4>
-      <p>CAT Platforms</p>
+      <p>CATプラットフォーム</p>
     </div>
   </div>
 </section>
 
 <section class="expertise" id="expertise">
   <div class="section-head reveal">
-    <span class="hero-label" style="color: var(--gold);">Capabilities</span>
-    <h2>Selected Expertise</h2>
+    <span class="hero-label" style="color: var(--gold);">核心能力</span>
+    <h2>選りすぐりの専門知識</h2>
   </div>
   <div class="bento">
     <div class="bento-card span-4 reveal">
-      <span class="tag">STUDIO STRENGTH</span>
-      <h3>Game Localisation</h3>
-      <p>Full-cycle cultural adaptation for AAA and indie titles. Clients include Ubisoft and Blizzard. From deep narrative scripts to technical UI strings.</p>
+      <span class="tag">スタジオの強み</span>
+      <h3>ゲーム・ローカライズ</h3>
+      <p>AAAおよびインディータイトルのフルサイクルな文化的適応。UbisoftやBlizzardを含むクライアント。深みのあるナラティブ・スクリプトから技術的なUIテキストまで対応。</p>
     </div>
     <div class="bento-card span-2 reveal">
       <span class="tag">UI / UX</span>
-      <h3>Software Localisation</h3>
-      <p>Adapting complex user flows and technical interfaces for the global English-speaking market with total clarity.</p>
+      <h3>ソフトウェア・ローカライズ</h3>
+      <p>世界中の英語圏市場向けに、複雑なユーザーフローや技術的なインターフェースを完全に明確な形で適応。</p>
     </div>
     <div class="bento-card span-2 reveal">
-      <span class="tag">COMPLIANCE</span>
-      <h3>Legal & IP</h3>
-      <p>Rigorous contracts, IP filings, and regulatory documentation with verified accuracy.</p>
+      <span class="tag">コンプライアンス</span>
+      <h3>法務・知的財産</h3>
+      <p>厳格な契約書、知的財産出願、規制文書を、検証済みの正確さで翻訳。</p>
     </div>
     <div class="bento-card span-4 reveal">
-      <span class="tag">PRECISION</span>
-      <h3>Technical & Medical</h3>
-      <p>Precision-focused translation for mechanical engineering, automotive manuals, and clinical records. Absolute technical rigour.</p>
+      <span class="tag">精度</span>
+      <h3>技術・医療</h3>
+      <p>機械工学、自動車マニュアル、臨床記録などの精度重視の翻訳。絶対的な技術的厳格さ。</p>
     </div>
     <div class="bento-card span-3 reveal">
-      <span class="tag">GROWTH</span>
-      <h3>Transcreation</h3>
-      <p>Marketing copy that maintains brand voice while resonating culturally with new target audiences.</p>
+      <span class="tag">成長</span>
+      <h3>トランスクリエーション</h3>
+      <p>ブランドの声を維持しながら、新しいターゲット層に文化的に響くマーケティングコピーを作成。</p>
     </div>
     <div class="bento-card span-3 reveal">
-      <span class="tag">MEDIA</span>
-      <h3>Subtitling</h3>
-      <p>Dynamic AV translation for film, television series, and online documentary content.</p>
+      <span class="tag">メディア</span>
+      <h3>字幕制作</h3>
+      <p>映画、テレビシリーズ、オンラインドキュメンタリーコンテンツのためのダイナミックなAV翻訳。</p>
     </div>
   </div>
 </section>
 
 <section class="rates" id="rates">
   <div class="section-head reveal">
-    <span class="hero-label" style="color: var(--gold);">Transparency</span>
-    <h2>Standard Rate Card</h2>
+    <span class="hero-label" style="color: var(--gold);">透明性</span>
+    <h2>標準料金表</h2>
   </div>
   <div class="rates-card reveal">
     <table class="rates-table">
       <thead>
         <tr>
-          <th>Language Pair</th>
-          <th>Rate (USD)</th>
-          <th>Unit</th>
+          <th>言語ペア</th>
+          <th>料金 (USD)</th>
+          <th>単位</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Chinese (Mandarin) &rsaquo; English</strong></td><td class="price">$0.075 – $0.15</td><td>per source CHAR</td></tr>
-        <tr><td>English &rsaquo; Chinese (Mandarin)</td><td class="price">$0.09 – $0.15</td><td>per source CHAR</td></tr>
-        <tr><td><strong>German &rsaquo; English</strong></td><td class="price">$0.075 – $0.15</td><td>per source word</td></tr>
-        <tr><td>English &rsaquo; German</td><td class="price">$0.09 – $0.18</td><td>per source word</td></tr>
-        <tr><td><strong>French &rsaquo; English</strong></td><td class="price">$0.075 – $0.12</td><td>per source word</td></tr>
-        <tr><td>English &rsaquo; French</td><td class="price">$0.08 – $0.14</td><td>per source word</td></tr>
-        <tr><td><strong>Spanish &rsaquo; English</strong></td><td class="price">$0.075 – $0.11</td><td>per source word</td></tr>
-        <tr><td>English &rsaquo; Spanish</td><td class="price">$0.08 – $0.14</td><td>per source word</td></tr>
-        <tr><td><strong>Japanese &rsaquo; English</strong></td><td class="price">$0.075 – $0.14</td><td>per source CHAR</td></tr>
-        <tr><td>English &rsaquo; Japanese</td><td class="price">$0.085 – $0.16</td><td>per source CHAR</td></tr>
-        <tr><td><strong>Other Pairs (IT, AF, NL) &rsaquo; English</strong></td><td class="price">$0.075 – $0.13</td><td>per source word</td></tr>
+        <tr><td><strong>中国語 (普通話) &rsaquo; 英語</strong></td><td class="price">$0.075 – $0.15</td><td>原文1文字あたり</td></tr>
+        <tr><td>英語 &rsaquo; 中国語 (普通話)</td><td class="price">$0.09 – $0.15</td><td>原文1文字あたり</td></tr>
+        <tr><td><strong>ドイツ語 &rsaquo; 英語</strong></td><td class="price">$0.075 – $0.15</td><td>原文1単語あたり</td></tr>
+        <tr><td>英語 &rsaquo; ドイツ語</td><td class="price">$0.09 – $0.18</td><td>原文1単語あたり</td></tr>
+        <tr><td><strong>フランス語 &rsaquo; 英語</strong></td><td class="price">$0.075 – $0.12</td><td>原文1単語あたり</td></tr>
+        <tr><td>英語 &rsaquo; フランス語</td><td class="price">$0.08 – $0.14</td><td>原文1単語あたり</td></tr>
+        <tr><td><strong>スペイン語 &rsaquo; 英語</strong></td><td class="price">$0.075 – $0.11</td><td>原文1単語あたり</td></tr>
+        <tr><td>英語 &rsaquo; スペイン語</td><td class="price">$0.08 – $0.14</td><td>原文1単語あたり</td></tr>
+        <tr><td><strong>日本語 &rsaquo; 英語</strong></td><td class="price">$0.075 – $0.14</td><td>原文1文字あたり</td></tr>
+        <tr><td>英語 &rsaquo; 日本語</td><td class="price">$0.085 – $0.16</td><td>原文1文字あたり</td></tr>
+        <tr><td><strong>その他のペア (IT, AF, NL) &rsaquo; 英語</strong></td><td class="price">$0.075 – $0.13</td><td>原文1単語あたり</td></tr>
       </tbody>
     </table>
   </div>
@@ -436,8 +442,8 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 
 <section class="clients reveal">
     <div class="section-head" style="text-align: center; margin-bottom: 4rem;">
-        <span class="hero-label" style="color: var(--gold);">Network</span>
-        <h2 style="color: var(--ink-dark);">Studio Track Record</h2>
+        <span class="hero-label" style="color: var(--gold);">ネットワーク</span>
+        <h2 style="color: var(--ink-dark);">スタジオ実績</h2>
     </div>
     <div class="clients-grid">
         <div class="client-card">
@@ -510,8 +516,8 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
     <li><a href="https://linkedin.com/in/donhartig">LinkedIn</a></li>
     <li><a href="https://www.proz.com/profile/1280455">ProZ Profile</a></li>
   </ul>
-  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">Designed and coded by <a href="index.html" style="color: inherit; text-decoration: none; font-weight: 700;">DON HARTIG</a></p>
-  <p style="font-size: 10px; color: var(--ink-muted); margin-top: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase;">&copy; 2026 Don Hartig. All rights reserved.</p>
+  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">設計・コーディング： <a href="index_JP.html" style="color: inherit; text-decoration: none; font-weight: 700;">DON HARTIG</a></p>
+  <p style="font-size: 10px; color: var(--ink-muted); margin-top: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase;">&copy; 2026 Don Hartig. 無断転載を禁じます。</p>
 </footer>
 
 <script>
