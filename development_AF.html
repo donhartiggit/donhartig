@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="af">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Don Hartig — Sagteware-ontwikkeling & Lokaliseringsingenieurswese</title>
+<title>Don Hartig — Sagteware-ontwikkeling en Lokaliseringsingenieurswese</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono&display=swap" rel="stylesheet">
@@ -30,45 +31,22 @@
     overflow-x: hidden; 
   }
 
-  /* ── TOPBAR ── */
-  ._topbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(10, 10, 12, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 0.6rem 1.5rem; gap: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  ._topbar button {
-    font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    background: var(--gold); color: #000; border: none;
-    padding: 0.5rem 1.2rem; border-radius: 4px; cursor: pointer;
-    transition: transform 0.2s;
-  }
-  ._topbar button:hover { transform: scale(1.05); }
-  
-  ._navgroup { display: flex; align-items: center; gap: 1.5rem; min-width: 0; }
-  ._homebtn {
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-    color: #1e8e3e; text-decoration: none; letter-spacing: 0.1em;
-    padding: 0.5rem 1rem; border: 1.5px solid #1e8e3e; border-radius: 4px;
-    transition: all 0.2s;
-  }
-  ._homebtn:hover { background: #1e8e3e; color: #fff; }
-
-  ._langrow { 
-    display: flex; gap: 0.5rem; 
-  }
-  ._langbtn {
-    font-size: 0.75rem; color: #fff; text-decoration: none;
-    background: #c0392b; padding: 0.4rem 0.8rem; border-radius: 4px;
-    transition: opacity 0.2s;
-    white-space: nowrap; flex-shrink: 0;
-  }
-  ._langbtn:hover { opacity: 0.8; }
-
-  @media print { ._topbar { display: none !important; } }
+  /* ── TOPBAR (matches productmanagement.html structure) ── */
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,6,2,0.96);padding:0.45rem 1.5rem;gap:1rem;box-shadow:0 1px 0 rgba(212,168,64,0.2);border-bottom:1px solid rgba(212,168,64,0.15);}
+._topbar button{font-family:'Space Grotesk',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;transition:background .2s;}
+._topbar button:hover{background:var(--gold-bright);}
+._navgroup{display:flex;align-items:center;gap:0.4rem;}
+._langrow{display:flex;gap:0.4rem;}
+._topbar a._langbtn{font-family:'Space Grotesk',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:.06em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;transition:opacity .2s;}
+._topbar a._langbtn:hover{opacity:0.85;}
+._topbar a._homebtn{font-family:'Space Grotesk',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:.06em;background:#1e8e3e;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;transition:opacity .2s;}
+._topbar a._homebtn:hover{opacity:0.85;}
+@media(max-width:960px){
+  ._topbar{flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+  ._navgroup{display:flex;flex-direction:column;align-items:center;width:100%;gap:0.5rem;}
+  ._langrow{justify-content:center;width:100%;}
+}
+@media print { ._topbar { display: none !important; } }
 
   /* ── HERO ── */
   .hero {
@@ -216,22 +194,18 @@
 <body>
 
   <div class="_topbar">
-    <button onclick="window.print()">⬇ Laai PDF af</button>
+    <button onclick="window.print()">⬇ Download PDF</button>
     <div class="_navgroup">
-      <a class="_homebtn" href="index_AF.html">Tuis</a>
+      <a class="_homebtn" href="index_AF.html">Home</a>
       <div class="_langrow">
-        <a class="_langbtn" href="开发.html">中文</a>
-        <a class="_langbtn" href="development_DE.html">Deutsch</a>
-        <a class="_langbtn" href="development_FR.html">Français</a>
-        <a class="_langbtn" href="development_JP.html">日本語</a>
-        <a class="_langbtn" href="development_ES.html">Español</a>
-        <a class="_langbtn" href="development.html">English</a></div>
+        <a class="_langbtn" href="development.html">English</a> <a class="_langbtn" href="开发.html">中文</a> <a class="_langbtn" href="development_DE.html">Deutsch</a> <a class="_langbtn" href="development_FR.html">Français</a> <a class="_langbtn" href="development_JP.html">日本語</a> <a class="_langbtn" href="development_ES.html">Español</a>
+      </div>
     </div>
   </div>
 
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-label">Ontwikkeling & Ingenieurswese</span>
+      <span class="hero-label">Ontwikkeling en Ingenieurswese</span>
       <h1 class="cover-name">
         <a href="index_AF.html">
           <span class="given">Don</span>
@@ -273,7 +247,7 @@
   <div class="stats-strip">
     <div class="stat-item">
       <h4>40+</h4>
-      <p>Platforms Built</p>
+      <p>Platforms Gebou</p>
     </div>
     <div class="stat-item">
       <h4>Full</h4>
@@ -281,11 +255,11 @@
     </div>
     <div class="stat-item">
       <h4>99.9</h4>
-      <p>Uptime Focus</p>
+      <p>Uptime-fokus</p>
     </div>
     <div class="stat-item">
       <h4>&lt;/&gt;</h4>
-      <p>Clean Code</p>
+      <p>Skoon Kode</p>
     </div>
   </div>
 
@@ -296,47 +270,47 @@
       <div class="tech-card">
         <span class="code-deco">0x01</span>
         <h3>Webontwikkeling</h3>
-        <p>Enige tipe webwerf. Spesialiseer in blitsvinnige pasgemaakte webwerwe vir klein tot medium ondernemings in enige bedryf. Ek het talle e-handelswinkels, pasgemaakte besigheidswebwerwe, nuuswerwe en invloedryker-webwerwe gebou.</p>
+        <p>Enige tipe webwerf. Spesialiseer in blitsvinnige pasgemaakte webwerwe vir klein tot mediumgrootte ondernemings. Ek het talle e-handelswinkels, pasgemaakte besigheidswebwerwe en nuuswerwe gebou.</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x02</span>
         <h3>Web-toepassings</h3>
-        <p>Dinamiese, interaktiewe webtoepassings wat in die blaaier loop. Ek het verskeie handelsapps, gereedskap en aanwysers gebou en selfs 'n blaaier-gebaseerde handelsplatform in 2017 (silktrader.net) sowel as 'n openbare ketting vir die 'Silubium' kripto-geldeenheid gebou.</p>
+        <p>Dinamiese web-toepassings wat in die blaaier loop. Ek het verskeie trading-apps gebou en selfs 'n blaaier-gebaseerde handelsplatform in 2017 (silktrader.net) asook 'n publieke blockchain vir 'Silubium' ontwikkel.</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x03</span>
         <h3>Blockchain-ingenieurswese</h3>
-        <p>Ek het die Silubium-blockchain en kripto-geldeenheid in 2017 in China ontwerp en gebou. Ek was also die ontwerper en hoofsagteware-ingenieur agter die Android- en iOS-beursies asook die Silkchain-geanimeerde openbare grootboek en die Silktrader-handelsplatform.</p>
+        <p>Ek het die Silubium (丝路币) blockchain en kripto-geldeenheid in 2017 in China ontwerp en gebou. Ek was ook die hoofingenieur agter die Android- en iOS-beursies asook die Silkchain (丝路链) publieke grootboek.</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x04</span>
         <h3>Speletjie-ontwikkeling</h3>
-        <p>Enige tipe speletjie - van blaaierspeletjies gebou in JS tot Godot, Unity en Unreal Engine. Ek genereer alle bates (2D of 3D) myself en is jou eenstop-ateljee vir al jou speletjie-ontwikkelingsbehoeftES.</p>
+        <p>Enige tipe speletjie – van blaaier-speletjies in JS tot Godot, Unity en Unreal Engine. Ek genereer alle bates self.</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x05</span>
-        <h3>E-handel</h3>
-        <p>Pasgemaakte winkelbou en betalingsintegrasies. Fokus op hoë-omskakelingsvloeie en vinnige produkfiltrering.</p>
+        <h3>E-Handel</h3>
+        <p>Pasgemaakte winkels en betalingsintegrasies. Fokus op hoë-omskakeling en vinnige produkfiltrering.</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x06</span>
         <h3>Outomatisering</h3>
-        <p>Pasgemaakte skripte en tyvloei-outomatisering. Bou gereedskap wat handtake uitskakel en databestuur stroomlyn.</p>
+        <p>Pasgemaakte skripte en outomatisering. Bou gereedskap wat handtake elimineer en databestuur stroomlyn.</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x07</span>
         <h3>API-ontwerp</h3>
-        <p>Ontwerp van skoon, veilige en goed gedokumenteerde REST- en GraphQL-API's vir naatlose derdeparty-integrasies.</p>
+        <p>Ontwerp skoon, veilige REST- en GraphQL-API's vir naatlose integrasie.</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x08</span>
         <h3>DevOps</h3>
-        <p>Wolk-ontplooiing en infrastruktuurbestuur. Verseker dat toepassings veilig, vinnig en altyd beskikbaar is.</p>
+        <p>Cloud deployment and infrastructure management. Wolk-ontplooiing en infrastruktuurbestuur. Verseker dat toepassings veilig, vinnig en altyd beskikbaar is.</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x09</span>
         <h3>Lokaliseringsingenieurswese</h3>
-        <p>Bou gereedskap vir outomatiese inhoudekstraksie en multi-taal sinchronisasie. Ingenieurswese vir globale skaal.</p>
+        <p>Bou gereedskap vir outomatiese inhoud-onttrekking en multi-taal sinkronisering.</p>
       </div>
     </div>
   </section>
@@ -346,38 +320,38 @@
     <h2 class="section-title">Geselekteerde Projekte</h2>
     <div class="portfolio-grid">
       <a href="https://majikfood.com/" class="project-item">
-        <span class="cat">VOEDSEL</span>
+        <span class="cat">FOOD</span>
         <h4>MajikFood</h4>
-        <p>Hoëprestasie-besigheidswebwerf vir probiotiese jogurt-handelsmerk in Suid-Afrika.</p>
+        <p>Hoëprestasie-besigheidswebwerf vir 'n probiotiese jogurt-handelsmerk in Suid-Afrika.</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://siamayachina.com/" class="project-item">
-        <span class="cat">E-handel</span>
+        <span class="cat">E-Commerce</span>
         <h4>Siamaya China</h4>
-        <p>Statiese e-handel handelsmerk-hub webwerf vir die amptelike verspreider van die 'Siamaya' Thai handwerk sjokolade handelsmerk.</p>
+        <p>Statiese e-handelswerf vir die amptelike verspreider van die 'Siamaya' Thaise sjokolade-handelsmerk.</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://donhartiggit.github.io/spcarb/" class="project-item">
-        <span class="cat">Motor</span>
+        <span class="cat">Automotive</span>
         <h4>SP Carb</h4>
-        <p>Internasionale vergaser-handelsmerk inligting webwerf vir China se tweede grootste vergaser vervaardiger.</p>
+        <p>Internasionale handelsmerk-webwerf vir China se tweede grootste vergasser-vervaardiger.</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://donhartiggit.github.io/deleyart/" class="project-item">
-        <span class="cat">Kuns</span>
+        <span class="cat">Arts</span>
         <h4>Deley Art</h4>
-        <p>Elegante, geanimeerde kunsgalery-webwerf vir die beroemde skilder Hendrik De Ley.</p>
+        <p>Elegante, geanimeerde kunsgalery-webwerf vir die bekende skilder 'Hendrik De Ley'.</p>
         <span class="link-icon">→</span>
       </a>
       <a href="#" class="project-item">
-        <span class="cat">Medies</span>
-        <h4>Chongqing Dentist</h4>
-        <p>Tandarts-webwerf vir 'n Chinese tandarts-kliniek.</p>
+        <span class="cat">MEDICAL</span>
+        <h4>Chongqing Tandarts</h4>
+        <p>Webwerf vir 'n Chinese tandarts se kliniek.</p>
         <span class="link-icon">→</span>
       </a>
       <a href="#" class="project-item">
-        <span class="cat">Regs</span>
-        <h4>Chongqing Legal</h4>
+        <span class="cat">LEGAL</span>
+        <h4>Chongqing Regshulp</h4>
         <p>Prokureurskantoor wat dienste aan buitelanders in China lewer.</p>
         <span class="link-icon">→</span>
       </a>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Don Hartig — ソフトウェア開発とローカリゼーションエンジニアリング</title>
+<title>Don Hartig — ソフトウェア開発・ローカリゼーションエンジニアリング</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono&display=swap" rel="stylesheet">
@@ -30,45 +31,22 @@
     overflow-x: hidden; 
   }
 
-  /* ── TOPBAR ── */
-  ._topbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(10, 10, 12, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 0.6rem 1.5rem; gap: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  ._topbar button {
-    font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    background: var(--gold); color: #000; border: none;
-    padding: 0.5rem 1.2rem; border-radius: 4px; cursor: pointer;
-    transition: transform 0.2s;
-  }
-  ._topbar button:hover { transform: scale(1.05); }
-  
-  ._navgroup { display: flex; align-items: center; gap: 1.5rem; min-width: 0; }
-  ._homebtn {
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-    color: #1e8e3e; text-decoration: none; letter-spacing: 0.1em;
-    padding: 0.5rem 1rem; border: 1.5px solid #1e8e3e; border-radius: 4px;
-    transition: all 0.2s;
-  }
-  ._homebtn:hover { background: #1e8e3e; color: #fff; }
-
-  ._langrow { 
-    display: flex; gap: 0.5rem; 
-  }
-  ._langbtn {
-    font-size: 0.75rem; color: #fff; text-decoration: none;
-    background: #c0392b; padding: 0.4rem 0.8rem; border-radius: 4px;
-    transition: opacity 0.2s;
-    white-space: nowrap; flex-shrink: 0;
-  }
-  ._langbtn:hover { opacity: 0.8; }
-
-  @media print { ._topbar { display: none !important; } }
+  /* ── TOPBAR (matches productmanagement.html structure) ── */
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,6,2,0.96);padding:0.45rem 1.5rem;gap:1rem;box-shadow:0 1px 0 rgba(212,168,64,0.2);border-bottom:1px solid rgba(212,168,64,0.15);}
+._topbar button{font-family:'Space Grotesk',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;transition:background .2s;}
+._topbar button:hover{background:var(--gold-bright);}
+._navgroup{display:flex;align-items:center;gap:0.4rem;}
+._langrow{display:flex;gap:0.4rem;}
+._topbar a._langbtn{font-family:'Space Grotesk',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:.06em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;transition:opacity .2s;}
+._topbar a._langbtn:hover{opacity:0.85;}
+._topbar a._homebtn{font-family:'Space Grotesk',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:.06em;background:#1e8e3e;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;transition:opacity .2s;}
+._topbar a._homebtn:hover{opacity:0.85;}
+@media(max-width:960px){
+  ._topbar{flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+  ._navgroup{display:flex;flex-direction:column;align-items:center;width:100%;gap:0.5rem;}
+  ._langrow{justify-content:center;width:100%;}
+}
+@media print { ._topbar { display: none !important; } }
 
   /* ── HERO ── */
   .hero {
@@ -216,22 +194,18 @@
 <body>
 
   <div class="_topbar">
-    <button onclick="window.print()">⬇ PDFをダウンロード</button>
+    <button onclick="window.print()">⬇ Download PDF</button>
     <div class="_navgroup">
-      <a class="_homebtn" href="index_JP.html">ホーム</a>
+      <a class="_homebtn" href="index_JP.html">Home</a>
       <div class="_langrow">
-        <a class="_langbtn" href="开发.html">中文</a>
-        <a class="_langbtn" href="development_DE.html">Deutsch</a>
-        <a class="_langbtn" href="development_FR.html">Français</a>
-        <a class="_langbtn" href="development_ES.html">Español</a>
-        <a class="_langbtn" href="development_AF.html">Afrikaans</a>
-        <a class="_langbtn" href="development.html">English</a></div>
+        <a class="_langbtn" href="development.html">English</a> <a class="_langbtn" href="开发.html">中文</a> <a class="_langbtn" href="development_DE.html">Deutsch</a> <a class="_langbtn" href="development_FR.html">Français</a> <a class="_langbtn" href="development_ES.html">Español</a> <a class="_langbtn" href="development_AF.html">Afrikaans</a>
+      </div>
     </div>
   </div>
 
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-label">開発とエンジニアリング</span>
+      <span class="hero-label">開発・エンジニアリング</span>
       <h1 class="cover-name">
         <a href="index_JP.html">
           <span class="given">Don</span>
@@ -258,7 +232,7 @@
         </div>
       </div>
 
-      <p class="hero-sub">堅牢で高性能なWebアプリケーションを構築するフルスタック開発者。複雑なエンジニアリングと洗練されたユーザー体験の架け橋となります。</p>
+      <p class="hero-sub">堅牢で高性能なウェブアプリケーションを構築するフルスタック開発者。複雑なエンジニアリングと洗練されたユーザー体験の架け橋となります。</p>
     </div>
 
     <div class="hero-portrait-wrap">
@@ -273,7 +247,7 @@
   <div class="stats-strip">
     <div class="stat-item">
       <h4>40+</h4>
-      <p>Platforms Built</p>
+      <p>構築済みプラットフォーム</p>
     </div>
     <div class="stat-item">
       <h4>Full</h4>
@@ -281,62 +255,62 @@
     </div>
     <div class="stat-item">
       <h4>99.9</h4>
-      <p>Uptime Focus</p>
+      <p>可用性への注力</p>
     </div>
     <div class="stat-item">
       <h4>&lt;/&gt;</h4>
-      <p>Clean Code</p>
+      <p>クリーンコード</p>
     </div>
   </div>
 
   <section id="expertise">
-    <span class="section-tag">能力</span>
-    <h2 class="section-title">技術的な専門知識</h2>
+    <span class="section-tag">スキル</span>
+    <h2 class="section-title">技術的専門知識</h2>
     <div class="tech-grid">
       <div class="tech-card">
         <span class="code-deco">0x01</span>
-        <h3>Web開発</h3>
-        <p>あらゆるタイプのウェブサイト。あらゆる業界の中小企業向けの超高速カスタムウェブサイトを専門としています。数え切れないほどのECショップ、カスタムビジネスサイト、ニュースサイト、インフルエンサーサイトを構築してきました。</p>
+        <h3>ウェブ開発</h3>
+        <p>あらゆるタイプのウェブサイト。あらゆる業界の中小企業向けの、超高速でカスタムなウェブサイトを専門としています。数多くのeコマースショップ、カスタムビジネスサイト、ニュースサイト、インフルエンサーサイトを構築してきました。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x02</span>
-        <h3>Webアプリ</h3>
-        <p>ブラウザで動作するダイナミックでインタラクティブなWebアプリ。複数のトレーディングアプリ、ツール、インジケーターを構築し、2017年にはブラウザベースのトレーディングプラットフォーム (silktrader.net) や暗号通貨「Silubium」のライブパブリックチェーンも構築しました。</p>
+        <h3>ウェブアプリ</h3>
+        <p>ブラウザで動作する動的でインタラクティブなウェブアプリ。複数のトレーディングアプリ、ツール、インジケーターを構築し、2017年にはブラウザベースのトレーディングプラットフォーム (silktrader.net) や仮想通貨「Silubium」のライブパブリックチェーンも構築しました。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x03</span>
-        <h3>ブロックチェーンエンジニアリング</h3>
-        <p>2017年に中国でSilubiumブロックチェーンと暗号通貨を設計・構築しました。また、AndroidおよびiOSウォレット、Silkchainアニメーションパブリックレジャー、およびSilktraderトレーディングプラットフォームのデザイナー兼チーフソフトウェアエンジニアも務めました。</p>
+        <h3>ブロックチェーン工学</h3>
+        <p>2017年に中国でSilubium（丝路币）ブロックチェーンと仮想通貨を設計・構築しました。また、AndroidおよびiOSウォレット、アニメーション付きパブリックレジャーSilkchain（丝路链）、Silktraderトレーディングプラットフォームの設計者および主任ソフトウェアエンジニアも務めました。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x04</span>
         <h3>ゲーム開発</h3>
-        <p>JSで構築されたブラウザゲームから、Godot、Unity、Unreal Engineまで、あらゆるタイプのゲームに対応。すべてのアセット（2Dまたは3D）を自ら生成し、ゲーム開発に関するあらゆるニーズに応えるワンストップスタジオです。</p>
+        <p>JSで構築されたブラウザゲームから、Godot、Unity、Unreal Engineまで、あらゆるタイプのゲーム。すべての素材（2Dまたは3D）を自ら生成し、あらゆるゲーム開発ニーズに対応するワンストップショップです。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x05</span>
-        <h3>Eコマース</h3>
-        <p>カスタムストアの構築と決済の統合。高コンバージョンなチェックアウトフローと超高速な製品フィルタリングに重点を置いています。</p>
+        <h3>eコマース</h3>
+        <p>カスタムストアの構築と決済の統合。コンバージョン率の高いチェックアウトフローと超高速の製品フィルタリングに焦点を当てています。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x06</span>
         <h3>自動化</h3>
-        <p>カスタムスクリプトとワークフローの自動化。手作業を排除し、データ管理を合理化するツールを構築します。</p>
+        <p>カスタムスクリプトとワークフローの自動化。手作業を排除し、データ管理を効率化するツールを構築します。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x07</span>
         <h3>API設計</h3>
-        <p>サードパーティとのシームレスな統合のために、クリーンで安全、かつ文書化されたRESTおよびGraphQL APIを設計します。</p>
+        <p>シームレスなサードパーティ統合のための、クリーンで安全、かつドキュメント化されたRESTおよびGraphQL APIの設計。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x08</span>
         <h3>DevOps</h3>
-        <p>クラウド展開とインフラ管理。アプリケーションの安全性、高速性、および常時利用可能性を確保します。</p>
+        <p>Cloud deployment and infrastructure management. クラウド展開とインフラ管理。アプリケーションが安全で、高速で、常に利用可能であることを保証します。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x09</span>
-        <h3>ローカリゼーションエンジニアリング</h3>
-        <p>自動コンテンツ抽出と多言語同期のためのツールを構築します。グローバルスケールのためのエンジニアリング。</p>
+        <h3>ローカリゼーション工学</h3>
+        <p>自動化されたコンテンツ抽出と多言語同期のためのツールの構築。グローバルな規模でのエンジニアリング。</p>
       </div>
     </div>
   </section>
@@ -346,46 +320,46 @@
     <h2 class="section-title">厳選されたプロジェクト</h2>
     <div class="portfolio-grid">
       <a href="https://majikfood.com/" class="project-item">
-        <span class="cat">食品</span>
+        <span class="cat">FOOD</span>
         <h4>MajikFood</h4>
-        <p>南アフリカのプロバイオティクスヨーグルトブランド向けの高性能ビジネスウェブサイト。</p>
+        <p>南アフリカのプロバイオティクスヨーグルトブランド向けの高性能ビジネスサイト。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://siamayachina.com/" class="project-item">
-        <span class="cat">Eコマース</span>
+        <span class="cat">E-Commerce</span>
         <h4>Siamaya China</h4>
-        <p>タイのクラフトチョコレートブランド「Siamaya」の公式代理店向けの静的Eコマースブランドハブサイト。</p>
+        <p>タイのクラフトチョコレートブランド「Siamaya」の中国公式代理店向けの静的eコマースブランドハブサイト。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://donhartiggit.github.io/spcarb/" class="project-item">
-        <span class="cat">自動車</span>
+        <span class="cat">Automotive</span>
         <h4>SP Carb</h4>
-        <p>中国第2位のキャブレターメーカー向けの国際キャブレターブランド情報サイト。</p>
+        <p>中国第2位のキャブレターメーカーによる国際的なブランド情報サイト。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://donhartiggit.github.io/deleyart/" class="project-item">
-        <span class="cat">芸術</span>
+        <span class="cat">Arts</span>
         <h4>Deley Art</h4>
-        <p>著名な画家Hendrik De Leyのエレガントでアニメーション化されたアートギャラリーウェブサイト。</p>
+        <p>有名な画家「Hendrik De Ley」のための、エレガントでアニメーション化されたアートギャラリーサイト。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="#" class="project-item">
-        <span class="cat">医療</span>
-        <h4>Chongqing Dentist</h4>
-        <p>中国の歯科医院向けの歯科医ウェブサイト。</p>
+        <span class="cat">MEDICAL</span>
+        <h4>重慶の歯科医</h4>
+        <p>中国の歯科医院のウェブサイト。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="#" class="project-item">
-        <span class="cat">法律</span>
-        <h4>Chongqing Legal</h4>
-        <p>中国在住の外国人向けにサービスを提供する法律事務所。</p>
+        <span class="cat">LEGAL</span>
+        <h4>重慶の法律事務所</h4>
+        <p>中国の外国人駐在員にサービスを提供する法律事務所。</p>
         <span class="link-icon">→</span>
       </a>
     </div>
   </section>
 
   <footer>
-    <p>設計およびコーディング： <strong><a href="index_JP.html">DON HARTIG</a></strong></p>
+    <p>設計・コーディング： <strong><a href="index_JP.html">DON HARTIG</a></strong></p>
     <div class="copy">© 2026 無断複写・転載を禁じます。</div>
   </footer>
 

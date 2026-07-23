@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Don Hartig — 软件开发与本地化工程</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono&display=swap" rel="stylesheet">
@@ -30,45 +31,22 @@
     overflow-x: hidden; 
   }
 
-  /* ── TOPBAR ── */
-  ._topbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(10, 10, 12, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 0.6rem 1.5rem; gap: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  ._topbar button {
-    font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    background: var(--gold); color: #000; border: none;
-    padding: 0.5rem 1.2rem; border-radius: 4px; cursor: pointer;
-    transition: transform 0.2s;
-  }
-  ._topbar button:hover { transform: scale(1.05); }
-  
-  ._navgroup { display: flex; align-items: center; gap: 1.5rem; min-width: 0; }
-  ._homebtn {
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-    color: #1e8e3e; text-decoration: none; letter-spacing: 0.1em;
-    padding: 0.5rem 1rem; border: 1.5px solid #1e8e3e; border-radius: 4px;
-    transition: all 0.2s;
-  }
-  ._homebtn:hover { background: #1e8e3e; color: #fff; }
-
-  ._langrow { 
-    display: flex; gap: 0.5rem; 
-  }
-  ._langbtn {
-    font-size: 0.75rem; color: #fff; text-decoration: none;
-    background: #c0392b; padding: 0.4rem 0.8rem; border-radius: 4px;
-    transition: opacity 0.2s;
-    white-space: nowrap; flex-shrink: 0;
-  }
-  ._langbtn:hover { opacity: 0.8; }
-
-  @media print { ._topbar { display: none !important; } }
+  /* ── TOPBAR (matches productmanagement.html structure) ── */
+._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(10,6,2,0.96);padding:0.45rem 1.5rem;gap:1rem;box-shadow:0 1px 0 rgba(212,168,64,0.2);border-bottom:1px solid rgba(212,168,64,0.15);}
+._topbar button{font-family:'Space Grotesk',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;transition:background .2s;}
+._topbar button:hover{background:var(--gold-bright);}
+._navgroup{display:flex;align-items:center;gap:0.4rem;}
+._langrow{display:flex;gap:0.4rem;}
+._topbar a._langbtn{font-family:'Space Grotesk',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:.06em;background:#c0392b;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;transition:opacity .2s;}
+._topbar a._langbtn:hover{opacity:0.85;}
+._topbar a._homebtn{font-family:'Space Grotesk',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:.06em;background:#1e8e3e;color:#fff;text-decoration:none;text-align:center;padding:0.34rem 0;border:1px solid rgba(255,255,255,0.15);border-radius:3px;white-space:nowrap;width:96px;display:inline-block;transition:opacity .2s;}
+._topbar a._homebtn:hover{opacity:0.85;}
+@media(max-width:960px){
+  ._topbar{flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;}
+  ._navgroup{display:flex;flex-direction:column;align-items:center;width:100%;gap:0.5rem;}
+  ._langrow{justify-content:center;width:100%;}
+}
+@media print { ._topbar { display: none !important; } }
 
   /* ── HERO ── */
   .hero {
@@ -216,16 +194,12 @@
 <body>
 
   <div class="_topbar">
-    <button onclick="window.print()">⬇ 下载 PDF</button>
+    <button onclick="window.print()">⬇ Download PDF</button>
     <div class="_navgroup">
-      <a class="_homebtn" href="index_ZH.html">首页</a>
+      <a class="_homebtn" href="index_ZH.html">Home</a>
       <div class="_langrow">
-        <a class="_langbtn" href="development_DE.html">Deutsch</a>
-        <a class="_langbtn" href="development_FR.html">Français</a>
-        <a class="_langbtn" href="development_JP.html">日本語</a>
-        <a class="_langbtn" href="development_ES.html">Español</a>
-        <a class="_langbtn" href="development_AF.html">Afrikaans</a>
-        <a class="_langbtn" href="development.html">English</a></div>
+        <a class="_langbtn" href="development.html">English</a> <a class="_langbtn" href="development_DE.html">Deutsch</a> <a class="_langbtn" href="development_FR.html">Français</a> <a class="_langbtn" href="development_JP.html">日本語</a> <a class="_langbtn" href="development_ES.html">Español</a> <a class="_langbtn" href="development_AF.html">Afrikaans</a>
+      </div>
     </div>
   </div>
 
@@ -258,7 +232,7 @@
         </div>
       </div>
 
-      <p class="hero-sub">全栈开发人员，构建稳健、高性能的 Web 应用程序。在复杂的工程与优雅的用户体验之间搭建桥梁。</p>
+      <p class="hero-sub">全栈开发人员，致力于构建稳健、高性能的网络应用程序。在复杂工程与优雅用户体验之间架起桥梁。</p>
     </div>
 
     <div class="hero-portrait-wrap">
@@ -273,7 +247,7 @@
   <div class="stats-strip">
     <div class="stat-item">
       <h4>40+</h4>
-      <p>Platforms Built</p>
+      <p>已建平台</p>
     </div>
     <div class="stat-item">
       <h4>Full</h4>
@@ -281,37 +255,37 @@
     </div>
     <div class="stat-item">
       <h4>99.9</h4>
-      <p>Uptime Focus</p>
+      <p>专注运行时间</p>
     </div>
     <div class="stat-item">
       <h4>&lt;/&gt;</h4>
-      <p>Clean Code</p>
+      <p>整洁代码</p>
     </div>
   </div>
 
   <section id="expertise">
-    <span class="section-tag">能力</span>
+    <span class="section-tag">核心能力</span>
     <h2 class="section-title">技术专长</h2>
     <div class="tech-grid">
       <div class="tech-card">
         <span class="code-deco">0x01</span>
-        <h3>Web 开发</h3>
-        <p>任何类型的网站。专注于为各行各业的中小型企业提供极速的定制网站。我构建过无数的电子商务商店、定制业务网站、新闻网站和网红网站。只需告诉我您的需求。</p>
+        <h3>Web开发</h3>
+        <p>任何类型的网站。专注于为各行各业的中小型企业提供极速定制网站。我曾建立过无数的电子商务商店、定制业务网站、新闻网站和网红网站。只需告诉我您的需求。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x02</span>
-        <h3>Web 应用程序</h3>
-        <p>在浏览器中运行的动态、交互式 Web 应用程序。我开发过多款交易应用程序、工具和指标，甚至在 2017 年开发了一个基于浏览器的交易平台 (silktrader.net)，以及为“丝路币” (Silubium) 加密货币开发了实时公链。</p>
+        <h3>Web应用</h3>
+        <p>在浏览器中运行的动态交互式Web应用程序。我曾开发过多种交易应用程序、工具和指标，甚至在2017年建立了一个基于浏览器的交易平台 (silktrader.net) 以及为“丝路币”(Silubium) 加密货币开发的实时公链。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x03</span>
         <h3>区块链工程</h3>
-        <p>我于 2017 年在中国设计并构建了丝路币 (Silubium) 区块链和加密货币。我还是 Android 和 iOS 钱包、丝路链 (Silkchain) 动画公共账本以及 Silktrader 交易平台的平面设计师和首席软件工程师。</p>
+        <p>我于2017年在中国设计并建立了丝路币 (Silubium) 区块链和加密货币。我还是Android和iOS钱包以及丝路链 (Silkchain) 动态公共账本和Silktrader交易平台的首席设计师和软件工程师。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x04</span>
         <h3>游戏开发</h3>
-        <p>任何类型的游戏——从使用 JS 构建的浏览器游戏到 Godot、Unity 和 Unreal Engine。我自己生成所有资产（2D 或 3D），是您所有游戏开发需求的一站式游戏开发工作室。</p>
+        <p>任何类型的游戏——从用JS编写的浏览器游戏到Godot、Unity和Unreal引擎。我自己生成所有素材（2D或3D），是您所有游戏开发需求的一站式工作室。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x05</span>
@@ -321,17 +295,17 @@
       <div class="tech-card">
         <span class="code-deco">0x06</span>
         <h3>自动化</h3>
-        <p>定制脚本和工作流自动化。构建消除手动任务并简化数据管理的工具。</p>
+        <p>自定义脚本和工作流自动化。构建消除手动任务并简化数据管理的工具。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x07</span>
-        <h3>API 设计</h3>
-        <p>设计简洁、安全且文档齐全的 REST 和 GraphQL API，实现无缝的第三方集成。</p>
+        <h3>API设计</h3>
+        <p>设计简洁、安全且文档齐全的REST和GraphQL API，实现无缝的第三方集成。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x08</span>
         <h3>DevOps</h3>
-        <p>云部署和基础设施管理。确保应用程序安全、快速且始终可用。</p>
+        <p>Cloud deployment and infrastructure management. 云部署和基础设施管理。确保应用程序安全、快速且始终可用。</p>
       </div>
       <div class="tech-card">
         <span class="code-deco">0x09</span>
@@ -346,38 +320,38 @@
     <h2 class="section-title">精选项目</h2>
     <div class="portfolio-grid">
       <a href="https://majikfood.com/" class="project-item">
-        <span class="cat">食品</span>
+        <span class="cat">FOOD</span>
         <h4>MajikFood</h4>
-        <p>南非益生菌酸奶品牌的高性能业务网站。</p>
+        <p>为南非益生菌酸奶品牌打造的高性能业务网站。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://siamayachina.com/" class="project-item">
-        <span class="cat">电子商务</span>
+        <span class="cat">E-Commerce</span>
         <h4>Siamaya China</h4>
-        <p>泰国手工巧克力品牌“Siamaya”官方分销商的静态电子商务品牌枢纽网站。</p>
+        <p>为“Siamaya”泰国手工巧克力品牌的官方分销商打造的静态电子商务品牌中心网站。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://donhartiggit.github.io/spcarb/" class="project-item">
-        <span class="cat">汽车</span>
+        <span class="cat">Automotive</span>
         <h4>SP Carb</h4>
-        <p>中国第二大化油器制造商的国际化油器品牌信息网站。</p>
+        <p>为中国第二大化油器制造商打造的国际品牌信息网站。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="https://donhartiggit.github.io/deleyart/" class="project-item">
-        <span class="cat">艺术</span>
+        <span class="cat">Arts</span>
         <h4>Deley Art</h4>
-        <p>著名画家 Hendrik De Ley 的优雅动画艺术画廊网站。</p>
+        <p>为著名画家“Hendrik De Ley”打造的优雅动感艺术画廊网站。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="#" class="project-item">
-        <span class="cat">医疗</span>
-        <h4>Chongqing Dentist</h4>
-        <p>中国牙科诊所的牙医网站。</p>
+        <span class="cat">MEDICAL</span>
+        <h4>重庆牙科</h4>
+        <p>中国牙科诊所的网站。</p>
         <span class="link-icon">→</span>
       </a>
       <a href="#" class="project-item">
-        <span class="cat">法律</span>
-        <h4>Chongqing Legal</h4>
+        <span class="cat">LEGAL</span>
+        <h4>重庆法律</h4>
         <p>为在华外籍人士提供服务的律师事务所。</p>
         <span class="link-icon">→</span>
       </a>
@@ -385,7 +359,7 @@
   </section>
 
   <footer>
-    <p>设计并编码： <strong><a href="index_ZH.html">DON HARTIG</a></strong></p>
+    <p>设计与编码： <strong><a href="index_ZH.html">DON HARTIG</a></strong></p>
     <div class="copy">© 2026 保留所有权利。</div>
   </footer>
 
