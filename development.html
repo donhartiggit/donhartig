@@ -3,841 +3,392 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Don Hartig — Full-Stack Web Developer specializing in modern, high-performance websites and web applications. Available for freelance and full-time opportunities.">
-<meta name="keywords" content="web developer, full-stack developer, freelance web developer, Don Hartig, website design, web development Chiang Mai">
-<meta property="og:title" content="Don Hartig | Web Developer">
-<meta property="og:description" content="Full-stack web developer crafting fast, beautiful, effective websites. View portfolio and get in touch.">
-<meta property="og:type" content="website">
-<title>Don Hartig | Web Developer</title>
+<title>Don Hartig — Software Development & Localization Engineering</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/me/favicon-32x32.png">
-
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --ink: #0e0e0e;
-    --ink-mid: #444;
-    --ink-light: #888;
-    --cream: #f5f2eb;
-    --white: #ffffff;
-    --accent: #c8522a;
-    --accent-light: #f0d5c8;
-    --accent-dark: #8c3518;
-    --border: rgba(14,14,14,0.12);
-    --ff-display: 'Playfair Display', Georgia, serif;
-    --ff-body: 'DM Sans', system-ui, sans-serif;
-    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --bg: #0a1835;
+    --canvas-alt: #0a0a0c;
+    --teal: #00ced1;
+    --orange: #f97316;
+    --yellow: #fde047;
+    --lime: #32cd32;
+    --gold: #D4A840;
+    --radius: 8px;
+    --border: rgba(255, 255, 255, 0.08);
   }
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--ff-body);
-    background: var(--cream);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
+  body { 
+    background-color: var(--bg); 
+    color: var(--text); 
+    font-family: 'Space Mono', monospace; 
+    line-height: 1.6; 
+    overflow-x: hidden; 
   }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 38px; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.1rem 5vw;
-    background: rgba(245,242,235,0.88);
-    backdrop-filter: blur(12px);
+  /* ── TOPBAR ── */
+  ._topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(10, 10, 12, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1.5rem; gap: 1rem;
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo {
-    font-family: var(--ff-display);
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: -0.01em;
+  ._topbar button {
+    font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    background: var(--gold); color: #000; border: none;
+    padding: 0.5rem 1.2rem; border-radius: 4px; cursor: pointer;
+    transition: transform 0.2s;
   }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--ink-mid);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    transition: color 0.2s;
+  ._topbar button:hover { transform: scale(1.05); }
+  
+  ._navgroup { display: flex; align-items: center; gap: 1.5rem; min-width: 0; }
+  ._homebtn {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    color: #1e8e3e; text-decoration: none; letter-spacing: 0.1em;
+    padding: 0.5rem 1rem; border: 1.5px solid #1e8e3e; border-radius: 4px;
+    transition: all 0.2s;
   }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-cta {
-    background: var(--ink);
-    color: var(--cream) !important;
-    padding: 0.45rem 1.1rem;
-    border-radius: 100px;
-    transition: background 0.2s !important;
+  ._homebtn:hover { background: #1e8e3e; color: #fff; }
+
+  ._langrow { 
+    display: flex; gap: 0.5rem; 
   }
-  .nav-cta:hover { background: var(--accent) !important; color: var(--white) !important; }
+  ._langbtn {
+    font-size: 0.75rem; color: #fff; text-decoration: none;
+    background: #c0392b; padding: 0.4rem 0.8rem; border-radius: 4px;
+    transition: opacity 0.2s;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  ._langbtn:hover { opacity: 0.8; }
+
+  @media print { ._topbar { display: none !important; } }
 
   /* ── HERO ── */
   .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 8.5rem 5vw 4rem;
-    gap: 4rem;
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px clamp(24px, 8vw, 120px) 100px;
+    gap: 5rem;
   }
-  .hero-text { max-width: 540px; }
-  .hero-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.2rem;
-    display: flex; align-items: center; gap: 0.6rem;
+  .hero-content { flex: 1.2; z-index: 2; }
+  .hero-label {
+    font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; color: var(--orange);
+    text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 1.5rem; display: block;
   }
-  .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 28px; height: 2px;
-    background: var(--accent);
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900; line-height: 0.88; letter-spacing: -0.04em; margin-bottom: 2.5rem;
+    color: #fff;
   }
-  .hero-name {
-    font-family: var(--ff-display);
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 900;
-    line-height: 1.0;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 0.3rem;
+  .cover-name a, .cover-name a:link, .cover-name a:visited, .cover-name a:hover, .cover-name a:active {
+    color: #fff; text-decoration: none;
   }
-  .hero-title {
-    font-family: var(--ff-display);
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--ink-mid);
-    margin-bottom: 1.6rem;
+  .hero h1 span.given { color: var(--blue); font-weight: 400; font-style: italic; font-size: 0.45em; display: block; }
+  
+  .hero-contact {
+    display: grid; grid-template-columns: auto 1fr; gap: 0.75rem 1.5rem;
+    margin-bottom: 3rem; font-family: 'Space Mono', monospace; max-width: fit-content;
   }
-  .hero-desc {
-    font-size: 1.05rem;
-    color: var(--ink-mid);
-    line-height: 1.75;
-    margin-bottom: 2.2rem;
-    font-weight: 300;
-    max-width: 460px;
+  .contact-item { display: contents; }
+  .contact-label {
+    text-align: right; font-size: 9px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.2em; color: var(--yellow); padding-top: 3px;
   }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-  .btn-primary {
-    background: var(--accent);
-    color: var(--white);
-    padding: 0.8rem 1.8rem;
-    border-radius: 100px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
-  .btn-ghost {
-    color: var(--ink);
-    padding: 0.8rem 1.8rem;
-    border: 1.5px solid var(--ink);
-    border-radius: 100px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: border-color 0.2s, color 0.2s, transform 0.2s;
-  }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+  .contact-value { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+  .contact-value a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1); transition: 0.2s; }
+  .contact-value a:hover { color: #fff; border-bottom-color: var(--blue); }
 
-  /* hero stats */
-  .hero-stats {
-    display: flex; gap: 2rem; margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
+  .hero-sub {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem); color: var(--text-muted);
+    max-width: 480px; font-weight: 400; margin-bottom: 4rem;
   }
-  .stat-num {
-    font-family: var(--ff-display);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1;
-  }
-  .stat-label { font-size: 0.78rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
-
-  /* hero image */
-  .hero-image-wrap {
-    position: relative;
-    display: flex; justify-content: flex-end; align-items: center;
-  }
-  .hero-img-frame {
-    position: relative;
-    width: min(420px, 90%);
-    aspect-ratio: 4/5;
-  }
-  .hero-img-frame::before {
-    content: '';
-    position: absolute;
-    inset: -18px 18px 18px -18px;
-    border: 2px solid var(--accent);
-    border-radius: 4px;
-    z-index: 0;
-  }
-  .hero-img-frame img {
-    position: relative; z-index: 1;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-    display: block;
-    filter: grayscale(15%);
-  }
-  .hero-img-placeholder {
-    position: relative; z-index: 1;
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, #d4c9b8 0%, #b5a99a 100%);
-    border-radius: 4px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    color: #7a6e62;
-    font-size: 0.85rem;
-  }
-  .hero-img-placeholder svg { margin-bottom: 0.5rem; opacity: 0.5; }
-
-  /* floating badge */
-  .hero-badge {
-    position: absolute;
-    bottom: -1rem; left: -2rem; z-index: 10;
-    background: var(--white);
+  
+  .hero-portrait-wrap { flex: 0.8; position: relative; display: flex; justify-content: flex-end; }
+  .hero-portrait {
+    width: 100%; max-width: 480px; aspect-ratio: 3/4; object-fit: cover;
+    border-radius: var(--radius); transform: rotate(2deg);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 0.8rem 1rem;
-    display: flex; align-items: center; gap: 0.7rem;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    font-size: 0.82rem;
   }
-  .badge-dot { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
-  .badge-text { font-weight: 500; color: var(--ink); }
-  .badge-sub { color: var(--ink-light); font-size: 0.75rem; }
+  .floating-card {
+    position: absolute; bottom: 10%; left: -2%; background: var(--canvas-alt);
+    padding: 1.5rem 2rem; border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid var(--border); transform: rotate(-4deg);
+  }
+  .floating-card .val { font-family: 'Space Mono', monospace; font-size: 32px; font-weight: 700; color: var(--yellow); line-height: 1; margin-bottom: 0.5rem; display: block; }
+  .floating-card .lab { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); }
 
-  /* ── SECTION COMMONS ── */
-  section { padding: 6rem 5vw; }
-  .section-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 0.8rem;
+  /* ── SECTIONS ── */
+  section { padding: 120px clamp(24px, 8vw, 120px); }
+  .section-tag {
+    font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.4em; color: var(--blue);
+    margin-bottom: 1.5rem; display: block;
   }
-  .section-heading {
-    font-family: var(--ff-display);
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    max-width: 560px;
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 4rem; }
+
+  /* ── GRID HOVER ── */
+  .tech-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
   }
-  .section-sub {
-    font-size: 1.05rem;
-    color: var(--ink-mid);
-    font-weight: 300;
-    max-width: 540px;
-    margin-top: 0.8rem;
-    line-height: 1.8;
+  .tech-card {
+    background: var(--canvas-alt); padding: 3rem; border-radius: var(--radius);
+    border: 1px solid var(--border); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative; overflow: hidden;
+  }
+  .tech-card:hover {
+    transform: scale(1.05);
+    border-color: var(--blue);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    z-index: 10;
+  }
+  .tech-card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #fff; }
+  .tech-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
+  .tech-card .code-deco { 
+    position: absolute; top: 1.5rem; right: 1.5rem; 
+    font-family: 'Space Mono', monospace; font-size: 12px; color: var(--orange); opacity: 1;
   }
 
-  /* ── SERVICES ── */
-  #services { background: var(--white); }
-  .services-header { margin-bottom: 3.5rem; }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5px;
-    background: var(--border);
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
+  /* ── STATS ── */
+  .stats-strip {
+    background: var(--canvas-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 4rem clamp(24px, 8vw, 120px); display: grid; grid-template-columns: repeat(4, 1fr); text-align: center;
   }
-  .service-card {
-    background: var(--white);
-    padding: 2rem;
-    transition: background 0.25s;
-  }
-  .service-card:hover { background: var(--cream); }
-  .service-icon {
-    width: 44px; height: 44px;
-    border-radius: 10px;
-    background: var(--accent-light);
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1.2rem;
-  }
-  .service-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
-  .service-title { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
-  .service-desc { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.65; font-weight: 300; }
+  .stat-item h4 { font-family: 'Space Mono', monospace; font-size: 2.5rem; color: var(--blue); margin-bottom: 0.5rem; }
+  .stat-item p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); }
 
   /* ── PORTFOLIO ── */
-  #portfolio { background: var(--cream); }
-  .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap; }
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+  .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .project-item {
+    background: #000; border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 3rem; transition: all 0.4s; position: relative;
+    text-decoration: none; color: inherit; display: block;
   }
-  .project-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
-    text-decoration: none;
-    display: block;
-    color: inherit;
-  }
-  .project-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.10); }
-  .project-thumb {
-    height: 180px;
-    background: var(--cream);
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-  }
-  .project-thumb img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s var(--ease-out);
-  }
-  .project-card:hover .project-thumb img { transform: scale(1.04); }
-  .thumb-placeholder {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 0.5rem;
-  }
-  .thumb-domain {
-    font-family: var(--ff-display);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--ink-mid);
-    letter-spacing: -0.01em;
-  }
-  .thumb-ext { font-size: 0.78rem; color: var(--ink-light); }
-  .project-info { padding: 1.25rem 1.4rem 1.4rem; }
-  .project-tag {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.4rem;
-  }
-  .project-name {
-    font-family: var(--ff-display);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 0.3rem;
-  }
-  .project-url { font-size: 0.8rem; color: var(--ink-light); display: flex; align-items: center; gap: 0.3rem; }
-  .project-url svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
-  .project-arrow {
-    display: flex; align-items: center; justify-content: flex-end;
-    padding: 0 1.4rem 1.1rem;
-    font-size: 0.8rem; font-weight: 500;
-    color: var(--accent);
-    gap: 0.3rem;
-    transition: gap 0.2s;
-  }
-  .project-card:hover .project-arrow { gap: 0.6rem; }
-
-  /* thumb color variants */
-  .thumb-1 { background: #e8f0ee; }
-  .thumb-2 { background: #f0ede8; }
-  .thumb-3 { background: #e8ecf0; }
-  .thumb-4 { background: #f0e8e8; }
-  .thumb-5 { background: #ede8f0; }
-  .thumb-6 { background: #e8f0e8; }
-  .thumb-7 { background: #f0ece8; }
-  .thumb-8 { background: #e8e8f0; }
-  .thumb-9 { background: #f0e8ed; }
-  .thumb-10 { background: #eaf0e8; }
-
-  /* ── SKILLS ── */
-  #skills { background: var(--ink); }
-  #skills .section-label { color: var(--accent-light); }
-  #skills .section-heading { color: var(--white); }
-  #skills .section-sub { color: rgba(255,255,255,0.55); }
-  .skills-wrap { margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
-  .skill-pill {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 0.85rem 1.1rem;
-    display: flex; align-items: center; gap: 0.75rem;
-    transition: background 0.2s;
-  }
-  .skill-pill:hover { background: rgba(200,82,42,0.15); border-color: rgba(200,82,42,0.4); }
-  .skill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-  .skill-name { font-size: 0.9rem; color: rgba(255,255,255,0.85); font-weight: 400; }
-
-  /* ── ABOUT ── */
-  #about { background: var(--white); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
-  .about-img-wrap { position: relative; }
-  .about-img-frame {
-    aspect-ratio: 3/4;
-    max-width: 380px;
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--cream);
-  }
-  .about-img-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%); }
-  .about-decor {
-    position: absolute;
-    bottom: -2rem; right: -2rem;
-    width: 180px; height: 180px;
-    background: var(--accent-light);
-    border-radius: 8px;
-    z-index: -1;
-  }
-  .about-content p { color: var(--ink-mid); margin-bottom: 1.2rem; font-weight: 300; font-size: 1.02rem; }
-  .about-highlights { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.8rem 0; }
-  .highlight-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.95rem; }
-  .highlight-check { color: var(--accent); font-size: 1.1rem; line-height: 1.5; flex-shrink: 0; }
-
-  /* ── CTA ── */
-  #contact { background: var(--cream); text-align: center; padding: 7rem 5vw; }
-  .cta-wrap { max-width: 640px; margin: 0 auto; }
-  #contact .section-heading { max-width: none; margin: 0 auto 0.5rem; }
-  #contact .section-sub { margin: 0 auto 2.5rem; }
-  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2.5rem; }
-  .contact-link { font-size: 0.9rem; color: var(--ink-mid); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
-  .contact-link:hover { color: var(--accent); }
-  .contact-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .project-item:hover { transform: scale(1.03); border-color: var(--orange); }
+  .project-item .cat { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--yellow); text-transform: uppercase; margin-bottom: 1rem; display: block; }
+  .project-item h4 { font-size: 1.8rem; margin-bottom: 1.5rem; color: #fff; }
+  .project-item p { color: var(--text-muted); font-size: 0.95rem; }
+  .project-item .link-icon { position: absolute; bottom: 2rem; right: 2rem; color: var(--orange); }
 
   /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    color: rgba(255,255,255,0.45);
-    text-align: center;
-    padding: 1.5rem 5vw;
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
-  }
-  footer a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
-  footer a:hover { color: var(--accent-light); }
+  footer { background: var(--canvas-alt); padding: 100px clamp(24px, 8vw, 120px); text-align: center; color: var(--text-muted); border-top: 1px solid var(--border); }
+  footer a { color: #fff; text-decoration: none; font-weight: 700; }
+  footer .copy { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 2rem; }
 
-  /* ── ANIMATIONS ── */
-  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 1024px) {
+    .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    ._topbar { padding: 0.5rem 0.75rem; }
+    ._navgroup { gap: 0.5rem; }
+    ._langrow { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+    ._langrow::-webkit-scrollbar { display: none; }
+    .hero { flex-direction: column; text-align: center; padding-top: 140px; }
+    .hero-sub, .hero-contact { margin-left: auto; margin-right: auto; }
+    .hero-contact { text-align: left; }
+    .hero-portrait-wrap { margin-top: 60px; width: 100%; justify-content: center; }
+    .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero-contact { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+    .contact-label { text-align: center; }
+    .tech-grid { grid-template-columns: 1fr; }
+  }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; padding-top: 7rem; gap: 2.5rem; }
-    .hero-image-wrap { justify-content: center; }
-    .hero-img-frame { width: min(320px, 80%); }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-img-wrap { display: none; }
-    nav { padding: 0.9rem 4vw; }
-    .nav-links { gap: 1.2rem; }
-  }
-  @media (max-width: 580px) {
-    .nav-links li:not(:last-child) { display: none; }
-    .hero-stats { gap: 1.2rem; }
-    .portfolio-header { flex-direction: column; align-items: flex-start; }
-  }
-</style>
-<style>
-._topbar{position:fixed;top:0;left:0;right:0;z-index:99999;display:flex;justify-content:space-between;align-items:center;background:rgba(245,242,235,0.97);padding:0.45rem 1.5rem;gap:1rem;box-shadow:0 1px 0 rgba(255,255,255,0.06);}
-._topbar button{font-family:inherit;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#c8522a;color:#fff;border:none;padding:0.38rem 0.95rem;border-radius:3px;cursor:pointer;}
-._topbar button:hover{opacity:0.85;}
-._topbar a._langbtn{font-family:inherit;font-size:0.7rem;color:#444;text-decoration:none;letter-spacing:0.04em;padding:0.3rem 0.75rem;border:1px solid rgba(0,0,0,0.15);border-radius:3px;white-space:nowrap;}
-._topbar a._langbtn:hover{color:#c8522a;border-color:#c8522a;}
-@media print{._topbar{display:none!important;}}
+  h2, h3, h4, .stat-item h4 { color: var(--teal) !important; }
+  p, .hero-sub, .contact-value, .tech-card p, .project-item p { color: var(--lime) !important; }
+  .contact-value, .contact-value a { color: var(--teal) !important; }
+  
+  /* Preserve name and specific labels */
+  .cover-name a, .cover-name span.given { color: #fff !important; }
+  footer a { color: var(--teal) !important; }
+  .hero-label { color: var(--orange) !important; }
+  .contact-label, .copy { color: var(--yellow) !important; }
 </style>
 </head>
 <body>
-<div class="_topbar"><button onclick="window.print()">⬇ Download PDF</button><a class="_langbtn" href="开发.html">中文版</a></div>
 
-
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Don Hartig</a>
-  <ul class="nav-links">
-    <li><a href="#portfolio">Work</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-text fade-up">
-    <p class="hero-eyebrow">Available for Projects</p>
-    <h1 class="hero-name">Don<br>Hartig</h1>
-    <p class="hero-title">Full-Stack Web & App Developer</p>
-    <p class="hero-desc">I build websites and web applications that are fast, beautiful, and built to convert — from clean branding sites to complex data-driven platforms.</p>
-    <div class="hero-btns">
-      <a href="#portfolio" class="btn-primary">View My Work</a>
-      <a href="#contact" class="btn-ghost">Get in Touch</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">40+</div>
-        <div class="stat-label">Sites Built</div>
-      </div>
-      <div>
-        <div class="stat-num">Full</div>
-        <div class="stat-label">Stack Dev</div>
-      </div>
-      <div>
-        <div class="stat-num">Fast</div>
-        <div class="stat-label">Turnaround</div>
+  <div class="_topbar">
+    <button onclick="window.print()">⬇ Download PDF</button>
+    <div class="_navgroup">
+      <a class="_homebtn" href="index.html">Home</a>
+      <div class="_langrow">
+        <a class="_langbtn" href="开发.html">中文</a>
+        <a class="_langbtn" href="development_DE.html">Deutsch</a>
+        <a class="_langbtn" href="development_FR.html">Français</a>
+        <a class="_langbtn" href="development_JP.html">日本語</a>
+        <a class="_langbtn" href="development_ES.html">Español</a>
+        <a class="_langbtn" href="development_AF.html">Afrikaans</a>
       </div>
     </div>
   </div>
-  <div class="hero-image-wrap fade-up" style="transition-delay:0.15s">
-    <div class="hero-img-frame">
-      <img src="images/me/posedon.jpeg" alt="Don Hartig, Web Developer" onerror="this.parentNode.innerHTML='<div class=\'hero-img-placeholder\'><svg width=\'48\' height=\'48\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.2\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M4 20c0-4 3.6-7 8-7s8 3 8 7\'/></svg><span>Don Hartig</span></div>'">
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-label">Development & Engineering</span>
+      <h1 class="cover-name">
+        <a href="index.html">
+          <span class="given">Don</span>
+          Hartig
+        </a>
+      </h1>
+
+      <div class="hero-contact">
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:don@donhartig.com">don@donhartig.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Mobile/WhatsApp</div>
+          <div class="contact-value">(+86) 159 0238 5400</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value"><a href="https://linkedin.com/in/donhartig">linkedin.com/in/donhartig</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">WeChat</div>
+          <div class="contact-value">Dongxiating</div>
+        </div>
+      </div>
+
+      <p class="hero-sub">Full-stack developer building robust, high-performance web applications. Bridging the gap between complex engineering and elegant user experiences.</p>
     </div>
-    <div class="hero-badge">
-      <div class="badge-dot"></div>
-      <div>
-        <div class="badge-text">Open to Work</div>
-        <div class="badge-sub">Freelance & Full-Time</div>
+
+    <div class="hero-portrait-wrap">
+      <img src="brown.png" alt="Don Hartig" class="hero-portrait">
+      <div class="floating-card">
+        <span class="val">1,000+</span>
+        <span class="lab">Commits / Year</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="services-header fade-up">
-    <p class="section-label">What I Do</p>
-    <h2 class="section-heading">End-to-end web development, from concept to launch</h2>
-  </div>
-  <div class="services-grid fade-up" style="transition-delay:0.1s">
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      </div>
-      <div class="service-title">Website Design & Dev</div>
-      <div class="service-desc">Responsive, pixel-perfect websites that look great on every screen and load in a flash.</div>
+  <div class="stats-strip">
+    <div class="stat-item">
+      <h4>40+</h4>
+      <p>Platforms Built</p>
     </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <div class="service-title">Full-Stack Applications</div>
-      <div class="service-desc">Scalable web apps with robust backends, clean APIs, and intuitive front-end interfaces.</div>
+    <div class="stat-item">
+      <h4>Full</h4>
+      <p>Stack Proficiency</p>
     </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20"/><path d="M2 12h20"/></svg>
-      </div>
-      <div class="service-title">E-Commerce Solutions</div>
-      <div class="service-desc">Online stores built for conversion — integrated payments, inventory, and smooth checkout flows.</div>
+    <div class="stat-item">
+      <h4>99.9</h4>
+      <p>Uptime Focus</p>
     </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      </div>
-      <div class="service-title">Performance Optimization</div>
-      <div class="service-desc">Speed audits, Core Web Vitals improvements, and SEO tuning to help you rank and convert.</div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="portfolio-header fade-up">
-    <div>
-      <p class="section-label">Portfolio</p>
-      <h2 class="section-heading">Selected work — live on the web</h2>
-    </div>
-    <p class="section-sub" style="max-width:300px; margin-top:0; font-size:0.95rem;">Each project built with care for performance, clarity, and results.</p>
-  </div>
-  <div class="portfolio-grid">
-
-    <a href="https://majikfood.com/" class="project-card fade-up" style="transition-delay:0.00s">
-      <div class="project-thumb thumb-1">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">majikfood</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Food & Lifestyle</div>
-        <div class="project-name">Majik Food</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          majikfood.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="https://siamayachina.com/" class="project-card fade-up" style="transition-delay:0.05s">
-      <div class="project-thumb thumb-2">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">siamaya</span>
-          <span class="thumb-ext">china.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Craft Chocolate</div>
-        <div class="project-name">Siamaya China</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          siamayachina.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="https://donhartig.com/" class="project-card fade-up" style="transition-delay:0.10s">
-      <div class="project-thumb thumb-3">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">donhartig</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Personal Brand / Portfolio Site</div>
-        <div class="project-name">DonHartig.com</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          donhartig.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="https://donhartiggit.github.io/spcarb/" class="project-card fade-up" style="transition-delay:0.15s">
-      <div class="project-thumb thumb-4">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">spcarb</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Automotive</div>
-        <div class="project-name">SP Carb</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          spcarb.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="#" class="project-card fade-up" style="transition-delay:0.20s">
-      <div class="project-thumb thumb-5">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">silubium</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Technology</div>
-        <div class="project-name">Silubium</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          silubium.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="#" class="project-card fade-up" style="transition-delay:0.25s">
-      <div class="project-thumb thumb-6">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">smpchiangmai</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Local Business</div>
-        <div class="project-name">SMP Chiang Mai</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          smpchiangmai.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="https://donhartiggit.github.io/deleyart/" class="project-card fade-up" style="transition-delay:0.30s">
-      <div class="project-thumb thumb-7">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">deleyart</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Art & Creative</div>
-        <div class="project-name">Deley Art</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          deleyart.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="#" class="project-card fade-up" style="transition-delay:0.35s">
-      <div class="project-thumb thumb-8">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">logonbranchout</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Marketing</div>
-        <div class="project-name">Logon Branch Out</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          logonbranchout.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="#" class="project-card fade-up" style="transition-delay:0.40s">
-      <div class="project-thumb thumb-9">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">donhartiggames</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Gaming</div>
-        <div class="project-name">Don Hartig Games</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          donhartiggames.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-    <a href="#" class="project-card fade-up" style="transition-delay:0.45s">
-      <div class="project-thumb thumb-10">
-        <div class="thumb-placeholder">
-          <span class="thumb-domain">fundfan</span>
-          <span class="thumb-ext">.com</span>
-        </div>
-      </div>
-      <div class="project-info">
-        <div class="project-tag">Crowdfunding / Finance</div>
-        <div class="project-name">FundFan</div>
-        <div class="project-url">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          fundfan.com
-        </div>
-      </div>
-      <div class="project-arrow">View project →</div>
-    </a>
-
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <p class="section-label fade-up">Technical Skills</p>
-  <h2 class="section-heading fade-up" style="color:var(--white)">The full toolkit — front to back</h2>
-  <p class="section-sub fade-up" style="color:rgba(255,255,255,0.5); transition-delay:0.1s">From wireframe to deployment, I handle every layer of the stack.</p>
-  <div class="skills-wrap fade-up" style="transition-delay:0.15s">
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">HTML5 / CSS3</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">JavaScript (ES6+)</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">React / Next.js</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">Node.js</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">PHP / WordPress</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">Python</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">MySQL / PostgreSQL</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">MongoDB</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">REST APIs / GraphQL</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">Git / GitHub</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">AWS / Cloud Hosting</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">SEO Optimization</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">UI/UX Design</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">E-Commerce / WooCommerce</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">Performance Tuning</span></div>
-    <div class="skill-pill"><span class="skill-dot"></span><span class="skill-name">Game Development</span></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div class="about-img-wrap fade-up">
-      <div class="about-img-frame">
-        <img src="posedon.jpg" alt="Don Hartig" onerror="this.style.display='none'">
-      </div>
-      <div class="about-decor"></div>
-    </div>
-    <div class="fade-up" style="transition-delay:0.1s">
-      <p class="section-label">About Me</p>
-      <h2 class="section-heading">Developer who thinks like a business owner</h2>
-      <div class="about-content" style="margin-top:1.5rem">
-        <p>I'm Don Hartig, a full-stack web developer with a passion for building digital products that actually move the needle. Over the years I've shipped projects across food, automotive, arts, travel, gaming, and finance — each one built with the same care for craft and results.</p>
-        <p>My work ranges from clean marketing sites to complex web applications. I bring both technical depth and a strong design eye to every project.</p>
-        <div class="about-highlights">
-          <div class="highlight-item"><span class="highlight-check">✓</span><span>Clean, maintainable code that scales</span></div>
-          <div class="highlight-item"><span class="highlight-check">✓</span><span>Responsive, mobile-first by default</span></div>
-          <div class="highlight-item"><span class="highlight-check">✓</span><span>Fast turnaround and clear communication</span></div>
-          <div class="highlight-item"><span class="highlight-check">✓</span><span>SEO-conscious development from day one</span></div>
-          <div class="highlight-item"><span class="highlight-check">✓</span><span>Available for freelance and full-time roles</span></div>
-        </div>
-        <a href="#contact" class="btn-primary" style="display:inline-block">Let's work together</a>
-      </div>
+    <div class="stat-item">
+      <h4>&lt;/&gt;</h4>
+      <p>Clean Code</p>
     </div>
   </div>
-</section>
 
-<!-- CTA / CONTACT -->
-<section id="contact">
-  <div class="cta-wrap fade-up">
-    <p class="section-label" style="text-align:center">Get In Touch</p>
-    <h2 class="section-heading" style="text-align:center">Ready to build something great?</h2>
-    <p class="section-sub" style="text-align:center; margin-top:0.6rem">Whether you have a project in mind or just want to explore possibilities — reach out. I respond quickly.</p>
-    <div class="cta-btns" style="margin-top:2rem">
-      <a href="mailto:don@donhartig.com" class="btn-primary">Send Me an Email</a>
-      <a href="http://www.donhartig.com" class="btn-ghost" target="_blank" rel="noopener">Visit DonHartig.com</a>
+  <section id="expertise">
+    <span class="section-tag">Capabilities</span>
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <span class="code-deco">0x01</span>
+        <h3>Web development</h3>
+        <p>Any type of website. Specialise in lightning-fast custom websites for small to medium businesses in any industry. I have built countless e-commerce shops, custom business websites, news sites and influencer websites. Just let me know what you need.</p>
+      </div>
+      <div class="tech-card">
+        <span class="code-deco">0x02</span>
+        <h3>Web apps</h3>
+        <p>Dynamic, interactive web apps that run in the browser. I have built several trading apps, tools and indicators and even bulit a browser-based trading platform in 2017 (silktrader.net) as well as a live public chain for the "Silubium" cryptocurrency.</p>
+      </div>
+      <div class="tech-card">
+        <span class="code-deco">0x03</span>
+        <h3>Blockchain engineering</h3>
+        <p>I designed and built the <i>Silubium</i> (丝路币) blockchain and cryptocurrency in 2017 in China. I was also the designer and chief software engineer behind the Android and iOS wallets as well as the <i>Silkchain</i> (丝路链) animated public ledger and the Silktrader trading platform.</p>
+      </div>
+      <div class="tech-card">
+        <span class="code-deco">0x04</span>
+        <h3>Game development</h3>
+        <p>Any type of game - from browser games built in JS to Godot, Unity and Unreal Engine. I generate all assets (2D or 3D) myself and am your one-stop-shop game development studio for any and all of your game development needs.</p>
+      </div>
+      <div class="tech-card">
+        <span class="code-deco">0x05</span>
+        <h3>E-Commerce</h3>
+        <p>Custom store builds and payment integrations. Focus on high-conversion checkout flows and lightning-fast product filtering.</p>
+      </div>
+      <div class="tech-card">
+        <span class="code-deco">0x06</span>
+        <h3>Automation</h3>
+        <p>Custom scripting and workflow automation. Building tools that eliminate manual tasks and streamline data management.</p>
+      </div>
+      <div class="tech-card">
+        <span class="code-deco">0x07</span>
+        <h3>API Design</h3>
+        <p>Designing clean, secure, and well-documented REST and GraphQL APIs for seamless third-party integrations.</p>
+      </div>
+      <div class="tech-card">
+        <span class="code-deco">0x08</span>
+        <h3>DevOps</h3>
+        <p>Cloud deployment and infrastructure management. Ensuring applications are secure, fast, and always available.</p>
+      </div>
+      <div class="tech-card">
+        <span class="code-deco">0x09</span>
+        <h3>Localization Eng</h3>
+        <p>Building tools for automated content extraction and multi-language synchronization. Engineering for global scale.</p>
+      </div>
     </div>
-    <div class="contact-links">
-      <a href="http://www.donhartig.com" class="contact-link" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        donhartig.com
+  </section>
+
+  <section id="work">
+    <span class="section-tag">Portfolio</span>
+    <h2 class="section-title">Selected Projects</h2>
+    <div class="portfolio-grid">
+      <a href="https://majikfood.com/" class="project-item">
+        <span class="cat">FOOD</span>
+        <h4>MajikFood</h4>
+        <p>High-performance business website for probiotic yoghurt brand in South Africa.</p>
+        <span class="link-icon">→</span>
       </a>
-      <a href="mailto:don@donhartig.com" class="contact-link">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        don@donhartig.com
+      <a href="https://siamayachina.com/" class="project-item">
+        <span class="cat">E-Commerce</span>
+        <h4>Siamaya China</h4>
+        <p>Static e-commerce brand hub site for the official distributor of the "Siamaya" Thai craft chocolate brand.</p>
+        <span class="link-icon">→</span>
+      </a>
+      <a href="https://donhartiggit.github.io/spcarb/" class="project-item">
+        <span class="cat">Automotive</span>
+        <h4>SP Carb</h4>
+        <p>International carboretor brand information website for China's second-largest carburetor manfacturer.</p>
+        <span class="link-icon">→</span>
+      </a>
+      <a href="https://donhartiggit.github.io/deleyart/" class="project-item">
+        <span class="cat">Arts</span>
+        <h4>Deley Art</h4>
+        <p>Elegant, animated art gallery website for the famous painter "Hendrik De Ley".</p>
+        <span class="link-icon">→</span>
+      </a>
+      <a href="#" class="project-item">
+        <span class="cat">MEDICAL</span>
+        <h4>Chongqing Dentist</h4>
+        <p>Dentist website for a Chinese dentist's clinic.</p>
+        <span class="link-icon">→</span>
+      </a>
+      <a href="#" class="project-item">
+        <span class="cat">LEGAL</span>
+        <h4>Chongqing Legal</h4>
+        <p>Lawer's office providing services to foreign expats in China.</p>
+        <span class="link-icon">→</span>
       </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  Coded by <a href="http://www.donhartig.com" target="_blank" rel="noopener">Don Hartig</a>
-</footer>
+  <footer>
+    <p>Designed and coded by <strong><a href="index.html">DON HARTIG</a></strong></p>
+    <div class="copy">© 2026 ALL RIGHTS RESERVED.</div>
+  </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  document.querySelectorAll('.fade-up').forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
-  });
-</script>
 </body>
 </html>
