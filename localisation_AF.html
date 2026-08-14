@@ -40,7 +40,6 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  padding-top: 46px;
   overflow-x: hidden;
 }
 
@@ -59,7 +58,8 @@ body {
   position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
   display: flex; justify-content: space-between; align-items: center;
   background: rgba(26, 66, 47, 0.95); backdrop-filter: blur(12px);
-  padding: 0.45rem 1.5rem; border-bottom: 1px solid var(--glass-border);
+  padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--glass-border);
 }
 ._topbar button {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 600;
@@ -68,19 +68,27 @@ body {
   cursor: pointer; transition: 0.2s;
 }
 ._topbar button:hover { transform: translateY(-1px); background: #c29836; }
-._navgroup { display: flex; align-items: center; gap: 0.5rem; }
-._langrow { display: flex; gap: 0.4rem; }
+._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 ._topbar a._langbtn {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600;
   background: var(--lang-red); color: #fff; text-decoration: none;
   text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+  white-space: nowrap; display: inline-block;
 }
 ._topbar a._homebtn {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600;
   background: var(--home-green); color: #fff; text-decoration: none;
   text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+  white-space: nowrap; display: inline-block;
 }
 ._topbar a:hover { opacity: 0.8; }
+@media (max-width: 700px) {
+  ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+  ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+  ._langrow { justify-content: center; width: 100%; }
+}
+@media print { ._topbar { display: none !important; } }
 
 /* ── NAV ── */
 nav {
@@ -278,10 +286,10 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <div class="_topbar">
   <button onclick="window.print()">⬇ Laai PDF af</button>
   <div class="_navgroup">
-    <a class="_homebtn" href="index_AF.html">Tuis</a>
+    <a class="_homebtn" href="DonHartig_AF.html">Tuis</a>
     <div class="_langrow">
-      <a class="_langbtn" href="本地化.html">中文</a>
       <a class="_langbtn" href="localisation.html">English</a>
+      <a class="_langbtn" href="本地化.html">中文</a>
       <a class="_langbtn" href="localisation_DE.html">Deutsch</a>
       <a class="_langbtn" href="localisation_FR.html">Français</a>
       <a class="_langbtn" href="localisation_JP.html">日本語</a>
@@ -289,6 +297,18 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
     </div>
   </div>
 </div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
 
 <nav>
   <a href="#" class="nav-logo">Don Hartig</a>
@@ -301,9 +321,9 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 
 <section class="hero">
   <div class="hero-content reveal">
-    <span class="hero-label">Hoë-spoed Lokalisering</span>
+    <span class="hero-label">Hoëspoed-lokalisering</span>
     <h1 class="cover-name">
-      <a href="index_AF.html">
+      <a href="DonHartig_AF.html">
         <span class="given">Don</span>
         Hartig
       </a>
@@ -327,14 +347,14 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
         <div class="contact-value">Dongxiating</div>
       </div>
     </div>
-    <p class="hero-sub">Moedertaal-Engelse taalkundige, nommer 3 wêreldwyd op ProZ. Oorbrug kulture vir AAA-speletjie-ateljees en globale sagteware-reuse.</p>
-    <a href="mailto:don@donhartig.com" style="display:inline-flex; background:var(--gold); color:#fff; padding:1.4rem 3rem; text-decoration:none; font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; border-radius:50px;">Navrae &rarr;</a>
+    <p class="hero-sub">Moedertaal Engelse taalkundige, wêreldwyd op #3 gerangskik op ProZ. Oorbrug kulture vir AAA-speletjiestudio's en wêreldwye sagteware-reuse.</p>
+    <a href="mailto:don@donhartig.com" style="display:inline-flex; background:var(--gold); color:#fff; padding:1.4rem 3rem; text-decoration:none; font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; border-radius:50px;">Navraag &rarr;</a>
   </div>
   <div class="hero-portrait-wrap reveal">
     <img src="images/me/brown.png" alt="Don Hartig" class="hero-portrait">
     <div class="floating-card">
       <span class="val">#3</span>
-      <span class="lab">Wêreldranglys<br>ZH &rsaquo; EN</span>
+      <span class="lab">Wêreldrangorde<br>ZH &rsaquo; EN</span>
     </div>
   </div>
 </section>
@@ -343,7 +363,7 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
   <div class="stats-grid">
     <div class="stat-item reveal">
       <h4>1M+</h4>
-      <p>Karakters hanteer</p>
+      <p>Karakters Hanteer</p>
     </div>
     <div class="stat-item reveal">
       <h4>9+</h4>
@@ -351,15 +371,15 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
     </div>
     <div class="stat-item reveal">
       <h4>15+</h4>
-      <p>Globale ateljees</p>
+      <p>Globale Studio's</p>
     </div>
     <div class="stat-item reveal">
       <h4>11y</h4>
-      <p>Ondervinding</p>
+      <p>Ervaring</p>
     </div>
     <div class="stat-item reveal">
       <h4>5</h4>
-      <p>CAT-platforms</p>
+      <p>CAT-Platforms</p>
     </div>
   </div>
 </section>
@@ -367,38 +387,38 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <section class="expertise" id="expertise">
   <div class="section-head reveal">
     <span class="hero-label" style="color: var(--gold);">Vermoëns</span>
-    <h2>Geselekteerde Kundigheid</h2>
+    <h2>Gekose Kundigheid</h2>
   </div>
   <div class="bento">
     <div class="bento-card span-4 reveal">
-      <span class="tag">ATELJEE STERKTE</span>
-      <h3>Speletjie-lokalisering</h3>
-      <p>Volledige siklus kulturele aanpassing vir AAA- en indie-titels. Kliënte sluit Ubisoft en Blizzard in. Van diep narratiewe draaiboeke tot tegniese UI-stringe.</p>
+      <span class="tag">STUDIO-STERKTE</span>
+      <h3>Speletjielokalisering</h3>
+      <p>Volsiklus kulturele aanpassing vir AAA- en indie-titels. Kliënte sluit Ubisoft en Blizzard in. Van diepgaande narratiewe skripte tot tegniese UI-stringe.</p>
     </div>
     <div class="bento-card span-2 reveal">
-      <span class="tag">UI / UX</span>
-      <h3>Sagteware-lokalisering</h3>
-      <p>Aanpassing van komplekse gebruikervloeie en tegniese koppelvlakke vir die globale Engelssprekende mark met totale duidelikheid.</p>
+      <span class="tag">UI/UX</span>
+      <h3>Sagtewarelokalisering</h3>
+      <p>Aanpassing van komplekse gebruikersvloei en tegniese koppelvlakke vir die wêreldwye Engelssprekende mark met volkome duidelikheid.</p>
     </div>
     <div class="bento-card span-2 reveal">
-      <span class="tag">VOLDOENING</span>
-      <h3>Regs & IP</h3>
-      <p>Streng kontrakte, IP-liasseerwerk en regulatoriese dokumentasie met geverifieerde akkuraatheid.</p>
+      <span class="tag">NALEWING</span>
+      <h3>Regte & IE</h3>
+      <p>Streng kontrakte, IE-aansoeke en regulatoriese dokumentasie met geverifieerde akkuraatheid.</p>
     </div>
     <div class="bento-card span-4 reveal">
       <span class="tag">PRESISIE</span>
-      <h3>Tegnies & Medies</h3>
-      <p>Presisie-gefokusde vertaling vir meganiese ingenieurswese, motorhandleidings en kliniese rekords. Absolute tegniese strengheid.</p>
+      <h3>Tegnies & Mediese</h3>
+      <p>Presisiegerigte vertaling vir meganiese ingenieurswese, motorhandleidings en kliniese rekords. Absolute tegniese noukeurigheid.</p>
     </div>
     <div class="bento-card span-3 reveal">
       <span class="tag">GROEI</span>
       <h3>Transkreasie</h3>
-      <p>Bemarkingskopie wat handelsmerkstem behou terwyl dit kultureel aanklank vind by nuwe teikengehore.</p>
+      <p>Bemarkingskopie wat handelsmerkstem behou terwyl dit kultureel met nuwe teikengehore resoneer.</p>
     </div>
     <div class="bento-card span-3 reveal">
       <span class="tag">MEDIA</span>
       <h3>Onderskrifte</h3>
-      <p>Dinamiese AV-vertaling vir film, televisiereekse en aanlyn dokumentêre inhoud.</p>
+      <p>Dinamiese AV-vertaling vir films, televisiereekse en aanlyn dokumentêre inhoud.</p>
     </div>
   </div>
 </section>
@@ -418,8 +438,8 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Chinees (Mandaryns) &rsaquo; Engels</strong></td><td class="price">$0.075 – $0.15</td><td>per bronkarakter</td></tr>
-        <tr><td>Engels &rsaquo; Chinees (Mandaryns)</td><td class="price">$0.09 – $0.15</td><td>per bronkarakter</td></tr>
+        <tr><td><strong>Sjinees (Mandaryns) &rsaquo; Engels</strong></td><td class="price">$0.075 – $0.15</td><td>per bronkarakter</td></tr>
+        <tr><td>Engels &rsaquo; Sjinees (Mandaryns)</td><td class="price">$0.09 – $0.15</td><td>per bronkarakter</td></tr>
         <tr><td><strong>Duits &rsaquo; Engels</strong></td><td class="price">$0.075 – $0.15</td><td>per bronwoord</td></tr>
         <tr><td>Engels &rsaquo; Duits</td><td class="price">$0.09 – $0.18</td><td>per bronwoord</td></tr>
         <tr><td><strong>Frans &rsaquo; Engels</strong></td><td class="price">$0.075 – $0.12</td><td>per bronwoord</td></tr>
@@ -437,7 +457,7 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <section class="clients reveal">
     <div class="section-head" style="text-align: center; margin-bottom: 4rem;">
         <span class="hero-label" style="color: var(--gold);">Netwerk</span>
-        <h2 style="color: var(--ink-dark);">Ateljee-rekords</h2>
+        <h2 style="color: var(--ink-dark);">Studio Rekord</h2>
     </div>
     <div class="clients-grid">
         <div class="client-card">
@@ -506,11 +526,11 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <footer>
   <a href="#" class="footer-logo">Don Hartig</a>
   <ul class="footer-links">
-    <li><a href="mailto:don@donhartig.com">Email</a></li>
+    <li><a href="mailto:don@donhartig.com">E-pos</a></li>
     <li><a href="https://linkedin.com/in/donhartig">LinkedIn</a></li>
-    <li><a href="https://www.proz.com/profile/1280455">ProZ Profile</a></li>
+    <li><a href="https://www.proz.com/profile/1280455">ProZ-profiel</a></li>
   </ul>
-  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">Ontwerp en gekodeer deur <a href="index.html" style="color: inherit; text-decoration: none; font-weight: 700;">DON HARTIG</a></p>
+  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">Ontwerp en gekodeer deur <a href="DonHartig_AF.html" style="color: inherit; text-decoration: none; font-weight: 700;">DON HARTIG</a></p>
   <p style="font-size: 10px; color: var(--ink-muted); margin-top: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase;">&copy; 2026 Don Hartig. Alle regte voorbehou.</p>
 </footer>
 

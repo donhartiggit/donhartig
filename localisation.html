@@ -40,7 +40,6 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  padding-top: 46px;
   overflow-x: hidden;
 }
 
@@ -59,7 +58,8 @@ body {
   position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
   display: flex; justify-content: space-between; align-items: center;
   background: rgba(26, 66, 47, 0.95); backdrop-filter: blur(12px);
-  padding: 0.45rem 1.5rem; border-bottom: 1px solid var(--glass-border);
+  padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--glass-border);
 }
 ._topbar button {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 600;
@@ -68,19 +68,27 @@ body {
   cursor: pointer; transition: 0.2s;
 }
 ._topbar button:hover { transform: translateY(-1px); background: #c29836; }
-._navgroup { display: flex; align-items: center; gap: 0.5rem; }
-._langrow { display: flex; gap: 0.4rem; }
+._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 ._topbar a._langbtn {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600;
   background: var(--lang-red); color: #fff; text-decoration: none;
   text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+  white-space: nowrap; display: inline-block;
 }
 ._topbar a._homebtn {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600;
   background: var(--home-green); color: #fff; text-decoration: none;
   text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+  white-space: nowrap; display: inline-block;
 }
 ._topbar a:hover { opacity: 0.8; }
+@media (max-width: 700px) {
+  ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+  ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+  ._langrow { justify-content: center; width: 100%; }
+}
+@media print { ._topbar { display: none !important; } }
 
 /* ── NAV ── */
 nav {
@@ -289,6 +297,18 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
     </div>
   </div>
 </div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
 
 <nav>
   <a href="#" class="nav-logo">Don Hartig</a>

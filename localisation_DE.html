@@ -40,7 +40,6 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  padding-top: 46px;
   overflow-x: hidden;
 }
 
@@ -59,7 +58,8 @@ body {
   position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
   display: flex; justify-content: space-between; align-items: center;
   background: rgba(26, 66, 47, 0.95); backdrop-filter: blur(12px);
-  padding: 0.45rem 1.5rem; border-bottom: 1px solid var(--glass-border);
+  padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--glass-border);
 }
 ._topbar button {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 600;
@@ -68,19 +68,27 @@ body {
   cursor: pointer; transition: 0.2s;
 }
 ._topbar button:hover { transform: translateY(-1px); background: #c29836; }
-._navgroup { display: flex; align-items: center; gap: 0.5rem; }
-._langrow { display: flex; gap: 0.4rem; }
+._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 ._topbar a._langbtn {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600;
   background: var(--lang-red); color: #fff; text-decoration: none;
   text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+  white-space: nowrap; display: inline-block;
 }
 ._topbar a._homebtn {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600;
   background: var(--home-green); color: #fff; text-decoration: none;
   text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+  white-space: nowrap; display: inline-block;
 }
 ._topbar a:hover { opacity: 0.8; }
+@media (max-width: 700px) {
+  ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+  ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+  ._langrow { justify-content: center; width: 100%; }
+}
+@media print { ._topbar { display: none !important; } }
 
 /* ── NAV ── */
 nav {
@@ -278,10 +286,10 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <div class="_topbar">
   <button onclick="window.print()">⬇ PDF herunterladen</button>
   <div class="_navgroup">
-    <a class="_homebtn" href="index_DE.html">Startseite</a>
+    <a class="_homebtn" href="DonHartig_DE.html">Startseite</a>
     <div class="_langrow">
-      <a class="_langbtn" href="本地化.html">中文</a>
       <a class="_langbtn" href="localisation.html">English</a>
+      <a class="_langbtn" href="本地化.html">中文</a>
       <a class="_langbtn" href="localisation_FR.html">Français</a>
       <a class="_langbtn" href="localisation_JP.html">日本語</a>
       <a class="_langbtn" href="localisation_ES.html">Español</a>
@@ -289,6 +297,18 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
     </div>
   </div>
 </div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
 
 <nav>
   <a href="#" class="nav-logo">Don Hartig</a>
@@ -303,7 +323,7 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
   <div class="hero-content reveal">
     <span class="hero-label">Hochgeschwindigkeits-Lokalisierung</span>
     <h1 class="cover-name">
-      <a href="index_DE.html">
+      <a href="DonHartig_DE.html">
         <span class="given">Don</span>
         Hartig
       </a>
@@ -327,14 +347,14 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
         <div class="contact-value">Dongxiating</div>
       </div>
     </div>
-    <p class="hero-sub">Muttersprachlicher Englisch-Linguist, weltweit auf Platz 3 bei ProZ gerankt. Brückenbau zwischen Kulturen für AAA-Spielestudios und globale Softwaregiganten.</p>
+    <p class="hero-sub">Englischer Muttersprachler, weltweit auf Platz 3 bei ProZ gelistet. Verbindet Kulturen für AAA-Spielestudios und globale Softwarekonzerne.</p>
     <a href="mailto:don@donhartig.com" style="display:inline-flex; background:var(--gold); color:#fff; padding:1.4rem 3rem; text-decoration:none; font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; border-radius:50px;">Anfragen &rarr;</a>
   </div>
   <div class="hero-portrait-wrap reveal">
     <img src="images/me/brown.png" alt="Don Hartig" class="hero-portrait">
     <div class="floating-card">
       <span class="val">#3</span>
-      <span class="lab">Weltrangliste<br>ZH &rsaquo; EN</span>
+      <span class="lab">Weltrang<br>ZH &rsaquo; EN</span>
     </div>
   </div>
 </section>
@@ -343,7 +363,7 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
   <div class="stats-grid">
     <div class="stat-item reveal">
       <h4>1M+</h4>
-      <p>Verarbeitete Zeichen</p>
+      <p>Zeichen bearbeitet</p>
     </div>
     <div class="stat-item reveal">
       <h4>9+</h4>
@@ -354,7 +374,7 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
       <p>Globale Studios</p>
     </div>
     <div class="stat-item reveal">
-      <h4>11j</h4>
+      <h4>11y</h4>
       <p>Erfahrung</p>
     </div>
     <div class="stat-item reveal">
@@ -366,39 +386,39 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 
 <section class="expertise" id="expertise">
   <div class="section-head reveal">
-    <span class="hero-label" style="color: var(--gold);">Kompetenzen</span>
+    <span class="hero-label" style="color: var(--gold);">Fähigkeiten</span>
     <h2>Ausgewählte Expertise</h2>
   </div>
   <div class="bento">
     <div class="bento-card span-4 reveal">
       <span class="tag">STUDIO-STÄRKE</span>
-      <h3>Spiele-Lokalisierung</h3>
-      <p>Kulturübergreifende Anpassung für AAA- und Indie-Titel. Kunden wie Ubisoft und Blizzard. Von narrativen Skripten bis zu technischen UI-Strings.</p>
+      <h3>Spielelokalisierung</h3>
+      <p>Vollzyklus-kulturelle Anpassung für AAA- und Indie-Titel. Zu den Kunden zählen Ubisoft und Blizzard. Von tiefgründigen Erzähltexten bis zu technischen UI-Strings.</p>
     </div>
     <div class="bento-card span-2 reveal">
-      <span class="tag">UI / UX</span>
-      <h3>Software-Lokalisierung</h3>
-      <p>Anpassung komplexer Benutzerabläufe und technischer Schnittstellen für den globalen englischsprachigen Markt mit totaler Klarheit.</p>
+      <span class="tag">UI/UX</span>
+      <h3>Softwarelokalisierung</h3>
+      <p>Anpassung komplexer Nutzerabläufe und technischer Oberflächen für den globalen englischsprachigen Markt – mit voller Klarheit.</p>
     </div>
     <div class="bento-card span-2 reveal">
       <span class="tag">COMPLIANCE</span>
-      <h3>Recht & IP</h3>
-      <p>Strenge Verträge, IP-Anmeldungen und regulatorische Dokumentation mit verifizierter Genauigkeit.</p>
+      <h3>Recht & geistiges Eigentum</h3>
+      <p>Präzise Verträge, Anmeldungen für geistiges Eigentum und behördliche Dokumentation mit verifizierter Genauigkeit.</p>
     </div>
     <div class="bento-card span-4 reveal">
       <span class="tag">PRÄZISION</span>
       <h3>Technik & Medizin</h3>
-      <p>Präzisionsfokussierte Übersetzung für Maschinenbau, Automobilhandbücher und klinische Berichte. Absolute technische Strenge.</p>
+      <p>Präzisionsübersetzung für Maschinenbau, Automobilhandbücher und klinische Aufzeichnungen. Absolute technische Genauigkeit.</p>
     </div>
     <div class="bento-card span-3 reveal">
       <span class="tag">WACHSTUM</span>
       <h3>Transkreation</h3>
-      <p>Werbetexte, die die Markenstimme bewahren und gleichzeitig kulturell bei neuen Zielgruppen ankommen.</p>
+      <p>Marketingtexte, die die Markenstimme bewahren und gleichzeitig kulturell bei neuen Zielgruppen ankommen.</p>
     </div>
     <div class="bento-card span-3 reveal">
       <span class="tag">MEDIEN</span>
       <h3>Untertitelung</h3>
-      <p>Dynamische AV-Übersetzung für Film, Fernsehserien und Online-Dokumentationen.</p>
+      <p>Dynamische AV-Übersetzung für Filme, Fernsehserien und Online-Dokumentarinhalte.</p>
     </div>
   </div>
 </section>
@@ -418,17 +438,17 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Chinesisch (Mandarin) &rsaquo; Englisch</strong></td><td class="price">$0,075 – $0,15</td><td>pro Quell-ZEICHEN</td></tr>
-        <tr><td>Englisch &rsaquo; Chinesisch (Mandarin)</td><td class="price">$0,09 – $0,15</td><td>pro Quell-ZEICHEN</td></tr>
-        <tr><td><strong>Deutsch &rsaquo; Englisch</strong></td><td class="price">$0,075 – $0,15</td><td>pro Quellwort</td></tr>
-        <tr><td>Englisch &rsaquo; Deutsch</td><td class="price">$0,09 – $0,18</td><td>pro Quellwort</td></tr>
-        <tr><td><strong>Französisch &rsaquo; Englisch</strong></td><td class="price">$0,075 – $0,12</td><td>pro Quellwort</td></tr>
-        <tr><td>Englisch &rsaquo; Französisch</td><td class="price">$0,08 – $0,14</td><td>pro Quellwort</td></tr>
-        <tr><td><strong>Spanisch &rsaquo; Englisch</strong></td><td class="price">$0,075 – $0,11</td><td>pro Quellwort</td></tr>
-        <tr><td>Englisch &rsaquo; Spanisch</td><td class="price">$0,08 – $0,14</td><td>pro Quellwort</td></tr>
-        <tr><td><strong>Japanisch &rsaquo; Englisch</strong></td><td class="price">$0,075 – $0,14</td><td>pro Quell-ZEICHEN</td></tr>
-        <tr><td>Englisch &rsaquo; Japanisch</td><td class="price">$0,085 – $0,16</td><td>pro Quell-ZEICHEN</td></tr>
-        <tr><td><strong>Andere Paare (IT, AF, NL) &rsaquo; Englisch</strong></td><td class="price">$0,075 – $0,13</td><td>pro Quellwort</td></tr>
+        <tr><td><strong>Chinesisch (Mandarin) &rsaquo; Englisch</strong></td><td class="price">$0.075 – $0.15</td><td>pro Quellzeichen</td></tr>
+        <tr><td>Englisch &rsaquo; Chinesisch (Mandarin)</td><td class="price">$0.09 – $0.15</td><td>pro Quellzeichen</td></tr>
+        <tr><td><strong>Deutsch &rsaquo; Englisch</strong></td><td class="price">$0.075 – $0.15</td><td>pro Quellwort</td></tr>
+        <tr><td>Englisch &rsaquo; Deutsch</td><td class="price">$0.09 – $0.18</td><td>pro Quellwort</td></tr>
+        <tr><td><strong>Französisch &rsaquo; Englisch</strong></td><td class="price">$0.075 – $0.12</td><td>pro Quellwort</td></tr>
+        <tr><td>Englisch &rsaquo; Französisch</td><td class="price">$0.08 – $0.14</td><td>pro Quellwort</td></tr>
+        <tr><td><strong>Spanisch &rsaquo; Englisch</strong></td><td class="price">$0.075 – $0.11</td><td>pro Quellwort</td></tr>
+        <tr><td>Englisch &rsaquo; Spanisch</td><td class="price">$0.08 – $0.14</td><td>pro Quellwort</td></tr>
+        <tr><td><strong>Japanisch &rsaquo; Englisch</strong></td><td class="price">$0.075 – $0.14</td><td>pro Quellzeichen</td></tr>
+        <tr><td>Englisch &rsaquo; Japanisch</td><td class="price">$0.085 – $0.16</td><td>pro Quellzeichen</td></tr>
+        <tr><td><strong>Andere Sprachpaare (IT, AF, NL) &rsaquo; Englisch</strong></td><td class="price">$0.075 – $0.13</td><td>pro Quellwort</td></tr>
       </tbody>
     </table>
   </div>
@@ -437,7 +457,7 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <section class="clients reveal">
     <div class="section-head" style="text-align: center; margin-bottom: 4rem;">
         <span class="hero-label" style="color: var(--gold);">Netzwerk</span>
-        <h2 style="color: var(--ink-dark);">Studio-Referenzen</h2>
+        <h2 style="color: var(--ink-dark);">Studio-Erfolgsbilanz</h2>
     </div>
     <div class="clients-grid">
         <div class="client-card">
@@ -506,11 +526,11 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
 <footer>
   <a href="#" class="footer-logo">Don Hartig</a>
   <ul class="footer-links">
-    <li><a href="mailto:don@donhartig.com">Email</a></li>
+    <li><a href="mailto:don@donhartig.com">E-Mail</a></li>
     <li><a href="https://linkedin.com/in/donhartig">LinkedIn</a></li>
-    <li><a href="https://www.proz.com/profile/1280455">ProZ Profile</a></li>
+    <li><a href="https://www.proz.com/profile/1280455">ProZ-Profil</a></li>
   </ul>
-  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">Entworfen und kodiert von <a href="index_DE.html" style="color: inherit; text-decoration: none; font-weight: 700;">DON HARTIG</a></p>
+  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">Entworfen und programmiert von <a href="DonHartig_DE.html" style="color: inherit; text-decoration: none; font-weight: 700;">DON HARTIG</a></p>
   <p style="font-size: 10px; color: var(--ink-muted); margin-top: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase;">&copy; 2026 Don Hartig. Alle Rechte vorbehalten.</p>
 </footer>
 

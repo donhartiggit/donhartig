@@ -40,7 +40,6 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  padding-top: 46px;
   overflow-x: hidden;
 }
 
@@ -59,7 +58,8 @@ body {
   position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
   display: flex; justify-content: space-between; align-items: center;
   background: rgba(26, 66, 47, 0.95); backdrop-filter: blur(12px);
-  padding: 0.45rem 1.5rem; border-bottom: 1px solid var(--glass-border);
+  padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--glass-border);
 }
 ._topbar button {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 600;
@@ -68,19 +68,27 @@ body {
   cursor: pointer; transition: 0.2s;
 }
 ._topbar button:hover { transform: translateY(-1px); background: #c29836; }
-._navgroup { display: flex; align-items: center; gap: 0.5rem; }
-._langrow { display: flex; gap: 0.4rem; }
+._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 ._topbar a._langbtn {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600;
   background: var(--lang-red); color: #fff; text-decoration: none;
   text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+  white-space: nowrap; display: inline-block;
 }
 ._topbar a._homebtn {
   font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 600;
   background: var(--home-green); color: #fff; text-decoration: none;
   text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+  white-space: nowrap; display: inline-block;
 }
 ._topbar a:hover { opacity: 0.8; }
+@media (max-width: 700px) {
+  ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+  ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+  ._langrow { justify-content: center; width: 100%; }
+}
+@media print { ._topbar { display: none !important; } }
 
 /* ── NAV ── */
 nav {
@@ -130,7 +138,7 @@ nav {
 
 .hero-sub {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--ink-muted);
-  max-width: 440px; font-weight: 400; margin-bottom: 4rem;
+  max-width: 480px; font-weight: 400; margin-bottom: 4rem;
 }
 
 .hero-portrait-wrap {
@@ -268,12 +276,6 @@ footer { padding: 100px clamp(24px, 8vw, 120px); background: var(--canvas-alt); 
   .hero-contact { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
   .contact-label { text-align: center; }
 }
-
-/* CJK Specific Adjustments */
-html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
-  line-height: 1.8;
-  letter-spacing: 0.02em;
-}
 </style>
 </head>
 
@@ -284,7 +286,7 @@ html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
 <div class="_topbar">
   <button onclick="window.print()">⬇ 下载 PDF</button>
   <div class="_navgroup">
-    <a class="_homebtn" href="index_ZH.html">首页</a>
+    <a class="_homebtn" href="董夏庭.html">首页</a>
     <div class="_langrow">
       <a class="_langbtn" href="localisation.html">English</a>
       <a class="_langbtn" href="localisation_DE.html">Deutsch</a>
@@ -295,21 +297,33 @@ html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
     </div>
   </div>
 </div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
 
 <nav>
   <a href="#" class="nav-logo">Don Hartig</a>
   <ul class="nav-links">
     <li><a href="#expertise">专业领域</a></li>
-    <li><a href="#rates">定价</a></li>
+    <li><a href="#rates">价格</a></li>
     <li><a href="mailto:don@donhartig.com">联系方式</a></li>
   </ul>
 </nav>
 
 <section class="hero">
   <div class="hero-content reveal">
-    <span class="hero-label">高速本地化</span>
+    <span class="hero-label">高效本地化</span>
     <h1 class="cover-name">
-      <a href="index_ZH.html">
+      <a href="董夏庭.html">
         <span class="given">Don</span>
         Hartig
       </a>
@@ -317,11 +331,11 @@ html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
 
     <div class="hero-contact">
       <div class="contact-item">
-        <div class="contact-label">Email</div>
+        <div class="contact-label">邮箱</div>
         <div class="contact-value"><a href="mailto:don@donhartig.com">don@donhartig.com</a></div>
       </div>
       <div class="contact-item">
-        <div class="contact-label">Mobile/WhatsApp</div>
+        <div class="contact-label">手机/WhatsApp</div>
         <div class="contact-value">(+86) 159 0238 5400</div>
       </div>
       <div class="contact-item">
@@ -329,18 +343,18 @@ html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
         <div class="contact-value"><a href="https://linkedin.com/in/donhartig">linkedin.com/in/donhartig</a></div>
       </div>
       <div class="contact-item">
-        <div class="contact-label">WeChat</div>
+        <div class="contact-label">微信</div>
         <div class="contact-value">Dongxiating</div>
       </div>
     </div>
-    <p class="hero-sub">ProZ 全球排名第 3 的英语母语语言学专家。为 AAA 游戏工作室和全球软件巨头架起文化桥梁。</p>
+    <p class="hero-sub">英语母语译者,ProZ全球排名第3。为3A游戏工作室和全球软件巨头架起文化桥梁。</p>
     <a href="mailto:don@donhartig.com" style="display:inline-flex; background:var(--gold); color:#fff; padding:1.4rem 3rem; text-decoration:none; font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; border-radius:50px;">咨询 &rarr;</a>
   </div>
   <div class="hero-portrait-wrap reveal">
     <img src="images/me/brown.png" alt="Don Hartig" class="hero-portrait">
     <div class="floating-card">
       <span class="val">#3</span>
-      <span class="lab">全球排名<br>ZH &rsaquo; EN</span>
+      <span class="lab">世界排名<br>ZH &rsaquo; EN</span>
     </div>
   </div>
 </section>
@@ -349,11 +363,11 @@ html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
   <div class="stats-grid">
     <div class="stat-item reveal">
       <h4>1M+</h4>
-      <p>已处理字符</p>
+      <p>处理字符数</p>
     </div>
     <div class="stat-item reveal">
       <h4>9+</h4>
-      <p>语言</p>
+      <p>语言数量</p>
     </div>
     <div class="stat-item reveal">
       <h4>15+</h4>
@@ -361,50 +375,50 @@ html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
     </div>
     <div class="stat-item reveal">
       <h4>11y</h4>
-      <p>经验</p>
+      <p>从业经验</p>
     </div>
     <div class="stat-item reveal">
       <h4>5</h4>
-      <p>CAT 平台</p>
+      <p>CAT平台</p>
     </div>
   </div>
 </section>
 
 <section class="expertise" id="expertise">
   <div class="section-head reveal">
-    <span class="hero-label" style="color: var(--gold);">核心能力</span>
-    <h2>精选专业领域</h2>
+    <span class="hero-label" style="color: var(--gold);">能力</span>
+    <h2>核心专长</h2>
   </div>
   <div class="bento">
     <div class="bento-card span-4 reveal">
-      <span class="tag">工作室实力</span>
+      <span class="tag">工作室优势</span>
       <h3>游戏本地化</h3>
-      <p>为 AAA 和独立游戏提供全周期的文化适配。客户包括育碧和暴雪。主攻深层叙事脚本到技术 UI 文本。</p>
+      <p>为3A及独立游戏提供全周期文化本地化。客户包括育碧(Ubisoft)和暴雪(Blizzard)。从深度叙事脚本到技术性UI字符串,全面覆盖。</p>
     </div>
     <div class="bento-card span-2 reveal">
-      <span class="tag">UI / UX</span>
+      <span class="tag">UI/UX</span>
       <h3>软件本地化</h3>
-      <p>为全球英语市场适配复杂的流程和技术界面，确保表达精准清晰。</p>
+      <p>为全球英语市场精准适配复杂的用户流程与技术界面,确保清晰易懂。</p>
     </div>
     <div class="bento-card span-2 reveal">
-      <span class="tag">合规性</span>
+      <span class="tag">合规</span>
       <h3>法律与知识产权</h3>
-      <p>严谨的合同、知识产权备案和监管文件翻译，确保验证过的准确性。</p>
+      <p>严谨的合同、知识产权申请及监管文件翻译,准确性经过核实。</p>
     </div>
     <div class="bento-card span-4 reveal">
-      <span class="tag">精准度</span>
-      <h3>技术与医药</h3>
-      <p>专注于机械工程、汽车手册和临床记录的精准翻译。极致的技术严谨性。</p>
+      <span class="tag">精准</span>
+      <h3>技术与医学</h3>
+      <p>专注于机械工程、汽车手册及临床记录的精准翻译,技术严谨性极高。</p>
     </div>
     <div class="bento-card span-3 reveal">
       <span class="tag">增长</span>
       <h3>创译</h3>
-      <p>在保持品牌调性的同时，确保营销文案能在新的目标受众中产生文化共鸣。</p>
+      <p>在保留品牌调性的同时,让营销文案与新目标受众产生文化共鸣。</p>
     </div>
     <div class="bento-card span-3 reveal">
       <span class="tag">媒体</span>
-      <h3>字幕制作</h3>
-      <p>为电影、电视剧和在线纪录片提供动态的影音翻译。</p>
+      <h3>字幕翻译</h3>
+      <p>为电影、电视剧集及在线纪录片内容提供生动的影音翻译。</p>
     </div>
   </div>
 </section>
@@ -412,29 +426,29 @@ html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
 <section class="rates" id="rates">
   <div class="section-head reveal">
     <span class="hero-label" style="color: var(--gold);">透明度</span>
-    <h2>标准费率表</h2>
+    <h2>标准价目表</h2>
   </div>
   <div class="rates-card reveal">
     <table class="rates-table">
       <thead>
         <tr>
           <th>语言对</th>
-          <th>费率 (美元)</th>
+          <th>费率(美元)</th>
           <th>单位</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>中文 (普通话) &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.15</td><td>每个源字符</td></tr>
-        <tr><td>英语 &rsaquo; 中文 (普通话)</td><td class="price">$0.09 – $0.15</td><td>每个源字符</td></tr>
-        <tr><td><strong>德语 &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.15</td><td>每个源单词</td></tr>
-        <tr><td>英语 &rsaquo; 德语</td><td class="price">$0.09 – $0.18</td><td>每个源单词</td></tr>
-        <tr><td><strong>法语 &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.12</td><td>每个源单词</td></tr>
-        <tr><td>英语 &rsaquo; 法语</td><td class="price">$0.08 – $0.14</td><td>每个源单词</td></tr>
-        <tr><td><strong>西班牙语 &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.11</td><td>每个源单词</td></tr>
-        <tr><td>英语 &rsaquo; 西班牙语</td><td class="price">$0.08 – $0.14</td><td>每个源单词</td></tr>
-        <tr><td><strong>日语 &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.14</td><td>每个源字符</td></tr>
-        <tr><td>英语 &rsaquo; 日本语</td><td class="price">$0.085 – $0.16</td><td>每个源字符</td></tr>
-        <tr><td><strong>其他语言对 (IT, AF, NL) &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.13</td><td>每个源单词</td></tr>
+        <tr><td><strong>中文(普通话) &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.15</td><td>每源字符</td></tr>
+        <tr><td>英语 &rsaquo; 中文(普通话)</td><td class="price">$0.09 – $0.15</td><td>每源字符</td></tr>
+        <tr><td><strong>德语 &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.15</td><td>每源词</td></tr>
+        <tr><td>英语 &rsaquo; 德语</td><td class="price">$0.09 – $0.18</td><td>每源词</td></tr>
+        <tr><td><strong>法语 &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.12</td><td>每源词</td></tr>
+        <tr><td>英语 &rsaquo; 法语</td><td class="price">$0.08 – $0.14</td><td>每源词</td></tr>
+        <tr><td><strong>西班牙语 &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.11</td><td>每源词</td></tr>
+        <tr><td>英语 &rsaquo; 西班牙语</td><td class="price">$0.08 – $0.14</td><td>每源词</td></tr>
+        <tr><td><strong>日语 &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.14</td><td>每源字符</td></tr>
+        <tr><td>英语 &rsaquo; 日语</td><td class="price">$0.085 – $0.16</td><td>每源字符</td></tr>
+        <tr><td><strong>其他语言对(意大利语、南非荷兰语、荷兰语) &rsaquo; 英语</strong></td><td class="price">$0.075 – $0.13</td><td>每源词</td></tr>
       </tbody>
     </table>
   </div>
@@ -512,12 +526,12 @@ html[lang="zh"] .hero-sub, html[lang="ja"] .hero-sub {
 <footer>
   <a href="#" class="footer-logo">Don Hartig</a>
   <ul class="footer-links">
-    <li><a href="mailto:don@donhartig.com">Email</a></li>
+    <li><a href="mailto:don@donhartig.com">邮箱</a></li>
     <li><a href="https://linkedin.com/in/donhartig">LinkedIn</a></li>
-    <li><a href="https://www.proz.com/profile/1280455">ProZ Profile</a></li>
+    <li><a href="https://www.proz.com/profile/1280455">ProZ 主页</a></li>
   </ul>
-  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">设计与编码： <a href="index_ZH.html" style="color: inherit; text-decoration: none; font-weight: 700;">DON HARTIG</a></p>
-  <p style="font-size: 10px; color: var(--ink-muted); margin-top: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase;">&copy; 2026 Don Hartig. 版权所有。</p>
+  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 4rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">设计与开发: <a href="董夏庭.html" style="color: inherit; text-decoration: none; font-weight: 700;">DON HARTIG</a></p>
+  <p style="font-size: 10px; color: var(--ink-muted); margin-top: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase;">&copy; 2026 Don Hartig. 保留所有权利。</p>
 </footer>
 
 <script>
