@@ -5,1701 +5,688 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr Don Hartig — Master SMP Artist | Chiang Mai & Worldwide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C96A;
-    --gold-pale: #F5E8C0;
-    --black: #0A0A0A;
-    --deep: #111111;
-    --charcoal: #1C1C1C;
-    --mid: #2E2E2E;
-    --warm-white: #F8F5EF;
-    --cream: #EDE8DE;
-    --text-muted: #888880;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'Montserrat', sans-serif;
+    --paper:      #FAF7F1;
+    --paper-alt:  #F2ECDF;
+    --white:      #FFFFFF;
+    --ink:        #18140F;
+    --ink-soft:   #5C5546;
+    --ink-faint:  #948C7A;
+    --gold:       #A6813C;
+    --gold-deep:  #8A6A2E;
+    --gold-pale:  #EFE3C3;
+    --pigment:    #B5794F;
+    --line:       #E4DCC9;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans:  'Inter', sans-serif;
+    --mono:  'IBM Plex Mono', monospace;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
-    background: var(--black);
-    color: var(--warm-white);
+    background: var(--paper);
+    color: var(--ink);
     font-family: var(--sans);
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  /* ─── UTILITY ─── */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  .eyebrow.center { justify-content: center; }
+  .eyebrow.center::before { display: none; }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--ink); }
+  .em { font-style: italic; color: var(--gold-deep); font-weight: 400; }
+
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 80px); }
+  section { padding: 130px 0; }
+
+  .lede {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    max-width: 520px;
+    font-weight: 300;
   }
 
-  /* NOISE OVERLAY */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.35;
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 32px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    transition: background 0.3s, color 0.3s, transform 0.25s;
   }
+  .btn-primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); transform: translateY(-2px); }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 6px;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .btn-ghost:hover { color: var(--gold-deep); border-color: var(--gold); }
 
   /* ─── CONTACT BAR ─── */
   .contact-bar {
-    background: var(--charcoal);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-    padding: 10px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    position: relative;
-    z-index: 100;
+    background: var(--ink);
+    color: rgba(250,247,241,0.65);
+    padding: 9px 0;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
   }
-  .contact-bar a {
-    color: var(--gold);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .contact-bar a:hover { color: var(--gold-light); }
-  .contact-bar .cb-group { display: flex; gap: 28px; align-items: center; }
-  .contact-bar .cb-divider { color: rgba(201,168,76,0.3); }
+  .contact-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .contact-bar a { color: var(--gold-pale); text-decoration: none; }
+  .contact-bar a:hover { color: var(--gold-pale); text-decoration: underline; }
+  .cb-group { display: flex; gap: 22px; align-items: center; }
+  .cb-divider { opacity: 0.4; }
 
   /* ─── NAV ─── */
   nav {
     position: sticky;
     top: 0;
     z-index: 200;
-    background: rgba(10,10,10,0.92);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-    padding: 0 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
+    background: rgba(250,247,241,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
   }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    color: var(--warm-white);
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--gold); }
+  nav .container { display: flex; justify-content: space-between; align-items: center; height: 74px; }
+  .nav-logo { font-family: var(--serif); font-size: 21px; letter-spacing: 0.01em; text-decoration: none; color: var(--ink); }
+  .nav-logo b { font-weight: 500; }
+  .nav-logo .tag { display: block; font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.25em; color: var(--gold-deep); margin-top: 2px; }
+  .nav-links { display: flex; gap: 34px; list-style: none; }
+  .nav-links a { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.25s; }
+  .nav-links a:hover { color: var(--gold-deep); }
   .nav-cta {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--black);
-    background: var(--gold);
-    padding: 10px 22px;
-    text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
+    font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--ink); color: var(--paper); padding: 11px 22px; text-decoration: none;
+    transition: background 0.3s;
   }
-  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .nav-cta:hover { background: var(--gold-deep); }
 
   /* ─── HERO ─── */
   .hero {
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    padding: 90px 0 60px;
     overflow: hidden;
-    background: var(--black);
   }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 10% 20%, rgba(201,168,76,0.04) 0%, transparent 60%);
-  }
-  .hero-lines {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    padding: 120px 80px 120px 120px;
-    max-width: 720px;
-  }
-  .hero-eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-    display: flex;
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
     align-items: center;
-    gap: 14px;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.2s forwards;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
   }
   .hero-title {
-    font-family: var(--serif);
-    font-size: clamp(52px, 6vw, 88px);
+    font-size: clamp(46px, 5.6vw, 76px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
     font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin-bottom: 32px;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.4s forwards;
+    margin-bottom: 28px;
   }
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
-  .hero-subtitle {
-    font-size: 13px;
-    line-height: 2;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-    max-width: 460px;
-    margin-bottom: 52px;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.6s forwards;
-  }
-  .hero-actions {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.8s forwards;
-  }
-  .btn-primary {
-    background: var(--gold);
-    color: var(--black);
-    padding: 16px 36px;
-    font-family: var(--sans);
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-  .btn-ghost {
-    color: var(--warm-white);
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    transition: border-color 0.3s, color 0.3s;
-  }
-  .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+  .hero-sub { margin-bottom: 44px; }
+  .hero-actions { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
 
-  /* Hero portrait area */
-  .hero-portrait {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 42%;
-    background: linear-gradient(135deg, var(--charcoal) 0%, var(--mid) 100%);
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 1.5s ease 1s forwards;
-  }
-  .hero-portrait::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 200px;
-    background: linear-gradient(90deg, var(--black), transparent);
-    z-index: 2;
-  }
-  .portrait-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
-    position: relative;
-  }
-  .portrait-placeholder::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 40% 40%, rgba(201,168,76,0.08) 0%, transparent 60%);
-  }
-  .portrait-silhouette {
-    width: 200px;
-    height: 260px;
-    opacity: 0.12;
-  }
-  .hero-credential {
-    position: absolute;
-    bottom: 60px;
-    right: 60px;
-    z-index: 20;
-    text-align: right;
-    opacity: 0;
-    animation: fadeIn 1s ease 1.4s forwards;
-  }
-  .hero-credential .cred-title {
-    font-family: var(--serif);
-    font-size: 28px;
-    font-weight: 300;
-    color: var(--warm-white);
-  }
-  .hero-credential .cred-sub {
-    font-size: 9px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-top: 6px;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  /* ─── GOLD DIVIDER ─── */
-  .gold-divider {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 0 120px;
-    margin: 0;
-  }
-  .gold-divider::before, .gold-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-  .gold-divider-diamond {
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    transform: rotate(45deg);
-    flex-shrink: 0;
-  }
-
-  /* ─── SECTION COMMON ─── */
-  section { padding: 120px 120px; }
-  .section-eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .section-eyebrow::before {
-    content: '';
-    display: block;
-    width: 28px;
-    height: 1px;
-    background: var(--gold);
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(38px, 4vw, 58px);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 24px;
-  }
-  .section-title em { font-style: italic; color: var(--gold); }
-  .section-body {
-    font-size: 13px;
-    line-height: 2.1;
-    color: var(--text-muted);
-    max-width: 580px;
-  }
-
-  /* ─── WHAT IS SMP ─── */
-  .smp-section {
-    background: var(--deep);
-    position: relative;
-    overflow: hidden;
-  }
-  .smp-section::before {
-    content: 'SMP';
-    position: absolute;
-    right: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: var(--serif);
-    font-size: 300px;
-    font-weight: 600;
-    color: rgba(201,168,76,0.025);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-  .smp-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  .smp-facts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 60px;
-  }
-  .smp-fact {
-    background: var(--charcoal);
-    padding: 28px;
-    border-top: 1px solid rgba(201,168,76,0.2);
-    transition: border-color 0.3s;
-  }
-  .smp-fact:hover { border-top-color: var(--gold); }
-  .smp-fact-num {
-    font-family: var(--serif);
-    font-size: 42px;
-    font-weight: 300;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .smp-fact-label {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-  .smp-visual {
-    position: relative;
-  }
-  .smp-diagram {
-    background: var(--charcoal);
-    border: 1px solid rgba(201,168,76,0.15);
-    padding: 50px;
-    position: relative;
-  }
-  .smp-diagram-title {
-    font-family: var(--serif);
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 36px;
+  /* Signature: dot-density hairline graphic */
+  .hero-art { position: relative; aspect-ratio: 1/1; }
+  .hero-art svg { width: 100%; height: 100%; }
+  .hero-art-caption {
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
     text-align: center;
-  }
-  .process-steps { display: flex; flex-direction: column; gap: 0; }
-  .process-step {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    transition: background 0.2s;
-  }
-  .process-step:last-child { border-bottom: none; }
-  .step-num {
-    font-family: var(--serif);
-    font-size: 32px;
-    font-weight: 300;
-    color: rgba(201,168,76,0.25);
-    line-height: 1;
-    min-width: 36px;
-  }
-  .step-content {}
-  .step-title {
-    font-size: 11px;
-    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--warm-white);
-    margin-bottom: 6px;
-    font-weight: 400;
-  }
-  .step-desc {
-    font-size: 12px;
-    line-height: 1.8;
-    color: var(--text-muted);
   }
 
-  /* ─── BEFORE & AFTER ─── */
-  .gallery-section {
-    background: var(--black);
-  }
-  .gallery-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 60px;
-  }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3px;
-  }
-  .ba-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    background: var(--charcoal);
-  }
-  .ba-card:hover .ba-overlay { opacity: 1; }
-  .ba-card:hover .ba-images { transform: scale(1.03); }
-  .ba-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 340px;
-    transition: transform 0.6s ease;
-  }
-  .ba-side {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .ba-side-before {
-    background: linear-gradient(135deg, #1a1410 0%, #0f0d0b 100%);
-  }
-  .ba-side-after {
-    background: linear-gradient(135deg, #0d1210 0%, #080d0c 100%);
-  }
-  .ba-side-divider {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: var(--gold);
-    z-index: 10;
-    transform: translateX(-50%);
-  }
-  /* Simulated scalp imagery using CSS art */
-  .scalp-art {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  .scalp-before {
-    background: radial-gradient(ellipse 70% 50% at 50% 40%, #2a1f14 0%, #1a1208 50%, #0f0b06 100%);
-  }
-  .scalp-after {
-    background: radial-gradient(ellipse 70% 50% at 50% 40%, #1e2018 0%, #141510 50%, #0a0b08 100%);
-  }
-  .follicle-dots {
-    position: absolute;
-    inset: 0;
-  }
-  .ba-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 50%;
-    padding: 10px;
-    background: rgba(0,0,0,0.7);
-    font-size: 8px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-align: center;
-    z-index: 5;
-  }
-  .ba-label-after {
-    left: 50%;
-    right: 0;
-    color: var(--gold);
-  }
-  .ba-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(transparent 40%, rgba(0,0,0,0.85) 100%);
-    opacity: 0;
-    transition: opacity 0.4s;
-    z-index: 20;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 24px;
-  }
-  .ba-case-title {
-    font-family: var(--serif);
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--warm-white);
-    margin-bottom: 6px;
-  }
-  .ba-case-sub {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
+  /* ─── TRUST STRIP ─── */
+  .trust-strip { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .trust-strip .container { display: flex; justify-content: space-between; padding: 34px 0; flex-wrap: wrap; gap: 24px; }
+  .trust-item { text-align: center; flex: 1; min-width: 150px; }
+  .trust-num { font-family: var(--serif); font-size: 34px; color: var(--gold-deep); font-weight: 400; line-height: 1; }
+  .trust-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-top: 8px; }
 
-  /* ─── DR DON ─── */
-  .about-section {
-    background: var(--deep);
+  /* ─── ABOUT ─── */
+  .about-section { background: var(--paper); }
+  .about-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 90px; align-items: start; }
+  .about-photo {
     position: relative;
+    aspect-ratio: 4/5;
+    background: var(--paper-alt);
+    overflow: hidden;
   }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 5fr 4fr;
-    gap: 100px;
-    align-items: start;
-  }
-  .about-portrait-frame {
-    position: relative;
-    aspect-ratio: 3/4;
-    max-width: 460px;
-  }
-  .about-portrait-frame::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: 20px;
-    bottom: 20px;
-    border: 1px solid rgba(201,168,76,0.2);
-    z-index: 0;
-  }
-  .about-portrait-inner {
-    position: relative;
-    z-index: 1;
+  .about-photo img {
     width: 100%;
     height: 100%;
-    background: linear-gradient(160deg, var(--charcoal), var(--mid));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .portrait-icon {
-    opacity: 0.15;
-  }
-  .about-gold-block {
-    position: absolute;
-    bottom: -30px;
-    right: -30px;
-    background: var(--gold);
-    padding: 24px 30px;
-    z-index: 2;
-  }
-  .about-gold-block .num {
-    font-family: var(--serif);
-    font-size: 36px;
-    font-weight: 300;
-    color: var(--black);
-    line-height: 1;
-  }
-  .about-gold-block .lbl {
-    font-size: 8px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(0,0,0,0.6);
-    margin-top: 4px;
-  }
-  .credentials-list {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .credential-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .credential-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
-  .cred-icon {
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
-    transform: rotate(45deg);
-    flex-shrink: 0;
-    margin-top: 7px;
-  }
-  .cred-text {
-    font-size: 12px;
-    line-height: 1.8;
-    color: var(--text-muted);
-  }
-  .cred-text strong {
-    color: var(--warm-white);
-    font-weight: 400;
+    object-fit: cover;
+    object-position: center top;
     display: block;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 2px;
   }
-  .travel-map {
-    margin-top: 50px;
-    background: var(--charcoal);
-    border: 1px solid rgba(201,168,76,0.1);
-    padding: 30px;
+  .about-photo-label {
+    position: absolute; bottom: 22px; left: 22px;
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
   }
-  .travel-map-title {
-    font-size: 9px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
+  .about-badge {
+    position: absolute; bottom: -26px; right: -26px;
+    background: var(--ink); color: var(--paper);
+    padding: 22px 28px;
   }
-  .travel-cities {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .travel-city {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    background: rgba(201,168,76,0.05);
-    border: 1px solid rgba(201,168,76,0.12);
-    padding: 7px 14px;
-    transition: all 0.3s;
-  }
-  .travel-city:hover { background: rgba(201,168,76,0.1); color: var(--gold); border-color: rgba(201,168,76,0.3); }
-  .travel-city.home { color: var(--gold); border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.08); }
+  .about-badge .n { font-family: var(--serif); font-size: 32px; line-height: 1; }
+  .about-badge .l { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-pale); margin-top: 4px; }
+
+  .about-title { font-size: clamp(34px, 3.6vw, 50px); line-height: 1.08; margin-bottom: 26px; }
+  .about-copy p { font-size: 14px; line-height: 1.9; color: var(--ink-soft); font-weight: 300; margin-bottom: 18px; max-width: 560px; }
+
+  .credentials { margin-top: 40px; display: flex; flex-direction: column; }
+  .credential { display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
+  .credential:last-child { border-bottom: 1px solid var(--line); }
+  .cred-mark { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex-shrink: 0; }
+  .cred-title { font-size: 12.5px; letter-spacing: 0.03em; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .cred-desc { font-size: 13px; line-height: 1.75; color: var(--ink-soft); font-weight: 300; }
+
+  .travel { margin-top: 56px; }
+  .travel-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px; }
+  .travel-cities { display: flex; flex-wrap: wrap; gap: 8px; }
+  .travel-city { font-size: 11px; letter-spacing: 0.05em; color: var(--ink-soft); background: var(--white); border: 1px solid var(--line); padding: 8px 16px; transition: 0.25s; }
+  .travel-city:hover { border-color: var(--gold); color: var(--gold-deep); }
+  .travel-city.home { color: var(--white); background: var(--ink); border-color: var(--ink); }
+
+  /* ─── THE CRAFT (facts) ─── */
+  .craft-section { background: var(--paper-alt); }
+  .craft-head { text-align: center; max-width: 640px; margin: 0 auto 70px; }
+  .craft-head .lede { margin: 0 auto; text-align: center; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .fact { background: var(--white); padding: 40px 28px; text-align: center; }
+  .fact-icon { width: 34px; height: 34px; margin: 0 auto 20px; }
+  .fact-title { font-size: 13px; font-weight: 500; letter-spacing: 0.02em; margin-bottom: 10px; }
+  .fact-desc { font-size: 12px; line-height: 1.7; color: var(--ink-soft); font-weight: 300; }
+
+  /* ─── JOURNEY (process, dot-density markers) ─── */
+  .journey-section { background: var(--paper); }
+  .journey-head { max-width: 620px; margin-bottom: 70px; }
+  .journey-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 44px; }
+  .journey-step { position: relative; }
+  .dotcluster { display: flex; gap: 4px; margin-bottom: 24px; height: 10px; align-items: center; }
+  .dotcluster i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+  .dotcluster i.on { background: var(--gold); }
+  .journey-step-title { font-size: 12.5px; letter-spacing: 0.04em; font-weight: 500; margin-bottom: 10px; }
+  .journey-step-desc { font-size: 12.5px; line-height: 1.8; color: var(--ink-soft); font-weight: 300; }
+
+  /* ─── RESULTS / GALLERY ─── */
+  .results-section { background: var(--paper-alt); }
+  .results-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; gap: 30px; flex-wrap: wrap; }
+  .results-head .eyebrow { margin-bottom: 14px; }
+  .results-head h2 { font-size: clamp(32px, 3.4vw, 46px); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .ba-card { background: var(--white); border: 1px solid var(--line); overflow: hidden; transition: box-shadow 0.3s, transform 0.3s; }
+  .ba-card:hover { box-shadow: 0 24px 48px rgba(24,20,15,0.08); transform: translateY(-4px); }
+  .ba-photo { position: relative; height: 320px; overflow: hidden; background: var(--paper-alt); }
+  .ba-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.5s ease; }
+  .ba-card:hover .ba-photo img { transform: scale(1.04); }
+  .ba-tag { position: absolute; bottom: 12px; left: 16px; font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,247,241,0.9); background: rgba(24,20,15,0.55); padding: 5px 10px; }
+  .ba-info { padding: 22px 24px; }
+  .ba-title { font-family: var(--serif); font-size: 17px; margin-bottom: 4px; }
+  .ba-meta { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-deep); }
 
   /* ─── TESTIMONIALS ─── */
-  .testimonials-section {
-    background: var(--black);
-    position: relative;
-    overflow: hidden;
-  }
-  .testimonials-section::before {
-    content: '"';
-    position: absolute;
-    left: 80px;
-    top: 60px;
-    font-family: var(--serif);
-    font-size: 400px;
-    line-height: 0.8;
-    color: rgba(201,168,76,0.03);
-    pointer-events: none;
-    user-select: none;
-  }
-  .testimonials-header {
-    text-align: center;
-    margin-bottom: 80px;
-  }
-  .testimonials-header .section-eyebrow { justify-content: center; }
-  .testimonials-header .section-eyebrow::before { display: none; }
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    position: relative;
-    z-index: 1;
-  }
-  .testimonial-card {
-    background: var(--deep);
-    padding: 44px 36px;
-    border-top: 2px solid transparent;
-    transition: border-color 0.4s, background 0.3s;
-    position: relative;
-  }
-  .testimonial-card:hover {
-    border-top-color: var(--gold);
-    background: var(--charcoal);
-  }
-  .t-quote-mark {
-    font-family: var(--serif);
-    font-size: 60px;
-    line-height: 0.8;
-    color: rgba(201,168,76,0.2);
-    margin-bottom: 20px;
-    font-style: italic;
-  }
-  .t-body {
-    font-family: var(--serif);
-    font-size: 17px;
-    font-style: italic;
-    line-height: 1.75;
-    color: var(--warm-white);
-    font-weight: 300;
-    margin-bottom: 32px;
-  }
-  .t-divider {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin-bottom: 20px;
-  }
-  .t-name {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--warm-white);
-    font-weight: 400;
-    margin-bottom: 4px;
-  }
-  .t-detail {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-  }
-  .t-stars {
-    position: absolute;
-    top: 32px;
-    right: 28px;
-    display: flex;
-    gap: 3px;
-  }
-  .t-star {
-    width: 8px;
-    height: 8px;
-    background: var(--gold);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
+  .testimonials-section { background: var(--paper); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 60px; }
+  .t-card { background: var(--white); border: 1px solid var(--line); padding: 38px 32px; position: relative; }
+  .t-quote { font-family: var(--serif); font-size: 46px; color: var(--gold-pale); line-height: 0.6; margin-bottom: 18px; font-style: italic; }
+  .t-body { font-family: var(--serif); font-size: 16px; font-style: italic; line-height: 1.7; color: var(--ink); margin-bottom: 26px; font-weight: 400; }
+  .t-name { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; margin-bottom: 3px; }
+  .t-role { font-family: var(--mono); font-size: 9.5px; color: var(--ink-faint); letter-spacing: 0.05em; }
 
-  /* ─── FEATURED TESTIMONIAL ─── */
-  .featured-testimonial {
-    background: var(--charcoal);
-    border: 1px solid rgba(201,168,76,0.15);
-    padding: 70px 100px;
-    margin: 3px 0 0;
+  .featured-quote {
+    margin-top: 22px;
+    background: var(--ink);
+    color: var(--paper);
     text-align: center;
-    position: relative;
-    z-index: 1;
+    padding: 64px clamp(24px, 8vw, 110px);
   }
-  .featured-testimonial .t-body {
-    font-size: 24px;
-    max-width: 700px;
-    margin: 0 auto 36px;
-  }
-  .featured-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--black);
-    font-size: 8px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    margin-bottom: 30px;
-    font-weight: 500;
-  }
+  .featured-quote .t-body { color: var(--paper); font-size: clamp(20px, 2.4vw, 28px); max-width: 780px; margin: 0 auto 30px; }
+  .featured-quote .t-name { color: var(--gold-pale); }
+  .featured-quote .t-role { color: rgba(250,247,241,0.55); }
+  .featured-badge { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-pale); border: 1px solid rgba(212,178,121,0.35); display: inline-block; padding: 6px 16px; margin-bottom: 28px; }
 
-  /* ─── PROCESS ─── */
-  .process-section {
-    background: var(--deep);
-  }
-  .process-timeline {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-top: 70px;
-    position: relative;
-  }
-  .process-timeline::before {
-    content: '';
-    position: absolute;
-    top: 24px;
-    left: 12%;
-    right: 12%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-  .pt-step {
-    padding: 0 30px;
-    padding-top: 0;
-    text-align: center;
-  }
-  .pt-num {
-    width: 48px;
-    height: 48px;
-    background: var(--black);
-    border: 1px solid rgba(201,168,76,0.4);
-    font-family: var(--serif);
-    font-size: 20px;
-    color: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 28px;
-    position: relative;
-    z-index: 1;
-    font-weight: 300;
-  }
-  .pt-title {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--warm-white);
-    margin-bottom: 12px;
-    font-weight: 400;
-  }
-  .pt-desc {
-    font-size: 12px;
-    line-height: 1.9;
-    color: var(--text-muted);
-  }
+  /* ─── CONTACT ─── */
+  .contact-section { background: var(--paper-alt); }
+  .contact-grid-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: start; }
+  .contact-title { font-size: clamp(34px, 3.6vw, 50px); margin-bottom: 24px; }
+  .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 44px; }
+  .cd-item { background: var(--white); padding: 26px; }
+  .cd-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 10px; }
+  .cd-value { font-family: var(--serif); font-size: 17px; text-decoration: none; color: var(--ink); display: block; line-height: 1.4; }
+  .cd-value:hover { color: var(--gold-deep); }
+  .cd-note { font-size: 10.5px; color: var(--ink-faint); margin-top: 6px; }
 
-  /* ─── FOOTER CONTACT ─── */
-  .footer-contact {
-    background: var(--charcoal);
-    padding: 100px 120px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: start;
-  }
-  .fc-left .section-body { margin-top: 24px; }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 40px;
-  }
-  .contact-item {
-    background: var(--mid);
-    padding: 28px;
-    border-left: 2px solid transparent;
-    transition: border-color 0.3s;
-  }
-  .contact-item:hover { border-left-color: var(--gold); }
-  .ci-label {
-    font-size: 8px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-  .ci-value {
-    font-family: var(--serif);
-    font-size: 16px;
-    font-weight: 300;
-    color: var(--warm-white);
-    text-decoration: none;
-    transition: color 0.3s;
-    display: block;
-    line-height: 1.5;
-  }
-  .ci-value:hover { color: var(--gold); }
-  .ci-note {
-    font-size: 10px;
-    color: var(--text-muted);
-    margin-top: 4px;
-  }
-  .contact-form-area { }
-  .cf-title {
-    font-family: var(--serif);
-    font-size: 32px;
-    font-weight: 300;
-    margin-bottom: 8px;
-  }
-  .cf-sub {
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-    margin-bottom: 32px;
-  }
-  .cf-field {
-    margin-bottom: 16px;
-  }
-  .cf-field input,
-  .cf-field select,
-  .cf-field textarea {
+  .form-card { background: var(--white); border: 1px solid var(--line); padding: 44px; }
+  .form-title { font-family: var(--serif); font-size: 26px; margin-bottom: 8px; }
+  .form-sub { font-size: 12px; color: var(--ink-soft); margin-bottom: 30px; }
+  .field { margin-bottom: 16px; }
+  .field input, .field select, .field textarea {
     width: 100%;
-    background: var(--mid);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(201,168,76,0.25);
-    color: var(--warm-white);
-    padding: 14px 18px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-bottom: 2px solid var(--ink);
+    color: var(--ink);
+    padding: 14px 16px;
     font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 0.05em;
+    font-size: 13px;
     outline: none;
-    transition: border-color 0.3s;
-    -webkit-appearance: none;
-    appearance: none;
+    transition: border-color 0.25s;
   }
-  .cf-field input::placeholder,
-  .cf-field textarea::placeholder {
-    color: var(--text-muted);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .cf-field input:focus,
-  .cf-field select:focus,
-  .cf-field textarea:focus {
-    border-bottom-color: var(--gold);
-    background: rgba(255,255,255,0.03);
-  }
-  .cf-field textarea { min-height: 100px; resize: none; }
-  .cf-field select { color: var(--text-muted); cursor: pointer; }
-  .cf-field select option { background: var(--charcoal); }
-  .cf-submit {
+  .field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--gold); }
+  .field input::placeholder, .field textarea::placeholder { color: var(--ink-faint); }
+  .field textarea { min-height: 96px; resize: none; }
+  .field select { color: var(--ink-soft); cursor: pointer; }
+  .form-submit {
     width: 100%;
-    background: var(--gold);
-    color: var(--black);
-    border: none;
-    padding: 16px;
-    font-family: var(--sans);
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    margin-top: 8px;
+    background: var(--ink); color: var(--paper);
+    border: none; padding: 16px;
+    font-family: var(--sans); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.3s; margin-top: 6px;
   }
-  .cf-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .form-submit:hover { background: var(--gold-deep); }
+  .form-success { display: none; margin-top: 16px; padding: 16px; background: var(--gold-pale); font-size: 11px; letter-spacing: 0.05em; color: var(--gold-deep); text-align: center; }
 
   /* ─── FOOTER ─── */
-  footer {
-    background: var(--black);
-    border-top: 1px solid rgba(201,168,76,0.1);
-    padding: 40px 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-logo {
-    font-family: var(--serif);
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    color: var(--warm-white);
-  }
-  .footer-logo span { color: var(--gold); }
-  .footer-copy {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    text-align: center;
-  }
-  .footer-links {
-    display: flex;
-    gap: 24px;
-  }
-  .footer-links a {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .footer-links a:hover { color: var(--gold); }
+  footer { background: var(--ink); color: rgba(250,247,241,0.6); padding: 40px 0; }
+  footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: var(--serif); font-size: 17px; color: var(--paper); }
+  .footer-logo b { color: var(--gold-pale); }
+  .footer-copy { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em; text-align: center; }
+  .footer-links { display: flex; gap: 22px; }
+  .footer-links a { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: rgba(250,247,241,0.6); transition: color 0.25s; }
+  .footer-links a:hover { color: var(--gold-pale); }
 
-  /* ─── SCROLL REVEAL ─── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-delay-1 { transition-delay: 0.15s; }
-  .reveal-delay-2 { transition-delay: 0.3s; }
-  .reveal-delay-3 { transition-delay: 0.45s; }
+  /* ─── REVEAL ─── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
 
-  /* Notice about photos */
-  .photo-notice {
-    background: rgba(201,168,76,0.06);
-    border: 1px solid rgba(201,168,76,0.15);
-    padding: 16px 24px;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-align: center;
-    margin-top: 3px;
+  @media (max-width: 980px) {
+    .hero .container, .about-grid, .contact-grid-wrap { grid-template-columns: 1fr; }
+    .facts-grid, .gallery-grid, .testimonials-grid, .journey-grid { grid-template-columns: repeat(2,1fr); }
+    .nav-links { display: none; }
+    section { padding: 90px 0; }
   }
-  .photo-notice span { color: var(--gold); }
+  @media (max-width: 600px) {
+    .facts-grid, .gallery-grid, .testimonials-grid, .journey-grid, .contact-details { grid-template-columns: 1fr; }
+    .trust-strip .container { flex-direction: column; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════
-     CONTACT BAR
-══════════════════════════════════════════ -->
+<!-- CONTACT BAR -->
 <div class="contact-bar">
-  <div class="cb-group">
-    <span>📍 Chiang Mai, Thailand</span>
-    <span class="cb-divider">|</span>
-    <span>By Invitation — Worldwide Travel</span>
-  </div>
-  <div class="cb-group">
-    <a href="tel:+66000000000">+66 (0) 000 000 000</a>
-    <span class="cb-divider">|</span>
-    <a href="mailto:drdon@drdonsmp.com">drdon@drdonsmp.com</a>
-    <span class="cb-divider">|</span>
-    <a href="#contact">Book a Consultation</a>
+  <div class="container">
+    <div class="cb-group">
+      <span>Chiang Mai, Thailand</span><span class="cb-divider">·</span><span>Worldwide, by invitation</span>
+    </div>
+    <div class="cb-group">
+      <a href="tel:+66000000000">+66 (0) 000 000 000</a><span class="cb-divider">·</span>
+      <a href="mailto:don@donhartig.com">don@donhartig.com</a>
+    </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     NAVIGATION
-══════════════════════════════════════════ -->
+<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Dr <span>Don</span> Hartig</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#smp">What is SMP</a></li>
-    <li><a href="#results">Results</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#process">Process</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Book Consultation</a>
+  <div class="container">
+    <a href="#top" class="nav-logo">Dr <b>Don Hartig</b><span class="tag">Master SMP Artist</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#craft">The Craft</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#words">Clients</a></li>
+      <li><a href="#journey">Process</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book Consultation</a>
+  </div>
 </nav>
 
-<!-- ═══════════════════════════════════════
-     HERO
-══════════════════════════════════════════ -->
+<!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-bg"></div>
-  <div class="hero-lines"></div>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">Master SMP Artist · Certified & Accredited</div>
-    <h1 class="hero-title">
-      The Art of<br>
-      <em>Invisible</em><br>
-      Restoration
-    </h1>
-    <p class="hero-subtitle">
-      Scalp micropigmentation of uncompromising precision. Dr Don Hartig brings world-class SMP artistry to discerning clients across Asia and the globe — redefining what is possible in non-surgical scalp restoration.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Reserve Your Consultation</a>
-      <a href="#results" class="btn-ghost">View Results</a>
+  <div class="container">
+    <div>
+      <div class="eyebrow">Scalp Micropigmentation · Certified &amp; Accredited</div>
+      <h1 class="hero-title">Confidence, restored<br>to the <span class="em">millimetre</span>.</h1>
+      <p class="lede hero-sub">Dr Don Hartig brings world-class SMP artistry to discerning clients across Asia and beyond — a permanent, undetectable hairline that lets you stop thinking about your hair and start living, unguarded, again.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Reserve a Consultation →</a>
+        <a href="#results" class="btn-ghost">See the Results</a>
+      </div>
     </div>
-  </div>
 
-  <div class="hero-portrait">
-    <div class="portrait-placeholder">
-      <svg class="portrait-silhouette" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="100" cy="80" rx="55" ry="65" fill="#C9A84C"/>
-        <path d="M30 260 Q30 160 100 150 Q170 160 170 260" fill="#C9A84C"/>
-      </svg>
+    <div>
+      <div class="hero-art">
+        <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- dot field: sparse & scattered (left / before) resolving into a clean dense edge (right / after) -->
+          <g id="dots"></g>
+          <path d="M 210 40 C 130 40 70 110 70 210 C 70 310 130 380 210 380" fill="none" stroke="#E4DCC9" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="hero-art-caption">Ten thousand individual impressions — resolved into one natural hairline</div>
     </div>
-  </div>
-
-  <div class="hero-credential">
-    <div class="cred-title">Dr Don Hartig</div>
-    <div class="cred-sub">Certified SMP Artist · Chiang Mai, Thailand</div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     GOLD DIVIDER
-══════════════════════════════════════════ -->
-<div class="gold-divider" style="padding: 30px 120px;">
-  <div class="gold-divider-diamond"></div>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-item"><div class="trust-num">10+</div><div class="trust-label">Years Practising</div></div>
+    <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label">Clients Transformed</div></div>
+    <div class="trust-item"><div class="trust-num">7</div><div class="trust-label">Countries Visited</div></div>
+    <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Confidential</div></div>
+  </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     ABOUT DR DON
-══════════════════════════════════════════ -->
+<!-- ABOUT -->
 <section class="about-section" id="about">
-  <div class="about-grid">
-    <div>
-      <div class="section-eyebrow reveal">The Artist</div>
-      <h2 class="section-title reveal reveal-delay-1">Dr Don Hartig —<br><em>A Name Trusted</em><br>Across Continents</h2>
-      <p class="section-body reveal reveal-delay-2">
-        Based in the cultural heart of Chiang Mai, Dr Don Hartig is one of Asia's most sought-after scalp micropigmentation specialists. A certified and fully accredited SMP artist, Dr Don has earned an international reputation through meticulous technique, an artist's eye for natural hairline design, and an unwavering commitment to discretion.
-      </p>
-      <p class="section-body reveal reveal-delay-2" style="margin-top: 20px;">
-        With a clientele that spans high-profile executives, entertainers, and celebrities across Asia, the Middle East, Europe and beyond, Dr Don travels by personal invitation — bringing his elite SMP practice wherever exceptional standards are demanded.
-      </p>
-
-      <div class="credentials-list reveal reveal-delay-2">
-        <div class="credential-item">
-          <div class="cred-icon"></div>
-          <div class="cred-text">
-            <strong>Certified SMP Practitioner</strong>
-            Internationally certified and accredited through recognised SMP training bodies with ongoing professional development.
-          </div>
-        </div>
-        <div class="credential-item">
-          <div class="cred-icon"></div>
-          <div class="cred-text">
-            <strong>Elite Clientele</strong>
-            Trusted by celebrities, athletes, executives, and public figures requiring absolute discretion and perfection.
-          </div>
-        </div>
-        <div class="credential-item">
-          <div class="cred-icon"></div>
-          <div class="cred-text">
-            <strong>Medical Background</strong>
-            Doctoral background ensuring rigorous understanding of scalp anatomy, skin physiology, and pigment science.
-          </div>
-        </div>
-        <div class="credential-item">
-          <div class="cred-icon"></div>
-          <div class="cred-text">
-            <strong>Worldwide Travel — By Invitation</strong>
-            Available globally for private, on-location appointments. All travel arrangements handled discreetly.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal reveal-delay-1">
-      <div class="about-portrait-frame">
-        <div class="about-portrait-inner">
-          <svg width="120" height="150" viewBox="0 0 120 150" fill="none" class="portrait-icon">
-            <ellipse cx="60" cy="48" rx="34" ry="40" fill="#C9A84C" opacity="0.5"/>
-            <path d="M12 150 Q12 96 60 88 Q108 96 108 150" fill="#C9A84C" opacity="0.5"/>
-          </svg>
-          <div style="font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color: rgba(201,168,76,0.4); margin-top:8px;">Dr Don Hartig</div>
-        </div>
-        <div class="about-gold-block">
-          <div class="num">500+</div>
-          <div class="lbl">Clients Transformed</div>
-        </div>
+  <div class="container about-grid">
+    <div class="reveal">
+      <div class="about-photo">
+        <img src="images/me/casual.jpg" alt="Dr Don Hartig — casual portrait">
+        <div class="about-photo-label">Dr Don Hartig — Studio Portrait</div>
+        <div class="about-badge"><div class="n">500+</div><div class="l">Clients Transformed</div></div>
       </div>
 
-      <div class="travel-map" style="margin-top: 60px;">
-        <div class="travel-map-title">✦ Travel Destinations</div>
+      <div class="travel">
+        <div class="travel-title">✦ Travels By Invitation</div>
         <div class="travel-cities">
-          <span class="travel-city home">Chiang Mai ★</span>
+          <span class="travel-city home">Chiang Mai</span>
           <span class="travel-city">Bangkok</span>
           <span class="travel-city">Singapore</span>
           <span class="travel-city">Tokyo</span>
           <span class="travel-city">Hong Kong</span>
           <span class="travel-city">Dubai</span>
-          <span class="travel-city">Seoul</span>
-          <span class="travel-city">Jakarta</span>
-          <span class="travel-city">London</span>
-          <span class="travel-city">Sydney</span>
-          <span class="travel-city">New York</span>
-          <span class="travel-city">Kuala Lumpur</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal d1">
+      <div class="eyebrow">The Artist</div>
+      <h2 class="about-title">A name trusted<br>across continents.</h2>
+      <div class="about-copy">
+        <p>Based in the cultural heart of Chiang Mai, Dr Don Hartig is one of Asia's most sought-after scalp micropigmentation specialists — certified, fully accredited, and known for an artist's eye for natural hairline design.</p>
+        <p>His clientele spans executives, entertainers, and public figures across Asia, the Middle East, and Europe. Dr Don travels by personal invitation, bringing his practice wherever exceptional standards are demanded.</p>
+      </div>
+
+      <div class="credentials">
+        <div class="credential">
+          <div class="cred-mark"></div>
+          <div><div class="cred-title">Certified SMP Practitioner</div><div class="cred-desc">Internationally certified through recognised SMP training bodies, with ongoing professional development.</div></div>
+        </div>
+        <div class="credential">
+          <div class="cred-mark"></div>
+          <div><div class="cred-title">Elite Clientele</div><div class="cred-desc">Trusted by executives, athletes and public figures who require absolute discretion and perfection.</div></div>
+        </div>
+        <div class="credential">
+          <div class="cred-mark"></div>
+          <div><div class="cred-title">Medical Background</div><div class="cred-desc">A doctoral background ensures a rigorous understanding of scalp anatomy and pigment science.</div></div>
+        </div>
+        <div class="credential">
+          <div class="cred-mark"></div>
+          <div><div class="cred-title">Worldwide, By Invitation</div><div class="cred-desc">Available globally for private, on-location appointments — every arrangement handled discreetly.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     WHAT IS SMP
-══════════════════════════════════════════ -->
-<section class="smp-section" id="smp">
-  <div class="smp-grid">
-    <div>
-      <div class="section-eyebrow reveal">The Treatment</div>
-      <h2 class="section-title reveal reveal-delay-1">Scalp Micropigmentation — <em>The Science</em> of Invisible</h2>
-      <p class="section-body reveal reveal-delay-2">
-        Scalp micropigmentation (SMP) is a highly specialised, non-surgical cosmetic procedure in which ultra-fine deposits of medical-grade pigment are applied to the scalp using precision micro-needles. Each dot is individually placed to replicate the natural appearance of a hair follicle — creating the illusion of a full, closely-cropped head of hair.
-      </p>
-      <p class="section-body reveal reveal-delay-2" style="margin-top: 20px;">
-        Unlike hair transplants — which involve surgical extraction and reimplantation of actual follicles — SMP requires no incisions, no anaesthesia, and no recovery time. The result is immediate, natural, and permanent. It is equally effective for pattern hair loss, alopecia, scalp scars, and those simply seeking greater density and definition.
-      </p>
-
-      <div class="smp-facts reveal reveal-delay-2">
-        <div class="smp-fact">
-          <div class="smp-fact-num">0</div>
-          <div class="smp-fact-label">Surgical<br>Procedures</div>
-        </div>
-        <div class="smp-fact">
-          <div class="smp-fact-num">2–4</div>
-          <div class="smp-fact-label">Sessions to<br>Complete Results</div>
-        </div>
-        <div class="smp-fact">
-          <div class="smp-fact-num">100%</div>
-          <div class="smp-fact-label">Natural-Looking<br>Outcome</div>
-        </div>
-        <div class="smp-fact">
-          <div class="smp-fact-num">∞</div>
-          <div class="smp-fact-label">Lasting<br>Confidence</div>
-        </div>
-      </div>
+<!-- THE CRAFT -->
+<section class="craft-section" id="craft">
+  <div class="container">
+    <div class="craft-head reveal">
+      <div class="eyebrow center">The Craft</div>
+      <h2 style="font-size:clamp(32px,3.6vw,46px); margin-bottom:20px;">What Scalp Micropigmentation <span class="em">Actually Is</span></h2>
+      <p class="lede">A precision technique that deposits pigment into the scalp's upper dermis, replicating the appearance of thousands of individual, closely-shaven hair follicles.</p>
     </div>
+    <div class="facts-grid reveal d1">
+      <div class="fact"><div class="fact-title">Non-Surgical</div><div class="fact-desc">No incisions, no grafts — a needle depositing pigment, nothing more invasive.</div></div>
+      <div class="fact"><div class="fact-title">Zero Downtime</div><div class="fact-desc">Return to work and daily life immediately after every session.</div></div>
+      <div class="fact"><div class="fact-title">Undetectable Result</div><div class="fact-desc">Designed to be indistinguishable from a genuinely shaved hairline, even up close.</div></div>
+      <div class="fact"><div class="fact-title">4–6 Year Longevity</div><div class="fact-desc">A long-lasting result with simple, infrequent touch-up sessions.</div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="smp-visual reveal reveal-delay-1">
-      <div class="smp-diagram">
-        <div class="smp-diagram-title">✦ The SMP Treatment Process</div>
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="step-num">01</div>
-            <div class="step-content">
-              <div class="step-title">Scalp & Design Consultation</div>
-              <div class="step-desc">A thorough analysis of the scalp, existing hair pattern, skin tone and facial structure to design a hairline that is indistinguishable from nature.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">02</div>
-            <div class="step-content">
-              <div class="step-title">Pigment Matching</div>
-              <div class="step-desc">Medical-grade pigments are custom-blended to precisely match the client's natural hair colour — accounting for the scalp undertone and intended density.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">03</div>
-            <div class="step-content">
-              <div class="step-title">Micro-Needling Application</div>
-              <div class="step-desc">Thousands of individual pigment deposits are placed with a specialist SMP machine, replicating follicles at the precise depth, angle and spacing that matches the client's natural pattern.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-num">04</div>
-            <div class="step-content">
-              <div class="step-title">Layering & Refinement</div>
-              <div class="step-desc">Across 2–4 sessions, layering builds density and dimension — creating depth and a three-dimensional appearance utterly indistinguishable from a freshly-shaved head.</div>
-            </div>
-          </div>
-        </div>
+<!-- JOURNEY -->
+<section class="journey-section" id="journey">
+  <div class="container">
+    <div class="journey-head reveal">
+      <div class="eyebrow">Your Journey</div>
+      <h2 style="font-size:clamp(32px,3.6vw,46px);">From First Contact to <span class="em">Final Reveal</span></h2>
+    </div>
+    <div class="journey-grid">
+      <div class="journey-step reveal">
+        <div class="dotcluster"><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="journey-step-title">Private Consultation</div>
+        <div class="journey-step-desc">Confidential, in-person or via secure video — discussing goals, scalp anatomy, and design. No obligation.</div>
+      </div>
+      <div class="journey-step reveal d1">
+        <div class="dotcluster"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <div class="journey-step-title">Bespoke Design</div>
+        <div class="journey-step-desc">Your hairline is hand-designed to complement your facial structure, age, and aesthetic.</div>
+      </div>
+      <div class="journey-step reveal d2">
+        <div class="dotcluster"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        <div class="journey-step-title">Treatment Sessions</div>
+        <div class="journey-step-desc">Typically 2–4 sessions, each building density and depth. Comfortable, with zero downtime.</div>
+      </div>
+      <div class="journey-step reveal d3">
+        <div class="dotcluster"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <div class="journey-step-title">Aftercare &amp; Review</div>
+        <div class="journey-step-desc">Comprehensive aftercare guidance, and a complimentary review to confirm the result exceeds expectations.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     BEFORE & AFTER GALLERY
-══════════════════════════════════════════ -->
-<section class="gallery-section" id="results">
-  <div class="gallery-header reveal">
-    <div>
-      <div class="section-eyebrow">Transformations</div>
-      <h2 class="section-title" style="margin-bottom:0;">Before &amp; <em>After</em></h2>
-    </div>
-    <p style="max-width:360px; font-size:12px; line-height:2; color: var(--text-muted); text-align:right;">
-      Each result is the product of meticulous artistry, precision technique, and an intimate understanding of natural hair patterns. No two scalps are alike — no two treatments are identical.
-    </p>
-  </div>
-
-  <div class="gallery-grid">
-
-    <!-- Case 1: Pattern baldness (Norwood IV) -->
-    <div class="ba-card reveal">
-      <div class="ba-images">
-        <div class="ba-side ba-side-before">
-          <svg width="100%" height="100%" viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="g1" cx="50%" cy="45%" r="55%">
-                <stop offset="0%" stop-color="#3a2a18"/>
-                <stop offset="100%" stop-color="#0f0905"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="100" cy="160" rx="95" ry="120" fill="url(#g1)"/>
-            <!-- Large bald area - Norwood pattern -->
-            <ellipse cx="100" cy="120" rx="72" ry="85" fill="#1a1008" opacity="0.8"/>
-            <!-- Shiny bald patch highlight -->
-            <ellipse cx="85" cy="95" rx="25" ry="18" fill="#2a1c10" opacity="0.4"/>
-            <!-- Remaining hair ring - thin -->
-            <path d="M28 170 Q20 200 30 230 Q50 270 100 280 Q150 270 170 230 Q180 200 172 170" stroke="#251a0e" stroke-width="18" fill="none" opacity="0.9"/>
-          </svg>
-          <div class="ba-label">Before</div>
-        </div>
-        <div class="ba-side ba-side-after">
-          <svg width="100%" height="100%" viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="g2" cx="50%" cy="45%" r="55%">
-                <stop offset="0%" stop-color="#1c1e18"/>
-                <stop offset="100%" stop-color="#080a06"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="100" cy="160" rx="95" ry="120" fill="url(#g2)"/>
-            <!-- Uniform SMP coverage - dense dots pattern -->
-            <g opacity="0.85" fill="#1a1c16">
-              <script type="text/smp-dots" id="dots1"></script>
-            </g>
-            <!-- Dense follicle simulation rows -->
-            <!-- Row pattern - tightly packed dots simulating SMP -->
-            <g fill="#2a2c24" opacity="0.9">
-              <!-- Multiple rows of tiny dots -->
-              <circle cx="40" cy="80" r="1.2"/><circle cx="48" cy="82" r="1.4"/><circle cx="56" cy="79" r="1.1"/><circle cx="64" cy="83" r="1.3"/><circle cx="72" cy="80" r="1.2"/><circle cx="80" cy="78" r="1.4"/><circle cx="88" cy="82" r="1.1"/><circle cx="96" cy="79" r="1.3"/><circle cx="104" cy="81" r="1.2"/><circle cx="112" cy="78" r="1.4"/><circle cx="120" cy="83" r="1.1"/><circle cx="128" cy="80" r="1.3"/><circle cx="136" cy="82" r="1.2"/><circle cx="144" cy="79" r="1.4"/><circle cx="152" cy="81" r="1.1"/><circle cx="160" cy="80" r="1.3"/>
-              <circle cx="36" cy="92" r="1.3"/><circle cx="44" cy="90" r="1.1"/><circle cx="52" cy="94" r="1.4"/><circle cx="60" cy="91" r="1.2"/><circle cx="68" cy="93" r="1.3"/><circle cx="76" cy="90" r="1.1"/><circle cx="84" cy="94" r="1.4"/><circle cx="92" cy="91" r="1.2"/><circle cx="100" cy="93" r="1.3"/><circle cx="108" cy="90" r="1.1"/><circle cx="116" cy="94" r="1.4"/><circle cx="124" cy="91" r="1.2"/><circle cx="132" cy="93" r="1.3"/><circle cx="140" cy="90" r="1.1"/><circle cx="148" cy="94" r="1.4"/><circle cx="156" cy="91" r="1.2"/><circle cx="164" cy="93" r="1.1"/>
-              <circle cx="38" cy="104" r="1.4"/><circle cx="46" cy="102" r="1.2"/><circle cx="54" cy="106" r="1.1"/><circle cx="62" cy="103" r="1.3"/><circle cx="70" cy="105" r="1.4"/><circle cx="78" cy="102" r="1.2"/><circle cx="86" cy="106" r="1.1"/><circle cx="94" cy="103" r="1.3"/><circle cx="102" cy="105" r="1.4"/><circle cx="110" cy="102" r="1.2"/><circle cx="118" cy="106" r="1.1"/><circle cx="126" cy="103" r="1.3"/><circle cx="134" cy="105" r="1.4"/><circle cx="142" cy="102" r="1.2"/><circle cx="150" cy="106" r="1.1"/><circle cx="158" cy="103" r="1.3"/><circle cx="166" cy="105" r="1.1"/>
-              <circle cx="35" cy="116" r="1.2"/><circle cx="43" cy="118" r="1.4"/><circle cx="51" cy="115" r="1.3"/><circle cx="59" cy="119" r="1.1"/><circle cx="67" cy="116" r="1.4"/><circle cx="75" cy="118" r="1.2"/><circle cx="83" cy="115" r="1.3"/><circle cx="91" cy="119" r="1.1"/><circle cx="99" cy="116" r="1.4"/><circle cx="107" cy="118" r="1.2"/><circle cx="115" cy="115" r="1.3"/><circle cx="123" cy="119" r="1.1"/><circle cx="131" cy="116" r="1.4"/><circle cx="139" cy="118" r="1.2"/><circle cx="147" cy="115" r="1.3"/><circle cx="155" cy="119" r="1.1"/><circle cx="163" cy="116" r="1.2"/>
-              <circle cx="37" cy="128" r="1.3"/><circle cx="45" cy="130" r="1.1"/><circle cx="53" cy="127" r="1.4"/><circle cx="61" cy="131" r="1.2"/><circle cx="69" cy="128" r="1.3"/><circle cx="77" cy="130" r="1.1"/><circle cx="85" cy="127" r="1.4"/><circle cx="93" cy="131" r="1.2"/><circle cx="101" cy="128" r="1.3"/><circle cx="109" cy="130" r="1.1"/><circle cx="117" cy="127" r="1.4"/><circle cx="125" cy="131" r="1.2"/><circle cx="133" cy="128" r="1.3"/><circle cx="141" cy="130" r="1.1"/><circle cx="149" cy="127" r="1.4"/><circle cx="157" cy="131" r="1.2"/><circle cx="165" cy="128" r="1.1"/>
-              <circle cx="40" cy="140" r="1.1"/><circle cx="48" cy="142" r="1.3"/><circle cx="56" cy="139" r="1.4"/><circle cx="64" cy="143" r="1.2"/><circle cx="72" cy="140" r="1.1"/><circle cx="80" cy="142" r="1.3"/><circle cx="88" cy="139" r="1.4"/><circle cx="96" cy="143" r="1.2"/><circle cx="104" cy="140" r="1.1"/><circle cx="112" cy="142" r="1.3"/><circle cx="120" cy="139" r="1.4"/><circle cx="128" cy="143" r="1.2"/><circle cx="136" cy="140" r="1.1"/><circle cx="144" cy="142" r="1.3"/><circle cx="152" cy="139" r="1.4"/><circle cx="160" cy="143" r="1.2"/>
-              <!-- Natural hairline definition top -->
-              <circle cx="55" cy="68" r="1.1"/><circle cx="63" cy="65" r="1.3"/><circle cx="72" cy="63" r="1.2"/><circle cx="81" cy="61" r="1.4"/><circle cx="90" cy="60" r="1.2"/><circle cx="100" cy="60" r="1.3"/><circle cx="110" cy="61" r="1.1"/><circle cx="119" cy="63" r="1.4"/><circle cx="128" cy="65" r="1.2"/><circle cx="136" cy="68" r="1.3"/><circle cx="143" cy="72" r="1.1"/>
-            </g>
-            <!-- Natural hairline definition line -->
-            <path d="M50 75 Q75 58 100 56 Q125 58 150 75" stroke="#2a2c22" stroke-width="1" fill="none" opacity="0.5"/>
-          </svg>
-          <div class="ba-label ba-label-after">After</div>
-        </div>
+<!-- RESULTS -->
+<section class="results-section" id="results">
+  <div class="container">
+    <div class="results-head reveal">
+      <div>
+        <div class="eyebrow">Selected Results</div>
+        <h2>Before &amp; <span class="em">After</span></h2>
       </div>
-      <div class="ba-overlay">
-        <div class="ba-case-title">Pattern Baldness — Norwood IV</div>
-        <div class="ba-case-sub">Full crown restoration · Natural hairline</div>
+      <a href="#contact" class="btn-ghost">Discuss Your Case →</a>
+    </div>
+    <div class="gallery-grid">
+      <div class="ba-card reveal">
+        <div class="ba-photo"><img src="images/SMP/client2.png" alt="SMP client result — advanced hairline recession"><span class="ba-tag">Client Result</span></div>
+        <div class="ba-info"><div class="ba-title">Advanced Hairline Recession</div><div class="ba-meta">3 Sessions · Full Density</div></div>
       </div>
-    </div>
-
-    <!-- Case 2: Scalp scar concealment -->
-    <div class="ba-card reveal reveal-delay-1">
-      <div class="ba-images">
-        <div class="ba-side ba-side-before">
-          <svg width="100%" height="100%" viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="g3" cx="50%" cy="45%" r="55%">
-                <stop offset="0%" stop-color="#2a1e14"/>
-                <stop offset="100%" stop-color="#0f0905"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="100" cy="160" rx="95" ry="120" fill="url(#g3)"/>
-            <!-- Hair texture -->
-            <g fill="#201408" opacity="0.7">
-              <circle cx="50" cy="90" r="1.5"/><circle cx="60" cy="88" r="1.3"/><circle cx="70" cy="92" r="1.6"/><circle cx="80" cy="89" r="1.4"/><circle cx="90" cy="91" r="1.5"/><circle cx="100" cy="88" r="1.3"/><circle cx="110" cy="92" r="1.6"/><circle cx="120" cy="89" r="1.4"/><circle cx="130" cy="91" r="1.5"/><circle cx="140" cy="88" r="1.3"/>
-              <circle cx="45" cy="104" r="1.4"/><circle cx="55" cy="102" r="1.6"/><circle cx="65" cy="106" r="1.3"/><circle cx="75" cy="103" r="1.5"/><circle cx="85" cy="105" r="1.4"/><circle cx="95" cy="102" r="1.6"/><circle cx="105" cy="106" r="1.3"/><circle cx="115" cy="103" r="1.5"/><circle cx="125" cy="105" r="1.4"/><circle cx="135" cy="102" r="1.6"/><circle cx="145" cy="106" r="1.3"/>
-              <circle cx="48" cy="118" r="1.5"/><circle cx="58" cy="116" r="1.3"/><circle cx="68" cy="120" r="1.6"/><circle cx="78" cy="117" r="1.4"/><circle cx="88" cy="119" r="1.5"/><circle cx="98" cy="116" r="1.3"/><circle cx="108" cy="120" r="1.6"/><circle cx="118" cy="117" r="1.4"/><circle cx="128" cy="119" r="1.5"/><circle cx="138" cy="116" r="1.3"/><circle cx="148" cy="120" r="1.4"/>
-            </g>
-            <!-- Prominent hair transplant scar (horizontal strip) -->
-            <path d="M25 155 Q100 148 175 155" stroke="#4a3020" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.9"/>
-            <path d="M28 155 Q100 149 172 155" stroke="#5a3822" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
-            <!-- Scar highlight -->
-            <path d="M30 153 Q100 147 170 153" stroke="#6a4428" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3"/>
-          </svg>
-          <div class="ba-label">Before</div>
-        </div>
-        <div class="ba-side ba-side-after">
-          <svg width="100%" height="100%" viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="g4" cx="50%" cy="45%" r="55%">
-                <stop offset="0%" stop-color="#1c1e18"/>
-                <stop offset="100%" stop-color="#080a06"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="100" cy="160" rx="95" ry="120" fill="url(#g4)"/>
-            <!-- Uniform SMP dots covering scar area -->
-            <g fill="#2a2c24" opacity="0.88">
-              <circle cx="50" cy="90" r="1.3"/><circle cx="58" cy="88" r="1.1"/><circle cx="66" cy="92" r="1.4"/><circle cx="74" cy="89" r="1.2"/><circle cx="82" cy="91" r="1.3"/><circle cx="90" cy="88" r="1.1"/><circle cx="98" cy="92" r="1.4"/><circle cx="106" cy="89" r="1.2"/><circle cx="114" cy="91" r="1.3"/><circle cx="122" cy="88" r="1.1"/><circle cx="130" cy="92" r="1.4"/><circle cx="138" cy="89" r="1.2"/><circle cx="146" cy="91" r="1.3"/>
-              <circle cx="46" cy="102" r="1.2"/><circle cx="54" cy="100" r="1.4"/><circle cx="62" cy="104" r="1.1"/><circle cx="70" cy="101" r="1.3"/><circle cx="78" cy="103" r="1.2"/><circle cx="86" cy="100" r="1.4"/><circle cx="94" cy="104" r="1.1"/><circle cx="102" cy="101" r="1.3"/><circle cx="110" cy="103" r="1.2"/><circle cx="118" cy="100" r="1.4"/><circle cx="126" cy="104" r="1.1"/><circle cx="134" cy="101" r="1.3"/><circle cx="142" cy="103" r="1.2"/><circle cx="150" cy="100" r="1.1"/>
-              <circle cx="48" cy="114" r="1.4"/><circle cx="56" cy="112" r="1.2"/><circle cx="64" cy="116" r="1.3"/><circle cx="72" cy="113" r="1.1"/><circle cx="80" cy="115" r="1.4"/><circle cx="88" cy="112" r="1.2"/><circle cx="96" cy="116" r="1.3"/><circle cx="104" cy="113" r="1.1"/><circle cx="112" cy="115" r="1.4"/><circle cx="120" cy="112" r="1.2"/><circle cx="128" cy="116" r="1.3"/><circle cx="136" cy="113" r="1.1"/><circle cx="144" cy="115" r="1.4"/>
-              <!-- Scar area - now blended with SMP dots -->
-              <circle cx="30" cy="152" r="1.3"/><circle cx="38" cy="154" r="1.1"/><circle cx="46" cy="151" r="1.4"/><circle cx="54" cy="155" r="1.2"/><circle cx="62" cy="152" r="1.3"/><circle cx="70" cy="154" r="1.1"/><circle cx="78" cy="151" r="1.4"/><circle cx="86" cy="155" r="1.2"/><circle cx="94" cy="152" r="1.3"/><circle cx="102" cy="154" r="1.1"/><circle cx="110" cy="151" r="1.4"/><circle cx="118" cy="155" r="1.2"/><circle cx="126" cy="152" r="1.3"/><circle cx="134" cy="154" r="1.1"/><circle cx="142" cy="151" r="1.4"/><circle cx="150" cy="155" r="1.2"/><circle cx="158" cy="152" r="1.3"/><circle cx="166" cy="154" r="1.1"/>
-              <circle cx="34" cy="163" r="1.2"/><circle cx="42" cy="161" r="1.4"/><circle cx="50" cy="165" r="1.1"/><circle cx="58" cy="162" r="1.3"/><circle cx="66" cy="164" r="1.2"/><circle cx="74" cy="161" r="1.4"/><circle cx="82" cy="165" r="1.1"/><circle cx="90" cy="162" r="1.3"/><circle cx="98" cy="164" r="1.2"/><circle cx="106" cy="161" r="1.4"/><circle cx="114" cy="165" r="1.1"/><circle cx="122" cy="162" r="1.3"/><circle cx="130" cy="164" r="1.2"/><circle cx="138" cy="161" r="1.4"/><circle cx="146" cy="165" r="1.1"/><circle cx="154" cy="162" r="1.3"/><circle cx="162" cy="164" r="1.2"/>
-            </g>
-          </svg>
-          <div class="ba-label ba-label-after">After</div>
-        </div>
+      <div class="ba-card reveal d1">
+        <div class="ba-photo"><img src="images/SMP/client4.png" alt="SMP client result — scar concealment"><span class="ba-tag">Client Result</span></div>
+        <div class="ba-info"><div class="ba-title">Scar Concealment</div><div class="ba-meta">2 Sessions · Total Coverage</div></div>
       </div>
-      <div class="ba-overlay">
-        <div class="ba-case-title">Transplant Scar Concealment</div>
-        <div class="ba-case-sub">Linear scar camouflage · Invisible result</div>
+      <div class="ba-card reveal d2">
+        <div class="ba-photo"><img src="images/SMP/client1.png" alt="SMP client result — diffuse thinning, crown"><span class="ba-tag">Client Result</span></div>
+        <div class="ba-info"><div class="ba-title">Diffuse Thinning, Crown</div><div class="ba-meta">3 Sessions · Density Build</div></div>
       </div>
-    </div>
-
-    <!-- Case 3: Alopecia / diffuse thinning -->
-    <div class="ba-card reveal reveal-delay-2">
-      <div class="ba-images">
-        <div class="ba-side ba-side-before">
-          <svg width="100%" height="100%" viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="g5" cx="50%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="#251a0e"/>
-                <stop offset="60%" stop-color="#150d06"/>
-                <stop offset="100%" stop-color="#0a0604"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="100" cy="155" rx="92" ry="115" fill="url(#g5)"/>
-            <!-- Very sparse hair — alopecia areata patches -->
-            <ellipse cx="75" cy="130" rx="30" ry="25" fill="#0e0806" opacity="0.9"/>
-            <ellipse cx="130" cy="110" rx="22" ry="18" fill="#0e0806" opacity="0.8"/>
-            <ellipse cx="100" cy="180" rx="28" ry="20" fill="#0e0806" opacity="0.7"/>
-            <!-- Sparse remaining hairs -->
-            <g fill="#2c1f10" opacity="0.5">
-              <circle cx="50" cy="85" r="1.8"/><circle cx="68" cy="90" r="1.6"/><circle cx="85" cy="82" r="2"/><circle cx="102" cy="87" r="1.7"/><circle cx="120" cy="83" r="1.9"/><circle cx="138" cy="88" r="1.6"/><circle cx="155" cy="84" r="1.8"/>
-              <circle cx="42" cy="100" r="1.9"/><circle cx="60" cy="105" r="1.6"/><circle cx="160" cy="102" r="1.7"/><circle cx="165" cy="118" r="1.5"/>
-            </g>
-          </svg>
-          <div class="ba-label">Before</div>
-        </div>
-        <div class="ba-side ba-side-after">
-          <svg width="100%" height="100%" viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="g6" cx="50%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="#1a1c16"/>
-                <stop offset="100%" stop-color="#080a06"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="100" cy="155" rx="92" ry="115" fill="url(#g6)"/>
-            <!-- Full SMP coverage - even density across entire scalp -->
-            <g fill="#252720" opacity="0.9">
-              <circle cx="45" cy="75" r="1.2"/><circle cx="54" cy="73" r="1.4"/><circle cx="63" cy="77" r="1.1"/><circle cx="72" cy="74" r="1.3"/><circle cx="81" cy="76" r="1.2"/><circle cx="90" cy="73" r="1.4"/><circle cx="99" cy="77" r="1.1"/><circle cx="108" cy="74" r="1.3"/><circle cx="117" cy="76" r="1.2"/><circle cx="126" cy="73" r="1.4"/><circle cx="135" cy="77" r="1.1"/><circle cx="144" cy="74" r="1.3"/><circle cx="153" cy="76" r="1.2"/>
-              <circle cx="42" cy="87" r="1.3"/><circle cx="51" cy="85" r="1.1"/><circle cx="60" cy="89" r="1.4"/><circle cx="69" cy="86" r="1.2"/><circle cx="78" cy="88" r="1.3"/><circle cx="87" cy="85" r="1.1"/><circle cx="96" cy="89" r="1.4"/><circle cx="105" cy="86" r="1.2"/><circle cx="114" cy="88" r="1.3"/><circle cx="123" cy="85" r="1.1"/><circle cx="132" cy="89" r="1.4"/><circle cx="141" cy="86" r="1.2"/><circle cx="150" cy="88" r="1.3"/><circle cx="158" cy="85" r="1.1"/>
-              <circle cx="44" cy="99" r="1.4"/><circle cx="53" cy="97" r="1.2"/><circle cx="62" cy="101" r="1.3"/><circle cx="71" cy="98" r="1.1"/><circle cx="80" cy="100" r="1.4"/><circle cx="89" cy="97" r="1.2"/><circle cx="98" cy="101" r="1.3"/><circle cx="107" cy="98" r="1.1"/><circle cx="116" cy="100" r="1.4"/><circle cx="125" cy="97" r="1.2"/><circle cx="134" cy="101" r="1.3"/><circle cx="143" cy="98" r="1.1"/><circle cx="152" cy="100" r="1.4"/><circle cx="161" cy="97" r="1.2"/>
-              <circle cx="40" cy="111" r="1.2"/><circle cx="49" cy="113" r="1.4"/><circle cx="58" cy="110" r="1.3"/><circle cx="67" cy="114" r="1.1"/><circle cx="76" cy="111" r="1.4"/><circle cx="85" cy="113" r="1.2"/><circle cx="94" cy="110" r="1.3"/><circle cx="103" cy="114" r="1.1"/><circle cx="112" cy="111" r="1.4"/><circle cx="121" cy="113" r="1.2"/><circle cx="130" cy="110" r="1.3"/><circle cx="139" cy="114" r="1.1"/><circle cx="148" cy="111" r="1.4"/><circle cx="157" cy="113" r="1.2"/>
-              <circle cx="43" cy="123" r="1.3"/><circle cx="52" cy="121" r="1.1"/><circle cx="61" cy="125" r="1.4"/><circle cx="70" cy="122" r="1.2"/><circle cx="79" cy="124" r="1.3"/><circle cx="88" cy="121" r="1.1"/><circle cx="97" cy="125" r="1.4"/><circle cx="106" cy="122" r="1.2"/><circle cx="115" cy="124" r="1.3"/><circle cx="124" cy="121" r="1.1"/><circle cx="133" cy="125" r="1.4"/><circle cx="142" cy="122" r="1.2"/><circle cx="151" cy="124" r="1.3"/><circle cx="159" cy="121" r="1.1"/>
-              <circle cx="46" cy="135" r="1.1"/><circle cx="55" cy="137" r="1.3"/><circle cx="64" cy="134" r="1.4"/><circle cx="73" cy="138" r="1.2"/><circle cx="82" cy="135" r="1.1"/><circle cx="91" cy="137" r="1.3"/><circle cx="100" cy="134" r="1.4"/><circle cx="109" cy="138" r="1.2"/><circle cx="118" cy="135" r="1.1"/><circle cx="127" cy="137" r="1.3"/><circle cx="136" cy="134" r="1.4"/><circle cx="145" cy="138" r="1.2"/><circle cx="154" cy="135" r="1.1"/>
-            </g>
-          </svg>
-          <div class="ba-label ba-label-after">After</div>
-        </div>
+      <div class="ba-card reveal d3">
+        <div class="ba-photo"><img src="images/SMP/client3.png" alt="SMP client result"><span class="ba-tag">Client Result</span></div>
+        <div class="ba-info"><div class="ba-title">Full Crown Restoration</div><div class="ba-meta">4 Sessions · Complete Coverage</div></div>
       </div>
-      <div class="ba-overlay">
-        <div class="ba-case-title">Alopecia Areata — Full Coverage</div>
-        <div class="ba-case-sub">Complete scalp restoration · Seamless density</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="photo-notice reveal">
-    <span>✦ Illustrations shown for representation.</span> Dr Don's portfolio of actual client photography is available for viewing during your private consultation — shared exclusively under NDA to protect client privacy.
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════════════ -->
-<section class="testimonials-section" id="testimonials">
-  <div class="testimonials-header reveal">
-    <div class="section-eyebrow">Client Voices</div>
-    <h2 class="section-title">Words from Those <em>Transformed</em></h2>
-  </div>
-
-  <div class="testimonials-grid">
-    <div class="testimonial-card reveal">
-      <div class="t-stars">
-        <div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div>
-      </div>
-      <div class="t-quote-mark">"</div>
-      <p class="t-body">I had been avoiding cameras and social events for years because of my hairline. After just two sessions with Dr Don, I walked back into my life with absolute confidence. Nobody knows — and that is everything.</p>
-      <div class="t-divider"></div>
-      <div class="t-name">J.W.</div>
-      <div class="t-detail">Entertainment Executive · Singapore</div>
-    </div>
-
-    <div class="testimonial-card reveal reveal-delay-1">
-      <div class="t-stars">
-        <div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div>
-      </div>
-      <div class="t-quote-mark">"</div>
-      <p class="t-body">The scar from my hair transplant fifteen years ago had haunted me ever since. Dr Don covered it so perfectly that even my barber cannot find it. The artistry is simply on another level.</p>
-      <div class="t-divider"></div>
-      <div class="t-name">A.K.</div>
-      <div class="t-detail">Professional Athlete · Dubai</div>
-    </div>
-
-    <div class="testimonial-card reveal reveal-delay-2">
-      <div class="t-stars">
-        <div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div>
-      </div>
-      <div class="t-quote-mark">"</div>
-      <p class="t-body">I flew Dr Don to London specifically. His discretion is total, his technique is extraordinary. I returned to set the following week and not a single person on the production had any idea.</p>
-      <div class="t-divider"></div>
-      <div class="t-name">Name withheld</div>
-      <div class="t-detail">Television Actor · United Kingdom</div>
-    </div>
-  </div>
-
-  <div class="featured-testimonial reveal" style="margin-top: 3px;">
-    <div class="featured-badge">✦ Featured Review</div>
-    <p class="t-body">"Dr Don does not just apply pigment — he sculpts identity. I travelled from Seoul with almost zero hope, and I left with a completely transformed relationship to my own face. I cannot imagine trusting this work to anyone else."</p>
-    <div class="t-divider" style="margin: 0 auto 20px;"></div>
-    <div class="t-name" style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color: var(--warm-white);">K.M.</div>
-    <div class="t-detail" style="font-size:10px; color: var(--text-muted);">Entrepreneur · Seoul, South Korea</div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     PROCESS
-══════════════════════════════════════════ -->
-<section class="process-section" id="process">
-  <div style="text-align: center; margin-bottom: 20px;" class="reveal">
-    <div class="section-eyebrow" style="justify-content: center;"><span style="display:none;"></span>Your Journey</div>
-    <h2 class="section-title">From First Contact<br>to <em>Final Reveal</em></h2>
-    <p class="section-body" style="margin: 0 auto; text-align:center;">Every transformation begins with a single conversation. Here is what to expect when you place your trust in Dr Don.</p>
-  </div>
-
-  <div class="process-timeline">
-    <div class="pt-step reveal">
-      <div class="pt-num">I</div>
-      <div class="pt-title">Private Consultation</div>
-      <p class="pt-desc">A confidential consultation — in-person in Chiang Mai or via secure video — to discuss your goals, scalp anatomy, and design preferences. No obligation.</p>
-    </div>
-    <div class="pt-step reveal reveal-delay-1">
-      <div class="pt-num">II</div>
-      <div class="pt-title">Bespoke Design</div>
-      <p class="pt-desc">Dr Don hand-designs your hairline to complement your facial structure, age, and aesthetic. Every line is intentional, every curve considered.</p>
-    </div>
-    <div class="pt-step reveal reveal-delay-2">
-      <div class="pt-num">III</div>
-      <div class="pt-title">Treatment Sessions</div>
-      <p class="pt-desc">Typically 2–4 sessions of 3–5 hours each. The treatment is comfortable, non-surgical, and requires zero downtime between your daily activities.</p>
-    </div>
-    <div class="pt-step reveal reveal-delay-3">
-      <div class="pt-num">IV</div>
-      <div class="pt-title">Aftercare & Review</div>
-      <p class="pt-desc">Comprehensive aftercare guidance and a complimentary review session to ensure your result is everything you envisioned — and more.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     FOOTER CONTACT
-══════════════════════════════════════════ -->
-<div class="footer-contact" id="contact">
-  <div class="fc-left">
-    <div class="section-eyebrow reveal">Get in Touch</div>
-    <h2 class="section-title reveal reveal-delay-1">Begin Your<br><em>Transformation</em></h2>
-    <p class="section-body reveal reveal-delay-2">
-      Dr Don welcomes enquiries from prospective clients worldwide. All consultations are held in the strictest confidence. Whether you are in Chiang Mai or require Dr Don to travel to you, we will arrange everything discreetly.
-    </p>
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="words">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 10px;" class="reveal">
+      <div class="eyebrow center">Word From Clients</div>
+      <h2 style="font-size:clamp(32px,3.6vw,46px);">Voices of the <span class="em">Transformed</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="t-card reveal">
+        <div class="t-quote">"</div>
+        <p class="t-body">After just two sessions with Dr Don, I walked back into my life with absolute confidence. Nobody knows — and that is everything.</p>
+        <div class="t-name">J.W.</div><div class="t-role">Entertainment Executive · Singapore</div>
+      </div>
+      <div class="t-card reveal d1">
+        <div class="t-quote">"</div>
+        <p class="t-body">The scar from my hair transplant fifteen years ago had haunted me ever since. Dr Don covered it so perfectly even my barber cannot find it.</p>
+        <div class="t-name">A.K.</div><div class="t-role">Professional Athlete · Dubai</div>
+      </div>
+      <div class="t-card reveal d2">
+        <div class="t-quote">"</div>
+        <p class="t-body">I flew Dr Don to London specifically. His discretion is total, his technique extraordinary. Nobody on set had any idea.</p>
+        <div class="t-name">Name withheld</div><div class="t-role">Television Actor · United Kingdom</div>
+      </div>
+    </div>
 
-    <div class="contact-grid reveal reveal-delay-2">
-      <div class="contact-item">
-        <div class="ci-label">Phone / WhatsApp</div>
-        <a href="tel:+66000000000" class="ci-value">+66 (0) 000 000 000</a>
-        <div class="ci-note">Available daily, 9am–7pm ICT</div>
-      </div>
-      <div class="contact-item">
-        <div class="ci-label">Email</div>
-        <a href="mailto:drdon@drdonsmp.com" class="ci-value">drdon@drdonsmp.com</a>
-        <div class="ci-note">Response within 24 hours</div>
-      </div>
-      <div class="contact-item">
-        <div class="ci-label">Studio Location</div>
-        <span class="ci-value">Chiang Mai,<br>Thailand</span>
-        <div class="ci-note">Private studio — address on booking</div>
-      </div>
-      <div class="contact-item">
-        <div class="ci-label">International Travel</div>
-        <span class="ci-value">By Invitation<br>Worldwide</span>
-        <div class="ci-note">All logistics arranged privately</div>
-      </div>
+    <div class="featured-quote reveal">
+      <div class="featured-badge">✦ Featured Review</div>
+      <p class="t-body">"Dr Don does not just apply pigment — he sculpts identity. I travelled from Seoul with almost zero hope, and left with a completely transformed relationship to my own face."</p>
+      <div class="t-name">K.M.</div><div class="t-role">Entrepreneur · Seoul, South Korea</div>
     </div>
   </div>
+</section>
 
-  <div class="contact-form-area reveal reveal-delay-1">
-    <div class="cf-title">Request a Consultation</div>
-    <div class="cf-sub">Strictly confidential. All enquiries handled with complete discretion.</div>
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container contact-grid-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Get in Touch</div>
+      <h2 class="contact-title">Begin your<br><span class="em">transformation</span>.</h2>
+      <p class="lede">Dr Don welcomes enquiries worldwide. All consultations are held in the strictest confidence — whether you're in Chiang Mai, or need Dr Don to come to you.</p>
+      <div class="contact-details">
+        <div class="cd-item"><div class="cd-label">Phone / WhatsApp</div><a href="tel:+66000000000" class="cd-value">+66 (0) 000 000 000</a><div class="cd-note">Daily, 9am–7pm ICT</div></div>
+        <div class="cd-item"><div class="cd-label">Email</div><a href="mailto:don@donhartig.com" class="cd-value">don@donhartig.com</a><div class="cd-note">Response within 24 hours</div></div>
+        <div class="cd-item"><div class="cd-label">Studio</div><span class="cd-value">Chiang Mai, Thailand</span><div class="cd-note">Address shared on booking</div></div>
+        <div class="cd-item"><div class="cd-label">Travel</div><span class="cd-value">By Invitation</span><div class="cd-note">All logistics arranged privately</div></div>
+      </div>
+    </div>
 
-    <div class="cf-field">
-      <input type="text" placeholder="Your Name" id="cf-name">
-    </div>
-    <div class="cf-field">
-      <input type="email" placeholder="Email Address" id="cf-email">
-    </div>
-    <div class="cf-field">
-      <input type="text" placeholder="Country / Location" id="cf-location">
-    </div>
-    <div class="cf-field">
-      <select id="cf-service">
-        <option value="" disabled selected>Area of Interest</option>
-        <option value="pattern">Pattern Hair Loss / Baldness</option>
-        <option value="scar">Scalp Scar Concealment</option>
-        <option value="alopecia">Alopecia</option>
-        <option value="density">Hair Density Enhancement</option>
-        <option value="other">Other / Not Sure</option>
-      </select>
-    </div>
-    <div class="cf-field">
-      <textarea placeholder="Tell us a little about your situation (optional)" id="cf-message"></textarea>
-    </div>
-    <button class="cf-submit" onclick="handleSubmit()">Send Enquiry — Confidentially</button>
-    <div id="cf-success" style="display:none; margin-top:16px; padding: 16px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); font-size:11px; letter-spacing:0.1em; color: var(--gold); text-align:center;">
-      ✦ Thank you. Dr Don will be in touch within 24 hours.
+    <div class="form-card reveal d1">
+      <div class="form-title">Request a Consultation</div>
+      <div class="form-sub">Strictly confidential. Every enquiry handled with complete discretion.</div>
+      <div class="field"><input type="text" placeholder="Your Name" id="cf-name"></div>
+      <div class="field"><input type="email" placeholder="Email Address" id="cf-email"></div>
+      <div class="field"><input type="text" placeholder="Country / Location"></div>
+      <div class="field">
+        <select>
+          <option value="" disabled selected>Area of Interest</option>
+          <option>Pattern Hair Loss / Baldness</option>
+          <option>Scalp Scar Concealment</option>
+          <option>Alopecia</option>
+          <option>Hair Density Enhancement</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="field"><textarea placeholder="Tell us a little about your situation (optional)"></textarea></div>
+      <button class="form-submit" onclick="handleSubmit()">Send Enquiry — Confidentially</button>
+      <div id="cf-success" class="form-success">✦ Thank you. Dr Don will be in touch within 24 hours.</div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ═══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Dr <span>Don</span> Hartig</div>
-  <div class="footer-copy">
-    © 2025 Dr Don Hartig — Master SMP Artist<br>
-    <span style="color: rgba(201,168,76,0.4); font-size: 9px; letter-spacing: 0.15em;">Chiang Mai, Thailand · Available Worldwide by Invitation</span>
-  </div>
-  <div class="footer-links">
-    <a href="#top">Top</a>
-    <a href="#smp">SMP</a>
-    <a href="#results">Results</a>
-    <a href="#contact">Contact</a>
+  <div class="container">
+    <div class="footer-logo">Dr <b>Don</b> Hartig</div>
+    <div class="footer-copy">© 2025 Dr Don Hartig — Master SMP Artist<br>Chiang Mai, Thailand · Available Worldwide by Invitation</div>
+    <div class="footer-links"><a href="#top">Top</a><a href="#craft">SMP</a><a href="#results">Results</a><a href="#contact">Contact</a></div>
   </div>
 </footer>
 
 <script>
-  // ─── SCROLL REVEAL ───
+  // Build the signature dot-field: sparse & scattered on the left, resolving to a clean dense edge on the right
+  (function(){
+    const svgNS = "http://www.w3.org/2000/svg";
+    const g = document.getElementById('dots');
+    const W = 420, H = 420, cols = 26, rows = 26;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = (c / cols) * W + (Math.random()-0.5) * 6;
+        const y = (r / rows) * H + (Math.random()-0.5) * 6;
+        const t = c / cols; // 0 (left/before) -> 1 (right/after)
+        // probability of showing increases toward the right, and jitter shrinks
+        const show = Math.random() < (0.12 + t * t * 0.85);
+        if (!show) continue;
+        const jitter = (1 - t) * 10;
+        const cx = x + (Math.random()-0.5) * jitter;
+        const cy = y + (Math.random()-0.5) * jitter;
+        const rad = 0.6 + t * 0.9;
+        const circle = document.createElementNS(svgNS, 'circle');
+        circle.setAttribute('cx', cx.toFixed(1));
+        circle.setAttribute('cy', cy.toFixed(1));
+        circle.setAttribute('r', rad.toFixed(2));
+        const opacity = 0.25 + t * 0.6;
+        circle.setAttribute('fill', t > 0.55 ? '#18140F' : '#B5794F');
+        circle.setAttribute('opacity', opacity.toFixed(2));
+        g.appendChild(circle);
+      }
+    }
+  })();
+
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // ─── NAV ACTIVE STATE ───
-  const sections = document.querySelectorAll('section[id], div[id="contact"]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
-    });
-  });
-
-  // ─── FORM SUBMIT ───
-  function handleSubmit() {
-    const name = document.getElementById('cf-name').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-    if (!name || !email) {
-      alert('Please enter your name and email address.');
-      return;
-    }
-    document.getElementById('cf-success').style.display = 'block';
-    document.querySelector('.cf-submit').style.display = 'none';
-  }
-
-  // ─── SMOOTH NAV SCROLL ───
+  // Smooth nav scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+
+  // Form submit
+  function handleSubmit(){
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    if (!name || !email) { alert('Please enter your name and email address.'); return; }
+    document.getElementById('cf-success').style.display = 'block';
+    document.querySelector('.form-submit').style.display = 'none';
+  }
 </script>
 </body>
 </html>
