@@ -190,10 +190,48 @@
   .cb-group { display: flex; gap: 22px; align-items: center; }
   .cb-divider { opacity: 0.4; }
 
+  /* ─── SITE TOPBAR (Home + Language Switcher) ─── */
+  ._topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    background: rgba(24,20,15,0.95); backdrop-filter: blur(12px);
+    padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: var(--sans);
+  }
+  ._topbar button {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; background: #D4A840;
+    color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px;
+    cursor: pointer; transition: 0.2s;
+  }
+  ._topbar button:hover { transform: translateY(-1px); background: #b8901f; }
+  ._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  ._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  ._topbar a._langbtn {
+    font-family: var(--sans); font-size: 0.66rem; font-weight: 600;
+    background: #c0392b; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a._homebtn {
+    font-family: var(--sans); font-size: 0.66rem; font-weight: 600;
+    background: #1e8e3e; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a:hover { opacity: 0.8; }
+  @media (max-width: 1000px) {
+    ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+    ._langrow { justify-content: center; width: 100%; }
+  }
+  @media print { ._topbar { display: none !important; } }
+
   /* ─── NAV ─── */
   nav {
     position: sticky;
-    top: 0;
+    top: 44px;
     z-index: 200;
     background: rgba(250,247,241,0.92);
     backdrop-filter: blur(14px);
@@ -429,6 +467,34 @@
 </style>
 </head>
 <body>
+
+<!-- SITE TOPBAR -->
+<div class="_topbar">
+  <button onclick="window.print()">⬇ 下载 PDF</button>
+  <div class="_navgroup">
+    <a class="_homebtn" href="董夏庭.html">首页</a>
+    <div class="_langrow">
+      <a class="_langbtn" href="smp.html">English</a>
+      <a class="_langbtn" href="smp_DE.html">Deutsch</a>
+      <a class="_langbtn" href="smp_FR.html">Français</a>
+      <a class="_langbtn" href="smp_JP.html">日本語</a>
+      <a class="_langbtn" href="smp_ES.html">Español</a>
+      <a class="_langbtn" href="smp_AF.html">Afrikaans</a>
+    </div>
+  </div>
+</div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
 
 <!-- CONTACT BAR -->
 <div class="contact-bar">
@@ -700,7 +766,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-logo">Dr <b>Don</b> Hartig</div>
+    <div class="footer-logo"><b>Don</b> Hartig</div>
     <div class="footer-copy">© 2025 Don Hartig博士 — 持证认可SMP大师级艺术家<br>受邀提供全球出诊服务</div>
     <div class="footer-links"><a href="#top">顶部</a><a href="#craft">SMP</a><a href="#results">效果展示</a><a href="#contact">联系我们</a></div>
   </div>

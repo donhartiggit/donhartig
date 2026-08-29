@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scalp Micropigmentation Thailand | SMP Specialist — Dr Don Hartig</title>
-<meta name="description" content="Thailand's leading Scalp Micropigmentation (SMP) specialist. Dr Don Hartig delivers natural, undetectable hairlines for hair loss, scarring &amp; alopecia. Certified SMP artist serving clients across Thailand and Asia. Book a confidential consultation.">
-<meta name="keywords" content="SMP Chiang Mai, Chiang Mai SMP, Scalp Micropigmentation Chiang Mai, Scalp Micropigmentation Thailand, SMP Thailand, hair tattoo Chiang Mai, hairline tattoo Thailand, scalp pigmentation Chiang Mai, bald head tattoo Chiang Mai, hair loss treatment Chiang Mai, alopecia treatment Thailand, scar camouflage scalp Thailand, best SMP artist Asia, Dr Don Hartig SMP">
+<title>Scalp Micropigmentation Thailand | SMP Specialist — Don Hartig</title>
+<meta name="description" content="Thailand's leading Scalp Micropigmentation (SMP) specialist. Don Hartig delivers natural, undetectable hairlines for hair loss, scarring &amp; alopecia. Certified SMP artist serving clients across Thailand and Asia. Book a confidential consultation.">
+<meta name="keywords" content="SMP Chiang Mai, Chiang Mai SMP, Scalp Micropigmentation Chiang Mai, Scalp Micropigmentation Thailand, SMP Thailand, hair tattoo Chiang Mai, hairline tattoo Thailand, scalp pigmentation Chiang Mai, bald head tattoo Chiang Mai, hair loss treatment Chiang Mai, alopecia treatment Thailand, scar camouflage scalp Thailand, best SMP artist Asia, Don Hartig SMP">
 <link rel="canonical" href="https://donhartig.com/smp.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="business.business">
-<meta property="og:title" content="Scalp Micropigmentation Thailand | SMP Specialist — Dr Don Hartig">
+<meta property="og:title" content="Scalp Micropigmentation Thailand | SMP Specialist — Don Hartig">
 <meta property="og:description" content="Thailand's leading Scalp Micropigmentation specialist. Natural, undetectable hairlines for hair loss, scarring &amp; alopecia. Serving clients across Thailand and Asia.">
 <meta property="og:image" content="https://donhartig.com/images/me/casual.jpg">
 <meta property="og:url" content="https://donhartig.com/smp.html">
-<meta property="og:site_name" content="Dr Don Hartig — SMP">
+<meta property="og:site_name" content="Don Hartig — SMP">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Scalp Micropigmentation Thailand | SMP Specialist — Dr Don Hartig">
+<meta name="twitter:title" content="Scalp Micropigmentation Thailand | SMP Specialist — Don Hartig">
 <meta name="twitter:description" content="Thailand's leading Scalp Micropigmentation specialist. Natural, undetectable hairlines for hair loss, scarring &amp; alopecia.">
 <meta name="twitter:image" content="https://donhartig.com/images/me/casual.jpg">
 
@@ -33,7 +33,7 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "name": "Dr Don Hartig — Scalp Micropigmentation",
+  "name": "Don Hartig — Scalp Micropigmentation",
   "image": "https://donhartig.com/images/me/casual.jpg",
   "url": "https://donhartig.com/smp.html",
   "description": "Thailand's leading Scalp Micropigmentation (SMP) specialist, delivering natural, undetectable hairlines for hair loss, scarring, and alopecia. Serving clients across Thailand and Asia.",
@@ -190,10 +190,48 @@
   .cb-group { display: flex; gap: 22px; align-items: center; }
   .cb-divider { opacity: 0.4; }
 
+  /* ─── SITE TOPBAR (Home + Language Switcher) ─── */
+  ._topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    background: rgba(24,20,15,0.95); backdrop-filter: blur(12px);
+    padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: var(--sans);
+  }
+  ._topbar button {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; background: #D4A840;
+    color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px;
+    cursor: pointer; transition: 0.2s;
+  }
+  ._topbar button:hover { transform: translateY(-1px); background: #b8901f; }
+  ._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  ._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  ._topbar a._langbtn {
+    font-family: var(--sans); font-size: 0.66rem; font-weight: 600;
+    background: #c0392b; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a._homebtn {
+    font-family: var(--sans); font-size: 0.66rem; font-weight: 600;
+    background: #1e8e3e; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a:hover { opacity: 0.8; }
+  @media (max-width: 1000px) {
+    ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+    ._langrow { justify-content: center; width: 100%; }
+  }
+  @media print { ._topbar { display: none !important; } }
+
   /* ─── NAV ─── */
   nav {
     position: sticky;
-    top: 0;
+    top: 44px;
     z-index: 200;
     background: rgba(250,247,241,0.92);
     backdrop-filter: blur(14px);
@@ -430,6 +468,34 @@
 </head>
 <body>
 
+<!-- SITE TOPBAR -->
+<div class="_topbar">
+  <button onclick="window.print()">⬇ Download PDF</button>
+  <div class="_navgroup">
+    <a class="_homebtn" href="index.html">Home</a>
+    <div class="_langrow">
+      <a class="_langbtn" href="头皮微色素着色.html">中文</a>
+      <a class="_langbtn" href="smp_DE.html">Deutsch</a>
+      <a class="_langbtn" href="smp_FR.html">Français</a>
+      <a class="_langbtn" href="smp_JP.html">日本語</a>
+      <a class="_langbtn" href="smp_ES.html">Español</a>
+      <a class="_langbtn" href="smp_AF.html">Afrikaans</a>
+    </div>
+  </div>
+</div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
 <!-- CONTACT BAR -->
 <div class="contact-bar">
   <div class="container">
@@ -446,7 +512,7 @@
 <!-- NAV -->
 <nav>
   <div class="container">
-    <a href="#top" class="nav-logo">Dr <b>Don Hartig</b><span class="tag">Certified & Accredited Master SMP Artist</span></a>
+    <a href="#top" class="nav-logo"><b>Don Hartig</b><span class="tag">Certified & Accredited Master SMP Artist</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#craft">The Craft</a></li>
@@ -464,7 +530,7 @@
     <div>
       <div class="eyebrow">Scalp Micropigmentation · Certified &amp; Accredited SMP Artist</div>
       <h1 class="hero-title">Confidence, restored<br>to the <span class="em">millimetre</span>.</h1>
-      <p class="lede hero-sub">Dr Don Hartig brings world-class Scalp Micropigmentation (SMP) artistry to discerning clients across Asia and beyond — a permanent, undetectable hairline that lets you stop thinking about your hair and start living, unguarded, again.</p>
+      <p class="lede hero-sub">Don Hartig brings world-class Scalp Micropigmentation (SMP) artistry to discerning clients across Asia and beyond — a permanent, undetectable hairline that lets you stop thinking about your hair and start living, unguarded, again.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Reserve a Consultation →</a>
         <a href="#results" class="btn-ghost">See the Results</a>
@@ -499,8 +565,8 @@
   <div class="container about-grid">
     <div class="reveal">
       <div class="about-photo">
-        <img src="images/me/casual.jpg" alt="Dr Don Hartig — casual portrait">
-        <div class="about-photo-label">Dr Don Hartig — Studio Portrait</div>
+        <img src="images/me/casual.jpg" alt="Don Hartig — casual portrait">
+        <div class="about-photo-label">Don Hartig — Studio Portrait</div>
         <div class="about-badge"><div class="n">500+</div><div class="l">Clients Transformed</div></div>
       </div>
 
@@ -520,8 +586,8 @@
       <div class="eyebrow">The Artist</div>
       <h2 class="about-title">A name trusted<br>across continents.</h2>
       <div class="about-copy">
-        <p>Dr Don Hartig is one of Asia's most sought-after scalp micropigmentation specialists — certified, fully accredited, and known for an artist's eye for natural hairline design.</p>
-        <p>His clientele spans executives, entertainers, and public figures across Asia, the Middle East, and Europe. Dr Don travels by personal invitation, bringing his practice wherever exceptional standards are demanded.</p>
+        <p>Don Hartig is one of Asia's most sought-after scalp micropigmentation specialists — certified, fully accredited, and known for an artist's eye for natural hairline design.</p>
+        <p>His clientele spans executives, entertainers, and public figures across Asia, the Middle East, and Europe. Don travels by personal invitation, bringing his practice wherever exceptional standards are demanded.</p>
       </div>
 
       <div class="credentials">
@@ -552,7 +618,7 @@
     <div class="craft-head reveal">
       <div class="eyebrow center">The Craft</div>
       <h2 style="font-size:clamp(32px,3.6vw,46px); margin-bottom:20px;">What Scalp Micropigmentation <span class="em">Actually Is</span></h2>
-      <p class="lede">A precision technique that deposits pigment into the scalp's upper dermis, replicating the appearance of thousands of individual, closely-shaven hair follicles. Dr Don Hartig is recognised as one of Thailand's leading practitioners of this technique.</p>
+      <p class="lede">A precision technique that deposits pigment into the scalp's upper dermis, replicating the appearance of thousands of individual, closely-shaven hair follicles. Don Hartig is recognised as one of Thailand's leading practitioners of this technique.</p>
     </div>
     <div class="facts-grid reveal d1">
       <div class="fact"><div class="fact-title">Non-Surgical</div><div class="fact-desc">No incisions, no grafts — a needle depositing pigment, nothing more invasive.</div></div>
@@ -636,24 +702,24 @@
     <div class="testimonials-grid">
       <div class="t-card reveal">
         <div class="t-quote">"</div>
-        <p class="t-body">After just two sessions with Dr Don, I walked back into my life with absolute confidence. Nobody knows — and that is everything.</p>
+        <p class="t-body">After just two sessions with Don, I walked back into my life with absolute confidence. Nobody knows — and that is everything.</p>
         <div class="t-name">J.W.</div><div class="t-role">Entertainment Executive · Singapore</div>
       </div>
       <div class="t-card reveal d1">
         <div class="t-quote">"</div>
-        <p class="t-body">The scar from my hair transplant fifteen years ago had haunted me ever since. Dr Don covered it so perfectly even my barber cannot find it.</p>
+        <p class="t-body">The scar from my hair transplant fifteen years ago had haunted me ever since. Don covered it so perfectly even my barber cannot find it.</p>
         <div class="t-name">A.K.</div><div class="t-role">Professional Athlete · Dubai</div>
       </div>
       <div class="t-card reveal d2">
         <div class="t-quote">"</div>
-        <p class="t-body">I flew Dr Don to London specifically. His discretion is total, his technique extraordinary. Nobody on set had any idea.</p>
+        <p class="t-body">I flew Don to London specifically. His discretion is total, his technique extraordinary. Nobody on set had any idea.</p>
         <div class="t-name">Name withheld</div><div class="t-role">Television Actor · United Kingdom</div>
       </div>
     </div>
 
     <div class="featured-quote reveal">
       <div class="featured-badge">✦ Featured Review</div>
-      <p class="t-body">"Dr Don does not just apply pigment — he sculpts identity. I travelled from Seoul with almost zero hope, and left with a completely transformed relationship to my own face."</p>
+      <p class="t-body">"Don does not just apply pigment — he sculpts identity. I travelled from Seoul with almost zero hope, and left with a completely transformed relationship to my own face."</p>
       <div class="t-name">K.M.</div><div class="t-role">Entrepreneur · Seoul, South Korea</div>
     </div>
   </div>
@@ -665,7 +731,7 @@
     <div class="reveal">
       <div class="eyebrow">Get in Touch</div>
       <h2 class="contact-title">Begin your<br><span class="em">transformation</span>.</h2>
-      <p class="lede">Dr Don welcomes enquiries worldwide. All consultations are held in the strictest confidence — wherever you are, or need Dr Don to come to you.</p>
+      <p class="lede">Don welcomes enquiries worldwide. All consultations are held in the strictest confidence — wherever you are, or need Don to come to you.</p>
       <div class="contact-details">
         <div class="cd-item"><div class="cd-label">Phone / WhatsApp</div><a href="tel:+8615902385400" class="cd-value">+86 159 023 85400</a><div class="cd-note">Daily, 9am–7pm ICT</div></div>
         <div class="cd-item"><div class="cd-label">Email</div><a href="mailto:don@donhartig.com" class="cd-value">don@donhartig.com</a><div class="cd-note">Response within 24 hours</div></div>
@@ -692,7 +758,7 @@
       </div>
       <div class="field"><textarea placeholder="Tell us a little about your situation (optional)"></textarea></div>
       <button class="form-submit" onclick="handleSubmit()">Send Enquiry — Confidentially</button>
-      <div id="cf-success" class="form-success">✦ Thank you. Dr Don will be in touch within 24 hours.</div>
+      <div id="cf-success" class="form-success">✦ Thank you. Don will be in touch within 24 hours.</div>
     </div>
   </div>
 </section>
@@ -700,8 +766,8 @@
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-logo">Dr <b>Don</b> Hartig</div>
-    <div class="footer-copy">© 2025 Dr Don Hartig — Certified & Accredited Master SMP Artist<br>Available Worldwide by Invitation</div>
+    <div class="footer-logo"><b>Don</b> Hartig</div>
+    <div class="footer-copy">© 2025 Don Hartig — Certified & Accredited Master SMP Artist<br>Available Worldwide by Invitation</div>
     <div class="footer-links"><a href="#top">Top</a><a href="#craft">SMP</a><a href="#results">Results</a><a href="#contact">Contact</a></div>
   </div>
 </footer>

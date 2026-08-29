@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>タイのスカルプマイクロピグメンテーション | SMPスペシャリスト — Dr Don Hartig</title>
+<title>タイのスカルプマイクロピグメンテーション | SMPスペシャリスト — Don Hartig</title>
 <meta name="description" content="タイを代表するスカルプマイクロピグメンテーション（SMP）専門家。Don Hartig博士は、薄毛、傷跡、脱毛症に対して自然で見分けのつかないヘアラインを提供します。認定SMPアーティストとしてタイおよびアジア全域のクライアントに対応。内密のカウンセリングをご予約ください。">
-<meta name="keywords" content="SMP チェンマイ, チェンマイ SMP, スカルプマイクロピグメンテーション チェンマイ, スカルプマイクロピグメンテーション タイ, SMP タイ, ヘアタトゥー チェンマイ, ヘアラインタトゥー タイ, スカルプピグメンテーション チェンマイ, 薄毛治療 チェンマイ, 脱毛症治療 タイ, 傷跡カモフラージュ 頭皮 タイ, アジア最高のSMPアーティスト, Dr Don Hartig SMP">
+<meta name="keywords" content="SMP チェンマイ, チェンマイ SMP, スカルプマイクロピグメンテーション チェンマイ, スカルプマイクロピグメンテーション タイ, SMP タイ, ヘアタトゥー チェンマイ, ヘアラインタトゥー タイ, スカルプピグメンテーション チェンマイ, 薄毛治療 チェンマイ, 脱毛症治療 タイ, 傷跡カモフラージュ 頭皮 タイ, アジア最高のSMPアーティスト, Don Hartig SMP">
 <link rel="canonical" href="https://donhartig.com/smp_JP.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="business.business">
-<meta property="og:title" content="タイのスカルプマイクロピグメンテーション | SMPスペシャリスト — Dr Don Hartig">
+<meta property="og:title" content="タイのスカルプマイクロピグメンテーション | SMPスペシャリスト — Don Hartig">
 <meta property="og:description" content="タイを代表するスカルプマイクロピグメンテーション専門家。薄毛、傷跡、脱毛症に対して自然で見分けのつかないヘアラインを提供。タイおよびアジア全域のクライアントに対応。">
 <meta property="og:image" content="https://donhartig.com/images/me/casual.jpg">
 <meta property="og:url" content="https://donhartig.com/smp_JP.html">
-<meta property="og:site_name" content="Dr Don Hartig — SMP">
+<meta property="og:site_name" content="Don Hartig — SMP">
 <meta property="og:locale" content="ja_JP">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="タイのスカルプマイクロピグメンテーション | SMPスペシャリスト — Dr Don Hartig">
+<meta name="twitter:title" content="タイのスカルプマイクロピグメンテーション | SMPスペシャリスト — Don Hartig">
 <meta name="twitter:description" content="タイを代表するスカルプマイクロピグメンテーション専門家。薄毛、傷跡、脱毛症に対して自然で見分けのつかないヘアラインを提供。">
 <meta name="twitter:image" content="https://donhartig.com/images/me/casual.jpg">
 
@@ -33,7 +33,7 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "name": "Dr Don Hartig — スカルプマイクロピグメンテーション",
+  "name": "Don Hartig — スカルプマイクロピグメンテーション",
   "image": "https://donhartig.com/images/me/casual.jpg",
   "url": "https://donhartig.com/smp_JP.html",
   "description": "タイを代表するスカルプマイクロピグメンテーション（SMP）専門家。薄毛、傷跡、脱毛症に対して自然で見分けのつかないヘアラインを提供。タイおよびアジア全域のクライアントに対応。",
@@ -190,10 +190,48 @@
   .cb-group { display: flex; gap: 22px; align-items: center; }
   .cb-divider { opacity: 0.4; }
 
+  /* ─── SITE TOPBAR (Home + Language Switcher) ─── */
+  ._topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    background: rgba(24,20,15,0.95); backdrop-filter: blur(12px);
+    padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: var(--sans);
+  }
+  ._topbar button {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; background: #D4A840;
+    color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px;
+    cursor: pointer; transition: 0.2s;
+  }
+  ._topbar button:hover { transform: translateY(-1px); background: #b8901f; }
+  ._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  ._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  ._topbar a._langbtn {
+    font-family: var(--sans); font-size: 0.66rem; font-weight: 600;
+    background: #c0392b; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a._homebtn {
+    font-family: var(--sans); font-size: 0.66rem; font-weight: 600;
+    background: #1e8e3e; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a:hover { opacity: 0.8; }
+  @media (max-width: 1000px) {
+    ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+    ._langrow { justify-content: center; width: 100%; }
+  }
+  @media print { ._topbar { display: none !important; } }
+
   /* ─── NAV ─── */
   nav {
     position: sticky;
-    top: 0;
+    top: 44px;
     z-index: 200;
     background: rgba(250,247,241,0.92);
     backdrop-filter: blur(14px);
@@ -430,6 +468,34 @@
 </head>
 <body>
 
+<!-- SITE TOPBAR -->
+<div class="_topbar">
+  <button onclick="window.print()">⬇ PDFをダウンロード</button>
+  <div class="_navgroup">
+    <a class="_homebtn" href="DonHartig_JP.html">ホーム</a>
+    <div class="_langrow">
+      <a class="_langbtn" href="smp.html">English</a>
+      <a class="_langbtn" href="头皮微色素着色.html">中文</a>
+      <a class="_langbtn" href="smp_DE.html">Deutsch</a>
+      <a class="_langbtn" href="smp_FR.html">Français</a>
+      <a class="_langbtn" href="smp_ES.html">Español</a>
+      <a class="_langbtn" href="smp_AF.html">Afrikaans</a>
+    </div>
+  </div>
+</div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
 <!-- CONTACT BAR -->
 <div class="contact-bar">
   <div class="container">
@@ -446,7 +512,7 @@
 <!-- NAV -->
 <nav>
   <div class="container">
-    <a href="#top" class="nav-logo">Dr <b>Don Hartig</b><span class="tag">認定・認可マスターSMPアーティスト</span></a>
+    <a href="#top" class="nav-logo"><b>Don Hartig</b><span class="tag">認定・認可マスターSMPアーティスト</span></a>
     <ul class="nav-links">
       <li><a href="#about">紹介</a></li>
       <li><a href="#craft">技術について</a></li>
@@ -464,7 +530,7 @@
     <div>
       <div class="eyebrow">スカルプマイクロピグメンテーション · 認定・認可SMPアーティスト</div>
       <h1 class="hero-title">1ミリ単位で<br>取り戻す<span class="em">自信</span>。</h1>
-      <p class="lede hero-sub">Dr Don Hartigは、アジア全域そしてそれ以外の目の肥えたクライアントに、世界クラスのスカルプマイクロピグメンテーション（SMP）の技術を提供します。永続的で見分けのつかないヘアラインにより、髪のことを考える必要がなくなり、再び自由に生きることができます。</p>
+      <p class="lede hero-sub">Don Hartigは、アジア全域そしてそれ以外の目の肥えたクライアントに、世界クラスのスカルプマイクロピグメンテーション（SMP）の技術を提供します。永続的で見分けのつかないヘアラインにより、髪のことを考える必要がなくなり、再び自由に生きることができます。</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">カウンセリングを予約する →</a>
         <a href="#results" class="btn-ghost">施術結果を見る</a>
@@ -499,8 +565,8 @@
   <div class="container about-grid">
     <div class="reveal">
       <div class="about-photo">
-        <img src="images/me/casual.jpg" alt="Dr Don Hartig — カジュアルポートレート">
-        <div class="about-photo-label">Dr Don Hartig — スタジオポートレート</div>
+        <img src="images/me/casual.jpg" alt="Don Hartig — カジュアルポートレート">
+        <div class="about-photo-label">Don Hartig — スタジオポートレート</div>
         <div class="about-badge"><div class="n">500+</div><div class="l">施術実績（人）</div></div>
       </div>
 
@@ -520,8 +586,8 @@
       <div class="eyebrow">アーティストについて</div>
       <h2 class="about-title">大陸を越えて<br>信頼される名前。</h2>
       <div class="about-copy">
-        <p>Dr Don Hartigは、アジアで最も引く手あまたのスカルプマイクロピグメンテーション専門家の一人であり、認定・完全認可を受け、自然なヘアラインデザインに対するアーティストの眼で知られています。</p>
-        <p>そのクライアントには、アジア、中東、ヨーロッパにわたる経営幹部、エンターテイナー、著名人が含まれます。Dr Donは個人的な招待により出張し、卓越した基準が求められる場所へその技術を届けます。</p>
+        <p>Don Hartigは、アジアで最も引く手あまたのスカルプマイクロピグメンテーション専門家の一人であり、認定・完全認可を受け、自然なヘアラインデザインに対するアーティストの眼で知られています。</p>
+        <p>そのクライアントには、アジア、中東、ヨーロッパにわたる経営幹部、エンターテイナー、著名人が含まれます。Donは個人的な招待により出張し、卓越した基準が求められる場所へその技術を届けます。</p>
       </div>
 
       <div class="credentials">
@@ -552,7 +618,7 @@
     <div class="craft-head reveal">
       <div class="eyebrow center">技術について</div>
       <h2 style="font-size:clamp(32px,3.6vw,46px); margin-bottom:20px;">スカルプマイクロピグメンテーションの<span class="em">本当の姿</span></h2>
-      <p class="lede">頭皮の真皮上層に色素を沈着させることで、何千もの個々の剃られたばかりの毛包の見た目を再現する精密技術です。Dr Don Hartigは、タイにおけるこの技術の第一人者として認識されています。</p>
+      <p class="lede">頭皮の真皮上層に色素を沈着させることで、何千もの個々の剃られたばかりの毛包の見た目を再現する精密技術です。Don Hartigは、タイにおけるこの技術の第一人者として認識されています。</p>
     </div>
     <div class="facts-grid reveal d1">
       <div class="fact"><div class="fact-title">非外科的施術</div><div class="fact-desc">切開もグラフトも不要 — 針で色素を入れるのみで、それ以上の侵襲はありません。</div></div>
@@ -636,24 +702,24 @@
     <div class="testimonials-grid">
       <div class="t-card reveal">
         <div class="t-quote">"</div>
-        <p class="t-body">Dr Donによるわずか2回のセッションで、絶対的な自信を持って生活に戻ることができました。誰も気づきません — それがすべてです。</p>
+        <p class="t-body">Donによるわずか2回のセッションで、絶対的な自信を持って生活に戻ることができました。誰も気づきません — それがすべてです。</p>
         <div class="t-name">J.W.様</div><div class="t-role">エンターテインメント業界幹部 · シンガポール</div>
       </div>
       <div class="t-card reveal d1">
         <div class="t-quote">"</div>
-        <p class="t-body">15年前の植毛による傷跡がずっと悩みの種でした。Dr Donの施術のおかげで、私の理容師でさえ見つけられないほど完璧にカバーされました。</p>
+        <p class="t-body">15年前の植毛による傷跡がずっと悩みの種でした。Donの施術のおかげで、私の理容師でさえ見つけられないほど完璧にカバーされました。</p>
         <div class="t-name">A.K.様</div><div class="t-role">プロアスリート · ドバイ</div>
       </div>
       <div class="t-card reveal d2">
         <div class="t-quote">"</div>
-        <p class="t-body">Dr Donをわざわざロンドンにお招きしました。その機密保持は完璧で、技術は卓越しています。撮影現場では誰も気づきませんでした。</p>
+        <p class="t-body">Donをわざわざロンドンにお招きしました。その機密保持は完璧で、技術は卓越しています。撮影現場では誰も気づきませんでした。</p>
         <div class="t-name">氏名非公開</div><div class="t-role">テレビ俳優 · イギリス</div>
       </div>
     </div>
 
     <div class="featured-quote reveal">
       <div class="featured-badge">✦ 注目のレビュー</div>
-      <p class="t-body">「Dr Donはただ色素を入れるだけではなく、アイデンティティを彫刻するのです。ほとんど希望を持たずにソウルから訪れましたが、自分の顔との関係が完全に変わりました。」</p>
+      <p class="t-body">「Donはただ色素を入れるだけではなく、アイデンティティを彫刻するのです。ほとんど希望を持たずにソウルから訪れましたが、自分の顔との関係が完全に変わりました。」</p>
       <div class="t-name">K.M.様</div><div class="t-role">起業家 · 韓国ソウル</div>
     </div>
   </div>
@@ -665,7 +731,7 @@
     <div class="reveal">
       <div class="eyebrow">お問い合わせ</div>
       <h2 class="contact-title">あなたの<br><span class="em">変化</span>を始めましょう。</h2>
-      <p class="lede">Dr Donは世界中からのお問い合わせを歓迎します。すべてのカウンセリングは厳格な機密保持のもとで行われます — どこにいらっしゃっても、またはDr Donの出張をご希望の場合でも対応いたします。</p>
+      <p class="lede">Donは世界中からのお問い合わせを歓迎します。すべてのカウンセリングは厳格な機密保持のもとで行われます — どこにいらっしゃっても、またはDonの出張をご希望の場合でも対応いたします。</p>
       <div class="contact-details">
         <div class="cd-item"><div class="cd-label">電話 / WhatsApp</div><a href="tel:+8615902385400" class="cd-value">+86 159 023 85400</a><div class="cd-note">毎日 9:00～19:00（インドシナ時間）</div></div>
         <div class="cd-item"><div class="cd-label">メール</div><a href="mailto:don@donhartig.com" class="cd-value">don@donhartig.com</a><div class="cd-note">24時間以内に返信</div></div>
@@ -692,7 +758,7 @@
       </div>
       <div class="field"><textarea placeholder="ご状況について少しお聞かせください（任意）"></textarea></div>
       <button class="form-submit" onclick="handleSubmit()">お問い合わせを送信 — 内密に</button>
-      <div id="cf-success" class="form-success">✦ ありがとうございます。Dr Donより24時間以内にご連絡いたします。</div>
+      <div id="cf-success" class="form-success">✦ ありがとうございます。Donより24時間以内にご連絡いたします。</div>
     </div>
   </div>
 </section>
@@ -700,8 +766,8 @@
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-logo">Dr <b>Don</b> Hartig</div>
-    <div class="footer-copy">© 2025 Dr Don Hartig — 認定・認可マスターSMPアーティスト<br>世界各地へ招待制で対応</div>
+    <div class="footer-logo"><b>Don</b> Hartig</div>
+    <div class="footer-copy">© 2025 Don Hartig — 認定・認可マスターSMPアーティスト<br>世界各地へ招待制で対応</div>
     <div class="footer-links"><a href="#top">トップ</a><a href="#craft">SMP</a><a href="#results">施術結果</a><a href="#contact">お問い合わせ</a></div>
   </div>
 </footer>
