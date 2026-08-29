@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Hartig — TEFL-Englischlehrer &amp; Sprachbildungsspezialist</title>
+<meta name="description" content="Don Hartig — zertifizierter TEFL-Englischlehrer, gerankter Übersetzer in 7 Sprachen und gefragter englischer Muttersprachler-Lehrer mit 15 Jahren Erfahrung im Unterrichten und Dozieren in China.">
+<meta name="keywords" content="Don Hartig, TEFL, Englischlehrer, China, Sichuan Foreign Language University, Chongqing University, Übersetzer, Sprachbildung, Mnemotechnik, angewandte Linguistik">
+<style>
+  :root{
+    --ink:#1b1f2a;
+    --cream:#f7f3ea;
+    --pale:#d9cdb8;
+    --paper:#fbf9f4;
+    --vermilion:#b5502f;
+    --gold:#a8823a;
+    --teal:#274b4a;
+    --line:#e4dccb;
+    --muted:#6b6455;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Georgia', 'Noto Serif', serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', 'Georgia', serif;
+    font-weight:800;
+    margin:0 0 .4em;
+    letter-spacing:.01em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px;}
+
+  /* topbar */
+  ._topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    background: rgba(27, 31, 42, 0.95); backdrop-filter: blur(12px);
+    padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  ._topbar button {
+    font-family: inherit; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; background: #D4A840;
+    color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px;
+    cursor: pointer; transition: 0.2s;
+  }
+  ._topbar button:hover { transform: translateY(-1px); background: #c29836; }
+  ._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  ._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  ._topbar a._langbtn {
+    font-family: inherit; font-size: 0.66rem; font-weight: 600;
+    background: #c0392b; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a._homebtn {
+    font-family: inherit; font-size: 0.66rem; font-weight: 600;
+    background: #1e8e3e; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a:hover { opacity: 0.8; }
+  @media (max-width: 1000px) {
+    ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+    ._langrow { justify-content: center; width: 100%; }
+  }
+
+  /* cover */
+  .cover{
+    background:linear-gradient(160deg,var(--teal) 0%,#1e3938 55%,var(--ink) 100%);
+    color:var(--cream);padding:70px 0 60px;
+  }
+  .cover-inner{display:flex;gap:44px;align-items:center;flex-wrap:wrap;}
+  .cover-photo{
+    width:180px;height:180px;border-radius:50%;object-fit:cover;
+    object-position:50% 35%;transform:scale(1.15);
+    border:4px solid var(--gold);flex-shrink:0;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+  }
+  .cover-text{flex:1;min-width:280px;}
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;
+    color:var(--gold);font-family:'Georgia',serif;margin-bottom:10px;
+  }
+  .cover-name{font-size:3.2rem;line-height:1;margin-bottom:14px;}
+  .cover-name .given{color:var(--pale);display:block;font-size:.5em;font-weight:600;letter-spacing:.06em;margin-bottom:2px;}
+  .cover-name a,
+  .cover-name a:link,
+  .cover-name a:visited,
+  .cover-name a:hover,
+  .cover-name a:active{color:var(--cream);text-decoration:none;}
+  .cover-name a .given{color:var(--pale);}
+  .tagline{font-size:1.25rem;color:var(--pale);margin-bottom:18px;max-width:560px;}
+  .cover-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem;color:var(--pale);}
+  .cover-meta a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold);}
+  .cover-meta a:hover{color:var(--gold);}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  .section-title{font-size:1.7rem;color:var(--teal);position:relative;padding-left:18px;}
+  .section-title::before{
+    content:"";position:absolute;left:0;top:.15em;bottom:.15em;width:4px;
+    background:var(--vermilion);
+  }
+  p.lead{font-size:1.08rem;color:var(--ink);max-width:760px;}
+  .dropcap::first-letter{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:4.2em;
+    float:left;line-height:.75;padding:4px 12px 0 0;color:var(--vermilion);
+  }
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:30px;}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+
+  .expertise-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);margin-top:30px;
+  }
+  .expertise-grid .card{
+    background:var(--paper);padding:24px 20px;
+  }
+  .expertise-grid .card h3{font-size:1rem;color:var(--vermilion);margin-bottom:8px;}
+  .expertise-grid .card p{font-size:.92rem;color:var(--muted);margin:0;}
+  @media(max-width:1024px){.expertise-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.expertise-grid{grid-template-columns:1fr;}}
+
+  .timeline{margin-top:30px;border-left:3px solid var(--pale);padding-left:26px;}
+  .tl-item{margin-bottom:32px;position:relative;}
+  .tl-item::before{
+    content:"";position:absolute;left:-32px;top:6px;width:12px;height:12px;
+    border-radius:50%;background:var(--vermilion);border:2px solid var(--paper);
+  }
+  .tl-item h3{font-size:1.15rem;margin-bottom:2px;color:var(--ink);}
+  .tl-role{color:var(--gold);font-size:.9rem;font-weight:700;letter-spacing:.02em;margin-bottom:6px;}
+  .tl-item p{color:var(--muted);font-size:.95rem;margin:0;}
+
+  .langs-served{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .lang-chip{
+    background:var(--teal);color:var(--cream);padding:8px 16px;border-radius:20px;
+    font-size:.88rem;letter-spacing:.02em;
+  }
+
+  .quote-block{
+    background:var(--ink);color:var(--cream);padding:50px 0;
+  }
+  .quote-block blockquote{
+    font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;
+    max-width:760px;margin:0 auto;text-align:center;color:var(--cream);
+    border:none;padding:0;
+  }
+  .quote-block cite{display:block;margin-top:16px;color:var(--gold);font-style:normal;font-size:.9rem;text-align:center;}
+
+  .cta{
+    text-align:center;padding:60px 0;background:linear-gradient(160deg,#274b4a,#1b1f2a);color:var(--cream);
+    border-bottom:none;
+  }
+  .cta a.btn{
+    display:inline-block;margin-top:20px;background:var(--vermilion);color:#fff;
+    text-decoration:none;padding:14px 30px;border-radius:6px;font-size:.95rem;letter-spacing:.02em;
+  }
+  .cta a.btn:hover{background:#9c4327;}
+
+  footer{padding:30px 0;text-align:center;font-size:.85rem;color:var(--muted);}
+
+  @media print{
+    ._topbar{display:none!important;}
+    .cover{background:var(--ink)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    section{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="_topbar">
+  <button onclick="window.print()">⬇ PDF herunterladen</button>
+  <div class="_navgroup">
+    <a class="_homebtn" href="DonHartig_DE.html">Startseite</a>
+    <div class="_langrow">
+      <a class="_langbtn" href="language.html">English</a>
+      <a class="_langbtn" href="语言教育.html">中文</a>
+      <a class="_langbtn" href="language_FR.html">Français</a>
+      <a class="_langbtn" href="language_JP.html">日本語</a>
+      <a class="_langbtn" href="language_ES.html">Español</a>
+      <a class="_langbtn" href="language_AF.html">Afrikaans</a>
+    </div>
+  </div>
+</div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
+<header class="cover">
+  <div class="wrap cover-inner">
+    <img class="cover-photo" src="images/me/newdonsmile.jpg" alt="Don Hartig">
+    <div class="cover-text">
+      <div class="eyebrow">TEFL-Englischlehrer &amp; Sprachbildungsspezialist</div>
+      <h1 class="cover-name"><a href="DonHartig_DE.html"><span class="given">Don</span>Hartig</a></h1>
+      <p class="tagline">Zertifizierter und akkreditierter TEFL-Englischlehrer, gerankter Übersetzer in sieben Sprachen und gefragter englischer Muttersprachler-Lehrer, bekannt für seinen unverwechselbaren, mnemotechnisch geprägten Sprachlernansatz.</p>
+      <div class="cover-meta">
+        <span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
+        <span><a href="https://donhartig.com">donhartig.com</a></span>
+        <span><a href="https://linkedin.com/in/donhartig">LinkedIn</a></span>
+        <span>Sprachbildung &amp; Lokalisierung</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Profil</h2>
+    <p class="lead dropcap">Don Hartig ist ein zertifizierter und akkreditierter TEFL-Englischlehrer und gerankter Übersetzer in sieben Sprachen. Während eines fünfzehnjährigen Aufenthalts als Englischlehrer in China entwickelte er ein umfangreiches mnemotechnisches Unterrichtssystem und unterrichtete Lernende jeden Alters, von kleinen Kindern bis zu Berufstätigen. Er unterrichtet gleichermaßen gerne im Einzel- wie im Gruppenunterricht und kann sowohl reinen Englisch-Immersionsunterricht als auch mehrsprachigen Unterricht anbieten, je nach Bedarf des Lernenden.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Unterrichten &amp; Dozieren in China</h2>
+    <div class="grid2">
+      <p>Dons fünfzehn Jahre in China bilden den Kern seiner Lehrkarriere und umfassen sowohl Klassenzimmerunterricht als auch Dozentur auf Universitätsniveau. Er hatte Lehr- und Dozentenpositionen an renommierten Institutionen inne, darunter die <strong>Sichuan Foreign Language University</strong> und die <strong>Chongqing University</strong>, wo er mit Fakultätsmitgliedern und Studierenden aus einer Vielzahl akademischer Disziplinen und Kenntnisstufen zusammenarbeitete.</p>
+      <p>Dieses umfangreiche, anhaltende Eintauchen in das chinesische akademische und Bildungsleben verschaffte Don eine seltene Perspektive: die Fähigkeit, Unterricht zu gestalten, der direkt auf die Bedürfnisse, Gewohnheiten und Lernkultur chinesischsprachiger Studierender eingeht, während er gleichzeitig vollständig anpassungsfähig für Lernende jeglichen sprachlichen Hintergrunds bleibt.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Eine unverwechselbare Unterrichtsmethode</h2>
+    <div class="expertise-grid">
+      <div class="card">
+        <h3>Mnemotechnisches Lernsystem</h3>
+        <p>Eine einzigartige, selbst entwickelte Mnemotechnik, die Wortschatz, Grammatik und Aussprache in einprägsamen Assoziationen verankert und so das Behalten und Abrufen erheblich beschleunigt.</p>
+      </div>
+      <div class="card">
+        <h3>Immersions-Englisch</h3>
+        <p>Vollständiger, rein englischsprachiger Unterricht für Lernende, die bereit sind einzutauchen, um durch anhaltende, natürliche Zielsprachen-Exposition Sprachgewandtheit und Selbstvertrauen aufzubauen.</p>
+      </div>
+      <div class="card">
+        <h3>Mehrsprachiger Unterricht</h3>
+        <p>Wo angebracht, überbrückt der Unterricht die Muttersprache des Lernenden und nutzt Kenntnisse in sieben Sprachen, um schwierige Konzepte schnell zu klären.</p>
+      </div>
+      <div class="card">
+        <h3>Alle Altersgruppen, alle Formate</h3>
+        <p>Gleichermaßen wirkungsvoll bei kleinen Kindern, Jugendlichen und Erwachsenen, und gleichermaßen zu Hause in einer Einzelsitzung wie in einem vollen Klassenzimmer.</p>
+      </div>
+      <div class="card">
+        <h3>Sprachliche Tiefe</h3>
+        <p>Eine echte Verankerung in Sprachgeschichte, Philologie und angewandter Linguistik prägt jede Unterrichtsstunde, nicht nur oberflächliche Regeln.</p>
+      </div>
+      <div class="card">
+        <h3>Engagierte Pädagogik</h3>
+        <p>Eine unübertroffene Fähigkeit, Sprachenlernen interessant zu gestalten, Lernende in den Prozess selbst einzubeziehen und die faszinierende, „coole" Seite der Sprache hervorzuheben.</p>
+      </div>
+      <div class="card">
+        <h3>Zertifiziert &amp; akkreditiert</h3>
+        <p>Vollständig zertifizierte und akkreditierte TEFL-Qualifikationen, gestützt durch fünfzehn Jahre echte Erfahrung im Klassenzimmer und Hörsaal.</p>
+      </div>
+      <div class="card">
+        <h3>Gerankter Übersetzer</h3>
+        <p>Professionell gerankter Übersetzer in sieben Sprachen, der die Präzision eines Übersetzers in den Sprachunterricht einbringt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Internationale Englisch-Prüfungsvorbereitung</h2>
+    <p class="lead">Neben dem allgemeinen Englischunterricht verfügt Don Hartig über umfangreiche, langjährige Erfahrung in der Vorbereitung von Studierenden aller Niveaus auf die wichtigsten internationalen Englisch-Sprachprüfungen, wobei prüfungsspezifische Strategie, zeitlich begrenztes Üben und gezielten Kompetenzaufbau an die jeweiligen Anforderungen jeder Prüfung angepasst werden.</p>
+    <div class="expertise-grid">
+      <div class="card">
+        <h3>IELTS</h3>
+        <p>Vorbereitung auf Academic und General Training, die alle vier Module abdeckt, mit Schwerpunkt auf Argumentation in Writing Task 2 und Sprechfluss unter Prüfungsbedingungen.</p>
+      </div>
+      <div class="card">
+        <h3>TOEFL iBT</h3>
+        <p>Integriertes Kompetenztraining für die Bereiche Lesen, Hören, Sprechen und Schreiben, mit Strategien für das akademische Register und Zeitformat der Prüfung.</p>
+      </div>
+      <div class="card">
+        <h3>Cambridge English (FCE / CAE / CPE)</h3>
+        <p>Vorbereitung auf die gesamte Cambridge-Reihe — First, Advanced und Proficiency — mit Aufbau der Präzision und Bandbreite, die Prüfer auf jedem Niveau erwarten.</p>
+      </div>
+      <div class="card">
+        <h3>TOEIC</h3>
+        <p>Geschäfts- und arbeitsplatzorientierte Vorbereitung für Hören und Lesen, für Berufstätige, die einen anerkannten unternehmensweiten Englisch-Standard benötigen.</p>
+      </div>
+      <div class="card">
+        <h3>PTE Academic</h3>
+        <p>Vertrautmachen mit dem computerbasierten Test und integriertes Kompetenztraining, mit Fokus auf die Betonung von Sprachfluss und Aussprache im Bewertungsalgorithmus.</p>
+      </div>
+      <div class="card">
+        <h3>Gaokao &amp; Schulabschlussprüfungen</h3>
+        <p>Umfangreiche Erfahrung in der Vorbereitung chinesischer Studierender auf den Englisch-Teil des nationalen Gaokao und anderer Sekundarschulprüfungen.</p>
+      </div>
+      <div class="card">
+        <h3>Wirtschafts- &amp; Hochschulenglisch</h3>
+        <p>Prüfungsnaher Unterricht in akademischem Schreiben und professioneller Kommunikation für Studierende, die zu einem englischsprachigen Studium oder in eine Karriere übergehen.</p>
+      </div>
+      <div class="card">
+        <h3>Probeprüfungen &amp; Notenstrategie</h3>
+        <p>Zeitlich begrenzte Probeprüfungen, detaillierte Fehleranalyse und Notenband-Strategiesitzungen, die die Prüfungsvorbereitung in messbaren, stetigen Fortschritt verwandeln.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Zeitleiste der Sprachunterrichtserfahrung</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <h3>Sichuan Foreign Language University</h3>
+        <div class="tl-role">Dozent / Englischlehrer</div>
+        <p>Erteilte Englischunterricht und Vorlesungen auf Universitätsniveau und arbeitete mit Studierenden, die fortgeschrittene Sprachkenntnisse und akademisches Englisch anstrebten.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Chongqing University</h3>
+        <div class="tl-role">Dozent / Englischlehrer</div>
+        <p>Unterrichtete und dozierte fakultätsübergreifend und passte den Unterricht an Lernende mit unterschiedlichem akademischem Hintergrund und Englischkenntnissen an.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Fünfzehn Jahre in China</h3>
+        <div class="tl-role">TEFL-Englischlehrer</div>
+        <p>Entwickelte und verfeinerte über eine fünfzehnjährige Karriere ein mnemotechnisches Unterrichtssystem, unterrichtete alle Altersgruppen sowohl im Einzel- als auch im Gruppenunterricht und wurde zu einem gefragten englischen Muttersprachler-Lehrer.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Firmen- &amp; Führungskräfteprogramme</h3>
+        <div class="tl-role">Wirtschaftsenglisch-Dozent</div>
+        <p>Erteilte Wirtschaftsenglisch-Coaching für Berufseinsteiger und Führungskräfte, mit Schwerpunkt auf Verhandlung, Präsentationen und professioneller Kommunikation für den internationalen Arbeitsplatz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Wirtschaftsenglisch-Unterricht</h2>
+    <div class="grid2">
+      <p>Über den allgemeinen und prüfungsorientierten Unterricht hinaus verfügt Don Hartig über umfangreiche Erfahrung in der Vermittlung von Wirtschaftsenglisch sowohl für Berufseinsteiger als auch für leitende Führungskräfte. Seine Unternehmensarbeit umfasst Einzelcoaching für Führungskräfte der obersten Ebene, die sich auf internationale Verhandlungen und Konferenzen vorbereiten, sowie strukturierte Gruppenprogramme für junge Erwachsene, die ins Berufsleben einsteigen und die von ihrer Karriere geforderten Kommunikationsfähigkeiten aufbauen.</p>
+      <p>Diese Erfahrung umfasst Präsentationsfähigkeiten im Sitzungssaal, Verhandlungs- und Besprechungsenglisch, professionelles E-Mail- und Berichtsschreiben, interkulturelle Geschäftsetikette und das selbstbewusste, präzise gesprochene Englisch, das Führungskräfte benötigen, wenn sie ihr Unternehmen auf internationaler Ebene vertreten. Don passt jedes Programm an die Branche, Führungsebene und spezifischen beruflichen Ziele des Lernenden an, wobei er auf dieselben mnemotechnischen Methoden und den linguistischen Hintergrund zurückgreift, die seine gesamte Unterrichtsmethode prägen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Sprachen</h2>
+    <p>Gerankter <a href="localisation_DE.html" style="color:var(--vermilion);border-bottom:1px solid var(--gold);text-decoration:none;">Übersetzer</a>, der in sieben Sprachen arbeitet, mit der Flexibilität, Englisch entweder rein im Immersionsstil zu unterrichten oder den Unterricht bei Bedarf über die Muttersprache des Lernenden zu vermitteln.</p>
+    <div class="langs-served">
+      <span class="lang-chip">Englisch</span>
+      <span class="lang-chip">Mandarin-Chinesisch</span>
+      <span class="lang-chip">Deutsch</span>
+      <span class="lang-chip">Französisch</span>
+      <span class="lang-chip">Japanisch</span>
+      <span class="lang-chip">Spanisch</span>
+      <span class="lang-chip">Afrikaans</span>
+    </div>
+  </div>
+</section>
+
+<div class="quote-block">
+  <div class="wrap">
+    <blockquote>Sprache wird nicht einfach auswendig gelernt — sie wird entdeckt. Meine Aufgabe ist es, Lernende zu aktiven Teilnehmern dieser Entdeckung zu machen und ihnen zu zeigen, warum Sprachen wirklich faszinierend sind.</blockquote>
+    <cite>— Don Hartig</cite>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Sprachgeschichte, Philologie &amp; angewandte Linguistik</h2>
+    <p class="lead">Dons Unterricht basiert auf mehr als bloßer Methode — er schöpft aus einem tiefen, fortlaufenden Studium der Sprachgeschichte, Philologie und angewandten Linguistik. Dieser Hintergrund erlaubt es ihm, nicht nur zu erklären, <em>wie</em> eine Sprache funktioniert, sondern auch <em>warum</em> sie so funktioniert: die historischen Verschiebungen, etymologischen Wurzeln und strukturellen Muster, die Grammatik und Wortschatz einprägsam statt willkürlich machen. Es ist diese Einsicht, kombiniert mit echter Begeisterung, die es Don ermöglicht, Sprachenlernen durchgehend spannend statt stumpf mechanisch zu gestalten.</p>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2 style="color:var(--cream);">Suchen Sie einen TEFL-Lehrer oder Übersetzer?</h2>
+    <p style="color:var(--pale);max-width:560px;margin:10px auto 0;">Verfügbar für Einzelunterricht, Gruppenkurse, Dozentur, Übersetzung und Lokalisierungsarbeit.</p>
+    <a class="btn" href="mailto:don@donhartig.com">Kontakt aufnehmen</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Don Hartig — TEFL-Englischlehrer &amp; gerankter Übersetzer
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

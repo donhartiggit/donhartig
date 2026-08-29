@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Hartig — TEFL英語教師 &amp; 言語教育スペシャリスト</title>
+<meta name="description" content="Don Hartig — 認定TEFL英語教師、7言語ランク付き翻訳者、そして中国での15年にわたる指導・講義経験を持つ、引く手あまたのネイティブ英語教師。">
+<meta name="keywords" content="Don Hartig, TEFL, 英語教師, 中国, 四川外国語大学, 重慶大学, 翻訳者, 言語教育, ニーモニック学習, 応用言語学">
+<style>
+  :root{
+    --ink:#1b1f2a;
+    --cream:#f7f3ea;
+    --pale:#d9cdb8;
+    --paper:#fbf9f4;
+    --vermilion:#b5502f;
+    --gold:#a8823a;
+    --teal:#274b4a;
+    --line:#e4dccb;
+    --muted:#6b6455;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Georgia', 'Noto Serif', serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', 'Georgia', serif;
+    font-weight:800;
+    margin:0 0 .4em;
+    letter-spacing:.01em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px;}
+
+  /* topbar */
+  ._topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    background: rgba(27, 31, 42, 0.95); backdrop-filter: blur(12px);
+    padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  ._topbar button {
+    font-family: inherit; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; background: #D4A840;
+    color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px;
+    cursor: pointer; transition: 0.2s;
+  }
+  ._topbar button:hover { transform: translateY(-1px); background: #c29836; }
+  ._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  ._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  ._topbar a._langbtn {
+    font-family: inherit; font-size: 0.66rem; font-weight: 600;
+    background: #c0392b; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a._homebtn {
+    font-family: inherit; font-size: 0.66rem; font-weight: 600;
+    background: #1e8e3e; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a:hover { opacity: 0.8; }
+  @media (max-width: 1000px) {
+    ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+    ._langrow { justify-content: center; width: 100%; }
+  }
+
+  /* cover */
+  .cover{
+    background:linear-gradient(160deg,var(--teal) 0%,#1e3938 55%,var(--ink) 100%);
+    color:var(--cream);padding:70px 0 60px;
+  }
+  .cover-inner{display:flex;gap:44px;align-items:center;flex-wrap:wrap;}
+  .cover-photo{
+    width:180px;height:180px;border-radius:50%;object-fit:cover;
+    object-position:50% 35%;transform:scale(1.15);
+    border:4px solid var(--gold);flex-shrink:0;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+  }
+  .cover-text{flex:1;min-width:280px;}
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;
+    color:var(--gold);font-family:'Georgia',serif;margin-bottom:10px;
+  }
+  .cover-name{font-size:3.2rem;line-height:1;margin-bottom:14px;}
+  .cover-name .given{color:var(--pale);display:block;font-size:.5em;font-weight:600;letter-spacing:.06em;margin-bottom:2px;}
+  .cover-name a,
+  .cover-name a:link,
+  .cover-name a:visited,
+  .cover-name a:hover,
+  .cover-name a:active{color:var(--cream);text-decoration:none;}
+  .cover-name a .given{color:var(--pale);}
+  .tagline{font-size:1.25rem;color:var(--pale);margin-bottom:18px;max-width:560px;}
+  .cover-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem;color:var(--pale);}
+  .cover-meta a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold);}
+  .cover-meta a:hover{color:var(--gold);}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  .section-title{font-size:1.7rem;color:var(--teal);position:relative;padding-left:18px;}
+  .section-title::before{
+    content:"";position:absolute;left:0;top:.15em;bottom:.15em;width:4px;
+    background:var(--vermilion);
+  }
+  p.lead{font-size:1.08rem;color:var(--ink);max-width:760px;}
+  .dropcap::first-letter{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:3em;
+    float:left;line-height:.9;padding:4px 12px 0 0;color:var(--vermilion);
+  }
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:30px;}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+
+  .expertise-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);margin-top:30px;
+  }
+  .expertise-grid .card{
+    background:var(--paper);padding:24px 20px;
+  }
+  .expertise-grid .card h3{font-size:1rem;color:var(--vermilion);margin-bottom:8px;}
+  .expertise-grid .card p{font-size:.92rem;color:var(--muted);margin:0;}
+  @media(max-width:1024px){.expertise-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.expertise-grid{grid-template-columns:1fr;}}
+
+  .timeline{margin-top:30px;border-left:3px solid var(--pale);padding-left:26px;}
+  .tl-item{margin-bottom:32px;position:relative;}
+  .tl-item::before{
+    content:"";position:absolute;left:-32px;top:6px;width:12px;height:12px;
+    border-radius:50%;background:var(--vermilion);border:2px solid var(--paper);
+  }
+  .tl-item h3{font-size:1.15rem;margin-bottom:2px;color:var(--ink);}
+  .tl-role{color:var(--gold);font-size:.9rem;font-weight:700;letter-spacing:.02em;margin-bottom:6px;}
+  .tl-item p{color:var(--muted);font-size:.95rem;margin:0;}
+
+  .langs-served{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .lang-chip{
+    background:var(--teal);color:var(--cream);padding:8px 16px;border-radius:20px;
+    font-size:.88rem;letter-spacing:.02em;
+  }
+
+  .quote-block{
+    background:var(--ink);color:var(--cream);padding:50px 0;
+  }
+  .quote-block blockquote{
+    font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;
+    max-width:760px;margin:0 auto;text-align:center;color:var(--cream);
+    border:none;padding:0;
+  }
+  .quote-block cite{display:block;margin-top:16px;color:var(--gold);font-style:normal;font-size:.9rem;text-align:center;}
+
+  .cta{
+    text-align:center;padding:60px 0;background:linear-gradient(160deg,#274b4a,#1b1f2a);color:var(--cream);
+    border-bottom:none;
+  }
+  .cta a.btn{
+    display:inline-block;margin-top:20px;background:var(--vermilion);color:#fff;
+    text-decoration:none;padding:14px 30px;border-radius:6px;font-size:.95rem;letter-spacing:.02em;
+  }
+  .cta a.btn:hover{background:#9c4327;}
+
+  footer{padding:30px 0;text-align:center;font-size:.85rem;color:var(--muted);}
+
+  @media print{
+    ._topbar{display:none!important;}
+    .cover{background:var(--ink)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    section{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="_topbar">
+  <button onclick="window.print()">⬇ PDFをダウンロード</button>
+  <div class="_navgroup">
+    <a class="_homebtn" href="DonHartig_JP.html">ホーム</a>
+    <div class="_langrow">
+      <a class="_langbtn" href="language.html">English</a>
+      <a class="_langbtn" href="语言教育.html">中文</a>
+      <a class="_langbtn" href="language_DE.html">Deutsch</a>
+      <a class="_langbtn" href="language_FR.html">Français</a>
+      <a class="_langbtn" href="language_ES.html">Español</a>
+      <a class="_langbtn" href="language_AF.html">Afrikaans</a>
+    </div>
+  </div>
+</div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
+<header class="cover">
+  <div class="wrap cover-inner">
+    <img class="cover-photo" src="images/me/newdonsmile.jpg" alt="Don Hartig">
+    <div class="cover-text">
+      <div class="eyebrow">TEFL英語教師 &amp; 言語教育スペシャリスト</div>
+      <h1 class="cover-name"><a href="DonHartig_JP.html"><span class="given">Don</span>Hartig</a></h1>
+      <p class="tagline">認定・認可を受けたTEFL英語教師であり、7言語のランク付き翻訳者。独自のニーモニック(記憶術)を活かした言語学習法で知られる、引く手あまたのネイティブ英語教師。</p>
+      <div class="cover-meta">
+        <span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
+        <span><a href="https://donhartig.com">donhartig.com</a></span>
+        <span><a href="https://linkedin.com/in/donhartig">LinkedIn</a></span>
+        <span>言語教育 &amp; ローカライゼーション</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">プロフィール</h2>
+    <p class="lead dropcap">Don Hartigは、認定・認可を受けたTEFL英語教師であり、7言語のランク付き翻訳者です。中国で英語教師として過ごした15年間で、独自のニーモニック(記憶術)指導法を体系化し、幼い子どもから社会人まで、あらゆる年齢の学習者を指導してきました。個人レッスンとグループレッスンのいずれも同様に得意とし、学習者のニーズに応じて英語のみによる完全没入型の指導、または多言語を用いた指導のいずれも提供できます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">中国での指導・講義経験</h2>
+    <div class="grid2">
+      <p>中国での15年間は、Donの教育者としてのキャリアの中核をなすものであり、教室での指導と大学レベルの講義の両方にわたります。<strong>四川外国語大学</strong>や<strong>重慶大学</strong>といった名門機関で教職・講師職を務め、幅広い学問分野と習熟度の学生・教員陣とともに活動してきました。</p>
+      <p>中国の学術・教育文化への長年にわたる深い没入経験により、Donは中国語話者の学生特有のニーズ、学習習慣、学習文化に直接応える指導を設計する、他にはない視点を得ました。同時に、あらゆる言語的背景を持つ学習者にも柔軟に対応できる指導力を維持しています。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">独自の指導法</h2>
+    <div class="expertise-grid">
+      <div class="card">
+        <h3>ニーモニック学習システム</h3>
+        <p>語彙・文法・発音を記憶に残りやすい連想と結びつける、独自に開発した記憶術によって、定着と想起を飛躍的に高めます。</p>
+      </div>
+      <div class="card">
+        <h3>完全没入型英語指導</h3>
+        <p>没入する準備ができた学生向けに、英語のみによる完全指導を実施。持続的で自然な目標言語への接触を通じて、流暢さと自信を築きます。</p>
+      </div>
+      <div class="card">
+        <h3>多言語指導</h3>
+        <p>必要に応じて学習者の母語を橋渡しに用いた指導も実施。7言語にわたる語学力を活かし、難しい概念を迅速に明確化します。</p>
+      </div>
+      <div class="card">
+        <h3>全年齢・全形式対応</h3>
+        <p>幼い子どもから10代、大人まで同様に効果的に指導でき、個人レッスンでもクラス全体でも同じように得意とします。</p>
+      </div>
+      <div class="card">
+        <h3>言語学的な深み</h3>
+        <p>言語史、文献学、応用言語学に対する本物の理解が、表面的なルールにとどまらない、すべてのレッスンを支えています。</p>
+      </div>
+      <div class="card">
+        <h3>魅力を引き出す指導法</h3>
+        <p>学生自身を学習プロセスに巻き込み、言語の魅力的で「かっこいい」側面を浮き彫りにすることで、言語学習を面白いものにする比類ない能力。</p>
+      </div>
+      <div class="card">
+        <h3>認定・認可資格</h3>
+        <p>15年間の実際の教室・講義経験に裏打ちされた、完全に認定・認可されたTEFL資格。</p>
+      </div>
+      <div class="card">
+        <h3>ランク付き翻訳者</h3>
+        <p>7言語にわたりプロとしてランク付けされた翻訳者であり、翻訳者としての精密さを言語指導に活かします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">国際英語試験対策</h2>
+    <p class="lead">一般的な英語指導に加え、Don Hartigは主要な国際英語能力試験に向けて、あらゆるレベルの学生を指導してきた豊富で継続的な経験を持っています。各試験特有の要求に合わせて、試験特化型の戦略、時間制限付き演習、的を絞ったスキル構築を行います。</p>
+    <div class="expertise-grid">
+      <div class="card">
+        <h3>IELTS</h3>
+        <p>Academic・General Trainingの両対策で4技能すべてをカバーし、Writing Task 2の論証構成や、試験本番を想定したSpeakingの流暢さに重点を置いた指導。</p>
+      </div>
+      <div class="card">
+        <h3>TOEFL iBT</h3>
+        <p>リーディング・リスニング・スピーキング・ライティングの統合技能指導。試験のアカデミックな言語表現と時間制限のある形式に適した戦略を提供。</p>
+      </div>
+      <div class="card">
+        <h3>ケンブリッジ英語検定(FCE / CAE / CPE)</h3>
+        <p>First・Advanced・Proficiencyというケンブリッジ検定シリーズ全体の対策で、各レベルで審査員が求める正確さと表現の幅を養成。</p>
+      </div>
+      <div class="card">
+        <h3>TOEIC</h3>
+        <p>認知度の高い企業向け英語基準を必要とするビジネスパーソン向けに、リスニング・リーディングに焦点を当てたビジネス・職場志向の対策。</p>
+      </div>
+      <div class="card">
+        <h3>PTE Academic</h3>
+        <p>コンピューターベースの試験への慣熟と統合技能演習。採点アルゴリズムが重視する流暢さと発音に配慮した指導。</p>
+      </div>
+      <div class="card">
+        <h3>高考(ガオカオ)&amp;学校卒業試験英語</h3>
+        <p>中国の全国統一大学入学試験(高考)の英語科目や、その他の中等教育レベルの試験に向けた、豊富な指導経験。</p>
+      </div>
+      <div class="card">
+        <h3>ビジネス&amp;アカデミック英語</h3>
+        <p>英語圏での進学や就業を目指す学生向けに、アカデミックライティングとビジネスコミュニケーションに関する試験に隣接した指導。</p>
+      </div>
+      <div class="card">
+        <h3>模擬試験&amp;スコア戦略</h3>
+        <p>時間制限付きの模擬試験、詳細な誤答分析、スコアバンド別の戦略セッションにより、試験対策を測定可能かつ着実な進歩へと変えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">語学指導経験タイムライン</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <h3>四川外国語大学</h3>
+        <div class="tl-role">講師 / 英語教師</div>
+        <p>大学レベルの英語指導・講義を実施し、高度な語学力とアカデミック英語を目指す学生たちと共に取り組んだ。</p>
+      </div>
+      <div class="tl-item">
+        <h3>重慶大学</h3>
+        <div class="tl-role">講師 / 英語教師</div>
+        <p>複数の学部にわたり指導・講義を行い、多様な学問的背景と英語習熟度を持つ学習者に合わせて指導を調整した。</p>
+      </div>
+      <div class="tl-item">
+        <h3>中国での15年間</h3>
+        <div class="tl-role">TEFL英語教師</div>
+        <p>15年間のキャリアを通じてニーモニック指導システムを構築・洗練させ、あらゆる年齢層を個人・グループの両形式で指導し、引く手あまたのネイティブ英語教師となった。</p>
+      </div>
+      <div class="tl-item">
+        <h3>法人向け・エグゼクティブ向けプログラム</h3>
+        <div class="tl-role">ビジネス英語講師</div>
+        <p>若手プロフェッショナルから上級エグゼクティブまでビジネス英語コーチングを実施し、国際的な職場に向けた交渉、プレゼンテーション、ビジネスコミュニケーションを指導した。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">ビジネス英語指導</h2>
+    <div class="grid2">
+      <p>一般英語や試験対策指導に加え、Don Hartigは若手プロフェッショナルから上級エグゼクティブまで、幅広くビジネス英語指導を行ってきた豊富な経験を持っています。企業向けの業務は、国際交渉や会議に備える経営幹部への個人コーチングから、社会人としてのキャリアが求めるコミュニケーション能力を身につける若手社会人向けの体系的なグループプログラムまで多岐にわたります。</p>
+      <p>この経験には、役員会でのプレゼンテーション技術、交渉・会議で用いる英語、ビジネスメールやレポートの作成、異文化間のビジネスマナー、そして企業を国際舞台で代表する際にエグゼクティブに求められる自信と正確さを備えた話し言葉の英語が含まれます。Donは、学習者の業界、役職、具体的な職業上の目標に合わせて各プログラムを調整し、幅広い指導法を特徴づける、同じニーモニック手法と応用言語学の知見を活用しています。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">言語</h2>
+    <p>7言語にわたりランク付けされた<a href="localisation_JP.html" style="color:var(--vermilion);border-bottom:1px solid var(--gold);text-decoration:none;">翻訳者</a>として活動し、必要に応じて英語のみの没入型指導、または学習者の母語を橋渡しにした指導のどちらも柔軟に提供できます。</p>
+    <div class="langs-served">
+      <span class="lang-chip">英語</span>
+      <span class="lang-chip">標準中国語</span>
+      <span class="lang-chip">ドイツ語</span>
+      <span class="lang-chip">フランス語</span>
+      <span class="lang-chip">日本語</span>
+      <span class="lang-chip">スペイン語</span>
+      <span class="lang-chip">アフリカーンス語</span>
+    </div>
+  </div>
+</section>
+
+<div class="quote-block">
+  <div class="wrap">
+    <blockquote>言語は単に暗記するものではなく、発見するものです。私の仕事は、学生をその発見の積極的な参加者にし、言語が本当に魅力的である理由を示すことです。</blockquote>
+    <cite>— Don Hartig</cite>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">言語史・文献学・応用言語学</h2>
+    <p class="lead">Donの指導は、単なる指導法以上のものに基づいています。言語史、文献学、応用言語学に関する深く継続的な研究がその土台です。この知識的背景により、言語が<em>どのように</em>機能するかだけでなく、<em>なぜ</em>そのように機能するのかを説明することができます。文法や語彙を恣意的なものではなく記憶に残るものにする、歴史的な変化、語源的なルーツ、構造的なパターンです。この深い洞察と本物の情熱が組み合わさることで、Donは言語学習を機械的な暗記ではなく、常に魅力的なものにすることができるのです。</p>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2 style="color:var(--cream);">TEFL教師や翻訳者をお探しですか?</h2>
+    <p style="color:var(--pale);max-width:560px;margin:10px auto 0;">個人指導、グループレッスン、講義、翻訳、ローカライゼーション業務に対応可能です。</p>
+    <a class="btn" href="mailto:don@donhartig.com">お問い合わせ</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Don Hartig — TEFL英語教師 &amp; ランク付き翻訳者
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

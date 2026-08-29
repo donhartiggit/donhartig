@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Hartig · 董夏庭 — TEFL英语教师 &amp; 语言教育专家</title>
+<meta name="description" content="Don Hartig（董夏庭）— 持证认可的TEFL英语教师，7种语言的高级排名译员，深受欢迎的英语母语教师，拥有15年在中国教学和授课的经验。">
+<meta name="keywords" content="Don Hartig, 董夏庭, TEFL, 英语教师, 中国, 四川外国语大学, 重庆大学, 译员, 语言教育, 记忆法学习, 应用语言学">
+<style>
+  :root{
+    --ink:#1b1f2a;
+    --cream:#f7f3ea;
+    --pale:#d9cdb8;
+    --paper:#fbf9f4;
+    --vermilion:#b5502f;
+    --gold:#a8823a;
+    --teal:#274b4a;
+    --line:#e4dccb;
+    --muted:#6b6455;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Georgia', 'Noto Serif', serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', 'Georgia', serif;
+    font-weight:800;
+    margin:0 0 .4em;
+    letter-spacing:.01em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px;}
+
+  /* topbar */
+  ._topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    background: rgba(27, 31, 42, 0.95); backdrop-filter: blur(12px);
+    padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  ._topbar button {
+    font-family: inherit; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; background: #D4A840;
+    color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px;
+    cursor: pointer; transition: 0.2s;
+  }
+  ._topbar button:hover { transform: translateY(-1px); background: #c29836; }
+  ._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  ._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  ._topbar a._langbtn {
+    font-family: inherit; font-size: 0.66rem; font-weight: 600;
+    background: #c0392b; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a._homebtn {
+    font-family: inherit; font-size: 0.66rem; font-weight: 600;
+    background: #1e8e3e; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a:hover { opacity: 0.8; }
+  @media (max-width: 1000px) {
+    ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+    ._langrow { justify-content: center; width: 100%; }
+  }
+
+  /* cover */
+  .cover{
+    background:linear-gradient(160deg,var(--teal) 0%,#1e3938 55%,var(--ink) 100%);
+    color:var(--cream);padding:70px 0 60px;
+  }
+  .cover-inner{display:flex;gap:44px;align-items:center;flex-wrap:wrap;}
+  .cover-photo{
+    width:180px;height:180px;border-radius:50%;object-fit:cover;
+    object-position:50% 35%;transform:scale(1.15);
+    border:4px solid var(--gold);flex-shrink:0;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+  }
+  .cover-text{flex:1;min-width:280px;}
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;
+    color:var(--gold);font-family:'Georgia',serif;margin-bottom:10px;
+  }
+  .cover-name{font-size:3.2rem;line-height:1;margin-bottom:14px;}
+  .cover-name .given{color:var(--pale);display:block;font-size:.5em;font-weight:600;letter-spacing:.06em;margin-bottom:2px;}
+  .cover-name a,
+  .cover-name a:link,
+  .cover-name a:visited,
+  .cover-name a:hover,
+  .cover-name a:active{color:var(--cream);text-decoration:none;}
+  .cover-name a .given{color:var(--pale);}
+  .tagline{font-size:1.25rem;color:var(--pale);margin-bottom:18px;max-width:560px;}
+  .cover-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem;color:var(--pale);}
+  .cover-meta a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold);}
+  .cover-meta a:hover{color:var(--gold);}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  .section-title{font-size:1.7rem;color:var(--teal);position:relative;padding-left:18px;}
+  .section-title::before{
+    content:"";position:absolute;left:0;top:.15em;bottom:.15em;width:4px;
+    background:var(--vermilion);
+  }
+  p.lead{font-size:1.08rem;color:var(--ink);max-width:760px;}
+  .dropcap::first-letter{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:3em;
+    float:left;line-height:.9;padding:4px 12px 0 0;color:var(--vermilion);
+  }
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:30px;}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+
+  .expertise-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);margin-top:30px;
+  }
+  .expertise-grid .card{
+    background:var(--paper);padding:24px 20px;
+  }
+  .expertise-grid .card h3{font-size:1rem;color:var(--vermilion);margin-bottom:8px;}
+  .expertise-grid .card p{font-size:.92rem;color:var(--muted);margin:0;}
+  @media(max-width:1024px){.expertise-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.expertise-grid{grid-template-columns:1fr;}}
+
+  .timeline{margin-top:30px;border-left:3px solid var(--pale);padding-left:26px;}
+  .tl-item{margin-bottom:32px;position:relative;}
+  .tl-item::before{
+    content:"";position:absolute;left:-32px;top:6px;width:12px;height:12px;
+    border-radius:50%;background:var(--vermilion);border:2px solid var(--paper);
+  }
+  .tl-item h3{font-size:1.15rem;margin-bottom:2px;color:var(--ink);}
+  .tl-role{color:var(--gold);font-size:.9rem;font-weight:700;letter-spacing:.02em;margin-bottom:6px;}
+  .tl-item p{color:var(--muted);font-size:.95rem;margin:0;}
+
+  .langs-served{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .lang-chip{
+    background:var(--teal);color:var(--cream);padding:8px 16px;border-radius:20px;
+    font-size:.88rem;letter-spacing:.02em;
+  }
+
+  .quote-block{
+    background:var(--ink);color:var(--cream);padding:50px 0;
+  }
+  .quote-block blockquote{
+    font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;
+    max-width:760px;margin:0 auto;text-align:center;color:var(--cream);
+    border:none;padding:0;
+  }
+  .quote-block cite{display:block;margin-top:16px;color:var(--gold);font-style:normal;font-size:.9rem;text-align:center;}
+
+  .cta{
+    text-align:center;padding:60px 0;background:linear-gradient(160deg,#274b4a,#1b1f2a);color:var(--cream);
+    border-bottom:none;
+  }
+  .cta a.btn{
+    display:inline-block;margin-top:20px;background:var(--vermilion);color:#fff;
+    text-decoration:none;padding:14px 30px;border-radius:6px;font-size:.95rem;letter-spacing:.02em;
+  }
+  .cta a.btn:hover{background:#9c4327;}
+
+  footer{padding:30px 0;text-align:center;font-size:.85rem;color:var(--muted);}
+
+  @media print{
+    ._topbar{display:none!important;}
+    .cover{background:var(--ink)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    section{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="_topbar">
+  <button onclick="window.print()">⬇ 下载 PDF</button>
+  <div class="_navgroup">
+    <a class="_homebtn" href="董夏庭.html">首页</a>
+    <div class="_langrow">
+      <a class="_langbtn" href="language.html">English</a>
+      <a class="_langbtn" href="language_DE.html">Deutsch</a>
+      <a class="_langbtn" href="language_FR.html">Français</a>
+      <a class="_langbtn" href="language_JP.html">日本語</a>
+      <a class="_langbtn" href="language_ES.html">Español</a>
+      <a class="_langbtn" href="language_AF.html">Afrikaans</a>
+    </div>
+  </div>
+</div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
+<header class="cover">
+  <div class="wrap cover-inner">
+    <img class="cover-photo" src="images/me/newdonsmile.jpg" alt="Don Hartig">
+    <div class="cover-text">
+      <div class="eyebrow">TEFL英语教师 &amp; 语言教育专家</div>
+      <h1 class="cover-name"><a href="董夏庭.html"><span class="given">Don</span>Hartig</a></h1>
+      <p class="tagline">持证认可的TEFL英语教师，7种语言的高级排名译员，深受欢迎的英语母语教师，以其独特的记忆法语言学习方法而闻名。</p>
+      <div class="cover-meta">
+        <span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
+        <span><a href="https://donhartig.com">donhartig.com</a></span>
+        <span><a href="https://linkedin.com/in/donhartig">LinkedIn</a></span>
+        <span>语言教育 &amp; 本地化</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">个人简介</h2>
+    <p class="lead dropcap">董夏庭（Don Hartig）是一位持证认可的TEFL英语教师，同时也是7种语言的高级排名译员。在中国担任英语教师的十五年间，他开发了一套完善的记忆法教学体系，教授过从幼儿到在职专业人士的各年龄段学习者。他同样擅长一对一和小组授课，能够根据学习者的需求提供纯英语深度沉浸式教学，或多语言辅助教学。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">在中国的教学与授课经历</h2>
+    <div class="grid2">
+      <p>董夏庭在中国的十五年是其教学生涯的核心，涵盖课堂教学与大学层面的授课工作。他曾在包括<strong>四川外国语大学</strong>和<strong>重庆大学</strong>在内的知名院校担任教师和讲师职务，与来自各学科领域、各水平层次的师生共同合作。</p>
+      <p>这段广泛而持久地融入中国学术和教育生活的经历，为董夏庭提供了一个独特的视角：能够设计出直接契合中文母语学生需求、习惯与学习文化的教学方案，同时依然能够充分适应任何语言背景的学习者。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">独特的教学方法</h2>
+    <div class="expertise-grid">
+      <div class="card">
+        <h3>记忆法学习系统</h3>
+        <p>一套独特的自主研发记忆法，将词汇、语法和发音与令人印象深刻的联想相结合，大幅加速记忆的保持与提取。</p>
+      </div>
+      <div class="card">
+        <h3>深度沉浸式英语</h3>
+        <p>为已准备好全情投入的学生提供纯英语教学，通过持续、自然的目标语言接触，建立流利度与自信心。</p>
+      </div>
+      <div class="card">
+        <h3>多语言教学</h3>
+        <p>在适当情况下，教学会借助学习者的母语作为桥梁，利用七种语言的能力快速阐明难点概念。</p>
+      </div>
+      <div class="card">
+        <h3>各年龄段、各种形式</h3>
+        <p>对幼儿、青少年和成年人同样有效，无论是一对一课程还是整班授课，都同样得心应手。</p>
+      </div>
+      <div class="card">
+        <h3>语言学深度</h3>
+        <p>对语言历史、文献学和应用语言学的真正理解贯穿每一堂课，而不仅仅停留于表面规则。</p>
+      </div>
+      <div class="card">
+        <h3>引人入胜的教学法</h3>
+        <p>无与伦比地将语言学习变得有趣的能力，让学生主动参与学习过程本身，并突出语言迷人、"酷"的一面。</p>
+      </div>
+      <div class="card">
+        <h3>认证与资质</h3>
+        <p>完全经过认证与资质认可的TEFL资格，背后有十五年真实课堂与讲堂经验作为支撑。</p>
+      </div>
+      <div class="card">
+        <h3>高级排名译员</h3>
+        <p>在七种语言方面获得专业排名认可的译员，将译员的精确性带入语言教学之中。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">国际英语考试备考</h2>
+    <p class="lead">除一般英语教学外，董夏庭在为各水平学生备考主要国际英语能力考试方面拥有丰富而持续的经验，能够针对每项考试的具体要求，量身定制备考策略、限时练习和有针对性的技能训练。</p>
+    <div class="expertise-grid">
+      <div class="card">
+        <h3>雅思（IELTS）</h3>
+        <p>覆盖学术类和培训类全部四个模块的备考，重点训练写作Task 2的论证结构以及考试条件下的口语流利度。</p>
+      </div>
+      <div class="card">
+        <h3>托福（TOEFL iBT）</h3>
+        <p>针对阅读、听力、口语与写作各部分的综合技能训练，采用适合考试学术风格及限时形式的策略。</p>
+      </div>
+      <div class="card">
+        <h3>剑桥英语（FCE / CAE / CPE）</h3>
+        <p>覆盖剑桥系列考试——First、Advanced与Proficiency——培养考官在各级别所要求的精确度与语言广度。</p>
+      </div>
+      <div class="card">
+        <h3>多益（TOEIC）</h3>
+        <p>面向商务及职场的听力与阅读备考，适合需要获得公认企业英语标准的职场人士。</p>
+      </div>
+      <div class="card">
+        <h3>PTE学术英语考试</h3>
+        <p>熟悉基于计算机的考试形式，并进行综合技能训练，特别关注评分算法对流利度和发音的重视。</p>
+      </div>
+      <div class="card">
+        <h3>高考及中学毕业英语</h3>
+        <p>在辅导中国学生备考全国高考英语科目及其他中学阶段考试方面拥有丰富经验。</p>
+      </div>
+      <div class="card">
+        <h3>商务与学术英语</h3>
+        <p>为即将赴英语授课环境求学或就业的学生提供学术写作及职业沟通方面的考试相关教学。</p>
+      </div>
+      <div class="card">
+        <h3>模拟考试与分数策略</h3>
+        <p>限时模拟考试、详细的错题分析以及分数段策略辅导，让备考过程转化为可衡量、稳步的进步。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">语言教学经历时间线</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <h3>四川外国语大学</h3>
+        <div class="tl-role">讲师 / 英语教师</div>
+        <p>提供大学层次的英语教学与授课，与追求高阶语言能力和学术英语水平的学生合作。</p>
+      </div>
+      <div class="tl-item">
+        <h3>重庆大学</h3>
+        <div class="tl-role">讲师 / 英语教师</div>
+        <p>跨院系开展教学与授课工作，针对具有不同学术背景和英语水平的学习者调整教学方式。</p>
+      </div>
+      <div class="tl-item">
+        <h3>在中国的十五年</h3>
+        <div class="tl-role">TEFL英语教师</div>
+        <p>在十五年的职业生涯中构建并不断完善记忆法教学体系，以一对一及小组形式教授各年龄段学生，成为深受欢迎的英语母语教师。</p>
+      </div>
+      <div class="tl-item">
+        <h3>企业及高管培训项目</h3>
+        <div class="tl-role">商务英语讲师</div>
+        <p>为年轻职场人士及高级管理人员提供商务英语辅导，内容涵盖谈判、演讲以及面向国际职场的专业沟通。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">商务英语教学</h2>
+    <div class="grid2">
+      <p>除一般教学和考试导向教学外，董夏庭在为年轻职场人士及高级管理人员提供商务英语教学方面拥有丰富经验。其企业合作项目既包括为准备国际谈判和会议的高层管理人员提供的一对一辅导，也包括面向初入职场、需要培养职业所需沟通能力的年轻成年人的结构化小组课程。</p>
+      <p>这些经验涵盖董事会演讲技巧、谈判及会议英语、专业邮件与报告写作、跨文化商务礼仪，以及高管在国际舞台上代表公司时所需的自信而精准的英语口语表达。董夏庭会根据学习者所在的行业、职级和具体职业目标，为每个项目量身定制内容，并运用与其整体教学方法一脉相承的记忆法技巧和应用语言学背景。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">语言</h2>
+    <p>七种语言的高级排名<a href="本地化.html" style="color:var(--vermilion);border-bottom:1px solid var(--gold);text-decoration:none;">译员</a>，能够灵活地采用纯沉浸式方式教授英语，或在需要时借助学生的母语进行辅助教学。</p>
+    <div class="langs-served">
+      <span class="lang-chip">英语</span>
+      <span class="lang-chip">普通话</span>
+      <span class="lang-chip">德语</span>
+      <span class="lang-chip">法语</span>
+      <span class="lang-chip">日语</span>
+      <span class="lang-chip">西班牙语</span>
+      <span class="lang-chip">南非荷兰语</span>
+    </div>
+  </div>
+</section>
+
+<div class="quote-block">
+  <div class="wrap">
+    <blockquote>语言不仅仅是死记硬背，而是需要被发现的。我的工作是让学生成为这一发现过程的积极参与者，并向他们展示语言真正迷人之处。</blockquote>
+    <cite>— 董夏庭（Don Hartig）</cite>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">语言历史、文献学与应用语言学</h2>
+    <p class="lead">董夏庭的教学不仅仅依靠方法本身，更根植于对语言历史、文献学和应用语言学的深入且持续的研究。这一背景使他不仅能够解释一门语言<em>如何</em>运作，更能说明它<em>为何</em>如此运作：那些使语法和词汇变得令人难忘而非随意的历史演变、词源根基和结构模式。正是这种洞察力，结合真诚的热情，使董夏庭能够始终让语言学习保持引人入胜，而非机械枯燥。</p>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2 style="color:var(--cream);">正在寻找TEFL教师或译员？</h2>
+    <p style="color:var(--pale);max-width:560px;margin:10px auto 0;">可提供一对一辅导、小组课程、讲座、翻译及本地化服务。</p>
+    <a class="btn" href="mailto:don@donhartig.com">联系我</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Don Hartig（董夏庭）— TEFL英语教师 &amp; 高级排名译员
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

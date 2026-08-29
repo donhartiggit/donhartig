@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Hartig — TEFL-Engelsonderwyser &amp; Taalonderrigspesialis</title>
+<meta name="description" content="Don Hartig — gesertifiseerde en geakkrediteerde TEFL-Engelsonderwyser, gerangeerde vertaler in 7 tale, en 'n gesogte moedertaal-Engelsonderwyser met 15 jaar se ervaring in onderrig en dosentskap regoor China.">
+<meta name="keywords" content="Don Hartig, TEFL, Engelsonderwyser, China, Sichuan Foreign Language University, Chongqing University, vertaler, taalonderrig, mnemoniese leer, toegepaste linguistiek">
+<style>
+  :root{
+    --ink:#1b1f2a;
+    --cream:#f7f3ea;
+    --pale:#d9cdb8;
+    --paper:#fbf9f4;
+    --vermilion:#b5502f;
+    --gold:#a8823a;
+    --teal:#274b4a;
+    --line:#e4dccb;
+    --muted:#6b6455;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Georgia', 'Noto Serif', serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', 'Georgia', serif;
+    font-weight:800;
+    margin:0 0 .4em;
+    letter-spacing:.01em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px;}
+
+  /* topbar */
+  ._topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    background: rgba(27, 31, 42, 0.95); backdrop-filter: blur(12px);
+    padding: 0.45rem 1.5rem; gap: 1rem; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  ._topbar button {
+    font-family: inherit; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; background: #D4A840;
+    color: #fff; border: none; padding: 0.4rem 1rem; border-radius: 4px;
+    cursor: pointer; transition: 0.2s;
+  }
+  ._topbar button:hover { transform: translateY(-1px); background: #c29836; }
+  ._navgroup { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  ._langrow { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  ._topbar a._langbtn {
+    font-family: inherit; font-size: 0.66rem; font-weight: 600;
+    background: #c0392b; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a._homebtn {
+    font-family: inherit; font-size: 0.66rem; font-weight: 600;
+    background: #1e8e3e; color: #fff; text-decoration: none;
+    text-align: center; padding: 0.4rem 0; width: 90px; border-radius: 4px; transition: 0.2s;
+    white-space: nowrap; display: inline-block;
+  }
+  ._topbar a:hover { opacity: 0.8; }
+  @media (max-width: 1000px) {
+    ._topbar { flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    ._navgroup { flex-direction: column; align-items: center; width: 100%; gap: 0.5rem; }
+    ._langrow { justify-content: center; width: 100%; }
+  }
+
+  /* cover */
+  .cover{
+    background:linear-gradient(160deg,var(--teal) 0%,#1e3938 55%,var(--ink) 100%);
+    color:var(--cream);padding:70px 0 60px;
+  }
+  .cover-inner{display:flex;gap:44px;align-items:center;flex-wrap:wrap;}
+  .cover-photo{
+    width:180px;height:180px;border-radius:50%;object-fit:cover;
+    object-position:50% 35%;transform:scale(1.15);
+    border:4px solid var(--gold);flex-shrink:0;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+  }
+  .cover-text{flex:1;min-width:280px;}
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;
+    color:var(--gold);font-family:'Georgia',serif;margin-bottom:10px;
+  }
+  .cover-name{font-size:3.2rem;line-height:1;margin-bottom:14px;}
+  .cover-name .given{color:var(--pale);display:block;font-size:.5em;font-weight:600;letter-spacing:.06em;margin-bottom:2px;}
+  .cover-name a,
+  .cover-name a:link,
+  .cover-name a:visited,
+  .cover-name a:hover,
+  .cover-name a:active{color:var(--cream);text-decoration:none;}
+  .cover-name a .given{color:var(--pale);}
+  .tagline{font-size:1.25rem;color:var(--pale);margin-bottom:18px;max-width:560px;}
+  .cover-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem;color:var(--pale);}
+  .cover-meta a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold);}
+  .cover-meta a:hover{color:var(--gold);}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  .section-title{font-size:1.7rem;color:var(--teal);position:relative;padding-left:18px;}
+  .section-title::before{
+    content:"";position:absolute;left:0;top:.15em;bottom:.15em;width:4px;
+    background:var(--vermilion);
+  }
+  p.lead{font-size:1.08rem;color:var(--ink);max-width:760px;}
+  .dropcap::first-letter{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:4.2em;
+    float:left;line-height:.75;padding:4px 12px 0 0;color:var(--vermilion);
+  }
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:30px;}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+
+  .expertise-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);margin-top:30px;
+  }
+  .expertise-grid .card{
+    background:var(--paper);padding:24px 20px;
+  }
+  .expertise-grid .card h3{font-size:1rem;color:var(--vermilion);margin-bottom:8px;}
+  .expertise-grid .card p{font-size:.92rem;color:var(--muted);margin:0;}
+  @media(max-width:1024px){.expertise-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.expertise-grid{grid-template-columns:1fr;}}
+
+  .timeline{margin-top:30px;border-left:3px solid var(--pale);padding-left:26px;}
+  .tl-item{margin-bottom:32px;position:relative;}
+  .tl-item::before{
+    content:"";position:absolute;left:-32px;top:6px;width:12px;height:12px;
+    border-radius:50%;background:var(--vermilion);border:2px solid var(--paper);
+  }
+  .tl-item h3{font-size:1.15rem;margin-bottom:2px;color:var(--ink);}
+  .tl-role{color:var(--gold);font-size:.9rem;font-weight:700;letter-spacing:.02em;margin-bottom:6px;}
+  .tl-item p{color:var(--muted);font-size:.95rem;margin:0;}
+
+  .langs-served{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .lang-chip{
+    background:var(--teal);color:var(--cream);padding:8px 16px;border-radius:20px;
+    font-size:.88rem;letter-spacing:.02em;
+  }
+
+  .quote-block{
+    background:var(--ink);color:var(--cream);padding:50px 0;
+  }
+  .quote-block blockquote{
+    font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;
+    max-width:760px;margin:0 auto;text-align:center;color:var(--cream);
+    border:none;padding:0;
+  }
+  .quote-block cite{display:block;margin-top:16px;color:var(--gold);font-style:normal;font-size:.9rem;text-align:center;}
+
+  .cta{
+    text-align:center;padding:60px 0;background:linear-gradient(160deg,#274b4a,#1b1f2a);color:var(--cream);
+    border-bottom:none;
+  }
+  .cta a.btn{
+    display:inline-block;margin-top:20px;background:var(--vermilion);color:#fff;
+    text-decoration:none;padding:14px 30px;border-radius:6px;font-size:.95rem;letter-spacing:.02em;
+  }
+  .cta a.btn:hover{background:#9c4327;}
+
+  footer{padding:30px 0;text-align:center;font-size:.85rem;color:var(--muted);}
+
+  @media print{
+    ._topbar{display:none!important;}
+    .cover{background:var(--ink)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    section{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="_topbar">
+  <button onclick="window.print()">⬇ Laai PDF af</button>
+  <div class="_navgroup">
+    <a class="_homebtn" href="DonHartig_AF.html">Tuis</a>
+    <div class="_langrow">
+      <a class="_langbtn" href="language.html">English</a>
+      <a class="_langbtn" href="语言教育.html">中文</a>
+      <a class="_langbtn" href="language_DE.html">Deutsch</a>
+      <a class="_langbtn" href="language_FR.html">Français</a>
+      <a class="_langbtn" href="language_JP.html">日本語</a>
+      <a class="_langbtn" href="language_ES.html">Español</a>
+    </div>
+  </div>
+</div>
+<div id="_topbarSpacer" style="height:44px;"></div>
+<script>
+(function(){
+  var bar = document.querySelector('._topbar');
+  var spacer = document.getElementById('_topbarSpacer');
+  function syncSpacer(){ spacer.style.height = bar.offsetHeight + 'px'; }
+  syncSpacer();
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncSpacer); }
+})();
+</script>
+
+<header class="cover">
+  <div class="wrap cover-inner">
+    <img class="cover-photo" src="images/me/newdonsmile.jpg" alt="Don Hartig">
+    <div class="cover-text">
+      <div class="eyebrow">TEFL-Engelsonderwyser &amp; Taalonderrigspesialis</div>
+      <h1 class="cover-name"><a href="DonHartig_AF.html"><span class="given">Don</span>Hartig</a></h1>
+      <p class="tagline">Gesertifiseerde en geakkrediteerde TEFL-Engelsonderwyser, gerangeerde vertaler in sewe tale, en 'n gesogte moedertaal-Engelsonderwyser bekend vir sy unieke, mnemonies-gedrewe benadering tot taalaanleer.</p>
+      <div class="cover-meta">
+        <span><a href="mailto:don@donhartig.com">don@donhartig.com</a></span>
+        <span><a href="https://donhartig.com">donhartig.com</a></span>
+        <span><a href="https://linkedin.com/in/donhartig">LinkedIn</a></span>
+        <span>Taalonderrig &amp; Lokalisering</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Profiel</h2>
+    <p class="lead dropcap">Don Hartig is 'n gesertifiseerde en geakkrediteerde TEFL-Engelsonderwyser en gerangeerde vertaler in sewe tale. Gedurende 'n vyftienjarige verblyf as Engelsonderwyser in China het hy 'n uitgebreide mnemoniese onderrigstelsel ontwikkel en leerders van alle ouderdomme onderrig, van klein kinders tot werkende professionele persone. Hy is ewe gemaklik om een-tot-een of in groepklasse te onderrig, en kan diep-immersie, Engels-alleen-onderrig of veeltalige onderrig lewer, na gelang van wat die leerder benodig.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Onderrig &amp; Dosentskap in China</h2>
+    <div class="grid2">
+      <p>Don se vyftien jaar in China vorm die kern van sy onderwysloopbaan, en strek oor beide klaskameronderrig en dosentskap op universiteitsvlak. Hy het onderrig- en dosentposte beklee by gesoghte instellings, insluitend die <strong>Sichuan Foreign Language University</strong> en <strong>Chongqing University</strong>, waar hy saam met fakulteitslede en studente oor 'n wye reeks akademiese dissiplines en vaardigheidsvlakke gewerk het.</p>
+      <p>Hierdie uitgebreide, volgehoue indompeling in die Chinese akademiese en onderwyslewe het Don 'n seldsame uitkykpunt gegee: die vermoë om onderrig te ontwerp wat direk inspeel op die behoeftes, gewoontes en leerkultuur van Chinees-sprekende studente, terwyl hy steeds ten volle aanpasbaar bly vir leerders van enige taalagtergrond.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">'n Unieke Onderrigmetode</h2>
+    <div class="expertise-grid">
+      <div class="card">
+        <h3>Mnemoniese Leerstelsel</h3>
+        <p>'n Unieke, self-ontwikkelde mnemoniese tegniek wat woordeskat, grammatika en uitspraak vasanker in onthoubare assosiasies, wat retensie en herroeping dramaties versnel.</p>
+      </div>
+      <div class="card">
+        <h3>Diep-immersie Engels</h3>
+        <p>Volledige, Engels-alleen-onderrig vir studente wat gereed is om hulself te dompel, wat vlotheid en selfvertroue opbou deur volgehoue, natuurlike blootstelling aan die doeltaal.</p>
+      </div>
+      <div class="card">
+        <h3>Veeltalige Onderrig</h3>
+        <p>Waar toepaslik, oorbrug die onderrig die leerder se moedertaal, deur staat te maak op vaardigheid in sewe tale om moeilike konsepte vinnig te verduidelik.</p>
+      </div>
+      <div class="card">
+        <h3>Alle Ouderdomme, Alle Formate</h3>
+        <p>Ewe effektief met klein kinders, tieners en volwassenes, en ewe tuis in 'n een-tot-een sessie of 'n volle klaskamer.</p>
+      </div>
+      <div class="card">
+        <h3>Linguistiese Diepte</h3>
+        <p>'n Egte grondslag in taalgeskiedenis, filologie en toegepaste linguistiek onderlê elke les, nie net oppervlakkige reëls nie.</p>
+      </div>
+      <div class="card">
+        <h3>Boeiende Pedagogie</h3>
+        <p>'n Onoortrefte vermoë om taalaanleer interessant te maak, deur studente in die proses self te betrek en die fassinerende, "cool" kant van tale uit te lig.</p>
+      </div>
+      <div class="card">
+        <h3>Gesertifiseer &amp; Geakkrediteer</h3>
+        <p>Volledig gesertifiseerde en geakkrediteerde TEFL-kwalifikasies, ondersteun deur vyftien jaar se werklike klaskamer- en lesingsaalervaring.</p>
+      </div>
+      <div class="card">
+        <h3>Gerangeerde Vertaler</h3>
+        <p>Professioneel gerangeer as vertaler in sewe tale, wat 'n vertaler se presisie na taalonderrig bring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Internasionale Engels-toetsvoorbereiding</h2>
+    <p class="lead">Benewens algemene Engelse onderrig, het Don Hartig uitgebreide, volgehoue ervaring in die voorbereiding van studente van alle vlakke vir die belangrikste internasionale Engelse vaardigheidseksamens, met toetsspesifieke strategie, getydde oefening en gerigte vaardigheidsopbou wat aangepas is by elke eksamen se spesifieke vereistes.</p>
+    <div class="expertise-grid">
+      <div class="card">
+        <h3>IELTS</h3>
+        <p>Voorbereiding vir Academic en General Training wat al vier modules dek, met gefokusde werk oor argumentasie in Writing Task 2 en spreekvlotheid onder eksamentoestande.</p>
+      </div>
+      <div class="card">
+        <h3>TOEFL iBT</h3>
+        <p>Geïntegreerde vaardigheidsafrigting vir die lees-, luister-, spreek- en skryfafdelings, met strategieë wat pas by die eksamen se akademiese register en getydde formaat.</p>
+      </div>
+      <div class="card">
+        <h3>Cambridge English (FCE / CAE / CPE)</h3>
+        <p>Voorbereiding regoor die Cambridge-reeks — First, Advanced en Proficiency — wat die presisie en omvang opbou wat eksaminatore op elke vlak soek.</p>
+      </div>
+      <div class="card">
+        <h3>TOEIC</h3>
+        <p>Besigheids- en werkplekgerigte voorbereiding vir luister en lees, gemik op professionele persone wat 'n erkende korporatiewe Engels-standaard benodig.</p>
+      </div>
+      <div class="card">
+        <h3>PTE Academic</h3>
+        <p>Vertroudheid met die rekenaargebaseerde toets en geïntegreerde vaardigheidsoefening, met aandag aan die puntetoekenningsalgoritme se klem op vlotheid en uitspraak.</p>
+      </div>
+      <div class="card">
+        <h3>Gaokao &amp; Skoolverlaters-Engels</h3>
+        <p>Uitgebreide ervaring in die voorbereiding van Chinese studente vir die Engelse komponent van die nasionale Gaokao en ander sekondêre-vlak eksamens.</p>
+      </div>
+      <div class="card">
+        <h3>Besigheids- &amp; Akademiese Engels</h3>
+        <p>Eksamen-verwante onderrig in akademiese skryfwerk en professionele kommunikasie vir studente wat na Engelsmedium studie of loopbane oorgaan.</p>
+      </div>
+      <div class="card">
+        <h3>Voorbeeldeksamens &amp; Puntestrategie</h3>
+        <p>Getydde voorbeeldeksamens, gedetailleerde foutontleding, en punteband-strategiesessies wat eksamenvoorbereiding omskep in meetbare, stelselmatige vordering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Tydlyn van Taalonderrigervaring</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <h3>Sichuan Foreign Language University</h3>
+        <div class="tl-role">Dosent / Engelsonderwyser</div>
+        <p>Het Engelse onderrig en lesings op universiteitsvlak aangebied, en met studente gewerk wat gevorderde taalvaardigheid en akademiese Engels nagestreef het.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Chongqing University</h3>
+        <div class="tl-role">Dosent / Engelsonderwyser</div>
+        <p>Het oor fakulteite heen onderrig en lesings gegee, en die onderrig aangepas vir leerders met uiteenlopende akademiese agtergronde en Engelse vaardigheidsvlakke.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Vyftien Jaar in China</h3>
+        <div class="tl-role">TEFL-Engelsonderwyser</div>
+        <p>Het oor 'n vyftienjarige loopbaan 'n mnemoniese onderrigstelsel opgebou en verfyn, alle ouderdomme onderrig in beide een-tot-een en groepverband, en 'n gesogte moedertaal-Engelsonderwyser geword.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Korporatiewe &amp; Uitvoerende Programme</h3>
+        <div class="tl-role">Besigheids-Engelsinstrukteur</div>
+        <p>Het besigheids-Engels-afrigting gelewer aan jong professionele persone en senior uitvoerende beamptes, met dekking van onderhandeling, aanbiedings en professionele kommunikasie vir die internasionale werkplek.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Besigheids-Engels-Onderrig</h2>
+    <div class="grid2">
+      <p>Buiten algemene en eksamengerigte onderrig, het Don Hartig uitgebreide ervaring in die aanbied van besigheids-Engels-onderrig aan sowel jong professionele persone as senior uitvoerende beamptes. Sy korporatiewe werk strek van een-tot-een-afrigting vir topbestuursleiers wat vir internasionale onderhandelinge en konferensies voorberei, tot gestruktureerde groepprogramme vir jong volwassenes wat die werkmag betree en die kommunikasievaardighede opbou wat hul loopbane vereis.</p>
+      <p>Hierdie ervaring dek raadsaalaanbiedingsvaardighede, onderhandelings- en vergaderings-Engels, professionele e-pos- en verslagskrywing, kruiskulturele besigheidsetiket, en die selfversekerde, presiese gesproke Engels wat uitvoerende beamptes nodig het wanneer hulle hul maatskappye op die internasionale verhoog verteenwoordig. Don pas elke program aan by die leerder se bedryf, senioriteit, en spesifieke professionele doelwitte, en steun daarby op dieselfde mnemoniese tegnieke en toegepaste linguistiese agtergrond wat sy breër onderrigmetode kenmerk.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Tale</h2>
+    <p>Gerangeerde <a href="localisation_AF.html" style="color:var(--vermilion);border-bottom:1px solid var(--gold);text-decoration:none;">vertaler</a> wat in sewe tale werk, met die buigsaamheid om Engels suiwer deur indompeling te onderrig, of om die onderrig via die student se moedertaal te oorbrug indien nodig.</p>
+    <div class="langs-served">
+      <span class="lang-chip">Engels</span>
+      <span class="lang-chip">Mandaryns-Chinees</span>
+      <span class="lang-chip">Duits</span>
+      <span class="lang-chip">Frans</span>
+      <span class="lang-chip">Japannees</span>
+      <span class="lang-chip">Spaans</span>
+      <span class="lang-chip">Afrikaans</span>
+    </div>
+  </div>
+</section>
+
+<div class="quote-block">
+  <div class="wrap">
+    <blockquote>Taal word nie net uit die kop geleer nie — dit word ontdek. My werk is om studente aktiewe deelnemers aan daardie ontdekking te maak, en om hulle te wys waarom tale werklik fassinerend is.</blockquote>
+    <cite>— Don Hartig</cite>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Taalgeskiedenis, Filologie &amp; Toegepaste Linguistiek</h2>
+    <p class="lead">Don se onderrig is gegrond op meer as net metode — dit put uit 'n diepgaande, voortgesette studie van taalgeskiedenis, filologie en toegepaste linguistiek. Hierdie agtergrond stel hom in staat om nie net te verduidelik <em>hoe</em> 'n taal werk nie, maar ook <em>waarom</em> dit so werk: die historiese verskuiwings, etimologiese wortels en strukturele patrone wat grammatika en woordeskat onthoubaar eerder as arbitrêr maak. Dit is hierdie insig, gekombineer met opregte entoesiasme, wat Don in staat stel om taalaanleer deurgaans boeiend eerder as meganies te laat voel.</p>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2 style="color:var(--cream);">Soek u 'n TEFL-Onderwyser of Vertaler?</h2>
+    <p style="color:var(--pale);max-width:560px;margin:10px auto 0;">Beskikbaar vir een-tot-een-onderrig, groepklasse, dosentskap, vertaling en lokaliseringswerk.</p>
+    <a class="btn" href="mailto:don@donhartig.com">Kontak</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Don Hartig — TEFL-Engelsonderwyser &amp; Gerangeerde Vertaler
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
