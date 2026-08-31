@@ -620,7 +620,11 @@
 
   /* ── PRINT ── */
   @media print {
-    body { background: white; color: #111; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
     body::before { display: none; }
     .avail::before { animation: none; }
   }
